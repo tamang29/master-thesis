@@ -9,7 +9,7 @@
 
 #show table: it => block(breakable: false, it)
 
-This chapter describes the architecture that connects the iterative requirements process in #section-link(<req-iterative>) to the implementation work in Chapter 6. The architecture is organized around the Apollon ecosystem rather than around individual pull requests. This keeps the design aligned with the thesis goal: improving Apollon as an educational modeling tool that is reused in several applications.
+This chapter describes the architecture that connects the iterative requirements process in #section-link(<req-iterative>)#h(0.25em)to the implementation work in Chapter 6. The architecture is organized around the Apollon ecosystem rather than around individual pull requests. This keeps the design aligned with the thesis goal: improving Apollon as an educational modeling tool that is reused in several applications.
 
 == Architectural Overview <arch-overview>
 

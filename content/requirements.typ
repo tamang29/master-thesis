@@ -9,19 +9,19 @@
 
 #show table: it => block(breakable: false, it)
 
-This chapter describes the requirements for enhancing Apollon as a set of feature-oriented mini projects. The requirements were not fixed once at the beginning. They were collected from the proposal, implemented in one part of the Apollon ecosystem, evaluated through integration work, and then refined when follow-up issues appeared. This iterative process follows the idea that requirements become clearer while the problem domain and solution domain are explored together @bruegge2004object.
+This chapter describes the requirements for enhancing Apollon, grouped by feature area. The requirements were not fixed once at the beginning. They were collected from the proposal, implemented in one part of the Apollon ecosystem, evaluated through integration work, and then refined when follow-up issues appeared. This iterative process follows the idea that requirements become clearer while the problem domain and solution domain are explored together @bruegge2004object.
 
 The proposal defines four broad goals: lower interaction cost, better collaboration awareness, mobile usage, and easier integration into the surrounding educational tooling. The roadmap from February to June 2026 translated these goals into concrete work packages for the Apollon library, the standalone application, Artemis, Athena, and the VS Code extension.
 
 == Requirements Engineering Approach <req-iterative>
 
-Each requirement area was treated as a small project with its own users, integration context, and validation loop. A first implementation usually clarified the next requirement. For example, replacing legacy Apollon in Artemis created follow-up requirements for Athena model support and quiz generation. Similarly, collaboration features first built for the standalone application became library requirements once Artemis team modeling needed the same behavior.
+Each requirement area was considered in relation to its users, integration context, and validation process. A first implementation usually clarified the next requirement. For example, replacing legacy Apollon in Artemis created follow-up requirements for Athena model support and quiz generation. Similarly, collaboration features first built for the standalone application became library requirements once Artemis team modeling needed the same behavior.
 
 #table(
   columns: (1fr, 1.7fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Mini project], [Requirement focus], [Implemented in]),
+  table.header([Feature area], [Requirement focus], [Implemented in]),
   [Usability], [Editing effort, navigation, and mobile export.], [#section-link(<impl-usability>)],
   [Collaboration], [Workspace awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
   [Ecosystem integration], [Artemis, Athena, and VS Code compatibility.], [#section-link(<impl-ecosystem>)],

@@ -128,9 +128,18 @@
   show figure: set text(size: 0.85em)
   
   // --- Table of Contents ---
-  show outline.entry.where(level: 1): it => {
-    v(15pt, weak: true)
-    strong(it)
+  show outline.entry: it => context {
+    let entry = link(
+      it.element.location().position(),
+      it.indented(it.prefix(), it.inner()),
+    )
+
+    if it.level == 1 {
+      v(15pt, weak: true)
+      strong(entry)
+    } else {
+      entry
+    }
   }
   outline(
     title: {

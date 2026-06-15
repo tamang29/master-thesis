@@ -6,13 +6,13 @@ This chapter describes how the requirements from Chapter 4 were implemented. The
 
 == Iterative Development Approach <impl-iterative>
 
-The implementation followed the iterative requirements process described in #section-link(<req-iterative>) and the architectural decisions in #section-link(<arch-decisions>). Each mini project started with a requirement from the proposal or roadmap, continued with a first implementation, and was then validated in the relevant integration context. Problems found during integration became follow-up requirements and were addressed in another implementation cycle.
+The implementation followed the iterative requirements process described in #section-link(<req-iterative>)#h(0.25em)and the architectural decisions in #section-link(<arch-decisions>). Each development cycle started with a requirement from the proposal or roadmap, continued with a first implementation, and was then validated in the relevant integration context. Problems found during integration became follow-up requirements and were addressed in another cycle.
 
 This process is visible throughout the project. The Artemis migration revealed missing Athena and quiz compatibility requirements. Collaboration awareness moved from the standalone application into the library when Artemis needed it for team modeling. The edge usability refactor was followed by line-jump and label-readability improvements, while the export service evolved from browser-based conversion to JSDOM and React Flow server-side rendering.
 
 == Usability Implementation <impl-usability>
 
-The usability work implements #section-link(<req-usability>) and follows the component split described in #section-link(<arch-mapping>). Editing interactions were implemented in the Apollon library, while application navigation and mobile file handling were implemented in the standalone and iOS application layers.
+The usability work implements #section-link(<req-usability>)#h(0.25em)and follows the component split described in #section-link(<arch-mapping>). Editing interactions were implemented in the Apollon library, while application navigation and mobile file handling were implemented in the standalone and iOS application layers.
 
 === Edge Usability <impl-edge-usability>
 

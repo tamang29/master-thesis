@@ -1,10 +1,11 @@
 #let section-link(target) = context {
   let element = query(target).first()
+  let location = element.location()
   link(
-    element.location(),
+    location.position(),
     [Section #numbering(
       element.numbering,
-      ..counter(heading).at(element.location())
+      ..counter(heading).at(location)
     )]
   )
 }
