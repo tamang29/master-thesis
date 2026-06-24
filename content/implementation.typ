@@ -1,4 +1,4 @@
-= Implementation Details
+= Implementation
 
 #import "/utils/section_link.typ": section-link
 
@@ -10,9 +10,9 @@ The implementation followed the iterative requirements process described in #sec
 
 This process is visible throughout the project. The Artemis migration revealed missing Athena and quiz compatibility requirements. Collaboration awareness moved from the standalone application into the library when Artemis needed it for team modeling. The edge usability refactor was followed by line-jump and label-readability improvements, while the export service evolved from browser-based conversion to JSDOM and React Flow server-side rendering.
 
-== Usability Implementation <impl-usability>
+== Improving Modeling and Application Usability <impl-usability>
 
-The usability work implements #section-link(<req-usability>)#h(0.25em)and follows the component split described in #section-link(<arch-mapping>). Editing interactions were implemented in the Apollon library, while application navigation and mobile file handling were implemented in the standalone and iOS application layers.
+The usability work implements #section-link(<req-usability>)#h(0.25em)and follows the component split described in #section-link(<arch-subsystems>). Editing interactions were implemented in the Apollon library, while application navigation and mobile file handling were implemented in the standalone and iOS application layers.
 
 === Edge Usability <impl-edge-usability>
 
@@ -54,13 +54,13 @@ Related requirement: #section-link(<req-standalone>).
 
 The standalone web application was extended with a home page that lists local and shared diagrams. URL-based routing was added so users can open and share diagrams through stable routes instead of always starting from an empty editor.
 
-== Collaboration Implementation <impl-collaboration>
+== Supporting Collaborative Modeling <impl-collaboration>
 
 The collaboration work implements #section-link(<req-collaboration>). It started in the standalone application and was then moved into the Apollon library so that Artemis could reuse the same awareness behavior for team modeling.
 
 === Collaboration Awareness <impl-collaboration-awareness>
 
-Related requirement: #section-link(<req-workspace-awareness>).
+Related requirement: #section-link(<req-collaboration>).
 
 Live cursors and a presence indicator were implemented first for collaborative standalone modeling. These features made it visible who was connected and where collaborators were currently working.
 
@@ -68,17 +68,17 @@ Viewport following extended the same awareness goal. It allows one user to follo
 
 === Library Migration <impl-collaboration-library>
 
-Related requirement: #section-link(<req-team-modeling>).
+Related requirement: #section-link(<req-collaboration>).
 
 After the standalone implementation proved useful, collaboration awareness was moved into the library. This kept live cursors, presence information, selections, and viewport following out of the persisted diagram model while making them reusable by host applications.
 
 === Team Modeling in Artemis <impl-team-modeling>
 
-Related requirement: #section-link(<req-team-modeling>).
+Related requirement: #section-link(<req-collaboration>).
 
 The Artemis team modeling integration uses the shared collaboration layer from the library. This work connects Apollon awareness features to Artemis exercises and is represented by the open team modeling collaboration pull request.
 
-== Ecosystem Integration Implementation <impl-ecosystem>
+== Integrating Apollon into Educational Systems <impl-ecosystem>
 
 The ecosystem work implements #section-link(<req-ecosystem>). It focuses on replacing legacy Apollon usage and keeping downstream systems compatible with the new Apollon library and model format.
 
@@ -110,25 +110,25 @@ Related requirement: #section-link(<req-vscode>).
 
 The VS Code extension was moved into the Apollon monorepo and updated to the latest Apollon renderer. This reduced ecosystem fragmentation and kept IDE-based editing aligned with the standalone web application and embedded Artemis integration.
 
-== Export and Rendering Implementation <impl-export-rendering>
+== Extending Export and Rendering <impl-export-rendering>
 
 The export and rendering work implements #section-link(<req-export-rendering>). It spans library rendering, standalone server conversion, and mobile export behavior.
 
 === Server-Side PDF Export <impl-server-pdf>
 
-Related requirement: #section-link(<req-export-conversion>).
+Related requirement: #section-link(<req-export-rendering>).
 
 The standalone server gained functionality to receive diagram data and generate a PDF export. This supports export workflows that cannot be handled reliably as a purely client-side browser operation.
 
 === JSDOM and React Flow Server-Side Rendering <impl-jsdom-ssr>
 
-Related requirement: #section-link(<req-export-conversion>).
+Related requirement: #section-link(<req-export-rendering>).
 
 The conversion service was changed from a Playwright-based implementation to JSDOM and React Flow server-side rendering. This made the conversion path better suited for server and container environments that should not depend on a full browser runtime.
 
 === SVG Export and Diagram Rendering <impl-svg-rendering>
 
-Related requirement: #section-link(<req-svg-rendering>).
+Related requirement: #section-link(<req-export-rendering>).
 
 SVG export was improved through compatibility modes, a flat SVG exporter, visual export tests, text-bound fixes, clipping fixes, and diagram-specific rendering fixes. The rendering work covered class diagrams, component diagrams, SFC diagrams, and Petri nets as one combined SVG rendering requirement.
 

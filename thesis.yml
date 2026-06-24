@@ -7,10 +7,92 @@ bruegge2004object:
   date: 2009
   publisher: Prentice Hall
 
-mustermann2020design:
-  type: thesis
-  title: "Design and Implementation of a Scalable Microservice Architecture"
-  author: Max Mustermann
-  genre: Master Thesis
-  publisher: Technical University of Munich
-  date: 2020 
+ternes2021ui:
+  type: article
+  title: User Interface Design Research for Modeling Tools
+  author:
+    - Ternes, Benjamin
+    - Rosenthal, Kristina
+    - Strecker, Stefan
+  date: 2021
+  parent:
+    type: periodical
+    title: Enterprise Modelling and Information Systems Architectures
+    volume: 16
+  serial-number:
+    doi: 10.18417/emisa.16.4
+
+planas2020uml:
+  type: article
+  title: "How Are UML Class Diagrams Built in Practice? A Usability Study of Two UML Tools: MagicDraw and Papyrus"
+  author:
+    - Planas, Elena
+    - Cabot, Jordi
+  date: 2020
+  parent:
+    type: periodical
+    title: Computer Standards & Interfaces
+    volume: 67
+  page-range: 103363
+  serial-number:
+    doi: 10.1016/j.csi.2019.103363
+
+green1996cognitive:
+  type: article
+  title: "Usability Analysis of Visual Programming Environments: A Cognitive Dimensions Framework"
+  author:
+    - Green, Thomas R. G.
+    - Petre, Marian
+  date: 1996
+  parent:
+    type: periodical
+    title: Journal of Visual Languages & Computing
+    volume: 7
+    issue: 2
+  page-range: 131-174
+  serial-number:
+    doi: 10.1006/jvlc.1996.0009
+
+moody2009physics:
+  type: article
+  title: "The Physics of Notations: Toward a Scientific Basis for Constructing Visual Notations in Software Engineering"
+  author: Moody, Daniel L.
+  date: 2009
+  parent:
+    type: periodical
+    title: IEEE Transactions on Software Engineering
+    volume: 35
+    issue: 6
+  page-range: 756-779
+  serial-number:
+    doi: 10.1109/TSE.2009.67
+
+lu2023umltools:
+  type: article
+  title: Systematic Review of UML Diagramming Software Tools for Higher Education Software Engineering Courses
+  author:
+    - Lu, Yuting
+    - Alexandru, Cristina
+  date: 2023
+  parent:
+    type: proceedings
+    title: Proceedings of the 2023 Conference on United Kingdom & Ireland Computing Education Research
+  page-range: 1-7
+  publisher: Association for Computing Machinery
+  serial-number:
+    doi: 10.1145/3610969.3611123
+
+krusche2018artemis:
+  type: article
+  title: "ArTEMiS: An Automatic Assessment Management System for Interactive Learning"
+  author:
+    - Krusche, Stephan
+    - Seitz, Andreas
+  date: 2018
+  parent:
+    type: proceedings
+    title: Proceedings of the 49th ACM Technical Symposium on Computer Science Education
+  page-range: 284-289
+  publisher: Association for Computing Machinery
+  serial-number:
+    doi: 10.1145/3159450.3159602

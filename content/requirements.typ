@@ -9,171 +9,280 @@
 
 #show table: it => block(breakable: false, it)
 
-This chapter describes the requirements for enhancing Apollon, grouped by feature area. The requirements were not fixed once at the beginning. They were collected from the proposal, implemented in one part of the Apollon ecosystem, evaluated through integration work, and then refined when follow-up issues appeared. This iterative process follows the idea that requirements become clearer while the problem domain and solution domain are explored together @bruegge2004object.
+This chapter specifies the requirements for enhancing Apollon. It follows the requirements analysis structure proposed by Bruegge and Dutoit @bruegge2004object. The analysis separates the application-domain requirements from implementation decisions and groups related requirements by feature area.
 
-The proposal defines four broad goals: lower interaction cost, better collaboration awareness, mobile usage, and easier integration into the surrounding educational tooling. The roadmap from February to June 2026 translated these goals into concrete work packages for the Apollon library, the standalone application, Artemis, Athena, and the VS Code extension.
+The requirements evolved between February and June 2026. The proposal and roadmap defined initial objectives, implementation work exposed integration gaps, and validation in Apollon, Artemis, and Athena produced follow-up requirements. The chapter records the resulting requirements without reproducing the chronological order of implementation.
 
-== Requirements Engineering Approach <req-iterative>
+== Overview <req-iterative>
 
-Each requirement area was considered in relation to its users, integration context, and validation process. A first implementation usually clarified the next requirement. For example, replacing legacy Apollon in Artemis created follow-up requirements for Athena model support and quiz generation. Similarly, collaboration features first built for the standalone application became library requirements once Artemis team modeling needed the same behavior.
+The thesis aims to reduce interaction effort in diagram editing, improve awareness during collaborative modeling, support standalone and mobile workflows, and maintain compatibility across the Apollon ecosystem. The scope covers the Apollon library, the standalone web application, the iOS application, Artemis, Athena, and the VS Code extension.
+
+The project used an iterative reengineering process. Each cycle selected a requirement from the proposal or roadmap, implemented and evaluated the requirement in its integration context, and refined the requirement when the evaluation exposed missing behavior. The Artemis migration, for example, created follow-up requirements for quiz generation and Athena model compatibility.
 
 #table(
   columns: (1fr, 1.7fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Feature area], [Requirement focus], [Implemented in]),
-  [Usability], [Editing effort, navigation, and mobile export.], [#section-link(<impl-usability>)],
-  [Collaboration], [Workspace awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
-  [Ecosystem integration], [Artemis, Athena, and VS Code compatibility.], [#section-link(<impl-ecosystem>)],
-  [Export and rendering], [PDF, SVG, and server-side conversion.], [#section-link(<impl-export-rendering>)],
+  [Diagram and application interaction], [Editing effort, navigation, and mobile workflows.], [#section-link(<impl-usability>)],
+  [Collaborative modeling], [Workspace awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
+  [Educational integrations], [Artemis, Athena, and VS Code compatibility.], [#section-link(<impl-ecosystem>)],
+  [Export and rendering], [PDF, SVG, presentation, and server-side conversion.], [#section-link(<impl-export-rendering>)],
 )
 
-== Usability <req-usability>
+== Existing System
 
-Usability is the central requirement group of the thesis. It covers editor interaction, diagram navigation, mobile export, and the standalone entry point. The common goal is to reduce the effort required to create, adjust, find, and export diagrams.
+The existing Apollon ecosystem consisted of a legacy editor, a newer Apollon library and standalone application, separate mobile and VS Code projects, and integrations in Artemis and Athena. These components used different build and release processes. Some capabilities existed only in one application, which made them difficult to reuse in other contexts.
 
-=== Edge Usability <req-edge-usability>
+The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile export, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment. Athena depended on earlier Apollon model formats for feedback generation. These dependencies limited replacement of the legacy integration.
 
-Edge editing was a major source of interaction cost. Users needed better ways to connect, bend, reconnect, and read edges in larger diagrams.
+== Proposed System <req-ecosystem>
+
+The proposed system uses the Apollon library as the shared foundation for diagram editing, rendering, collaboration awareness, and quiz-related interactions. The standalone web application and iOS application add navigation, persistence, sharing, and platform-specific export workflows without duplicating editor behavior.
+
+Artemis embeds the library for modeling exercises, team modeling, quizzes, and assessment. Athena supports the model versions required for feedback generation, while the VS Code extension uses the same renderer and release environment. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
+
+== Functional Requirements
+
+Functional requirements describe the behavior that users and integrating systems expect from Apollon. The short requirement names use an action-oriented form, while the descriptions state the observable behavior independently of the implementation technology.
+
+The following subsections group the requirements by feature area. Each table links the requirement to the corresponding implementation section for traceability.
+
+=== Diagram Editing <req-edge-usability>
+
+Diagram editing requirements address frequent modeling actions involving edges and visual layout. They apply to supported diagram types unless a notation imposes a specific restriction.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Lower edge editing effort], [Provide improved edge interaction through better edge usability, waypoint dragging, step-edge bending, React Flow reconnection, and dynamic edge handles based on element size.], [#section-link(<impl-edge-usability>)],
-  [Improve edge readability], [Add line jumps for edge collisions and keep labels readable on vertical and horizontal edges, including communication diagrams.], [#section-link(<impl-edge-usability>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Adjust edge paths], [Users shall bend stepped edges, move waypoints, and reconnect an existing edge without recreating it.], [#section-link(<impl-edge-usability>)],
+  [Adapt connection controls], [The editor shall adapt available connection controls to the size and shape of an element.], [#section-link(<impl-edge-usability>)],
+  [Show edge crossings], [The editor shall distinguish intersecting edges with line jumps where the notation permits them.], [#section-link(<impl-edge-usability>)],
+  [Keep edge labels readable], [The editor shall position labels consistently on horizontal and vertical edges.], [#section-link(<impl-edge-usability>)],
 )
 
-=== General App Usability <req-app-usability>
+=== Editor and Library Interaction <req-app-usability>
 
-General app usability covers editing actions that are not limited to one diagram type. These requirements affect the library first, because standalone Apollon and embedded integrations both rely on it.
+These requirements cover recurring editing actions beyond edge manipulation. Shared behavior belongs to the library so standalone and embedded applications can offer consistent interactions.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Reduce manual layout work], [Show alignment guides while users move elements and refine the behavior for nested elements after follow-up bugs.], [#section-link(<impl-app-usability>)],
-  [Make editing predictable], [Support keyboard deletion, class attribute and method reordering, scroll lock mode, and clearer sidebar and export actions.], [#section-link(<impl-app-usability>)],
-  [Improve library embedability], [Expose Apollon as a React library so host applications can reuse the editor without standalone-only assumptions.], [#section-link(<impl-library-usability>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Align diagram elements], [The editor shall show alignment guides while users move elements, including elements inside containers.], [#section-link(<impl-app-usability>)],
+  [Support editing controls], [Users shall delete selected elements with the keyboard and reorder class attributes and methods.], [#section-link(<impl-app-usability>)],
+  [Control canvas scrolling], [Host applications shall enable a mode that prevents unintended canvas movement.], [#section-link(<impl-app-usability>)],
+  [Embed the editor], [React applications shall integrate the editor without depending on standalone application state.], [#section-link(<impl-library-usability>)],
 )
 
-=== iOS App and Mobile Export <req-ios-mobile>
+=== Collaborative Modeling <req-collaboration>
 
-The proposal identified mobile usage as an important direction. The implemented scope focused on reliable iOS export and Capacitor app support.
+Collaborative modeling requires awareness of other participants in addition to synchronized diagram data. Awareness information remains session-specific and does not change the diagram itself.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Support iOS file export], [Export diagrams from the iOS application as PNG, PDF, JSON, and SVG files.], [#section-link(<impl-ios-export>)],
-  [Support iOS presentation export], [Provide animatable PPTX export for the iOS application.], [#section-link(<impl-ios-export>)],
-  [Support app-local services], [Allow the Capacitor application to use local server functionality where export and collaboration workflows require it.], [#section-link(<impl-mobile-platform>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Show collaborator activity], [Users shall see collaborator cursors, presence, and selections during a shared session.], [#section-link(<impl-collaboration-awareness>)],
+  [Follow a collaborator], [A user shall follow another participant's viewport during synchronous modeling.], [#section-link(<impl-collaboration-awareness>)],
+  [Reuse collaboration awareness], [Host applications shall reuse collaboration awareness from the library.], [#section-link(<impl-collaboration-library>)],
+  [Support team modeling], [Artemis shall provide collaboration awareness in team modeling exercises.], [#section-link(<impl-team-modeling>)],
 )
 
 === Standalone Web Application <req-standalone>
 
-The standalone application needed a clearer starting point once it became more than a simple editor shell.
+The standalone web application requires an entry point for managing existing diagrams. Navigation shall distinguish local and shared diagrams while preserving links used to open a diagram.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Provide a diagram overview], [Show local and shared diagrams on a home page so users can continue existing work without starting from an empty editor.], [#section-link(<impl-standalone-home>)],
-  [Support diagram navigation], [Use stable routes and links for opening and sharing diagrams.], [#section-link(<impl-standalone-home>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [List diagrams], [The application shall show local and shared diagrams on a home page.], [#section-link(<impl-standalone-home>)],
+  [Open diagram links], [The application shall use stable routes for opening and sharing diagrams.], [#section-link(<impl-standalone-home>)],
 )
 
-== Collaboration <req-collaboration>
+=== iOS Application <req-ios-mobile>
 
-Collaboration requirements focus on workspace awareness. Shared diagram state alone is not enough; users also need to understand who is present, where collaborators are working, and whether they should follow another viewport.
-
-=== Workspace Awareness <req-workspace-awareness>
+The iOS application extends the standalone workflow with platform-specific file access. Its export behavior shall not depend on desktop-only browser interactions.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Show collaborator activity], [Display live cursors, presence indicators, and collaborator selections during synchronous modeling.], [#section-link(<impl-collaboration-awareness>)],
-  [Support viewport following], [Allow a user to follow another collaborator's viewport when synchronous work benefits from a shared view.], [#section-link(<impl-collaboration-awareness>)],
-  [Keep awareness transient], [Cursor, presence, and viewport-following state must not become part of the persisted diagram model.], [#section-link(<impl-collaboration-library>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Export diagram files], [Users shall export diagrams as PNG, PDF, JSON, and SVG files from the iOS application.], [#section-link(<impl-ios-export>)],
+  [Export presentations], [Users shall export diagrams as animatable PPTX presentations from the iOS application.], [#section-link(<impl-ios-export>)],
+  [Use application services], [The application shall access local service functionality required by export and collaboration workflows.], [#section-link(<impl-mobile-platform>)],
 )
-
-=== Reusable Collaboration for Artemis <req-team-modeling>
-
-#table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
-  inset: (x: 5pt, y: 4pt),
-  align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Move awareness into the library], [Make collaboration features reusable by host applications instead of keeping them only in the standalone application.], [#section-link(<impl-collaboration-library>)],
-  [Integrate team modeling], [Use the shared collaboration layer in Artemis team modeling exercises.], [#section-link(<impl-team-modeling>)],
-)
-
-== Ecosystem Integration <req-ecosystem>
-
-Apollon is used as a library, standalone application, mobile app, Artemis component, Athena input format, and VS Code extension. Ecosystem requirements therefore focus on compatibility between these contexts.
 
 === Artemis Integration <req-artemis>
 
+Artemis requires the new Apollon library for modeling, quiz, assessment, and team modeling workflows. The replacement shall preserve the behavior required by existing courses and exercises.
+
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Replace legacy Apollon], [Replace legacy Apollon with the new Apollon in Artemis while preserving modeling exercise behavior.], [#section-link(<impl-artemis-migration>)],
-  [Support quiz creation], [Provide quiz mode, interactive export, element selection, automatic diagram cut-out, and nested selections for drag-and-drop quizzes.], [#section-link(<impl-quiz-assessment>)],
-  [Support assessment workflows], [Keep assessment interactions usable, including selection highlighting, popover behavior, and scoring follow-up fixes.], [#section-link(<impl-quiz-assessment>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Replace legacy Apollon], [Artemis shall use the new Apollon integration for modeling exercises.], [#section-link(<impl-artemis-migration>)],
+  [Create drag-and-drop quizzes], [Instructors shall select diagram elements, generate cut-outs, and use nested selections in drag-and-drop quizzes.], [#section-link(<impl-quiz-assessment>)],
+  [Assess modeling submissions], [Assessors shall select elements, open assessment controls, and assign scores without interaction regressions.], [#section-link(<impl-quiz-assessment>)],
 )
 
 === Athena Integration <req-athena>
 
+Athena consumes Apollon models when it generates feedback. The integration must accept models produced before and after the Artemis migration.
+
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Support new Apollon models], [Parse and process Apollon v4 models for feedback generation.], [#section-link(<impl-athena>)],
-  [Keep model compatibility], [Athena must support all Apollon model versions during and after the migration.], [#section-link(<impl-athena>)],
-  [Update validation tooling], [Update the Athena playground to use the latest Apollon version.], [#section-link(<impl-athena>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Process current models], [Athena shall process Apollon v4 models for feedback generation.], [#section-link(<impl-athena>)],
+  [Process earlier models], [Athena shall support all Apollon model versions used during the migration period.], [#section-link(<impl-athena>)],
+  [Validate model support], [The Athena playground shall use the current Apollon version for validation.], [#section-link(<impl-athena>)],
 )
 
 === VS Code Extension <req-vscode>
 
+The VS Code extension provides diagram editing outside the web applications. It shall remain consistent with the maintained Apollon renderer and release process.
+
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Move extension into the monorepo], [Integrate the VS Code extension into the Apollon monorepo and release workflow.], [#section-link(<impl-vscode>)],
-  [Use the current renderer], [Update the extension to use the modern Apollon renderer so IDE usage remains consistent with the web editor.], [#section-link(<impl-vscode>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Integrate the extension], [The extension shall be built and released from the Apollon monorepo.], [#section-link(<impl-vscode>)],
+  [Use the current renderer], [The extension shall render diagrams with the maintained Apollon library.], [#section-link(<impl-vscode>)],
 )
 
 === Export and Rendering <req-export-rendering>
 
-Export and rendering requirements bridge the library, the standalone server, and the mobile application. The goal is to produce reliable diagram artifacts without depending on one specific browser environment.
-
-==== Server-Side Export <req-export-conversion>
+Export requirements cover server-generated PDF files and SVG files used outside the editor. Exported artifacts shall preserve the relevant diagram content and notation.
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Provide PDF export service], [Implement server functionality that receives a diagram and returns a PDF export.], [#section-link(<impl-server-pdf>)],
-  [Remove browser-runtime dependency], [Replace the Playwright conversion approach with JSDOM and React Flow server-side rendering.], [#section-link(<impl-jsdom-ssr>)],
+  table.header([Requirement], [Description], [Implemented in]),
+  [Generate PDF files], [A server endpoint shall receive a diagram and return a PDF representation.], [#section-link(<impl-server-pdf>)],
+  [Render diagrams on the server], [The conversion service shall render diagrams without an interactive browser session.], [#section-link(<impl-jsdom-ssr>)],
+  [Generate compatible SVG files], [SVG export shall support external consumers and preserve text, clipping, nodes, and edges.], [#section-link(<impl-svg-rendering>)],
 )
 
-==== SVG Rendering <req-svg-rendering>
+== Quality Attributes
+
+Quality attributes define how well the proposed system shall provide its functional behavior. The attributes use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
+
+The thesis prioritizes usability and compatibility because Apollon serves repeated editing workflows and forms part of existing educational systems. Maintainability and portability support continued use across the library, standalone application, mobile application, and integrations.
+
+=== Usability <req-usability>
 
 #table(
-  columns: (1.1fr, 1.9fr, 0.8fr),
+  columns: (0.8fr, 1.1fr, 2fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([Requirement], [Sub-requirements], [Implemented in]),
-  [Improve SVG correctness], [Support SVG compatibility modes, flat export, text bounds, clipping fixes, and visual export tests.], [#section-link(<impl-svg-rendering>)],
-  [Preserve diagram notation], [Render class, component, SFC, and Petri net diagrams correctly in exported SVG artifacts.], [#section-link(<impl-svg-rendering>)],
+  table.header([ID], [Attribute], [Quality requirement]),
+  [QA-U1], [Interaction efficiency], [Users should adjust edges and align elements with fewer corrective actions than in the existing editor.],
+  [QA-U2], [Predictability], [Editing actions should behave consistently in standalone, embedded, quiz, and assessment contexts.],
+  [QA-U3], [Workspace awareness], [Collaboration indicators should communicate participant activity without obscuring diagram content.],
+  [QA-U4], [Mobile usability], [Export workflows should remain usable with touch input and platform file dialogs.],
 )
+
+=== Reliability and Compatibility
+
+#table(
+  columns: (0.8fr, 1.1fr, 2fr),
+  inset: (x: 5pt, y: 4pt),
+  align: (left, left, left),
+  table.header([ID], [Attribute], [Quality requirement]),
+  [QA-R1], [Export correctness], [Exports should preserve diagram bounds, labels, nodes, edges, and notation-specific rendering.],
+  [QA-R2], [Integration compatibility], [Artemis modeling, quiz, assessment, and team modeling workflows should continue to function after migration.],
+  [QA-R3], [Feedback continuity], [Athena should continue generating feedback for supported historical and current model formats.],
+)
+
+=== Maintainability and Portability
+
+#table(
+  columns: (0.8fr, 1.1fr, 2fr),
+  inset: (x: 5pt, y: 4pt),
+  align: (left, left, left),
+  table.header([ID], [Attribute], [Quality requirement]),
+  [QA-S1], [Reuse], [Shared editing and collaboration behavior should reside in the library rather than in one host application.],
+  [QA-S2], [Consistency], [Standalone, Artemis, mobile, and VS Code integrations should use the maintained renderer and model definitions.],
+  [QA-S3], [Deployment portability], [Server-side conversion should operate in the deployment environment without a full interactive browser.],
+)
+
+== Constraints
+
+The proposed system extends an active ecosystem rather than replacing every component at once. Existing releases, stored diagrams, educational workflows, and distribution channels restrict the available design choices.
+
+The following constraints apply across feature areas and take precedence over local implementation convenience.
+
+#table(
+  columns: (0.8fr, 1.1fr, 2fr),
+  inset: (x: 5pt, y: 4pt),
+  align: (left, left, left),
+  table.header([ID], [Constraint], [Description]),
+  [C1], [Artemis regression], [The migration must not remove required modeling, quiz, assessment, or team modeling behavior.],
+  [C2], [Athena compatibility], [Athena must support all Apollon model versions required by existing feedback workflows.],
+  [C3], [Existing iOS application], [Mobile work must reuse the existing App Store application identity and Capacitor-based application.],
+  [C4], [Stored diagrams], [Changes to routing, rendering, and model handling must preserve access to existing diagrams where possible.],
+  [C5], [Release coordination], [Integration work must align with the relevant Artemis, Athena, npm, VS Code, and iOS release processes.],
+  [C6], [Session data], [Cursor, presence, selection, and followed viewport state must not become part of the persisted diagram model.],
+)
+
+== System Models
+
+System models describe the application domain independently of the selected implementation technology. The models focus on the actors, activities, and domain objects affected by the requirements.
+
+The relevant actors are students, instructors, assessors, standalone users, and integrating systems. The central concepts are diagrams, diagram elements, collaboration sessions, exports, modeling exercises, quizzes, assessments, and feedback requests.
+
+=== Scenarios
+
+*Editing and export scenario.* Lina is a student who edits a class diagram on a tablet. She aligns elements, reconnects an edge, verifies that crossing edges remain readable, and exports the result as a PDF and presentation. The application returns her to the diagram overview after the export.
+
+*Collaborative modeling scenario.* Jonas is an instructor who starts a team modeling exercise in Artemis. Students see who has joined, observe collaborator cursors and selections, and follow a teammate's viewport while discussing one part of the model. The submitted diagram contains diagram data but no transient awareness state.
+
+*Quiz and feedback scenario.* Mira is an instructor who selects nested diagram elements for a drag-and-drop quiz. Artemis generates the required cut-outs and later displays assessment controls for a modeling submission. Athena processes the associated Apollon model and generates feedback regardless of whether the model uses an earlier or current supported format.
+
+=== Use Case Model
+
+The use case model distinguishes people who create or assess learning activities from people who edit diagrams. Students and standalone users edit, collaborate, navigate, and export diagrams. Instructors create modeling and quiz exercises, while assessors inspect submissions and assign scores. Artemis and Athena act as external systems that consume editor behavior and model data.
+
+The table summarizes the central use cases. A later diagram can visualize the same actor relationships without adding implementation-specific components.
+
+#table(
+  columns: (1fr, 2.2fr),
+  inset: (x: 5pt, y: 4pt),
+  align: (left, left),
+  table.header([Actor], [Primary use cases]),
+  [Student or standalone user], [Create and edit a diagram; collaborate; open an existing diagram; export a diagram.],
+  [Instructor], [Create modeling exercises; create drag-and-drop quizzes; start team modeling sessions.],
+  [Assessor], [Inspect diagram elements; open assessment controls; assign scores.],
+  [Artemis], [Embed the editor; manage exercises and sessions; persist submissions.],
+  [Athena], [Read supported Apollon models; generate modeling feedback.],
+)
+
+=== Analysis Object Model
+
+A diagram consists of diagram elements. Nodes and edges specialize diagram elements, while containers can own nested elements. A selection references one or more elements. A collaboration session associates participants with transient cursor, selection, and viewport state without changing the persisted diagram.
+
+An export request references a diagram and an output format and produces an export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments. Athena associates a feedback request with an Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
+
+=== Dynamic Model
+
+The central editing activity begins when a user opens or creates a diagram. Editing actions update diagram elements, while collaboration actions update transient session state. The user can save, share, submit, or export the diagram. Validation or conversion failures return the user to the current diagram without discarding its state.
+
+The integration activity begins when Artemis loads a modeling, quiz, or assessment context and initializes Apollon with the corresponding mode. Artemis receives changed diagram or selection data and persists exercise-specific results. Athena separately receives a feedback request, selects a compatible parser for the model version, and returns generated feedback.
+
+=== User Interface
+
+The requirements distinguish three interface areas. The editor provides the canvas and editing controls, the standalone home page lists local and shared diagrams, and the iOS application connects editor actions to platform file export. Collaboration indicators remain close to the canvas because they describe the current session.
+
+The proposal mockups define the intended navigation and mobile workflows. Implementation screenshots belong in Chapter 6, where they can document the realized interfaces and explain differences between the initial mockups and the final behavior.

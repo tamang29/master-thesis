@@ -3,5 +3,3 @@
 == Apollon
 
 == Artemis
-
-== Diagram Export
