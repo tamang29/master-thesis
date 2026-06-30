@@ -1,8 +1,8 @@
-= Implementation
+= Implementation <impl-chapter>
 
 #import "/utils/section_link.typ": section-link
 
-This chapter describes how the requirements from Chapter 4 were implemented. The structure is more detailed than the requirements chapter because each requirement group produced several concrete implementation tasks across the Apollon ecosystem.
+This chapter describes how the requirements from @req-chapter were implemented. The structure is more detailed than the requirements chapter because each requirement group produced several concrete implementation tasks across the Apollon ecosystem.
 
 == Iterative Development Approach <impl-iterative>
 
@@ -18,9 +18,28 @@ The usability work implements #section-link(<req-usability>)#h(0.25em)and follow
 
 Related requirement: #section-link(<req-edge-usability>).
 
-Edge handling was implemented as a library-level usability project. The refactor improved edge usability and UI/UX, added step-edge bending, supported waypoint dragging, and integrated React Flow reconnection behavior. Dynamic edge handles based on the size of an element made connection targets more appropriate for different element shapes.
+Edges are central to the diagrams supported by Apollon because they encode relationships between model elements. Poor edge interaction can therefore interrupt the modeling process more strongly than many other editor problems. Earlier feedback and issue discussions showed that users often had to spend effort on correcting edge paths, recreating connections, or adjusting layout after moving diagram elements. The implementation addressed this problem at the library level so that the improved behavior could be reused by the standalone application and embedded host applications.
 
-Follow-up work added line jumps for edge collisions and improved label behavior for vertical communication diagram edges. This reflects the iterative process from #section-link(<req-iterative>): the broader edge refactor improved manipulation first, and later diagram examples exposed readability problems that required additional fixes.
+The edge usability work reworked the interaction model for step edges. Users can bend step edges by manipulating dedicated bend handles instead of recreating the edge. The bend interaction uses a smaller snapping grid, which makes edge correction more precise while still keeping paths aligned to predictable positions. This snapping behavior supports the requirement that edge paths can be adjusted without turning every correction into free-form manual drawing.
+
+#figure(
+  image("/figures/edge-step-bend-handles.png", width: 100%),
+  caption: [Step-edge editing with draggable bend handles.],
+)
+
+Waypoint dragging extends this behavior to manually placed intermediate points. During a drag operation, the editor keeps live drag state and synchronizes manually adjusted waypoints back into the edge input. This allows users to correct the visual route of an existing connection while preserving the semantic source and target of the edge. The implementation therefore separates the modeled relationship from its visual path correction: the edge still connects the same elements, but users gain more control over the route between them.
+
+Endpoint reconnection was integrated with React Flow's native reconnect API. This allows users to move an existing edge endpoint to another compatible target without deleting and recreating the edge. Reconnection is important for iterative modeling because users often refine the structure of a diagram after creating an initial version. The implementation preserves manually adjusted waypoints where possible after reconnection, which reduces the amount of repeated correction work after changing an endpoint.
+
+The connection-handle model was redesigned to make edge creation and reconnection more predictable across different element sizes and zoom levels. The implementation introduced a multi-slot handle model with visible handles and hidden compatibility anchors. This model gives the editor more precise connection positions while preserving compatibility with existing diagrams and edge data. Handles and endpoint hit targets were made zoom-adaptive so that users can still interact with them at different canvas zoom levels.
+
+The implementation also removed stale runtime geometry from the persisted diagram model. Earlier geometry values that belonged only to rendering or interaction could become outdated when diagrams were imported or migrated. The edge migration logic strips such runtime-only data and recalculates the required geometry during rendering and interaction. This reduces compatibility problems when diagrams move between versions or host applications.
+
+Several smaller improvements completed the edge usability work. The edge toolbar follows live drag interaction instead of remaining fixed to outdated geometry. Edge decorations in SFC diagrams follow the edge while it is dragged, and decorative SVG parts are pointer-transparent so they do not block interaction with the edge itself. A separate connector fix addressed overlapping required-interface markers in component and deployment diagrams. Together, these changes improve edge interaction, readability, and compatibility across supported diagram types.
+
+The edge implementation was supported by unit and end-to-end tests for bending behavior, handle hit-testing, zoom behavior, endpoint markers, migration cleanup, edge decorations, and reconnection behavior. These tests are important because edge interaction combines persisted diagram data, runtime geometry, pointer interaction, and rendering behavior. Small regressions in one of these areas can make existing diagrams harder to edit or read.
+
+The implemented work improves direct manipulation of edges, but it does not fully solve all edge-related usability problems. Later feedback still requested easier straight-line correction, larger selectable areas, more flexible anchor behavior, and stronger snapping support for specific layout situations. These remaining issues are discussed in Chapter 7 and remain future work.
 
 === Alignment and Editing Controls <impl-app-usability>
 
@@ -30,7 +49,7 @@ Alignment guides were added to reduce manual positioning effort. A later follow-
 
 The editor also gained class attribute and method reordering, keyboard deletion behavior, scroll lock mode, and sidebar and export UI cleanup. These changes reduce small sources of friction that accumulate during repeated modeling tasks.
 
-=== Library Embedability <impl-library-usability>
+=== Library Embedding <impl-library-usability>
 
 Related requirement: #section-link(<req-app-usability>).
 
@@ -52,7 +71,38 @@ The Capacitor application was extended with local server support for workflows t
 
 Related requirement: #section-link(<req-standalone>).
 
-The standalone web application was extended with a home page that lists local and shared diagrams. URL-based routing was added so users can open and share diagrams through stable routes instead of always starting from an empty editor.
+The standalone Apollon application previously opened directly into an editor view. This made the application useful for creating a new diagram, but it provided only limited support for returning to existing work, distinguishing local and shared diagrams, or opening diagrams through stable URLs. Users who expected a diagram-management workflow first had to enter the editor and then rely on application-specific actions to find or create the diagram they wanted.
+
+The implementation changed the standalone application from an editor-first entry point into a home-page-based diagram management workflow. The root route now opens a dedicated home page instead of a blank local editor. This page acts as the main entry point for creating, finding, opening, and managing diagrams. It separates the decision of which diagram to work on from the editing activity itself.
+
+URL-based routing was introduced to make local and shared diagrams addressable. Local diagrams use a dedicated route with the diagram identifier, while shared diagrams use a separate shared route with a view mode parameter. This distinction makes the application state clearer because local work and shared collaboration links no longer use the same implicit entry point. Legacy shared links are redirected to the new shared route while preserving the relevant query parameters, which supports compatibility with previously distributed links.
+
+The home page provides a gallery for local and shared diagrams. It supports different source views so users can focus on local diagrams, shared diagrams, or the combined diagram collection. Shared diagram entries are stored locally and merged with fetched shared diagram information when available. The implementation also handles unavailable shared diagrams through a dedicated load-error screen with retry and return-home behavior. This prevents failed shared links from leaving users in an unclear editor state.
+
+#figure(
+  image("/figures/standalone-home-page.png", width: 100%),
+  caption: [Standalone home page with diagram search, filtering, sorting, local and shared diagrams, and diagram management actions.],
+)
+
+The diagram gallery includes search, filtering, sorting, and favorites. Users can search for diagrams, filter by diagram type and source, sort entries by properties such as name or time-related metadata, and mark diagrams as favorites. These features make the home page useful when the number of diagrams grows beyond a few examples. They also support the requirement that the standalone application should show existing diagrams before users enter the editor.
+
+The gallery supports grid and table views. The grid view emphasizes visual recognition through diagram cards and thumbnails, while the table view supports denser browsing. Infinite scrolling loads additional entries as the user moves through the gallery, which avoids a separate load-more interaction. The implementation also includes thumbnail generation, warmup, and caching so that diagram previews can be shown without forcing the user to open each diagram.
+
+Diagram cards provide management actions directly on the home page. Users can duplicate, delete, and share diagrams without first opening them in the editor. The share action opens a share dialog that creates shared links and lets the user choose the default view mode for the shared diagram. These actions turn the standalone home page into an operational diagram-management surface rather than a static list.
+
+The standalone home page also introduced home-specific light and dark theming. Dedicated CSS variables define the visual appearance of the home page and support theme switching. This work improved consistency between the home page and the editor while keeping the home page independent enough to provide its own layout and navigation structure.
+
+The implementation was supported by end-to-end tests for the new home-page workflow. The tests cover initial loading, empty states, search, filtering, sorting, favorites, source filtering, grid and table switching, infinite scrolling, and card actions. Separate tests and implementation checks cover shared diagram storage, shared link handling, and unavailable shared diagram behavior. These tests reduce the risk that future changes break the main entry point of the standalone application.
+
+The resulting standalone application provides a clearer workflow for creating, reopening, organizing, and sharing diagrams. The home page makes the application more suitable for repeated use because users can return to existing work instead of always starting from an empty editor. Remaining limitations concern stronger persistence, ownership, authentication, local file-system integration, and long-term project workflows. These topics are discussed as future work in Chapter 7.
+
+=== User Interface Modernization and Consistency <impl-ui-modernization>
+
+Related requirement: #section-link(<req-usability>).
+
+The implementation work also included editor-side user interface modernization. Apollon had accumulated interface code based on several component and styling approaches, which made the editor harder to maintain and complicated consistent behavior across standalone and embedded use. The modernization therefore began by replacing parts of the editor-facing MUI and Emotion usage with lighter reusable primitives and by adapting popovers, selection controls, tooltips, and style-editing components to the newer component approach.
+
+This work focused on the library and editor surface rather than on the entire application design system. The editor migration included cleanup of wrapper components, direct use of shared icon components, related CSS and package adjustments, and test updates for changed selectors and style-editor behavior. These changes reduced dependency on older UI layers and made the editor components easier to align with the broader Apollon interface direction.
 
 == Supporting Collaborative Modeling <impl-collaboration>
 
@@ -76,7 +126,7 @@ After the standalone implementation proved useful, collaboration awareness was m
 
 Related requirement: #section-link(<req-collaboration>).
 
-The Artemis team modeling integration uses the shared collaboration layer from the library. This work connects Apollon awareness features to Artemis exercises and is represented by the open team modeling collaboration pull request.
+The Artemis team modeling integration uses the shared collaboration layer from the library. This work connects Apollon awareness features to Artemis team modeling exercises and aligns the shared collaboration layer with the Artemis exercise context.
 
 == Integrating Apollon into Educational Systems <impl-ecosystem>
 
@@ -92,15 +142,27 @@ Artemis replaced legacy Apollon with the new Apollon integration for the Artemis
 
 Related requirement: #section-link(<req-artemis>).
 
-For Artemis 9.1.1, the implementation restored Apollon drag-and-drop quiz behavior. It added element selection, fixed SVG rendering issues, and supported automatic diagram cut-outs for drag-and-drop exercises.
+Artemis uses modeling exercises and quiz exercises in different workflows. For quiz exercises, Apollon diagrams can be used to generate drag-and-drop questions where selected diagram elements become draggable items and the remaining diagram becomes the background. After the Apollon migration, this workflow required additional integration work because the quiz generator had to interpret the updated Apollon model format, preserve selected elements, generate correct background images, and align drop locations with the exported diagram.
 
-For Artemis 9.3, follow-up work added nested Apollon selections in quiz generation, updated the element selection highlighting color, fixed assessment popover interaction on double click, and addressed assessment scoring follow-up issues.
+The implementation separated Apollon-side interactive selection support from Artemis-side quiz generation. Apollon exposes the diagram information and selected interactive elements, while Artemis consumes this data to create quiz backgrounds, drag items, and drop locations. This design avoids hardcoding diagram-type-specific selection behavior in Artemis and keeps the quiz generation workflow aligned with the Apollon editor model.
+
+The first part of the implementation restored reliable drag-and-drop quiz generation from Apollon diagrams. Artemis was adapted to activate the appropriate Apollon quiz mode when diagrams are imported into the quiz workflow. The quiz generator then reads the Apollon diagram data, identifies the quiz-relevant elements, and passes the model to the SVG rendering pipeline. The generated background uses an export mode that removes the selected quiz elements from the diagram while preserving the surrounding structure. The removed elements are then used as draggable quiz items, and their original positions are converted into drop locations.
+
+This work also improved the alignment between SVG rendering and quiz interaction. The quiz background and draggable items must share the same coordinate system; otherwise, a visually correct diagram can still produce misplaced drop zones. The implementation adjusted the generator and renderer so that the exported background, selected elements, and drop areas remain consistent. Tests were added and updated to cover the generated quiz structure and prevent regressions in the Apollon-based drag-and-drop workflow.
+
+The second part of the implementation extended quiz generation to nested Apollon selections. This is relevant for class diagrams because useful quiz elements are not always top-level nodes. Attributes and methods can be selected as individual quiz elements even though they are visually and structurally nested inside a class. The Artemis generator was extended to handle these nested selections, preserve their relation to the parent element, and produce accurate cutouts and drop locations. SVG and image generation were adapted so that selected nested elements can appear as draggable items while the background contains the corresponding placeholder.
+
+The nested-selection work required coordination between model interpretation and rendering. The generator had to distinguish top-level elements from nested selectable elements, while the renderer had to crop or mask the corresponding visual region accurately. This makes the generated quiz closer to the original diagram and avoids forcing instructors to simplify diagrams only to make them usable in drag-and-drop questions.
+
+A smaller assessment-related contribution addressed compatibility with structured grading instructions. During the Apollon migration, flattened serialization of Apollon drop information affected how usage-count limits for structured grading instructions were evaluated. The scoring logic and related tests were adjusted so that these limits are enforced correctly with the updated Apollon data representation. This contribution was part of the broader migration context but should be understood as a focused assessment compatibility fix rather than ownership of the full Artemis migration.
+
+The implemented quiz and assessment work improved the connection between Apollon diagrams and Artemis teaching workflows. Instructors can generate drag-and-drop quiz questions from selected Apollon elements, including nested class diagram content, while Artemis keeps the exported background and drop areas aligned. The work also strengthened regression coverage for the quiz and assessment paths. Remaining limitations concern the general expressiveness of quiz generation, support for additional diagram-specific element types, and the maintainability of the integration as Apollon evolves further.
 
 === Athena Model Compatibility <impl-athena>
 
 Related requirement: #section-link(<req-athena>).
 
-Athena was updated to support Apollon v4 models for feedback generation. The parser logic was adapted so Athena must support all Apollon model versions, and the Athena playground was updated to use the latest Apollon version for validation.
+Athena was updated to support the current Apollon model format for feedback generation. The parser logic was adapted so Athena supports the earlier and current Apollon model formats required by feedback workflows during the migration period, and the Athena playground was updated to use the latest Apollon version for validation.
 
 This work was a direct result of the Artemis migration. Once Artemis used newer Apollon models, Athena also needed to process them to keep feedback workflows intact.
 
@@ -118,7 +180,11 @@ The export and rendering work implements #section-link(<req-export-rendering>). 
 
 Related requirement: #section-link(<req-export-rendering>).
 
-The standalone server gained functionality to receive diagram data and generate a PDF export. This supports export workflows that cannot be handled reliably as a purely client-side browser operation.
+PDF export is needed when diagrams are used outside the editor, for example in reports, teaching material, documentation, and learning-platform workflows. Client-side export is useful during interactive editing, but it does not cover all situations in which an application or service should generate a stable artifact from diagram data. The implementation therefore added a server-side PDF export path to the standalone application.
+
+The export path connected the standalone server to Apollon's diagram conversion workflow. The server receives diagram data through an export endpoint, converts the model into a renderable representation, and returns a PDF artifact to the caller. Implementing this workflow required server routing, export service logic, endpoint path integration, model conversion handling, and configuration changes so the server-side code could use the relevant Apollon rendering functionality. During integration, the endpoint and request handling were refined, and error handling was improved so conversion failures could be reported without modifying the original diagram data.
+
+The result was a service-based PDF export capability that moved export generation beyond a purely browser-local interaction. This made PDF generation easier to integrate into application workflows where the exported artifact is requested from a server instead of produced manually by the user in the editor. Later work generalized and hardened the conversion infrastructure further, but the server-side PDF export path formed the basis for providing diagram export through the standalone server.
 
 === JSDOM and React Flow Server-Side Rendering <impl-jsdom-ssr>
 
@@ -130,27 +196,47 @@ The conversion service was changed from a Playwright-based implementation to JSD
 
 Related requirement: #section-link(<req-export-rendering>).
 
-SVG export was improved through compatibility modes, a flat SVG exporter, visual export tests, text-bound fixes, clipping fixes, and diagram-specific rendering fixes. The rendering work covered class diagrams, component diagrams, SFC diagrams, and Petri nets as one combined SVG rendering requirement.
+SVG export is central to Apollon because exported diagrams are reused in documents, presentations, quiz generation, and server-side conversion workflows. Unlike screenshots, SVG files should preserve diagram structure and visual quality outside the editor. This requires more than serializing the canvas. Styles, colors, text bounds, markers, labels, and notation-specific shapes must remain correct when the diagram is opened by external tools or processed by another service.
+
+The implementation introduced export compatibility work for different SVG consumers. Separate export behavior was added for web-oriented and compatibility-oriented SVG output. The compatibility path resolves styling assumptions that are safe inside the browser but unreliable once the SVG is used externally. This included handling CSS variables in exported SVGs and preserving fallback colors for compatible output. These changes make exported diagrams more portable across the standalone application, server-side conversion, presentation workflows, and Artemis quiz generation.
+
+A second part of the work addressed bounds and clipping. Text and labels are especially sensitive in SVG export because the browser can render them correctly while the exported artifact still clips or omits parts of the text. The implementation improved text-bound calculation so exported diagrams include the necessary visual area. This reduced clipping problems for diagram elements and labels and made exported SVGs more dependable as inputs for PDF generation and external rendering.
+
+The rendering work also included diagram-specific fixes. Class diagram rendering was adjusted so attribute and method sections are handled correctly in SVG output. Component and deployment diagram rendering was improved by fixing overlapping required-interface connection markers. SFC and Petri net rendering received label and band alignment fixes so notation-specific visual elements remain readable after export. These fixes were important because export correctness depends on the details of each supported diagram type, not only on the generic export function.
+
+The export changes were supported by visual export checks and snapshot updates. These checks help detect regressions where a change still compiles but produces a visually different or incorrect exported diagram. Visual validation is especially relevant for SVG because many export bugs appear as small layout, clipping, or marker errors rather than as runtime exceptions.
+
+One implementation iteration introduced a flat SVG exporter to reduce dependency on browser-specific rendering behavior. Later export work refined parts of the export architecture further. The thesis therefore treats the flat exporter as an implementation step, not as the only final export mechanism. Overall, the SVG and rendering work improved diagram portability and export correctness while leaving further export hardening and deterministic conversion behavior to later system-level work.
 
 == Implementation Timeline <impl-timeline>
 
-#table(
-  columns: (auto, 1fr, 1.3fr, auto),
-  inset: 5pt,
-  align: (left, left, left, center),
-  table.header([Month], [Feature Area], [Key Deliverables], [Status]),
-  [February 2026], [iOS app and mobile export], [iOS file export for PNG, PDF, JSON, and SVG], [Done],
-  [February 2026], [VS Code extension], [Migration into Apollon monorepo and renderer update], [Done],
-  [March 2026], [App usability], [Alignment guides and follow-up fixes], [Done],
-  [April 2026], [Artemis integration], [Replace legacy Apollon with new Apollon], [Done],
-  [April 2026], [Athena integration], [Apollon v4 support, parser compatibility, and playground update], [Done],
-  [April 2026], [Artemis quiz integration], [Element selection, SVG rendering, and automatic cut-out], [Done],
-  [April 2026], [Export and conversion], [Server-side PDF export and conversion service refinement], [Done],
-  [May 2026], [Artemis quiz follow-ups], [Nested selections, highlight color, assessment popover fixes, and scoring follow-ups], [Done],
-  [May 2026], [iOS app and mobile export], [Animatable PPTX export for iOS], [Done],
-  [May 2026], [Collaboration], [Live cursors and presence indicator in standalone], [Done],
-  [May 2026], [Standalone web application], [Home page with local and shared diagram list], [In progress],
-  [June 2026], [Collaboration], [Move awareness features into the library], [In progress],
-  [June 2026], [Artemis integration], [Team modeling awareness integration], [In progress],
-  [June 2026], [Edge usability], [Edge usability refactor, waypoint dragging, reconnection, and line jumps], [In progress],
-)
+#{
+  set text(size: 9.5pt)
+  show table.cell: it => {
+    set par(justify: false)
+    it
+  }
+
+  table(
+    columns: (auto, 1fr, 1.3fr, auto),
+    inset: (x: 4pt, y: 3pt),
+    align: (left, left, left, center),
+    table.header([Month], [Feature Area], [Key Deliverables], [Status]),
+    [February 2026], [iOS app and mobile export], [iOS file export for PNG, PDF, JSON, and SVG], [Done],
+    [February 2026], [VS Code extension], [Migration into Apollon monorepo and renderer update], [Done],
+    [March 2026], [App usability], [Alignment guides and follow-up editing fixes], [Done],
+    [March 2026], [Export and conversion], [Server-side PDF export endpoint and request handling], [Done],
+    [March 2026], [SVG export and rendering], [Flat exporter, compatibility modes, CSS variable handling, fallback colors, diagram-specific rendering fixes, and export validation], [Done],
+    [April 2026], [Artemis integration], [Replace legacy Apollon with the maintained Apollon integration], [Done],
+    [April 2026], [Athena integration], [Current Apollon model-format support, parser compatibility, and playground update], [Done],
+    [April 2026], [Artemis quiz integration], [Element selection, SVG background export, and automatic diagram cut-outs], [Done],
+    [May 2026], [Artemis quiz follow-ups], [Nested selections, quiz cut-outs, and assessment scoring compatibility], [Done],
+    [May 2026], [iOS app and mobile export], [Animatable PPTX export for iOS], [Done],
+    [May 2026], [Collaboration], [Live cursors and presence indicator in standalone modeling], [Done],
+    [June 2026], [Standalone web application], [Home page, diagram list, routing, filtering, sorting, sharing, and management actions], [Done],
+    [June 2026], [Collaboration], [Move awareness features into the Apollon library], [Done],
+    [June 2026], [Artemis integration], [Team modeling awareness integration], [Done],
+    [June 2026], [Edge usability], [Step-edge bending, waypoint dragging, reconnection, dynamic handles, and edge readability fixes], [Done],
+    [June 2026], [Editor user interface], [Editor-side component cleanup, popovers, selection controls, tooltips, and style-editor migration], [Done],
+  )
+}

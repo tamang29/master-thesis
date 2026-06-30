@@ -1,8 +1,4 @@
--- Supplementary Material --
-
-= Work Distribution
-
-The work distribution follows the structure of the example thesis and separates chapter and implementation contributions. The implementation table includes merged contributions and currently open pull requests.
+== Work Distribution
 
 #let category(title) = (strong(title), [])
 #let feature(title, author) = ([#h(1em)#title], author)
@@ -15,7 +11,7 @@ The work distribution follows the structure of the example thesis and separates 
   ..rows.flatten(),
 )
 
-== Chapter Contributions
+=== Chapter Contributions
 
 #table(
   columns: (1fr, 1fr),
@@ -31,22 +27,22 @@ The work distribution follows the structure of the example thesis and separates 
   [Related Work], [],
   [Requirements], [],
   [Architecture], [],
-  [Implementation Details], [],
-  [Evaluation], [],
+  [Implementation], [],
+  [User Feedback and Findings], [],
   [Summary], [],
   [Future Work], [],
 )
 
-== Implementation Contributions
+=== Implementation Contributions
 
 #contribution-table((
   category([1 Library - Edge usability]),
-  feature([1.1 Edge usability and UI/UX improvements], [Fady Saman]),
-  feature([1.2 Step-edge bending and waypoint dragging], [Fady Saman]),
-  feature([1.3 React Flow edge reconnection], [Fady Saman]),
-  feature([1.4 Dynamic edge handles based on size of element], [Fady Saman]),
+  feature([1.1 Edge usability and UI/UX improvements], [Fady Samaan]),
+  feature([1.2 Step-edge bending and waypoint dragging], [Fady Samaan]),
+  feature([1.3 React Flow edge reconnection], [Fady Samaan]),
+  feature([1.4 Dynamic edge handles based on size of element], [Fady Samaan]),
   feature([1.5 Edge line jumps on collision], [Ravi Tamang]),
-  feature([1.6 Communication diagram vertical edge labels (open PR #645)], [Ravi Tamang]),
+  feature([1.6 Communication diagram vertical edge labels], [Ravi Tamang]),
 
   category([2 Library - Collaboration features]),
   feature([2.1 Live cursors], [Ravi Tamang]),
@@ -56,40 +52,38 @@ The work distribution follows the structure of the example thesis and separates 
   category([3 Library - App usability]),
   feature([3.1 Alignment guides], [Ravi Tamang]),
   feature([3.2 Class attributes and methods reordering], [Ravi Tamang]),
-  feature([3.3 Keyboard shorcut for deletion], [Ravi Tamang]),
+  feature([3.3 Keyboard shortcut for deletion], [Ravi Tamang]),
   feature([3.4 Add scroll lock mode to library], [Ravi Tamang]),
-  feature([3.5 Sidebar preview and export UI cleanup], [Fady Saman]),
+  feature([3.5 Sidebar preview and export UI cleanup], [Fady Samaan]),
+  feature([3.6 Editor-side UI modernization and component cleanup], [Fady Samaan]),
 
   category([4 Library - SVG and rendering]),
-  feature([4.1 SVG export compatibility modes], [Fady Saman]),
-  feature([4.2 Flat SVG exporter], [Fady Saman]),
-  feature([4.3 SVG export visual tests], [Fady Saman]),
-  feature([4.4 SVG text bounds and clipping fixes], [Fady Saman]),
-  feature([4.5 Class, component, SFC, and Petri net SVG rendering], [Fady Saman]),
+  feature([4.1 SVG export compatibility modes], [Fady Samaan]),
+  feature([4.2 Flat SVG exporter], [Fady Samaan]),
+  feature([4.3 SVG export visual tests], [Fady Samaan]),
+  feature([4.4 SVG text bounds and clipping fixes], [Fady Samaan]),
+  feature([4.5 Class, component, SFC, and Petri net SVG rendering], [Fady Samaan]),
 
-  category([5 Standalone application - Dashboard and routing]),
-  feature([5.1 Home page with diagram list (open PR #662)], [Fady Saman]),
-  feature([5.2 URL-based diagram routing], [Fady Saman]),
+  category([5 Standalone application - Home page and routing]),
+  feature([5.1 Standalone home page and routing], [Fady Samaan]),
+  feature([5.2 Home page diagram list and entry points], [Fady Samaan]),
 
   category([6 Standalone application - Mobile and export]),
   feature([6.1 iOS file export for PNG, PDF, JSON, and SVG], [Ravi Tamang]),
   feature([6.2 Animatable PPTX export for iOS], [Ravi Tamang]),
   feature([6.3 Local server support for Capacitor app], [Ravi Tamang]),
-  feature([6.4 Server-side PDF export endpoint], [Fady Saman]),
+  feature([6.4 Server-side PDF export endpoint], [Fady Samaan]),
   feature([6.5 Replace Playwright conversion service with JSDOM and React Flow SSR], [Ravi Tamang]),
 
   category([7 Artemis integration]),
-  feature([7.1 Replace legacy Apollon with new Apollon in Artemis], [Ravi Tamang and Fady Saman]),
-  feature([7.2 Quiz mode and interactive export], [Fady Saman]),
-  feature([7.3 Select elements for Apollon drag-and-drop quizzes], [Fady Saman]),
-  feature([7.4 Automatic diagram cut-out for drag-and-drop], [Fady Saman]),
-  feature([7.5 Nested Apollon selections in quiz generation], [Fady Saman]),
-  feature([7.6 Element selection highlighting color], [Ravi Tamang]),
-  feature([7.7 Assessment popover interaction logic], [Fady Saman]),
-  feature([7.8 Team modeling collaboration in Artemis (open PR #12867)], [Ravi Tamang]),
+  feature([7.1 Replace legacy Apollon with new Apollon in Artemis], [Ravi Tamang and Fady Samaan]),
+  feature([7.2 Quiz mode and drag-and-drop quiz generation], [Fady Samaan]),
+  feature([7.3 Element selection highlighting color], [Ravi Tamang]),
+  feature([7.4 Assessment scoring compatibility for Apollon drop information], [Fady Samaan]),
+  feature([7.5 Team modeling collaboration in Artemis], [Ravi Tamang]),
 
   category([8 Athena integration]),
-  feature([8.1 Support Apollon v4 model in Athena], [Ravi Tamang]),
+  feature([8.1 Support current Apollon model format in Athena], [Ravi Tamang]),
   feature([8.2 Backward-compatible Athena parser logic], [Ravi Tamang]),
   feature([8.3 Update Athena playground to latest Apollon version], [Ravi Tamang]),
 

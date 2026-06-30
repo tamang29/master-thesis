@@ -1,4 +1,4 @@
-= Requirements
+= Requirements <req-chapter>
 
 #import "/utils/section_link.typ": section-link
 
@@ -38,9 +38,9 @@ The existing editor supported common modeling workflows, but edge manipulation, 
 
 == Proposed System <req-ecosystem>
 
-The proposed system uses the Apollon library as the shared foundation for diagram editing, rendering, collaboration awareness, and quiz-related interactions. The standalone web application and iOS application add navigation, persistence, sharing, and platform-specific export workflows without duplicating editor behavior.
+The proposed system uses the Apollon library as the shared foundation for diagram editing, rendering, collaboration awareness presentation, reusable editor behavior, and editor-side interaction behavior required by host workflows. The standalone web application and iOS application add navigation, persistence, sharing, and platform-specific export workflows without duplicating editor behavior.
 
-Artemis embeds the library for modeling exercises, team modeling, quizzes, and assessment. Athena supports the model versions required for feedback generation, while the VS Code extension uses the same renderer and release environment. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
+Artemis embeds the library in modeling exercises, team modeling, quiz-related editor interactions, and assessment views. In these contexts, Apollon provides the shared editor behavior and model interaction, while Artemis connects this behavior to its exercise lifecycle, submissions, quiz generation, assessment data, access control, and persistence. Athena consumes serialized Apollon models for feedback generation, while the VS Code extension uses the maintained editor and renderer. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
 
 == Functional Requirements
 
@@ -80,7 +80,7 @@ These requirements cover recurring editing actions beyond edge manipulation. Sha
 
 === Collaborative Modeling <req-collaboration>
 
-Collaborative modeling requires awareness of other participants in addition to synchronized diagram data. Awareness information remains session-specific and does not change the diagram itself.
+Collaborative modeling requires awareness of other participants in addition to synchronized diagram data. Awareness information remains session-specific and does not change the persisted diagram model.
 
 #table(
   columns: (1.05fr, 1.95fr, 0.8fr),
@@ -89,7 +89,7 @@ Collaborative modeling requires awareness of other participants in addition to s
   table.header([Requirement], [Description], [Implemented in]),
   [Show collaborator activity], [Users shall see collaborator cursors, presence, and selections during a shared session.], [#section-link(<impl-collaboration-awareness>)],
   [Follow a collaborator], [A user shall follow another participant's viewport during synchronous modeling.], [#section-link(<impl-collaboration-awareness>)],
-  [Reuse collaboration awareness], [Host applications shall reuse collaboration awareness from the library.], [#section-link(<impl-collaboration-library>)],
+  [Reuse collaboration awareness], [Host applications shall reuse the library's awareness presentation with host-provided session events.], [#section-link(<impl-collaboration-library>)],
   [Support team modeling], [Artemis shall provide collaboration awareness in team modeling exercises.], [#section-link(<impl-team-modeling>)],
 )
 
@@ -108,7 +108,7 @@ The standalone web application requires an entry point for managing existing dia
 
 === iOS Application <req-ios-mobile>
 
-The iOS application extends the standalone workflow with platform-specific file access. Its export behavior shall not depend on desktop-only browser interactions.
+The iOS application extends the standalone workflow with Capacitor-based file access. Its export behavior shall not depend on desktop-only browser interactions.
 
 #table(
   columns: (1.05fr, 1.95fr, 0.8fr),
@@ -117,12 +117,12 @@ The iOS application extends the standalone workflow with platform-specific file 
   table.header([Requirement], [Description], [Implemented in]),
   [Export diagram files], [Users shall export diagrams as PNG, PDF, JSON, and SVG files from the iOS application.], [#section-link(<impl-ios-export>)],
   [Export presentations], [Users shall export diagrams as animatable PPTX presentations from the iOS application.], [#section-link(<impl-ios-export>)],
-  [Use application services], [The application shall access local service functionality required by export and collaboration workflows.], [#section-link(<impl-mobile-platform>)],
+  [Use application services], [The Capacitor application shall access app-local services required by export workflows and mobile file handling.], [#section-link(<impl-mobile-platform>)],
 )
 
 === Artemis Integration <req-artemis>
 
-Artemis requires the new Apollon library for modeling, quiz, assessment, and team modeling workflows. The replacement shall preserve the behavior required by existing courses and exercises.
+Artemis uses Apollon for modeling exercises, quiz-related editor interactions, assessment views, and team modeling. The surrounding educational workflows remain part of Artemis and must preserve the behavior required by existing courses and exercises.
 
 #table(
   columns: (1.05fr, 1.95fr, 0.8fr),
@@ -136,16 +136,16 @@ Artemis requires the new Apollon library for modeling, quiz, assessment, and tea
 
 === Athena Integration <req-athena>
 
-Athena consumes Apollon models when it generates feedback. The integration must accept models produced before and after the Artemis migration.
+Athena consumes serialized Apollon models when it generates feedback. The integration must accept models produced before and after the Artemis migration.
 
 #table(
   columns: (1.05fr, 1.95fr, 0.8fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Process current models], [Athena shall process Apollon v4 models for feedback generation.], [#section-link(<impl-athena>)],
-  [Process earlier models], [Athena shall support all Apollon model versions used during the migration period.], [#section-link(<impl-athena>)],
-  [Validate model support], [The Athena playground shall use the current Apollon version for validation.], [#section-link(<impl-athena>)],
+  [Process current models], [Athena shall process the current Apollon model format for feedback generation.], [#section-link(<impl-athena>)],
+  [Process earlier models], [Athena shall support the earlier and current Apollon model formats required during the migration period.], [#section-link(<impl-athena>)],
+  [Validate model support], [The Athena playground shall validate feedback generation with models from the current Apollon version.], [#section-link(<impl-athena>)],
 )
 
 === VS Code Extension <req-vscode>
@@ -170,9 +170,9 @@ Export requirements cover server-generated PDF files and SVG files used outside 
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Generate PDF files], [A server endpoint shall receive a diagram and return a PDF representation.], [#section-link(<impl-server-pdf>)],
+  [Generate PDF files], [A server endpoint shall receive a diagram model and return a derived PDF artifact.], [#section-link(<impl-server-pdf>)],
   [Render diagrams on the server], [The conversion service shall render diagrams without an interactive browser session.], [#section-link(<impl-jsdom-ssr>)],
-  [Generate compatible SVG files], [SVG export shall support external consumers and preserve text, clipping, nodes, and edges.], [#section-link(<impl-svg-rendering>)],
+  [Generate compatible SVG files], [Derived SVG artifacts shall support external consumers and preserve text, clipping, nodes, and edges.], [#section-link(<impl-svg-rendering>)],
 )
 
 == Quality Attributes
@@ -213,7 +213,7 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([ID], [Attribute], [Quality requirement]),
-  [QA-S1], [Reuse], [Shared editing and collaboration behavior should reside in the library rather than in one host application.],
+  [QA-S1], [Reuse], [Shared editing behavior and awareness presentation should reside in the library, while host applications own persistence, access control, and session infrastructure.],
   [QA-S2], [Consistency], [Standalone, Artemis, mobile, and VS Code integrations should use the maintained renderer and model definitions.],
   [QA-S3], [Deployment portability], [Server-side conversion should operate in the deployment environment without a full interactive browser.],
 )
@@ -230,11 +230,11 @@ The following constraints apply across feature areas and take precedence over lo
   align: (left, left, left),
   table.header([ID], [Constraint], [Description]),
   [C1], [Artemis regression], [The migration must not remove required modeling, quiz, assessment, or team modeling behavior.],
-  [C2], [Athena compatibility], [Athena must support all Apollon model versions required by existing feedback workflows.],
+  [C2], [Athena compatibility], [Athena must support the earlier and current Apollon model formats required by existing feedback workflows.],
   [C3], [Existing iOS application], [Mobile work must reuse the existing App Store application identity and Capacitor-based application.],
   [C4], [Stored diagrams], [Changes to routing, rendering, and model handling must preserve access to existing diagrams where possible.],
   [C5], [Release coordination], [Integration work must align with the relevant Artemis, Athena, npm, VS Code, and iOS release processes.],
-  [C6], [Session data], [Cursor, presence, selection, and followed viewport state must not become part of the persisted diagram model.],
+  [C6], [Session data], [Cursor, presence, selection, and followed viewport state are transient collaboration state and must not become part of the persisted diagram model.],
 )
 
 == System Models
@@ -253,9 +253,9 @@ The relevant actors are students, instructors, assessors, standalone users, and 
 
 === Use Case Model
 
-The use case model distinguishes people who create or assess learning activities from people who edit diagrams. Students and standalone users edit, collaborate, navigate, and export diagrams. Instructors create modeling and quiz exercises, while assessors inspect submissions and assign scores. Artemis and Athena act as external systems that consume editor behavior and model data.
+The use case model distinguishes people who create or assess learning activities from people who edit diagrams. Students and standalone users edit, collaborate, navigate, and export diagrams. Instructors create modeling and quiz exercises, while assessors inspect submissions and assign scores. Artemis acts as an external host for editor behavior and model data. Athena consumes serialized Apollon models and provides feedback.
 
-The table summarizes the central use cases. A later diagram can visualize the same actor relationships without adding implementation-specific components.
+The table summarizes the central use cases without adding implementation-specific components.
 
 #table(
   columns: (1fr, 2.2fr),
@@ -266,18 +266,18 @@ The table summarizes the central use cases. A later diagram can visualize the sa
   [Instructor], [Create modeling exercises; create drag-and-drop quizzes; start team modeling sessions.],
   [Assessor], [Inspect diagram elements; open assessment controls; assign scores.],
   [Artemis], [Embed the editor; manage exercises and sessions; persist submissions.],
-  [Athena], [Read supported Apollon models; generate modeling feedback.],
+  [Athena], [Read supported serialized Apollon models; generate modeling feedback.],
 )
 
 === Analysis Object Model
 
-A diagram consists of diagram elements. Nodes and edges specialize diagram elements, while containers can own nested elements. A selection references one or more elements. A collaboration session associates participants with transient cursor, selection, and viewport state without changing the persisted diagram.
+A diagram consists of diagram elements. Nodes and edges specialize diagram elements, while containers can own nested elements. A selection references one or more elements. A collaboration session associates participants with transient cursor, selection, and viewport state without changing the persisted diagram model.
 
-An export request references a diagram and an output format and produces an export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments. Athena associates a feedback request with an Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
+An export request references a diagram and an output format and produces a derived export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments. Athena associates a feedback request with a serialized Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
 
 === Dynamic Model
 
-The central editing activity begins when a user opens or creates a diagram. Editing actions update diagram elements, while collaboration actions update transient session state. The user can save, share, submit, or export the diagram. Validation or conversion failures return the user to the current diagram without discarding its state.
+The central editing activity begins when a user opens or creates a diagram. Editing actions update diagram data, while collaboration actions update transient collaboration state. The user can save, share, submit, or export the diagram. Validation or conversion failures return the user to the current diagram without discarding its state.
 
 The integration activity begins when Artemis loads a modeling, quiz, or assessment context and initializes Apollon with the corresponding mode. Artemis receives changed diagram or selection data and persists exercise-specific results. Athena separately receives a feedback request, selects a compatible parser for the model version, and returns generated feedback.
 

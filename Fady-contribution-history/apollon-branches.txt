@@ -1,0 +1,8 @@
+392-improve-edge-control | latest ce738d9e35aa | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/392-improve-edge-control
+copilot/research-apollon-v3-integration | latest 1c9bb75ae1b0 | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/copilot/research-apollon-v3-integration
+feat/better-edge-draggers | latest 6e5cfca46fdb | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/feat/better-edge-draggers
+feat/implement-url-based-routing | latest c57745208690 | PR #661 (closed) | https://github.com/ls1intum/Apollon/tree/feat/implement-url-based-routing
+feat/issue-757-migrate-webapp-to-shadcn | latest b63e0a960733 | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/feat/issue-757-migrate-webapp-to-shadcn
+feature/add-more-edge-handlers | latest 518fe2a621f8 | PR #656 (closed) | https://github.com/ls1intum/Apollon/tree/feature/add-more-edge-handlers
+legacy/apollon | latest 1c9bb75ae1b0 | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/legacy/apollon
+pr-modernize-dashboard-assets | latest 8b3f9a12eadd | no associated authored/contributor PR found in inventory | https://github.com/ls1intum/Apollon/tree/pr-modernize-dashboard-assets

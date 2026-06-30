@@ -89,7 +89,7 @@
     let el = it.element
     if el != none and el.func() == heading and el.level == 1 {
       link(
-        el.location(),
+        el.location().position(),
         [Chapter #numbering(
           el.numbering,
           ..counter(heading).at(el.location())
@@ -98,19 +98,19 @@
     // Custom formatting for FR, QA, and C to remove whitespace
     } else if el != none and el.func() == figure and el.kind == "FR" {
       link(
-        el.location(),
+        el.location().position(),
         [#el.supplement#numbering(el.numbering, ..fr_counter.at(el.location()))]
       )
     } 
     else if el != none and el.func() == figure and el.kind == "QA" {
       link(
-        el.location(),
+        el.location().position(),
         [#el.supplement#numbering(el.numbering, ..qa_counter.at(el.location()))]
       )
     }
     else if el != none and el.func() == figure and el.kind == "C" {
       link(
-        el.location(),
+        el.location().position(),
         [#el.supplement#numbering(el.numbering, ..const_counter.at(el.location()))]
       )
     } else {
@@ -123,6 +123,14 @@
 
   // --- Citations ---
   set cite(style: "alphanumeric")
+  show cite: it => context {
+    let entries = query(<bibliography>)
+    if entries.len() > 0 {
+      link(entries.first().location().position(), it)
+    } else {
+      it
+    }
+  }
 
   // --- Figures ---
   show figure: set text(size: 0.85em)
@@ -161,23 +169,29 @@
 
   // Start each chapter on a new page
   show heading.where(level: 1): it => {
-    pagebreak(weak: true)
+    if it.numbering != none {
+      pagebreak(weak: true)
+    }
     it
   }
   body
 
   // List of figures.
   pagebreak()
-  heading(numbering: none)[List of Figures]
-  show outline: it => { // Show only the short caption here
-    in-outline.update(true)
-    it
-    in-outline.update(false)
+  {
+    block(breakable: false)[
+      #heading(numbering: none)[List of Figures]
+      #show outline: it => { // Show only the short caption here
+        in-outline.update(true)
+        it
+        in-outline.update(false)
+      }
+      #outline(
+        title:"",
+        target: figure.where(kind: image),
+      )
+    ]
   }
-  outline(
-    title:"",
-    target: figure.where(kind: image),
-  )
 
   // List of tables.
   context[
@@ -194,8 +208,13 @@
   // Appendix.
   pagebreak()
   heading(numbering: none)[Appendix A: Supplementary Material]
-  include("/layout/appendix.typ")
+  {
+    set heading(numbering: none)
+    include("/layout/appendix.typ")
+  }
 
   pagebreak()
-  bibliography("/thesis.yml")
+  [
+    #bibliography("/thesis.yml") <bibliography>
+  ]
 }
