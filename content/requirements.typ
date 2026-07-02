@@ -87,7 +87,7 @@ Collaborative modeling requires awareness of other participants in addition to s
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Show collaborator activity], [Users shall see collaborator cursors, presence, and selections during a shared session.], [#section-link(<impl-collaboration-awareness>)],
+  [Show collaborator activity], [Users shall see collaborator cursors with participant identity and highlighted elements selected or dragged by others during a shared session.], [#section-link(<impl-collaboration-awareness>)],
   [Follow a collaborator], [A user shall follow another participant's viewport during synchronous modeling.], [#section-link(<impl-collaboration-awareness>)],
   [Reuse collaboration awareness], [Host applications shall reuse the library's awareness presentation with host-provided session events.], [#section-link(<impl-collaboration-library>)],
   [Support team modeling], [Artemis shall provide collaboration awareness in team modeling exercises.], [#section-link(<impl-team-modeling>)],
@@ -234,7 +234,7 @@ The following constraints apply across feature areas and take precedence over lo
   [C3], [Existing iOS application], [Mobile work must reuse the existing App Store application identity and Capacitor-based application.],
   [C4], [Stored diagrams], [Changes to routing, rendering, and model handling must preserve access to existing diagrams where possible.],
   [C5], [Release coordination], [Integration work must align with the relevant Artemis, Athena, npm, VS Code, and iOS release processes.],
-  [C6], [Session data], [Cursor, presence, selection, and followed viewport state are transient collaboration state and must not become part of the persisted diagram model.],
+  [C6], [Session data], [Cursor, participant identity, selection, and followed viewport state are transient collaboration state and must not become part of the persisted diagram model.],
 )
 
 == System Models

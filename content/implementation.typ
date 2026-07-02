@@ -33,6 +33,13 @@ Endpoint reconnection was integrated with React Flow's native reconnect API. Thi
 
 The connection-handle model was redesigned to make edge creation and reconnection more predictable across different element sizes and zoom levels. The implementation introduced a multi-slot handle model with visible handles and hidden compatibility anchors. This model gives the editor more precise connection positions while preserving compatibility with existing diagrams and edge data. Handles and endpoint hit targets were made zoom-adaptive so that users can still interact with them at different canvas zoom levels.
 
+Line jumps were added to improve readability when several orthogonal edges cross in a dense diagram. At an intersection, the horizontal edge segment renders a small bridge over the vertical segment. This makes the route of each edge easier to follow in complex layouts without changing the underlying diagram model or requiring users to manually separate every crossing.
+
+#figure(
+  image("/figures/edge-line-jumps.png", width: 100%),
+  caption: [Line jumps clarify edge crossings in a dense class diagram.],
+)
+
 The implementation also removed stale runtime geometry from the persisted diagram model. Earlier geometry values that belonged only to rendering or interaction could become outdated when diagrams were imported or migrated. The edge migration logic strips such runtime-only data and recalculates the required geometry during rendering and interaction. This reduces compatibility problems when diagrams move between versions or host applications.
 
 Several smaller improvements completed the edge usability work. The edge toolbar follows live drag interaction instead of remaining fixed to outdated geometry. Edge decorations in SFC diagrams follow the edge while it is dragged, and decorative SVG parts are pointer-transparent so they do not block interaction with the edge itself. A separate connector fix addressed overlapping required-interface markers in component and deployment diagrams. Together, these changes improve edge interaction, readability, and compatibility across supported diagram types.
@@ -106,21 +113,39 @@ This work focused on the library and editor surface rather than on the entire ap
 
 == Supporting Collaborative Modeling <impl-collaboration>
 
-The collaboration work implements #section-link(<req-collaboration>). It started in the standalone application and was then moved into the Apollon library so that Artemis could reuse the same awareness behavior for team modeling.
+The collaboration work implements #section-link(<req-collaboration>). It was developed incrementally because each iteration exposed another kind of awareness that users need during shared modeling. The implementation began with selected-element awareness, continued with live cursors and participant naming, and then added viewport following for synchronous discussion. These features started in the standalone collaboration workflow and were then shaped so that the same awareness concepts could be reused by embedded hosts such as Artemis.
 
 === Collaboration Awareness <impl-collaboration-awareness>
 
 Related requirement: #section-link(<req-collaboration>).
 
-Live cursors and a presence indicator were implemented first for collaborative standalone modeling. These features made it visible who was connected and where collaborators were currently working.
+The first collaboration iteration added highlighting for nodes and edges selected or dragged by another participant. In a shared modeling session, synchronized diagram data shows the final diagram state, but it does not explain which element another user is currently inspecting or moving. The implementation therefore propagated the currently selected or dragged element as transient collaboration awareness. Remote clients used this awareness state to highlight the corresponding node or edge on their local canvas.
 
-Viewport following extended the same awareness goal. It allows one user to follow another collaborator's viewport when synchronous modeling requires a shared focus.
+This behavior was intentionally kept outside the persisted diagram model. A highlighted node or edge communicates another user's current focus, not a diagram property that should be saved, submitted, exported, or processed by Artemis and Athena. When the remote selection changed or disappeared, the highlight was cleared from the local canvas. This made the feature useful during live collaboration while preserving the boundary between diagram data and session data.
+
+#figure(
+  image("/figures/collaboration-selection-highlighting.png", width: 100%),
+  caption: [First collaboration iteration: a highlighted class and cursor label show another participant's current focus.],
+)
+
+The second iteration added live cursors. Cursor positions give collaborators a lighter-weight signal than selection because they show where a person is looking or moving even before an element is selected. The editor converts pointer movement into diagram coordinates before sending it through awareness state, and remote clients convert those coordinates back into screen positions for rendering. This keeps the cursor tied to the diagram canvas even when users zoom or pan.
+
+Participant identity was introduced together with the cursor display. A randomized display name allowed a participant to join quickly, while a name modal allowed the user to replace it with a meaningful name before entering the shared session. The chosen name and collaboration color were then attached to the awareness user state and rendered next to the cursor. This made remote cursors easier to interpret because users could associate motion, selections, and later follow targets with a participant rather than with an anonymous connection.
+
+The third iteration added viewport following. Live cursors and selection highlights show where collaborators are active, but they do not automatically bring another user's area of the diagram into view. This became important for larger diagrams and for teaching or team-modeling situations where one participant wants to guide the attention of the group. The follow feature lets a user choose a collaborator and synchronize the local viewport with that collaborator's viewport while following is active.
+
+Viewport following uses the same separation of concerns as the earlier awareness features. The followed viewport is session state, not diagram content. The host or collaboration service distributes the relevant viewport information, and the editor applies it only while the user has chosen to follow another participant. Users can therefore share focus during a discussion without modifying the diagram model or introducing host-specific persistence behavior into the Apollon library.
+
+#figure(
+  image("/figures/collaboration-follow-viewport.png", width: 100%),
+  caption: [Third collaboration iteration: viewport following synchronizes the local view with a selected collaborator.],
+)
 
 === Library Migration <impl-collaboration-library>
 
 Related requirement: #section-link(<req-collaboration>).
 
-After the standalone implementation proved useful, collaboration awareness was moved into the library. This kept live cursors, presence information, selections, and viewport following out of the persisted diagram model while making them reusable by host applications.
+After the standalone implementation proved useful, collaboration awareness was moved toward the library boundary. This kept selected-element highlights, live cursors, participant identity, and viewport following out of the persisted diagram model while making the awareness presentation reusable by host applications. Host applications still own the collaboration transport, session lifecycle, authentication, and persistence decisions, but the editor can provide a consistent awareness surface once it receives the corresponding transient state.
 
 === Team Modeling in Artemis <impl-team-modeling>
 
@@ -232,7 +257,7 @@ One implementation iteration introduced a flat SVG exporter to reduce dependency
     [April 2026], [Artemis quiz integration], [Element selection, SVG background export, and automatic diagram cut-outs], [Done],
     [May 2026], [Artemis quiz follow-ups], [Nested selections, quiz cut-outs, and assessment scoring compatibility], [Done],
     [May 2026], [iOS app and mobile export], [Animatable PPTX export for iOS], [Done],
-    [May 2026], [Collaboration], [Live cursors and presence indicator in standalone modeling], [Done],
+    [May 2026], [Collaboration], [Selected-element highlights, live cursors, display-name modal, and follow collaborator viewport], [Done],
     [June 2026], [Standalone web application], [Home page, diagram list, routing, filtering, sorting, sharing, and management actions], [Done],
     [June 2026], [Collaboration], [Move awareness features into the Apollon library], [Done],
     [June 2026], [Artemis integration], [Team modeling awareness integration], [Done],

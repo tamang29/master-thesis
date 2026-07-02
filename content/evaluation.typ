@@ -48,9 +48,9 @@ Remaining feedback focused on advanced editing and customization. Users requeste
 
 === Collaboration and Shared Modeling
 
-Collaboration received positive feedback once users saw the available awareness features. Live cursors, presence information, visible selections, and viewport following helped users understand where collaborators were working. This supports the workspace-awareness requirements from #section-link(<req-collaboration>)#h(0.25em)and the collaboration implementation described in #section-link(<impl-collaboration>).
+Collaboration received positive feedback once users saw the available awareness features. Highlighted selected or dragged elements, live cursors with participant names, and viewport following helped users understand where collaborators were working. This supports the workspace-awareness requirements from #section-link(<req-collaboration>)#h(0.25em)and the collaboration implementation described in #section-link(<impl-collaboration>).
 
-The feedback also confirmed that collaboration awareness should remain separate from the persisted diagram model. Cursors, selections, presence, and followed viewports help users coordinate during a session, but they do not belong to the diagram content itself. This matches the architectural decision to treat awareness state as transient session data.
+The feedback also confirmed that collaboration awareness should remain separate from the persisted diagram model. Cursors, participant identity, selections, and followed viewports help users coordinate during a session, but they do not belong to the diagram content itself. This matches the architectural decision to treat awareness state as transient session data.
 
 Remaining feedback focused on collaboration beyond synchronous editing. Users wanted clearer ownership of shared diagrams, optional login, persistent shared workspaces, and review comments for teaching and supervision. These features would make Apollon more useful when students submit diagrams, tutors review them, or instructors discuss modeling decisions with project teams. They remain future work because they require stronger persistence and access-control decisions than the current lightweight sharing model.
 

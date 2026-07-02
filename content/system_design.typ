@@ -102,7 +102,7 @@ The mapping separates interactive rendering from persistent and compute-oriented
 
 The persisted diagram model contains diagram elements and notation-specific properties. The Apollon library receives and returns this model but does not select a storage system or become the authoritative store for any host. Storage ownership follows host boundaries: standalone local diagrams are client/browser-managed, standalone local version history is stored separately in IndexedDB, standalone shared diagrams use application/server-side shared diagram services, Artemis stores exercises, submissions, quiz data, assessment data, and Apollon model data in Artemis-side persistence, and VS Code stores diagrams as workspace files. Athena consumes serialized models for feedback generation and does not become an authoritative diagram store.
 
-Collaboration cursors, presence, selections, and followed viewport state are transient collaboration state. They belong to a collaboration session and disappear when the session ends. Derived export artifacts are not the persisted diagram model: clients may save them as files, but the diagram model remains the source for later editing and conversion.
+Collaboration cursors, participant identity, selections, and followed viewport state are transient collaboration state. They belong to a collaboration session and disappear when the session ends. Derived export artifacts are not the persisted diagram model: clients may save them as files, but the diagram model remains the source for later editing and conversion.
 
 == Access Control
 

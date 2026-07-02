@@ -45,8 +45,8 @@
   feature([1.6 Communication diagram vertical edge labels], [Ravi Tamang]),
 
   category([2 Library - Collaboration features]),
-  feature([2.1 Live cursors], [Ravi Tamang]),
-  feature([2.2 Presence indicator], [Ravi Tamang]),
+  feature([2.1 Selected and dragged element highlighting], [Ravi Tamang]),
+  feature([2.2 Live cursors and display-name modal], [Ravi Tamang]),
   feature([2.3 Follow collaborator viewport], [Ravi Tamang]),
 
   category([3 Library - App usability]),
