@@ -139,7 +139,7 @@
   show outline.entry: it => context {
     let entry = link(
       it.element.location().position(),
-      it.indented(it.prefix(), it.inner()),
+      it.indented([#it.prefix()#h(0.5em)], it.inner()),
     )
 
     if it.level == 1 {

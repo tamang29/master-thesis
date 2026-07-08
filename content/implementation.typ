@@ -6,7 +6,7 @@ This chapter describes how the requirements from @req-chapter were implemented. 
 
 == Iterative Development Approach <impl-iterative>
 
-The implementation followed the iterative requirements process described in #section-link(<req-iterative>)#h(0.25em)and the architectural decisions in #section-link(<arch-decisions>). Each development cycle started with a requirement from the proposal or roadmap, continued with a first implementation, and was then validated in the relevant integration context. Problems found during integration became follow-up requirements and were addressed in another cycle.
+The implementation followed the iterative requirements process described in #section-link(<req-iterative>)#h(0.25em)and the architectural decisions in #section-link(<arch-decisions>). Each development cycle started with a requirement from the proposal or roadmap, continued with a first implementation, and was then tested in the relevant integration context. Problems found during integration became follow-up requirements and were addressed in another cycle.
 
 This process is visible throughout the project. The Artemis migration revealed missing Athena and quiz compatibility requirements. Collaboration awareness moved from the standalone application into the library when Artemis needed it for team modeling. The edge usability refactor was followed by line-jump and label-readability improvements, while the export service evolved from browser-based conversion to JSDOM and React Flow server-side rendering.
 
@@ -161,7 +161,7 @@ The ecosystem work implements #section-link(<req-ecosystem>). It focuses on repl
 
 Related requirement: #section-link(<req-artemis>).
 
-Artemis replaced legacy Apollon with the new Apollon integration for the Artemis 9.0 release window. The migration preserved modeling exercise behavior while moving Artemis to the modernized Apollon library.
+Artemis replaced legacy Apollon with the maintained Apollon integration for the Artemis 9.0 release window. The migration preserved modeling exercise behavior while moving Artemis to the modernized Apollon library.
 
 === Quiz and Assessment for Artemis <impl-quiz-assessment>
 
@@ -175,7 +175,7 @@ The first part of the implementation restored reliable drag-and-drop quiz genera
 
 This work also improved the alignment between SVG rendering and quiz interaction. The quiz background and draggable items must share the same coordinate system; otherwise, a visually correct diagram can still produce misplaced drop zones. The implementation adjusted the generator and renderer so that the exported background, selected elements, and drop areas remain consistent. Tests were added and updated to cover the generated quiz structure and prevent regressions in the Apollon-based drag-and-drop workflow.
 
-The second part of the implementation extended quiz generation to nested Apollon selections. This is relevant for class diagrams because useful quiz elements are not always top-level nodes. Attributes and methods can be selected as individual quiz elements even though they are visually and structurally nested inside a class. The Artemis generator was extended to handle these nested selections, preserve their relation to the parent element, and produce accurate cutouts and drop locations. SVG and image generation were adapted so that selected nested elements can appear as draggable items while the background contains the corresponding placeholder.
+The second part of the implementation extended quiz generation to nested Apollon selections. This is relevant for class diagrams because useful quiz elements are not always top-level nodes. Attributes and methods can be selected as individual quiz elements even though they are visually and structurally nested inside a class. The Artemis generator was extended to handle these nested selections, preserve their relation to the parent element, and produce accurate cut-outs and drop locations. SVG and image generation were adapted so that selected nested elements can appear as draggable items while the background contains the corresponding placeholder.
 
 The nested-selection work required coordination between model interpretation and rendering. The generator had to distinguish top-level elements from nested selectable elements, while the renderer had to crop or mask the corresponding visual region accurately. This makes the generated quiz closer to the original diagram and avoids forcing instructors to simplify diagrams only to make them usable in drag-and-drop questions.
 
@@ -187,7 +187,7 @@ The implemented quiz and assessment work improved the connection between Apollon
 
 Related requirement: #section-link(<req-athena>).
 
-Athena was updated to support the current Apollon model format for feedback generation. The parser logic was adapted so Athena supports the earlier and current Apollon model formats required by feedback workflows during the migration period, and the Athena playground was updated to use the latest Apollon version for validation.
+Athena was updated to support the current Apollon model format for feedback generation. The parser logic was adapted so Athena supports the earlier and current Apollon model formats required by feedback workflows during the migration period, and the Athena playground was updated to use the maintained Apollon version for validation.
 
 This work was a direct result of the Artemis migration. Once Artemis used newer Apollon models, Athena also needed to process them to keep feedback workflows intact.
 
@@ -195,7 +195,7 @@ This work was a direct result of the Artemis migration. Once Artemis used newer 
 
 Related requirement: #section-link(<req-vscode>).
 
-The VS Code extension was moved into the Apollon monorepo and updated to the latest Apollon renderer. This reduced ecosystem fragmentation and kept IDE-based editing aligned with the standalone web application and embedded Artemis integration.
+The VS Code extension was moved into the Apollon monorepo and updated to the maintained Apollon renderer. This reduced ecosystem fragmentation and kept IDE-based editing aligned with the standalone web application and embedded Artemis integration.
 
 == Extending Export and Rendering <impl-export-rendering>
 

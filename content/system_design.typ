@@ -15,7 +15,7 @@ The architecture separates reusable editor behavior from application-specific na
 
 == Overview <arch-overview>
 
-The Apollon library is the reusable center of the proposed architecture. It provides shared editor behavior, model and rendering behavior, editor runtime callbacks, and reusable presentation for collaboration awareness. Host applications configure the editor and connect it to their own user interface, persistence, access control, session infrastructure, and platform-specific workflows.
+The Apollon library is the reusable center of the proposed architecture. It provides shared editor behavior, model behavior, rendering behavior, editor runtime callbacks, and reusable collaboration-awareness presentation. Host applications configure the editor and connect it to their own user interface, persistence, access control, session infrastructure, and platform-specific workflows.
 
 The standalone web application owns the standalone home page, diagram routing, local and shared diagram workflows, and service calls to the standalone server. The iOS application follows the standalone workflow through a Capacitor shell and adds native file/export handling. Artemis embeds Apollon for educational workflows, Athena consumes serialized Apollon models for feedback generation, and the VS Code extension hosts the editor and renderer in the IDE environment.
 
@@ -53,7 +53,7 @@ Some goals conflict. A shared library reduces duplication but requires stable in
 
 The system is decomposed into subsystems according to ownership of editor behavior, application workflows, and integration responsibilities. The decomposition follows the requirement areas from #section-link(<req-iterative>) and keeps dependencies directed toward the Apollon library.
 
-Each host may use a subset of library services. The standalone application uses the complete editor and export surface, Artemis configures educational modes and persistence callbacks, Athena consumes model data without embedding the editor, and the VS Code extension uses the maintained editor and renderer in an IDE context.
+Each host may use a subset of library services. The standalone application uses the main editor and export surface, Artemis configures educational modes and persistence callbacks, Athena consumes model data without embedding the editor, and the VS Code extension uses the maintained editor and renderer in an IDE context.
 
 === Apollon Library <arch-library>
 
@@ -79,7 +79,7 @@ Athena consumes serialized Apollon models for feedback generation rather than em
 
 The VS Code extension is a local IDE host for the maintained Apollon editor and renderer. It connects workspace files to the Apollon model while preserving the extension-specific host interface.
 
-== Hardware Software Mapping
+== Hardware/Software Mapping
 
 The architecture runs across browser clients, mobile devices, application servers, and external educational services. Client-side editing remains available without a dedicated rendering server, while shared diagrams, collaboration, and service-based exports require host infrastructure.
 
