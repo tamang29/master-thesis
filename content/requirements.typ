@@ -25,7 +25,7 @@ The project used an iterative reengineering process. Each cycle selected a requi
   align: (left, left, left),
   table.header([Feature area], [Requirement focus], [Implemented in]),
   [Diagram and application interaction], [Editing effort, navigation, and mobile workflows.], [#section-link(<impl-usability>)],
-  [Collaborative modeling], [Workspace awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
+  [Collaborative modeling], [Collaboration awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
   [Educational integrations], [Artemis, Athena, and VS Code compatibility.], [#section-link(<impl-ecosystem>)],
   [Export and rendering], [PDF, SVG, presentation, and server-side conversion.], [#section-link(<impl-export-rendering>)],
 )
@@ -129,7 +129,7 @@ Artemis uses Apollon for modeling exercises, quiz-related editor interactions, a
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Replace legacy Apollon], [Artemis shall use the new Apollon integration for modeling exercises.], [#section-link(<impl-artemis-migration>)],
+  [Replace legacy Apollon], [Artemis shall use the maintained Apollon integration for modeling exercises.], [#section-link(<impl-artemis-migration>)],
   [Create drag-and-drop quizzes], [Instructors shall select diagram elements, generate cut-outs, and use nested selections in drag-and-drop quizzes.], [#section-link(<impl-quiz-assessment>)],
   [Assess modeling submissions], [Assessors shall select elements, open assessment controls, and assign scores without interaction regressions.], [#section-link(<impl-quiz-assessment>)],
 )
@@ -190,7 +190,7 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   table.header([ID], [Attribute], [Quality requirement]),
   [QA-U1], [Interaction efficiency], [Users should adjust edges and align elements with fewer corrective actions than in the existing editor.],
   [QA-U2], [Predictability], [Editing actions should behave consistently in standalone, embedded, quiz, and assessment contexts.],
-  [QA-U3], [Workspace awareness], [Collaboration indicators should communicate participant activity without obscuring diagram content.],
+  [QA-U3], [Collaboration awareness], [Collaboration indicators should communicate participant activity without obscuring diagram content.],
   [QA-U4], [Mobile usability], [Export workflows should remain usable with touch input and platform file dialogs.],
 )
 
