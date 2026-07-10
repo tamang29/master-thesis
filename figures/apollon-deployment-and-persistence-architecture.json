@@ -1,22 +1,17 @@
 {
-  "version": "4.1.0",
   "id": "apollon-deployment-and-persistence",
+  "version": "4.1.0",
   "title": "Apollon Deployment and Persistence Architecture",
   "type": "DeploymentDiagram",
-  "assessments": {},
   "nodes": [
     {
       "id": "desktop",
+      "width": 690,
+      "height": 790,
       "type": "deploymentNode",
       "position": {
         "x": 45,
         "y": 110
-      },
-      "width": 690,
-      "height": 790,
-      "measured": {
-        "width": 690,
-        "height": 790
       },
       "data": {
         "name": "desktop: User/Desktop Machine",
@@ -25,21 +20,22 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 690,
+        "height": 790
       }
     },
     {
       "id": "browser",
-      "type": "deploymentNode",
-      "position": {
-        "x": 90,
-        "y": 205
-      },
       "width": 400,
       "height": 650,
-      "measured": {
-        "width": 400,
-        "height": 650
+      "type": "deploymentNode",
+      "position": {
+        "x": 45,
+        "y": 95
       },
+      "parentId": "desktop",
       "data": {
         "name": "browser: Web Browser",
         "stereotype": "execution environment",
@@ -47,124 +43,130 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 400,
+        "height": 650
       }
     },
     {
       "id": "webapp",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 150,
-        "y": 290
-      },
       "width": 245,
       "height": 82,
-      "measured": {
-        "width": 245,
-        "height": 82
+      "type": "deploymentComponent",
+      "position": {
+        "x": 60,
+        "y": 85
       },
+      "parentId": "browser",
       "data": {
         "name": "Standalone Web Application",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 245,
+        "height": 82
       }
     },
     {
       "id": "local-editor",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 150,
-        "y": 410
-      },
       "width": 245,
       "height": 72,
-      "measured": {
-        "width": 245,
-        "height": 72
+      "type": "deploymentComponent",
+      "position": {
+        "x": 60,
+        "y": 205
       },
+      "parentId": "browser",
       "data": {
         "name": "Local Diagram Editor",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 245,
+        "height": 72
       }
     },
     {
       "id": "shared-editor",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 150,
-        "y": 520
-      },
       "width": 245,
       "height": 72,
-      "measured": {
-        "width": 245,
-        "height": 72
+      "type": "deploymentComponent",
+      "position": {
+        "x": 60,
+        "y": 315
       },
+      "parentId": "browser",
       "data": {
         "name": "Shared Diagram Editor",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 245,
+        "height": 72
       }
     },
     {
       "id": "local-storage",
+      "width": 250,
+      "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 150,
-        "y": 620
+        "x": 60,
+        "y": 415
       },
-      "width": 180,
-      "height": 52,
-      "measured": {
-        "width": 180,
-        "height": 52
-      },
+      "parentId": "browser",
       "data": {
-        "name": "localStorage",
+        "name": "Diagrams (localStorage)",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 250,
+        "height": 52
       }
     },
     {
       "id": "indexed-db",
+      "width": 250,
+      "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 150,
-        "y": 760
+        "x": 60,
+        "y": 555
       },
-      "width": 180,
-      "height": 52,
-      "measured": {
-        "width": 180,
-        "height": 52
-      },
+      "parentId": "browser",
       "data": {
-        "name": "IndexedDB",
+        "name": "Versions (IndexedDB)",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 250,
+        "height": 52
       }
     },
     {
       "id": "vscode-host",
+      "width": 195,
+      "height": 340,
       "type": "deploymentNode",
       "position": {
-        "x": 520,
-        "y": 585
+        "x": 470,
+        "y": 410
       },
-      "width": 175,
-      "height": 275,
-      "measured": {
-        "width": 175,
-        "height": 275
-      },
+      "parentId": "desktop",
       "data": {
         "name": "vscode: Visual Studio Code",
         "stereotype": "execution environment",
@@ -172,61 +174,63 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 195,
+        "height": 340
       }
     },
     {
       "id": "vscode-extension",
+      "width": 160,
+      "height": 100,
       "type": "deploymentComponent",
       "position": {
-        "x": 542,
-        "y": 650
+        "x": 15,
+        "y": 130
       },
-      "width": 135,
-      "height": 100,
-      "measured": {
-        "width": 135,
-        "height": 100
-      },
+      "parentId": "vscode-host",
       "data": {
         "name": "Apollon VS Code Extension",
         "isComponentHeaderShown": true,
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 160,
+        "height": 100
       }
     },
     {
       "id": "workspace-files",
+      "width": 170,
+      "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 535,
-        "y": 790
+        "x": 10,
+        "y": 270
       },
-      "width": 145,
-      "height": 52,
-      "measured": {
-        "width": 145,
-        "height": 52
-      },
+      "parentId": "vscode-host",
       "data": {
-        "name": "Files",
+        "name": ".apollon files",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 170,
+        "height": 52
       }
     },
     {
       "id": "mobile",
+      "width": 420,
+      "height": 400,
       "type": "deploymentNode",
       "position": {
         "x": 790,
         "y": 660
-      },
-      "width": 380,
-      "height": 310,
-      "measured": {
-        "width": 380,
-        "height": 310
       },
       "data": {
         "name": "mobile: Mobile Device",
@@ -235,21 +239,22 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 420,
+        "height": 400
       }
     },
     {
       "id": "capacitor",
+      "width": 350,
+      "height": 290,
       "type": "deploymentNode",
       "position": {
-        "x": 825,
-        "y": 735
+        "x": 35,
+        "y": 75
       },
-      "width": 305,
-      "height": 210,
-      "measured": {
-        "width": 305,
-        "height": 210
-      },
+      "parentId": "mobile",
       "data": {
         "name": "capacitor: Capacitor Runtime",
         "stereotype": "execution environment",
@@ -257,41 +262,42 @@
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 350,
+        "height": 290
       }
     },
     {
       "id": "mobile-app",
+      "width": 270,
+      "height": 60,
       "type": "deploymentComponent",
       "position": {
-        "x": 855,
-        "y": 790
+        "x": 40,
+        "y": 55
       },
-      "width": 230,
-      "height": 52,
-      "measured": {
-        "width": 230,
-        "height": 52
-      },
+      "parentId": "capacitor",
       "data": {
         "name": "Standalone Mobile App",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 270,
+        "height": 60
       }
     },
     {
       "id": "datacenter",
+      "width": 895,
+      "height": 480,
       "type": "deploymentNode",
       "position": {
         "x": 790,
         "y": 110
-      },
-      "width": 850,
-      "height": 480,
-      "measured": {
-        "width": 850,
-        "height": 480
       },
       "data": {
         "name": "dataCenter: University Data Center",
@@ -300,21 +306,22 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 895,
+        "height": 480
       }
     },
     {
       "id": "traefik",
-      "type": "deploymentNode",
-      "position": {
-        "x": 835,
-        "y": 205
-      },
       "width": 205,
       "height": 135,
-      "measured": {
-        "width": 205,
-        "height": 135
+      "type": "deploymentNode",
+      "position": {
+        "x": 45,
+        "y": 95
       },
+      "parentId": "datacenter",
       "data": {
         "name": "traefik: Traefik Proxy",
         "stereotype": "execution environment",
@@ -322,21 +329,22 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 205,
+        "height": 135
       }
     },
     {
       "id": "server",
-      "type": "deploymentNode",
-      "position": {
-        "x": 1080,
-        "y": 190
-      },
       "width": 310,
       "height": 340,
-      "measured": {
-        "width": 310,
-        "height": 340
+      "type": "deploymentNode",
+      "position": {
+        "x": 290,
+        "y": 80
       },
+      "parentId": "datacenter",
       "data": {
         "name": "server: Standalone Server",
         "stereotype": "execution environment",
@@ -344,84 +352,88 @@
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 310,
+        "height": 340
       }
     },
     {
       "id": "rest-api",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 1135,
-        "y": 285
-      },
       "width": 205,
       "height": 65,
-      "measured": {
-        "width": 205,
-        "height": 65
+      "type": "deploymentComponent",
+      "position": {
+        "x": 55,
+        "y": 95
       },
+      "parentId": "server",
       "data": {
         "name": "Diagram and Version APIs",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 205,
+        "height": 65
       }
     },
     {
       "id": "websocket",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 1135,
-        "y": 380
-      },
       "width": 215,
       "height": 65,
+      "type": "deploymentComponent",
+      "position": {
+        "x": 55,
+        "y": 190
+      },
+      "parentId": "server",
+      "data": {
+        "name": "WebSocket Relay",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
       "measured": {
         "width": 215,
         "height": 65
-      },
-      "data": {
-        "name": "WebSocket Room Coordinator",
-        "isComponentHeaderShown": true,
-        "fillColor": "#d9e8ff",
-        "strokeColor": "#4a86d9",
-        "textColor": "#000000"
       }
     },
     {
       "id": "converter",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 1135,
-        "y": 470
-      },
       "width": 215,
       "height": 45,
-      "measured": {
-        "width": 215,
-        "height": 45
+      "type": "deploymentComponent",
+      "position": {
+        "x": 55,
+        "y": 280
       },
+      "parentId": "server",
       "data": {
         "name": "Conversion Service",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 215,
+        "height": 45
       }
     },
     {
       "id": "redis",
+      "width": 255,
+      "height": 295,
       "type": "deploymentNode",
       "position": {
-        "x": 1430,
-        "y": 205
+        "x": 620,
+        "y": 95
       },
-      "width": 180,
-      "height": 295,
-      "measured": {
-        "width": 180,
-        "height": 295
-      },
+      "parentId": "datacenter",
       "data": {
         "name": "redis: Redis Stack",
         "stereotype": "execution environment",
@@ -429,169 +441,219 @@
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 255,
+        "height": 295
       }
     },
     {
       "id": "shared-head",
+      "width": 220,
+      "height": 57,
       "type": "deploymentArtifact",
       "position": {
-        "x": 1450,
-        "y": 315
+        "x": 10,
+        "y": 60
       },
-      "width": 130,
-      "height": 52,
-      "measured": {
-        "width": 130,
-        "height": 52
-      },
+      "parentId": "redis",
       "data": {
-        "name": "HEAD",
+        "name": "Current Shared Diagram",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 57
       }
     },
     {
       "id": "snapshots",
+      "width": 220,
+      "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 1450,
-        "y": 400
+        "x": 10,
+        "y": 135
       },
-      "width": 130,
-      "height": 52,
-      "measured": {
-        "width": 130,
-        "height": 52
-      },
+      "parentId": "redis",
       "data": {
-        "name": "Versions",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
+        "name": "Version Snapshots",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 52
+      }
+    },
+    {
+      "id": "version-metadata-index",
+      "width": 220,
+      "height": 62,
+      "type": "deploymentArtifact",
+      "position": {
+        "x": 10,
+        "y": 210
+      },
+      "parentId": "redis",
+      "data": {
+        "name": "Version Metadata and Index",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 62
       }
     },
     {
       "id": "artemis",
+      "width": 370,
+      "height": 210,
       "type": "deploymentNode",
       "position": {
         "x": 1270,
         "y": 690
       },
-      "width": 370,
-      "height": 210,
-      "measured": {
-        "width": 370,
-        "height": 210
-      },
       "data": {
-        "name": "artemis: Artemis",
+        "name": "artemis: Artemis Server",
         "stereotype": "execution environment",
         "isComponentHeaderShown": true,
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 370,
+        "height": 210
       }
     },
     {
       "id": "artemis-modeling",
-      "type": "deploymentComponent",
-      "position": {
-        "x": 1350,
-        "y": 775
-      },
       "width": 200,
       "height": 65,
-      "measured": {
-        "width": 200,
-        "height": 65
+      "type": "deploymentComponent",
+      "position": {
+        "x": 80,
+        "y": 85
       },
+      "parentId": "artemis",
       "data": {
         "name": "Modeling Module",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 200,
+        "height": 65
       }
     },
     {
       "id": "legend-existing",
+      "width": 120,
+      "height": 44,
       "type": "colorDescription",
       "position": {
         "x": 1250,
         "y": 45
-      },
-      "width": 120,
-      "height": 44,
-      "measured": {
-        "width": 120,
-        "height": 44
       },
       "data": {
         "name": "Existing",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 120,
+        "height": 44
       }
     },
     {
       "id": "legend-modified",
+      "width": 120,
+      "height": 44,
       "type": "colorDescription",
       "position": {
         "x": 1370,
         "y": 45
-      },
-      "width": 120,
-      "height": 44,
-      "measured": {
-        "width": 120,
-        "height": 44
       },
       "data": {
         "name": "Modified",
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 120,
+        "height": 44
       }
     },
     {
       "id": "legend-added",
+      "width": 120,
+      "height": 44,
       "type": "colorDescription",
       "position": {
         "x": 1490,
         "y": 45
-      },
-      "width": 120,
-      "height": 44,
-      "measured": {
-        "width": 120,
-        "height": 44
       },
       "data": {
         "name": "Added",
         "fillColor": "#d9e8ff",
         "strokeColor": "#4a86d9",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 120,
+        "height": 44
       }
     },
     {
-      "id": "mobile-storage",
+      "id": "mobile-local-storage",
+      "width": 270,
+      "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 850,
-        "y": 870
+        "x": 40,
+        "y": 140
       },
-      "width": 250,
-      "height": 52,
-      "measured": {
-        "width": 250,
-        "height": 52
-      },
+      "parentId": "capacitor",
       "data": {
-        "name": "WebView storage",
+        "name": "Diagrams (localStorage)",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
+      },
+      "measured": {
+        "width": 270,
+        "height": 52
+      }
+    },
+    {
+      "id": "mobile-indexed-db",
+      "width": 270,
+      "height": 52,
+      "type": "deploymentArtifact",
+      "position": {
+        "x": 40,
+        "y": 215
+      },
+      "parentId": "capacitor",
+      "data": {
+        "name": "Versions (IndexedDB)",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": {
+        "width": 270,
+        "height": 52
       }
     }
   ],
@@ -605,9 +667,13 @@
       "targetHandle": "left",
       "data": {
         "points": [],
-        "label": "HTTPS / WSS",
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "label": "HTTPS / WSS",
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.1076923076923077
+        }
       }
     },
     {
@@ -619,9 +685,9 @@
       "targetHandle": "left",
       "data": {
         "points": [],
-        "label": "routes",
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "label": "routes"
       }
     },
     {
@@ -629,13 +695,30 @@
       "source": "server",
       "target": "redis",
       "type": "DeploymentAssociation",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom-right",
+      "targetHandle": "bottom-left",
       "data": {
-        "points": [],
-        "label": "Redis protocol",
+        "points": [
+          {
+            "x": 1330,
+            "y": 531
+          },
+          {
+            "x": 1330,
+            "y": 561
+          },
+          {
+            "x": 1460,
+            "y": 561
+          },
+          {
+            "x": 1460,
+            "y": 501
+          }
+        ],
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "label": "Redis protocol"
       }
     },
     {
@@ -647,9 +730,17 @@
       "targetHandle": "bottom",
       "data": {
         "points": [],
-        "label": "HTTPS / WSS",
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "label": "HTTPS / WSS",
+        "sourceAnchor": {
+          "side": "top",
+          "ratio": 0.11428571428571428
+        },
+        "targetAnchor": {
+          "side": "bottom",
+          "ratio": 0.14634146341463414
+        }
       }
     },
     {
@@ -660,11 +751,29 @@
       "sourceHandle": "top",
       "targetHandle": "bottom",
       "data": {
-        "points": [],
-        "label": "HTTPS export",
+        "points": [
+          {
+            "x": 1455,
+            "y": 689
+          },
+          {
+            "x": 1455,
+            "y": 645
+          },
+          {
+            "x": 1235,
+            "y": 645
+          },
+          {
+            "x": 1235,
+            "y": 531
+          }
+        ],
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "label": "HTTPS export"
       }
     }
-  ]
+  ],
+  "assessments": {}
 }

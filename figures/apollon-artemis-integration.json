@@ -31,9 +31,10 @@
       "height": 190,
       "type": "componentSubsystem",
       "position": {
-        "x": 60,
-        "y": 200
+        "x": 50,
+        "y": 80
       },
+      "parentId": "artemis",
       "data": {
         "name": "Exercise Module",
         "isComponentSubsystemHeaderShown": true,
@@ -52,9 +53,10 @@
       "height": 80,
       "type": "component",
       "position": {
-        "x": 105,
-        "y": 275
+        "x": 45,
+        "y": 75
       },
+      "parentId": "exercise",
       "data": {
         "name": "Participation Team WebSocket Service",
         "isComponentHeaderShown": true,
@@ -73,9 +75,10 @@
       "height": 90,
       "type": "component",
       "position": {
-        "x": 105,
-        "y": 455
+        "x": 95,
+        "y": 335
       },
+      "parentId": "artemis",
       "data": {
         "name": "Modeling Module",
         "isComponentHeaderShown": true,
@@ -94,9 +97,10 @@
       "height": 80,
       "type": "component",
       "position": {
-        "x": 105,
-        "y": 590
+        "x": 95,
+        "y": 470
       },
+      "parentId": "artemis",
       "data": {
         "name": "Quiz Module",
         "isComponentHeaderShown": true,
@@ -115,9 +119,10 @@
       "height": 80,
       "type": "component",
       "position": {
-        "x": 105,
-        "y": 710
+        "x": 95,
+        "y": 590
       },
+      "parentId": "artemis",
       "data": {
         "name": "Assessment Module",
         "isComponentHeaderShown": true,
@@ -157,9 +162,10 @@
       "height": 80,
       "type": "component",
       "position": {
-        "x": 720,
-        "y": 700
+        "x": 55,
+        "y": 60
       },
+      "parentId": "athena",
       "data": {
         "name": "Feedback Generator",
         "isComponentHeaderShown": true,
@@ -178,9 +184,10 @@
       "height": 70,
       "type": "component",
       "position": {
-        "x": 720,
-        "y": 805
+        "x": 55,
+        "y": 165
       },
+      "parentId": "athena",
       "data": {
         "name": "R&D Playground",
         "isComponentHeaderShown": true,
@@ -195,8 +202,8 @@
     },
     {
       "id": "library",
-      "width": 415,
-      "height": 310,
+      "width": 365,
+      "height": 325,
       "type": "componentSubsystem",
       "position": {
         "x": 640,
@@ -210,8 +217,8 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 415,
-        "height": 310
+        "width": 365,
+        "height": 325
       }
     },
     {
@@ -220,9 +227,10 @@
       "height": 90,
       "type": "component",
       "position": {
-        "x": 720,
-        "y": 240
+        "x": 80,
+        "y": 95
       },
+      "parentId": "library",
       "data": {
         "name": "Diagram Editor",
         "isComponentHeaderShown": true,
@@ -241,14 +249,15 @@
       "height": 80,
       "type": "component",
       "position": {
-        "x": 720,
-        "y": 370
+        "x": 80,
+        "y": 225
       },
+      "parentId": "library",
       "data": {
         "name": "State Synchronization",
         "isComponentHeaderShown": true,
-        "fillColor": "#d9e8ff",
-        "strokeColor": "#4a86d9",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
       "measured": {
@@ -283,11 +292,12 @@
       "height": 90,
       "type": "component",
       "position": {
-        "x": 1270,
-        "y": 355
+        "x": 55,
+        "y": 65
       },
+      "parentId": "server",
       "data": {
-        "name": "Diagram Converter",
+        "name": "Conversion Service",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
@@ -324,11 +334,11 @@
       "height": 40,
       "type": "componentInterface",
       "position": {
-        "x": 1100,
-        "y": 480
+        "x": 830,
+        "y": 485
       },
       "data": {
-        "name": "Export API",
+        "name": "Diagram Conversion API",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
@@ -428,7 +438,9 @@
       "sourceHandle": "top",
       "targetHandle": "bottom",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -439,7 +451,9 @@
       "sourceHandle": "top",
       "targetHandle": "bottom",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -450,7 +464,9 @@
       "sourceHandle": "top",
       "targetHandle": "bottom",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -461,7 +477,9 @@
       "sourceHandle": "top",
       "targetHandle": "bottom",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -472,7 +490,9 @@
       "sourceHandle": "bottom",
       "targetHandle": "top",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -481,9 +501,15 @@
       "target": "editor-api",
       "type": "ComponentProvidedInterface",
       "sourceHandle": "right",
-      "targetHandle": "left",
+      "targetHandle": "top",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
       }
     },
     {
@@ -496,22 +522,28 @@
       "data": {
         "points": [
           {
-            "x": 416,
-            "y": 500
+            "x": 415,
+            "y": 530
           },
           {
-            "x": 446,
-            "y": 500
+            "x": 445,
+            "y": 530
           },
           {
-            "x": 446,
+            "x": 445,
             "y": 605
           },
           {
             "x": 1095,
             "y": 605
           }
-        ]
+        ],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.8333333333333334
+        }
       }
     },
     {
@@ -523,6 +555,8 @@
       "targetHandle": "bottom",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "sourceAnchor": {
           "side": "right",
           "ratio": 0.42857142857142855
@@ -538,9 +572,28 @@
       "targetHandle": "right",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "sourceAnchor": {
           "side": "bottom",
           "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "converter-library",
+      "source": "converter",
+      "target": "library",
+      "type": "ComponentDependency",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.3384615384615385
         }
       }
     },
@@ -552,7 +605,9 @@
       "sourceHandle": "left",
       "targetHandle": "right",
       "data": {
-        "points": []
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
       }
     },
     {
@@ -573,6 +628,8 @@
             "y": 740
           }
         ],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "sourceAnchor": {
           "side": "right",
           "ratio": 0.375
@@ -580,7 +637,7 @@
       }
     },
     {
-      "id": "aa5a71fb-bd09-48ed-8808-332ab8239eca",
+      "id": "modeling-requires-export",
       "source": "modeling",
       "target": "export-api",
       "type": "ComponentRequiredInterface",
@@ -588,9 +645,11 @@
       "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "sourceAnchor": {
           "side": "right",
-          "ratio": 0.5
+          "ratio": 0.5555555555555556
         }
       }
     }

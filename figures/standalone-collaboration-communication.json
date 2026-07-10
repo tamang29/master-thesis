@@ -6,169 +6,169 @@
   "nodes": [
     {
       "id": "editor-a",
-      "width": 250,
+      "width": 270,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
         "x": 60,
-        "y": 120
+        "y": 300
       },
       "data": {
-        "name": "editorA: Diagram Editor A",
+        "name": "editorA: Diagram Editor",
         "attributes": [
           {
             "id": "editor-a-role",
-            "name": "local diagram model"
+            "name": "local diagram model and interactions"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 250,
+        "width": 270,
         "height": 92
       }
     },
     {
       "id": "sync-a",
-      "width": 260,
+      "width": 300,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
         "x": 480,
-        "y": 120
+        "y": 100
       },
       "data": {
-        "name": "syncA: Yjs Synchronization",
+        "name": "syncA: State Synchronization",
         "attributes": [
           {
             "id": "sync-a-role",
-            "name": "document synchronization"
+            "name": "CRDT document synchronization"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 260,
+        "width": 300,
         "height": 92
       }
     },
     {
       "id": "relay",
-      "width": 280,
+      "width": 340,
       "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 860,
-        "y": 310
+        "x": 930,
+        "y": 300
       },
       "data": {
-        "name": "relay: WebSocket Coordinator",
+        "name": "relay: WebSocket Relay",
         "attributes": [
           {
             "id": "relay-role",
-            "name": "room awareness and cleanup"
+            "name": "rooms, awareness state, and disconnect cleanup"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 280,
+        "width": 340,
         "height": 70
       }
     },
     {
       "id": "sync-b",
-      "width": 260,
+      "width": 300,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
-        "x": 1240,
-        "y": 120
+        "x": 1430,
+        "y": 100
       },
       "data": {
-        "name": "syncB: Yjs Synchronization",
+        "name": "syncB: State Synchronization",
         "attributes": [
           {
             "id": "sync-b-role",
-            "name": "document synchronization"
+            "name": "CRDT document synchronization"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 260,
+        "width": 300,
         "height": 92
       }
     },
     {
       "id": "editor-b",
-      "width": 250,
+      "width": 270,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
-        "x": 1740,
-        "y": 120
+        "x": 1860,
+        "y": 300
       },
       "data": {
-        "name": "editorB: Diagram Editor B",
+        "name": "editorB: Diagram Editor",
         "attributes": [
           {
             "id": "editor-b-role",
-            "name": "remote diagram model"
+            "name": "remote model and collaboration overlays"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 250,
+        "width": 270,
         "height": 92
       }
     },
     {
       "id": "presence-a",
-      "width": 260,
+      "width": 300,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
         "x": 480,
-        "y": 520
+        "y": 500
       },
       "data": {
-        "name": "presenceA: Collaboration Layer",
+        "name": "awarenessA: Collaboration Awareness",
         "attributes": [
           {
             "id": "presence-a-role",
-            "name": "cursor, selection, viewport"
+            "name": "cursor, selection, viewport, and drag state"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 260,
+        "width": 300,
         "height": 92
       }
     },
     {
       "id": "presence-b",
-      "width": 280,
+      "width": 300,
       "height": 92,
       "type": "communicationObjectName",
       "position": {
-        "x": 1240,
-        "y": 520
+        "x": 1430,
+        "y": 500
       },
       "data": {
-        "name": "presenceB: Collaboration Layer",
+        "name": "awarenessB: Collaboration Awareness",
         "attributes": [
           {
             "id": "presence-b-role",
-            "name": "presence and interaction overlays"
+            "name": "remote presence and follow state"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 280,
+        "width": 300,
         "height": 92
       }
     }
@@ -183,15 +183,15 @@
       "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "messages": [
           {
-            "id": "m1",
-            "text": "1: local model change",
+            "id": "m11",
+            "text": "1.1: local model change",
             "direction": "target"
           }
-        ],
-        "strokeColor": "#000000",
-        "textColor": "#000000"
+        ]
       }
     },
     {
@@ -200,23 +200,33 @@
       "target": "relay",
       "type": "CommunicationLink",
       "sourceHandle": "right",
-      "targetHandle": "top",
+      "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "messages": [
           {
-            "id": "m2",
-            "text": "2: CRDT document update",
+            "id": "m12",
+            "text": "1.2: send CRDT document update",
             "direction": "target"
           },
           {
-            "id": "m7",
-            "text": "7: reconnect full-state sync",
+            "id": "m31",
+            "text": "3.1 [connect/reconnect]: request peer state",
+            "direction": "target"
+          },
+          {
+            "id": "m34",
+            "text": "3.4: relay complete peer state",
+            "direction": "source"
+          },
+          {
+            "id": "m35",
+            "text": "3.5: broadcast local full state",
             "direction": "target"
           }
-        ],
-        "strokeColor": "#000000",
-        "textColor": "#000000"
+        ]
       }
     },
     {
@@ -228,15 +238,30 @@
       "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "messages": [
           {
-            "id": "m3",
-            "text": "3: relay document update",
+            "id": "m13",
+            "text": "1.3: relay document update",
+            "direction": "target"
+          },
+          {
+            "id": "m32",
+            "text": "3.2: forward state request",
+            "direction": "target"
+          },
+          {
+            "id": "m33",
+            "text": "3.3: return complete peer state",
+            "direction": "source"
+          },
+          {
+            "id": "m36",
+            "text": "3.6: relay local full state",
             "direction": "target"
           }
-        ],
-        "strokeColor": "#000000",
-        "textColor": "#000000"
+        ]
       }
     },
     {
@@ -248,15 +273,35 @@
       "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "messages": [
           {
-            "id": "m4",
-            "text": "4: apply update and re-render",
+            "id": "m14",
+            "text": "1.4: apply update and re-render",
             "direction": "target"
           }
-        ],
+        ]
+      }
+    },
+    {
+      "id": "editor-to-presence",
+      "source": "editor-a",
+      "target": "presence-a",
+      "type": "CommunicationLink",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": [],
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "messages": [
+          {
+            "id": "m21",
+            "text": "2.1: update local awareness",
+            "direction": "target"
+          }
+        ]
       }
     },
     {
@@ -265,22 +310,18 @@
       "target": "relay",
       "type": "CommunicationLink",
       "sourceHandle": "right",
-      "targetHandle": "bottom",
+      "targetHandle": "left",
       "data": {
         "points": [],
-        "messages": [
-          {
-            "id": "m5",
-            "text": "5: awareness update",
-            "direction": "target"
-          }
-        ],
         "strokeColor": "#000000",
         "textColor": "#000000",
-        "targetAnchor": {
-          "side": "bottom",
-          "ratio": 0.5
-        }
+        "messages": [
+          {
+            "id": "m22",
+            "text": "2.2: send awareness update",
+            "direction": "target"
+          }
+        ]
       }
     },
     {
@@ -292,15 +333,40 @@
       "targetHandle": "left",
       "data": {
         "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000",
         "messages": [
           {
-            "id": "m6",
-            "text": "6: relay awareness; clear stale presence",
+            "id": "m23",
+            "text": "2.3: relay awareness update",
+            "direction": "target"
+          },
+          {
+            "id": "m40",
+            "text": "4 [disconnect]: clear stale presence",
             "direction": "target"
           }
-        ],
+        ]
+      }
+    },
+    {
+      "id": "presence-to-editor",
+      "source": "presence-b",
+      "target": "editor-b",
+      "type": "CommunicationLink",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": [],
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "messages": [
+          {
+            "id": "m24",
+            "text": "2.4: render cursor, selection, drag, and follow",
+            "direction": "target"
+          }
+        ]
       }
     }
   ],
