@@ -159,12 +159,12 @@
     },
     {
       "id": "vscode-host",
-      "width": 195,
-      "height": 340,
+      "width": 200,
+      "height": 320,
       "type": "deploymentNode",
       "position": {
-        "x": 470,
-        "y": 410
+        "x": 465,
+        "y": 430
       },
       "parentId": "desktop",
       "data": {
@@ -176,8 +176,8 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 195,
-        "height": 340
+        "width": 200,
+        "height": 320
       }
     },
     {
@@ -186,8 +186,8 @@
       "height": 100,
       "type": "deploymentComponent",
       "position": {
-        "x": 15,
-        "y": 130
+        "x": 20,
+        "y": 110
       },
       "parentId": "vscode-host",
       "data": {
@@ -208,8 +208,8 @@
       "height": 52,
       "type": "deploymentArtifact",
       "position": {
-        "x": 10,
-        "y": 270
+        "x": 15,
+        "y": 250
       },
       "parentId": "vscode-host",
       "data": {
@@ -292,8 +292,8 @@
     },
     {
       "id": "datacenter",
-      "width": 895,
-      "height": 480,
+      "width": 960,
+      "height": 485,
       "type": "deploymentNode",
       "position": {
         "x": 790,
@@ -308,8 +308,8 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 895,
-        "height": 480
+        "width": 960,
+        "height": 485
       }
     },
     {
@@ -318,7 +318,7 @@
       "height": 135,
       "type": "deploymentNode",
       "position": {
-        "x": 45,
+        "x": 35,
         "y": 95
       },
       "parentId": "datacenter",
@@ -426,7 +426,7 @@
     },
     {
       "id": "redis",
-      "width": 255,
+      "width": 285,
       "height": 295,
       "type": "deploymentNode",
       "position": {
@@ -443,14 +443,14 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 255,
+        "width": 285,
         "height": 295
       }
     },
     {
       "id": "shared-head",
-      "width": 220,
-      "height": 57,
+      "width": 245,
+      "height": 62,
       "type": "deploymentArtifact",
       "position": {
         "x": 10,
@@ -464,13 +464,13 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 220,
-        "height": 57
+        "width": 245,
+        "height": 62
       }
     },
     {
       "id": "snapshots",
-      "width": 220,
+      "width": 245,
       "height": 52,
       "type": "deploymentArtifact",
       "position": {
@@ -485,13 +485,13 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 220,
+        "width": 245,
         "height": 52
       }
     },
     {
       "id": "version-metadata-index",
-      "width": 220,
+      "width": 245,
       "height": 62,
       "type": "deploymentArtifact",
       "position": {
@@ -506,7 +506,7 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 220,
+        "width": 245,
         "height": 62
       }
     },
@@ -687,7 +687,11 @@
         "points": [],
         "strokeColor": "#000000",
         "textColor": "#000000",
-        "label": "routes"
+        "label": "routes",
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.25
+        }
       }
     },
     {
@@ -708,11 +712,11 @@
             "y": 561
           },
           {
-            "x": 1460,
+            "x": 1465,
             "y": 561
           },
           {
-            "x": 1460,
+            "x": 1465,
             "y": 501
           }
         ],
@@ -735,11 +739,11 @@
         "label": "HTTPS / WSS",
         "sourceAnchor": {
           "side": "top",
-          "ratio": 0.11428571428571428
+          "ratio": 0.12857142857142856
         },
         "targetAnchor": {
           "side": "bottom",
-          "ratio": 0.14634146341463414
+          "ratio": 0.21951219512195122
         }
       }
     },
@@ -758,11 +762,11 @@
           },
           {
             "x": 1455,
-            "y": 645
+            "y": 650
           },
           {
             "x": 1235,
-            "y": 645
+            "y": 650
           },
           {
             "x": 1235,

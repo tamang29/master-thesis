@@ -115,6 +115,17 @@ This work focused on the library and editor surface rather than on the entire ap
 
 The collaboration work implements #section-link(<req-collaboration>). It was developed incrementally because each iteration exposed another kind of awareness that users need during shared modeling. The implementation began with selected-element awareness, continued with live cursors and participant naming, and then added viewport following for synchronous discussion. These features started in the standalone collaboration workflow and were then shaped so that the same awareness concepts could be reused by embedded hosts such as Artemis.
 
+@fig-collaboration-communication summarizes the runtime communication between two editor clients. A local model change is encoded by the state-synchronization component and sent through the room-scoped WebSocket relay. The second client applies the update to its local model and re-renders the editor. Cursor, selection, drag, and viewport information use an independent awareness flow over the same connection. During connection or reconnection, the clients exchange complete states so that missed updates can be merged. On disconnect, the relay removes the participant's transient awareness state and informs the remaining clients. The same flows operate symmetrically when the second participant edits or interacts with the diagram.
+
+#pagebreak()
+#set page(flipped: true)
+#figure(
+  image("/figures/standalone-collaboration-communication.png", width: 100%),
+  caption: [UML communication diagram of document synchronization and collaboration awareness.],
+) <fig-collaboration-communication>
+#pagebreak()
+#set page(flipped: false)
+
 === Collaboration Awareness <impl-collaboration-awareness>
 
 Related requirement: #section-link(<req-collaboration>).

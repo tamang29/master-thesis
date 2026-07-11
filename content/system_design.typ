@@ -55,6 +55,13 @@ The system is decomposed into subsystems according to ownership of editor behavi
 
 Each host may use a subset of library services. The standalone application uses the main editor and export surface, Artemis configures educational modes and persistence callbacks, Athena consumes model data without embedding the editor, and the VS Code extension uses the maintained editor and renderer in an IDE context.
 
+@fig-standalone-decomposition visualizes the decomposition of the standalone application. The web application separates the diagram overview, local editing, shared editing, and version history. Both editors reuse the Apollon library, while shared diagrams and their versions use the standalone server. The server exposes diagram and version APIs, relays collaboration messages, and stores shared diagram data in Redis Stack. White components already existed, orange components were modified, and blue components were added during the work described in this thesis.
+
+#figure(
+  image("/figures/apollon-standalone-decomposition.png", width: 100%),
+  caption: [UML component diagram of the standalone subsystem decomposition.],
+) <fig-standalone-decomposition>
+
 === Apollon Library <arch-library>
 
 The Apollon library defines and exposes the reusable editor, diagram model behavior, rendering behavior, runtime callbacks, editor modes, and awareness presentation. Host applications supply the current diagram, mode and capability configuration, persistence behavior, and collaboration/session events; the library sends model updates and editor events back through configured callbacks.
@@ -73,6 +80,13 @@ The Artemis integration embeds and configures Apollon for modeling exercises, qu
 
 Artemis remains responsible for authentication, authorization, the exercise lifecycle, submissions, quiz data, assessment records, persistence, and team modeling/session infrastructure. It stores educational Apollon models in Artemis-side persistence rather than in the standalone Apollon server. The integration layer prevents these concerns from entering the Apollon library.
 
+@fig-artemis-integration focuses on the components involved in the educational integration. The Modeling Module embeds the Diagram Editor through its public API and uses the Participation Team WebSocket Service for team exercises. The Quiz and Assessment Modules build on the modeling integration, while Athena consumes diagram models through its Feedback Generator. The standalone Conversion Service provides server-side diagram conversion and depends on the reusable Apollon library for model import and rendering.
+
+#figure(
+  image("/figures/apollon-artemis-integration.png", width: 100%),
+  caption: [UML component diagram of the Apollon integration with Artemis, Athena, and the conversion service.],
+) <fig-artemis-integration>
+
 === Athena and VS Code Integrations <arch-athena-vscode>
 
 Athena consumes serialized Apollon models for feedback generation rather than embedding the editor. Its parser selects behavior according to the model version and maps supported versions to the concepts needed for feedback generation.
@@ -84,6 +98,15 @@ The VS Code extension is a local IDE host for the maintained Apollon editor and 
 The architecture runs across browser clients, mobile devices, application servers, and external educational services. Client-side editing remains available without a dedicated rendering server, while shared diagrams, collaboration, and service-based exports require host infrastructure.
 
 The mapping separates interactive rendering from persistent and compute-oriented services. This reduces latency during editing and allows Artemis and the standalone application to deploy the same library in different environments.
+
+@fig-deployment-persistence maps these components and their persisted data to execution nodes. On a desktop machine, the browser keeps local diagrams in `localStorage` and local version history in IndexedDB, while the VS Code extension stores `.apollon` files in the workspace. The mobile application runs the same web application inside a Capacitor WebView and therefore uses WebView `localStorage` and IndexedDB for local diagrams and versions.
+
+Shared diagrams follow a separate path. HTTPS and WebSocket traffic passes through Traefik to the standalone server. Redis Stack stores the current shared diagram as mutable state and keeps complete version snapshots with their metadata and index. The WebSocket relay holds collaboration presence only in memory, and the Conversion Service produces derived exports without replacing the persisted diagram model.
+
+#figure(
+  image("/figures/apollon-deployment-and-persistence-architecture.png", width: 100%),
+  caption: [UML deployment diagram of Apollon execution environments and diagram persistence.],
+) <fig-deployment-persistence>
 
 #table(
   columns: (1fr, 1.35fr, 1.55fr),
