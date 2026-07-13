@@ -52,7 +52,7 @@
   align(center, text(font: fonts.sans, 2em, weight: 500, titleGerman))
 
   let entries = ()
-  entries.push(("Author", author))
+  entries.push(("Authors", author))
   entries.push(("Examiner", examiner))
   // Only show supervisors if there are any
   if supervisors.len() > 0 {

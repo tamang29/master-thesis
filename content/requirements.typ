@@ -75,7 +75,7 @@ These requirements cover recurring editing actions beyond edge manipulation. Sha
   [Align diagram elements], [The editor shall show alignment guides while users move elements, including elements inside parent elements.], [#section-link(<impl-app-usability>)],
   [Support editing controls], [Users shall delete selected elements with the keyboard and reorder class attributes and methods.], [#section-link(<impl-app-usability>)],
   [Control canvas scrolling], [Host applications shall enable a mode that prevents unintended canvas movement.], [#section-link(<impl-app-usability>)],
-  [Expose a React API], [React host applications shall embed the Apollon editor through reusable components and hooks exported by the library.], [#section-link(<impl-library-usability>)],
+  [Provide a React embedding API], [The library shall expose reusable React components and hooks that allow React host applications to embed and access the Apollon editor.], [#section-link(<impl-library-usability>)],
 )
 
 === Collaborative Modeling <req-collaboration>
@@ -176,7 +176,7 @@ Export requirements cover server-generated PDF files and SVG files used outside 
 
 == Non-Functional Requirements
 
-Non-functional requirements define how well the proposed system shall provide its functional behavior. They use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
+Non-functional requirements define how well the proposed system shall provide its functional behavior. They use usability, reliability and compatibility, and maintainability and portability categories based on the categories described by Bruegge and Dutoit @bruegge2004object.
 
 The thesis prioritizes usability and compatibility because Apollon serves repeated editing workflows and forms part of existing educational systems. Maintainability and portability support continued use across the library, standalone application, mobile application, and integrations.
 

@@ -42,7 +42,7 @@ Each host may use a subset of library services. The standalone application uses 
 
 === Apollon Library <arch-library>
 
-The Apollon library defines and exposes the reusable editor, diagram model behavior, rendering behavior, runtime callbacks, editor modes, and awareness presentation. Host applications supply the current diagram, mode and capability configuration, persistence behavior, and collaboration/session events; the library sends model updates and editor events back through configured callbacks.
+The Apollon library defines and exposes the reusable editor, diagram model behavior, rendering behavior, runtime callbacks, editor modes, and awareness presentation. For React hosts, the library provides a React embedding API through reusable React components and hooks that allow the host to embed and access the editor. Host applications supply the current diagram, mode and capability configuration, persistence behavior, and collaboration/session events; the library sends model updates and editor events back through configured callbacks.
 
 The library does not own persistence, authentication, authorization, course data, shared-link storage, collaboration transport, or deployment configuration. This boundary prevents standalone, Artemis, and other host concerns from becoming dependencies of the shared editor.
 
@@ -58,7 +58,7 @@ The Artemis integration embeds and configures Apollon for modeling exercises, qu
 
 Artemis remains responsible for authentication, authorization, the exercise lifecycle, submissions, quiz data, assessment records, persistence, and team modeling/session infrastructure. It stores educational Apollon models in Artemis-side persistence rather than in the standalone Apollon server. The integration layer prevents these concerns from entering the Apollon library.
 
-@fig-artemis-integration focuses on the components involved in the educational integration. The Modeling Module embeds the Diagram Editor through its public API and uses the Participation Team WebSocket Service for team exercises. The Quiz and Assessment Modules build on the modeling integration, while Athena consumes diagram models through its Feedback Generator. The standalone Conversion Service provides server-side diagram conversion and depends on the reusable Apollon library for model import and rendering.
+@fig-artemis-integration focuses on the components involved in the educational integration. The Modeling Module embeds the Diagram Editor through its host integration layer and uses the Participation Team WebSocket Service for team exercises. React host applications can use the library's React embedding API, while Artemis adapts the editor to its exercise context. The Quiz and Assessment Modules build on the modeling integration, while Athena consumes diagram models through its Feedback Generator. The standalone Conversion Service provides server-side diagram conversion and depends on the reusable Apollon library for model import and rendering.
 
 #figure(
   image("/figures/apollon-artemis-integration.png", width: 100%),

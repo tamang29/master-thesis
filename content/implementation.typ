@@ -22,10 +22,12 @@ Edges are central to the diagrams supported by Apollon because they encode relat
 
 The edge usability work reworked the interaction model for step edges. Users can bend step edges by manipulating dedicated bend handles instead of recreating the edge. The bend interaction uses a smaller snapping grid, which makes edge correction more precise while still keeping paths aligned to predictable positions. This snapping behavior supports the requirement that edge paths can be adjusted without turning every correction into free-form manual drawing.
 
+@fig-edge-step-bend-handles shows the dedicated handles used to bend a stepped edge.
+
 #figure(
   image("/figures/edge-step-bend-handles.png", width: 100%),
   caption: [Step-edge editing with draggable bend handles.],
-)
+) <fig-edge-step-bend-handles>
 
 Waypoint dragging extends this behavior to manually placed intermediate points. During a drag operation, the editor keeps live drag state and synchronizes manually adjusted waypoints back into the edge input. This allows users to correct the visual route of an existing connection while preserving the semantic source and target of the edge. The implementation therefore separates the modeled relationship from its visual path correction: the edge still connects the same elements, but users gain more control over the route between them.
 
@@ -35,10 +37,12 @@ The connection-handle model was redesigned to make edge creation and reconnectio
 
 Line jumps were added to improve readability when several orthogonal edges cross in a dense diagram. At an intersection, the horizontal edge segment renders a small bridge over the vertical segment. This makes the route of each edge easier to follow in complex layouts without changing the underlying diagram model or requiring users to manually separate every crossing.
 
+The resulting bridge rendering is shown in @fig-edge-line-jumps.
+
 #figure(
   image("/figures/edge-line-jumps.png", width: 100%),
   caption: [Line jumps clarify edge crossings in a dense class diagram.],
-)
+) <fig-edge-line-jumps>
 
 The implementation also removed stale runtime geometry from the persisted diagram model. Earlier geometry values that belonged only to rendering or interaction could become outdated when diagrams were imported or migrated. The edge migration logic strips such runtime-only data and recalculates the required geometry during rendering and interaction. This reduces compatibility problems when diagrams move between versions or host applications.
 
@@ -60,7 +64,7 @@ The editor also gained class attribute and method reordering, keyboard deletion 
 
 Related requirement: #section-link(<req-app-usability>).
 
-The library now exports a reusable React component and hooks for embedding and accessing the editor. React host applications can therefore integrate Apollon through the library's supported API instead of maintaining application-specific wrappers. This keeps the standalone application and Artemis closer to the same editor lifecycle and behavior.
+The library now provides a React embedding API through reusable React components and hooks that allow React host applications to embed and access the Apollon editor. React hosts can therefore integrate Apollon through the supported React embedding API instead of maintaining application-specific wrappers. Other hosts retain their host-specific integration layers while reusing the same editor lifecycle and behavior.
 
 === iOS Export and Platform Support <impl-ios-export>
 
@@ -80,10 +84,12 @@ URL-based routing was introduced to make local and shared diagrams addressable. 
 
 The home page provides a gallery for local and shared diagrams. It supports different source views so users can focus on local diagrams, shared diagrams, or the combined diagram collection. Shared diagram entries are stored locally and merged with fetched shared diagram information when available. The implementation also handles unavailable shared diagrams through a dedicated load-error screen with retry and return-home behavior. This prevents failed shared links from leaving users in an unclear editor state.
 
+The resulting diagram-management entry point is shown in @fig-standalone-home.
+
 #figure(
   image("/figures/standalone-home-page.png", width: 100%),
   caption: [Standalone home page with diagram search, filtering, sorting, local and shared diagrams, and diagram management actions.],
-)
+) <fig-standalone-home>
 
 The diagram gallery includes search, filtering, sorting, and favorites. Users can search for diagrams, filter by diagram type and source, sort entries by properties such as name or time-related metadata, and mark diagrams as favorites. These features make the home page useful when the number of diagrams grows beyond a few examples. They also support the requirement that the standalone application should show existing diagrams before users enter the editor.
 
@@ -112,13 +118,11 @@ The collaboration work implements #section-link(<req-collaboration>). It was dev
 @fig-collaboration-communication summarizes the runtime communication between two editor clients. A local model change is encoded by the state-synchronization component and sent through the room-scoped WebSocket relay. The second client applies the update to its local model and re-renders the editor. Cursor, selection, drag, and viewport information use an independent awareness flow over the same connection. During connection or reconnection, the clients exchange complete states so that missed updates can be merged. On disconnect, the relay removes the participant's transient awareness state and informs the remaining clients. The same flows operate symmetrically when the second participant edits or interacts with the diagram.
 
 #pagebreak()
-#set page(flipped: true)
 #figure(
   image("/figures/standalone-collaboration-communication.png", width: 100%),
   caption: [UML communication diagram of document synchronization and collaboration awareness.],
 ) <fig-collaboration-communication>
 #pagebreak()
-#set page(flipped: false)
 
 === Collaboration Awareness <impl-collaboration-awareness>
 
@@ -128,10 +132,12 @@ The first collaboration iteration added highlighting for nodes and edges selecte
 
 This behavior was intentionally kept outside the persisted diagram model. A highlighted node or edge communicates another user's current focus, not a diagram property that should be saved, submitted, exported, or processed by Artemis and Athena. When the remote selection changed or disappeared, the highlight was cleared from the local canvas. This made the feature useful during live collaboration while preserving the boundary between diagram data and session data.
 
+The first awareness iteration is illustrated in @fig-collaboration-selection.
+
 #figure(
   image("/figures/collaboration-selection-highlighting.png", width: 100%),
   caption: [First collaboration iteration: a highlighted class and cursor label show another participant's current focus.],
-)
+) <fig-collaboration-selection>
 
 The second iteration added live cursors. Cursor positions give collaborators a lighter-weight signal than selection because they show where a person is looking or moving even before an element is selected. The editor converts pointer movement into diagram coordinates before sending it through awareness state, and remote clients convert those coordinates back into screen positions for rendering. This keeps the cursor tied to the diagram canvas even when users zoom or pan.
 
@@ -141,10 +147,12 @@ The third iteration added viewport following. Live cursors and selection highlig
 
 Viewport following uses the same separation of concerns as the earlier awareness features. The followed viewport is session state, not diagram content. The host or collaboration service distributes the relevant viewport information, and the editor applies it only while the user has chosen to follow another participant. Users can therefore share focus during a discussion without modifying the diagram model or introducing host-specific persistence behavior into the Apollon library.
 
+The viewport-following interface is shown in @fig-collaboration-follow.
+
 #figure(
   image("/figures/collaboration-follow-viewport.png", width: 100%),
   caption: [Third collaboration iteration: viewport following synchronizes the local view with a selected collaborator.],
-)
+) <fig-collaboration-follow>
 
 After the standalone implementation proved useful, collaboration awareness was moved toward the library boundary. This kept selected-element highlights, live cursors, participant identity, and viewport following out of the persisted diagram model while making the awareness presentation reusable by host applications. Host applications still own the collaboration transport, session lifecycle, authentication, and persistence decisions, but the editor can provide a consistent awareness surface once it receives the corresponding transient state.
 

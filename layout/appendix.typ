@@ -17,7 +17,7 @@
   columns: (1fr, 1fr),
   inset: 6pt,
   align: horizon,
-  table.header([Chapter], [Author]),
+  table.header([Chapter or section], [Author]),
   [Introduction], [Ravi Tamang and Fady Samaan],
   [Problem], [Ravi Tamang and Fady Samaan],
   [Motivation], [Ravi Tamang and Fady Samaan],
