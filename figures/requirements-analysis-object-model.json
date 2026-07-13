@@ -6,12 +6,12 @@
   "nodes": [
     {
       "id": "diagram",
-      "width": 230,
+      "width": 240,
       "height": 160,
       "type": "class",
       "position": {
         "x": 40,
-        "y": 30
+        "y": 60
       },
       "data": {
         "name": "Diagram",
@@ -30,13 +30,13 @@
           },
           {
             "id": "d4",
-            "name": "+ schemaVersion: String"
+            "name": "+ modelVersion: String"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 230,
+        "width": 240,
         "height": 160
       }
     },
@@ -46,8 +46,8 @@
       "height": 70,
       "type": "class",
       "position": {
-        "x": 370,
-        "y": 30
+        "x": 420,
+        "y": 180
       },
       "data": {
         "name": "DiagramElement",
@@ -67,12 +67,12 @@
     },
     {
       "id": "node",
-      "width": 210,
-      "height": 120,
+      "width": 200,
+      "height": 100,
       "type": "class",
       "position": {
-        "x": 700,
-        "y": 5
+        "x": 810,
+        "y": 150
       },
       "data": {
         "name": "Node",
@@ -89,8 +89,8 @@
         "methods": []
       },
       "measured": {
-        "width": 210,
-        "height": 120
+        "width": 200,
+        "height": 100
       }
     },
     {
@@ -99,8 +99,8 @@
       "height": 120,
       "type": "class",
       "position": {
-        "x": 700,
-        "y": 190
+        "x": 810,
+        "y": 315
       },
       "data": {
         "name": "Edge",
@@ -123,26 +123,45 @@
     },
     {
       "id": "container",
-      "width": 210,
-      "height": 90,
+      "width": 215,
+      "height": 40,
       "type": "class",
       "position": {
-        "x": 1020,
-        "y": 20
+        "x": 1105,
+        "y": 170
       },
       "data": {
         "name": "Container",
         "attributes": [],
-        "methods": [
-          {
-            "id": "c1",
-            "name": "+ contain(element)"
-          }
-        ]
+        "methods": []
       },
       "measured": {
-        "width": 210,
-        "height": 90
+        "width": 215,
+        "height": 40
+      }
+    },
+    {
+      "id": "selection",
+      "width": 250,
+      "height": 70,
+      "type": "class",
+      "position": {
+        "x": 420,
+        "y": 335
+      },
+      "data": {
+        "name": "Selection",
+        "attributes": [
+          {
+            "id": "sel1",
+            "name": "+ purpose: SelectionPurpose"
+          }
+        ],
+        "methods": []
+      },
+      "measured": {
+        "width": 250,
+        "height": 70
       }
     },
     {
@@ -151,8 +170,8 @@
       "height": 100,
       "type": "class",
       "position": {
-        "x": 370,
-        "y": 230
+        "x": 410,
+        "y": 30
       },
       "data": {
         "name": "ElementAssessment",
@@ -179,8 +198,8 @@
       "height": 160,
       "type": "class",
       "position": {
-        "x": 40,
-        "y": 250
+        "x": 45,
+        "y": 330
       },
       "data": {
         "name": "DiagramVersion",
@@ -212,11 +231,11 @@
     {
       "id": "session",
       "width": 240,
-      "height": 100,
+      "height": 70,
       "type": "class",
       "position": {
-        "x": 40,
-        "y": 500
+        "x": 45,
+        "y": 555
       },
       "data": {
         "name": "CollaborationSession",
@@ -226,16 +245,11 @@
             "name": "+ id: Identifier"
           }
         ],
-        "methods": [
-          {
-            "id": "s2",
-            "name": "+ join(participant)"
-          }
-        ]
+        "methods": []
       },
       "measured": {
         "width": 240,
-        "height": 100
+        "height": 70
       }
     },
     {
@@ -244,8 +258,8 @@
       "height": 130,
       "type": "class",
       "position": {
-        "x": 390,
-        "y": 490
+        "x": 420,
+        "y": 545
       },
       "data": {
         "name": "Participant",
@@ -272,71 +286,62 @@
     },
     {
       "id": "awareness",
-      "width": 260,
+      "width": 340,
       "height": 160,
       "type": "class",
       "position": {
-        "x": 755,
-        "y": 475
+        "x": 805,
+        "y": 530
       },
       "data": {
         "name": "AwarenessState",
         "attributes": [
           {
             "id": "w1",
-            "name": "+ cursor: Point"
+            "name": "+ cursor: Point [0..1]"
           },
           {
             "id": "w2",
-            "name": "+ viewport: Viewport"
+            "name": "+ viewport: Viewport [0..1]"
           },
           {
             "id": "w3",
-            "name": "+ selectedElement: Identifier"
+            "name": "+ selectedElement: Identifier [0..1]"
           },
           {
             "id": "w4",
-            "name": "+ followedParticipant: Identifier"
+            "name": "+ draggingNodes: DraggingNode [0..*]"
           }
         ],
         "methods": []
       },
       "measured": {
-        "width": 260,
+        "width": 340,
         "height": 160
       }
     },
     {
       "id": "request",
       "width": 230,
-      "height": 150,
+      "height": 110,
       "type": "class",
       "position": {
-        "x": 40,
-        "y": 720
+        "x": 45,
+        "y": 765
       },
       "data": {
         "name": "ExportRequest",
         "attributes": [
           {
             "id": "r1",
-            "name": "+ diagramId: Identifier"
-          },
-          {
-            "id": "r2",
             "name": "+ format: ExportFormat"
           }
         ],
-        "methods": [
-          {
-            "id": "r3",
-            "name": "+ generate()"
-          }
-        ]
+        "methods": []
       },
       "measured": {
         "width": 230,
-        "height": 150
+        "height": 110
       }
     },
     {
@@ -345,8 +350,8 @@
       "height": 120,
       "type": "class",
       "position": {
-        "x": 465,
-        "y": 735
+        "x": 420,
+        "y": 760
       },
       "data": {
         "name": "ExportArtifact",
@@ -371,21 +376,25 @@
   "edges": [
     {
       "id": "aom1",
-      "source": "diagram",
-      "target": "element",
+      "source": "element",
+      "target": "diagram",
       "type": "ClassComposition",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "left",
+      "targetHandle": "right",
       "data": {
-        "sourceMultiplicity": "1",
-        "targetMultiplicity": "0..*",
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "1",
+        "sourceRole": "elements",
         "targetRole": "",
         "points": [],
-        "sourceAnchor": {
+        "targetAnchor": {
           "side": "right",
-          "ratio": 0.21875
+          "ratio": 0.84375
         },
-        "sourceRole": "contains"
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.21428571428571427
+        }
       }
     },
     {
@@ -399,11 +408,7 @@
         "points": [],
         "targetAnchor": {
           "side": "right",
-          "ratio": 0.14285714285714285
-        },
-        "sourceAnchor": {
-          "side": "left",
-          "ratio": 0.2916666666666667
+          "ratio": 0.2857142857142857
         }
       }
     },
@@ -415,7 +420,28 @@
       "sourceHandle": "left",
       "targetHandle": "right",
       "data": {
-        "points": []
+        "points": [
+          {
+            "x": 809,
+            "y": 375
+          },
+          {
+            "x": 738,
+            "y": 375
+          },
+          {
+            "x": 738,
+            "y": 225
+          },
+          {
+            "x": 645,
+            "y": 225
+          }
+        ],
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.6428571428571429
+        }
       }
     },
     {
@@ -426,7 +452,43 @@
       "sourceHandle": "left",
       "targetHandle": "right",
       "data": {
-        "points": []
+        "points": [],
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.4
+        }
+      }
+    },
+    {
+      "id": "aom5",
+      "source": "node",
+      "target": "container",
+      "type": "ClassUnidirectional",
+      "sourceHandle": "bottom",
+      "targetHandle": "bottom",
+      "data": {
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "0..1",
+        "sourceRole": "children",
+        "targetRole": "parent",
+        "points": [
+          {
+            "x": 910,
+            "y": 251
+          },
+          {
+            "x": 910,
+            "y": 281
+          },
+          {
+            "x": 1215,
+            "y": 281
+          },
+          {
+            "x": 1215,
+            "y": 211
+          }
+        ]
       }
     },
     {
@@ -434,29 +496,36 @@
       "source": "assessment",
       "target": "element",
       "type": "ClassUnidirectional",
-      "sourceHandle": "top",
-      "targetHandle": "bottom",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
       "data": {
+        "sourceMultiplicity": "0..1",
         "targetMultiplicity": "1",
+        "sourceRole": "",
         "targetRole": "",
         "points": [],
-        "sourceAnchor": {
+        "targetAnchor": {
           "side": "top",
-          "ratio": 0.4791666666666667
+          "ratio": 0.4888888888888889
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
         }
       }
     },
     {
       "id": "aom9",
-      "source": "diagram",
-      "target": "version",
+      "source": "version",
+      "target": "diagram",
       "type": "ClassComposition",
-      "sourceHandle": "bottom",
-      "targetHandle": "top",
+      "sourceHandle": "top",
+      "targetHandle": "bottom",
       "data": {
-        "sourceMultiplicity": "1",
-        "targetMultiplicity": "0..*",
-        "targetRole": "versions",
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "1",
+        "sourceRole": "versions",
+        "targetRole": "",
         "points": []
       }
     },
@@ -470,77 +539,87 @@
       "data": {
         "sourceMultiplicity": "0..1",
         "targetMultiplicity": "1",
-        "targetRole": "",
+        "sourceRole": "collaborationSession",
+        "targetRole": "sharedDiagram",
         "points": [
           {
+            "x": 45,
+            "y": 590
+          },
+          {
+            "x": 9,
+            "y": 590
+          },
+          {
+            "x": 9,
+            "y": 140
+          },
+          {
             "x": 39,
-            "y": 550
-          },
-          {
-            "x": -50,
-            "y": 550
-          },
-          {
-            "x": -50,
-            "y": 110
-          },
-          {
-            "x": 39,
-            "y": 110
+            "y": 140
           }
         ],
-        "sourceRole": "updates"
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        }
       }
     },
     {
       "id": "aom11",
-      "source": "session",
-      "target": "participant",
+      "source": "participant",
+      "target": "session",
       "type": "ClassComposition",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "left",
+      "targetHandle": "right",
       "data": {
-        "sourceMultiplicity": "1",
-        "targetMultiplicity": "1..*",
+        "sourceMultiplicity": "1..*",
+        "targetMultiplicity": "1",
+        "sourceRole": "participants",
         "targetRole": "",
-        "points": [
-          {
-            "x": 280,
-            "y": 555
-          },
-          {
-            "x": 389,
-            "y": 555
-          }
-        ],
-        "sourceAnchor": {
+        "points": [],
+        "targetAnchor": {
           "side": "right",
-          "ratio": 0.55
+          "ratio": 0.5
+        },
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.34615384615384615
         }
       }
     },
     {
       "id": "aom12",
-      "source": "participant",
-      "target": "awareness",
+      "source": "awareness",
+      "target": "participant",
       "type": "ClassComposition",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "left",
+      "targetHandle": "right",
       "data": {
-        "sourceMultiplicity": "1",
-        "targetMultiplicity": "0..1",
+        "sourceMultiplicity": "0..1",
+        "targetMultiplicity": "1",
+        "sourceRole": "transientState",
         "targetRole": "",
-        "points": [
-          {
-            "x": 621,
-            "y": 555
-          },
-          {
-            "x": 754,
-            "y": 555
-          }
-        ],
-        "sourceRole": "updates"
+        "points": []
+      }
+    },
+    {
+      "id": "aom13",
+      "source": "selection",
+      "target": "element",
+      "type": "ClassUnidirectional",
+      "sourceHandle": "top",
+      "targetHandle": "bottom",
+      "data": {
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "1..*",
+        "sourceRole": "selections",
+        "targetRole": "elements",
+        "points": [],
+        "sourceAnchor": {
+          "side": "top",
+          "ratio": 0.46
+        }
       }
     },
     {
@@ -553,9 +632,77 @@
       "data": {
         "sourceMultiplicity": "1",
         "targetMultiplicity": "0..1",
-        "targetRole": "generates",
-        "points": [],
-        "sourceRole": "request"
+        "sourceRole": "",
+        "targetRole": "result",
+        "points": []
+      }
+    },
+    {
+      "id": "aom16",
+      "source": "request",
+      "target": "diagram",
+      "type": "ClassUnidirectional",
+      "sourceHandle": "left",
+      "targetHandle": "left",
+      "data": {
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "1",
+        "sourceRole": "exportRequests",
+        "targetRole": "diagram",
+        "points": [
+          {
+            "x": 44,
+            "y": 820
+          },
+          {
+            "x": -130,
+            "y": 820
+          },
+          {
+            "x": -130,
+            "y": 85
+          },
+          {
+            "x": 40,
+            "y": 85
+          }
+        ],
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.15625
+        }
+      }
+    },
+    {
+      "id": "aom17",
+      "source": "awareness",
+      "target": "participant",
+      "type": "ClassUnidirectional",
+      "sourceHandle": "bottom",
+      "targetHandle": "bottom",
+      "data": {
+        "sourceMultiplicity": "0..*",
+        "targetMultiplicity": "0..1",
+        "sourceRole": "followers",
+        "targetRole": "followedParticipant",
+        "points": [
+          {
+            "x": 975,
+            "y": 691
+          },
+          {
+            "x": 975,
+            "y": 721
+          },
+          {
+            "x": 535,
+            "y": 721
+          },
+          {
+            "x": 535,
+            "y": 676
+          }
+        ]
       }
     }
   ],
