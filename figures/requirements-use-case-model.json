@@ -6,94 +6,53 @@
   "nodes": [
     {
       "id": "system",
-      "width": 1020,
-      "height": 930,
+      "width": 670,
+      "height": 910,
       "type": "useCaseSystem",
-      "position": { "x": 220, "y": 20 },
+      "position": {
+        "x": 220,
+        "y": 45
+      },
       "data": {
         "name": "Apollon",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
       },
-      "measured": { "width": 1020, "height": 930 }
+      "measured": {
+        "width": 670,
+        "height": 910
+      }
     },
     {
       "id": "diagram-user",
       "width": 120,
       "height": 150,
       "type": "useCaseActor",
-      "position": { "x": 30, "y": 250 },
+      "position": {
+        "x": 10,
+        "y": 325
+      },
       "data": {
         "name": "Diagram User",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
       },
-      "measured": { "width": 120, "height": 150 }
-    },
-    {
-      "id": "instructor",
-      "width": 120,
-      "height": 150,
-      "type": "useCaseActor",
-      "position": { "x": 1320, "y": 70 },
-      "data": {
-        "name": "Instructor",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 120, "height": 150 }
-    },
-    {
-      "id": "artemis",
-      "width": 120,
-      "height": 150,
-      "type": "useCaseActor",
-      "position": { "x": 1320, "y": 570 },
-      "data": {
-        "name": "Artemis",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 120, "height": 150 }
-    },
-    {
-      "id": "assessor",
-      "width": 120,
-      "height": 150,
-      "type": "useCaseActor",
-      "position": { "x": 1320, "y": 330 },
-      "data": {
-        "name": "Assessor",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 120, "height": 150 }
-    },
-    {
-      "id": "athena",
-      "width": 120,
-      "height": 150,
-      "type": "useCaseActor",
-      "position": { "x": 1320, "y": 820 },
-      "data": {
-        "name": "Athena",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 120, "height": 150 }
+      "measured": {
+        "width": 120,
+        "height": 150
+      }
     },
     {
       "id": "edit-diagram",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 70, "y": 70 },
+      "position": {
+        "x": 70,
+        "y": 70
+      },
       "parentId": "system",
       "data": {
         "name": "Create or Edit Diagram",
@@ -101,14 +60,20 @@
         "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "collaborate",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 70, "y": 250 },
+      "position": {
+        "x": 70,
+        "y": 225
+      },
       "parentId": "system",
       "data": {
         "name": "Collaborate on Diagram",
@@ -116,14 +81,20 @@
         "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "manage-diagrams",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 70, "y": 430 },
+      "position": {
+        "x": 70,
+        "y": 405
+      },
       "parentId": "system",
       "data": {
         "name": "Manage Diagrams",
@@ -131,14 +102,20 @@
         "strokeColor": "#4a86d9",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "export-diagram",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 70, "y": 610 },
+      "position": {
+        "x": 70,
+        "y": 585
+      },
       "parentId": "system",
       "data": {
         "name": "Export Diagram",
@@ -146,29 +123,20 @@
         "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "request-feedback",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 70, "y": 790 },
-      "parentId": "system",
-      "data": {
-        "name": "Request Generated Feedback",
-        "fillColor": "#ffe0ad",
-        "strokeColor": "#d08a00",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "follow-collaborator",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 400, "y": 250 },
+      "position": {
+        "x": 400,
+        "y": 225
+      },
       "parentId": "system",
       "data": {
         "name": "Follow Collaborator",
@@ -176,139 +144,154 @@
         "strokeColor": "#4a86d9",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "select-quiz-elements",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 400, "y": 430 },
-      "parentId": "system",
-      "data": {
-        "name": "Select Quiz Elements",
-        "fillColor": "#d9e8ff",
-        "strokeColor": "#4a86d9",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "export-presentation",
       "width": 220,
       "height": 100,
       "type": "useCase",
-      "position": { "x": 400, "y": 610 },
+      "position": {
+        "x": 400,
+        "y": 585
+      },
       "parentId": "system",
       "data": {
-        "name": "Export Presentation",
+        "name": "Export PPTX",
         "fillColor": "#d9e8ff",
         "strokeColor": "#4a86d9",
         "textColor": "#000000"
       },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "create-modeling-exercise",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 710, "y": 70 },
-      "parentId": "system",
-      "data": {
-        "name": "Create Modeling Exercise",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "create-diagram-quiz",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 710, "y": 250 },
-      "parentId": "system",
-      "data": {
-        "name": "Create Diagram Quiz",
-        "fillColor": "#ffe0ad",
-        "strokeColor": "#d08a00",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "assess-submission",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 710, "y": 430 },
-      "parentId": "system",
-      "data": {
-        "name": "Assess Submission",
-        "fillColor": "#ffe0ad",
-        "strokeColor": "#d08a00",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
-    },
-    {
-      "id": "embed-editor",
-      "width": 220,
-      "height": 100,
-      "type": "useCase",
-      "position": { "x": 710, "y": 610 },
-      "parentId": "system",
-      "data": {
-        "name": "Embed Apollon Editor",
-        "fillColor": "#ffe0ad",
-        "strokeColor": "#d08a00",
-        "textColor": "#000000"
-      },
-      "measured": { "width": 220, "height": 100 }
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     },
     {
       "id": "legend-existing",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
-      "position": { "x": 550, "y": 990 },
+      "position": {
+        "x": 530,
+        "y": -40
+      },
       "data": {
         "name": "Existing",
         "fillColor": "#ffffff",
         "strokeColor": "#000000",
         "textColor": "#000000"
       },
-      "measured": { "width": 120, "height": 44 }
+      "measured": {
+        "width": 120,
+        "height": 44
+      }
     },
     {
       "id": "legend-modified",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
-      "position": { "x": 670, "y": 990 },
+      "position": {
+        "x": 650,
+        "y": -40
+      },
       "data": {
         "name": "Modified",
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
-      "measured": { "width": 120, "height": 44 }
+      "measured": {
+        "width": 120,
+        "height": 44
+      }
     },
     {
       "id": "legend-added",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
-      "position": { "x": 790, "y": 990 },
+      "position": {
+        "x": 770,
+        "y": -40
+      },
       "data": {
         "name": "Added",
         "fillColor": "#d9e8ff",
         "strokeColor": "#4a86d9",
         "textColor": "#000000"
       },
-      "measured": { "width": 120, "height": 44 }
+      "measured": {
+        "width": 120,
+        "height": 44
+      }
+    },
+    {
+      "id": "16290edd-eafd-4d9d-b55d-c232887ece6c",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": {
+        "x": 405,
+        "y": 345
+      },
+      "parentId": "system",
+      "data": {
+        "name": "Presence indicator",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
+    },
+    {
+      "id": "f1d0ffa8-4dd1-4ac7-af9b-fdaf646b8342",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": {
+        "x": 395,
+        "y": 720
+      },
+      "parentId": "system",
+      "data": {
+        "name": "Export SVG,PNG,PDF",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
+    },
+    {
+      "id": "5be216c6-c8a5-4c51-9cbc-088a2c1dc8ab",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": {
+        "x": 70,
+        "y": 780
+      },
+      "parentId": "system",
+      "data": {
+        "name": "Import Diagram",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
     }
   ],
   "edges": [
@@ -319,7 +302,11 @@
       "type": "UseCaseAssociation",
       "sourceHandle": "right",
       "targetHandle": "left",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
       "id": "user-collaborate",
@@ -328,7 +315,11 @@
       "type": "UseCaseAssociation",
       "sourceHandle": "right",
       "targetHandle": "left",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
       "id": "user-manage",
@@ -337,7 +328,11 @@
       "type": "UseCaseAssociation",
       "sourceHandle": "right",
       "targetHandle": "left",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
       "id": "user-export",
@@ -346,61 +341,11 @@
       "type": "UseCaseAssociation",
       "sourceHandle": "right",
       "targetHandle": "left",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "user-feedback",
-      "source": "diagram-user",
-      "target": "request-feedback",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "right",
-      "targetHandle": "left",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "instructor-modeling",
-      "source": "instructor",
-      "target": "create-modeling-exercise",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "instructor-quiz",
-      "source": "instructor",
-      "target": "create-diagram-quiz",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "artemis-editor",
-      "source": "artemis",
-      "target": "embed-editor",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "assessor-assessment",
-      "source": "assessor",
-      "target": "assess-submission",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
-    },
-    {
-      "id": "athena-feedback",
-      "source": "athena",
-      "target": "request-feedback",
-      "type": "UseCaseAssociation",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
       "id": "follow-extends-collaboration",
@@ -409,7 +354,11 @@
       "type": "UseCaseExtend",
       "sourceHandle": "left",
       "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
       "id": "presentation-extends-export",
@@ -418,16 +367,60 @@
       "type": "UseCaseExtend",
       "sourceHandle": "left",
       "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "data": {
+        "points": [],
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      }
     },
     {
-      "id": "quiz-includes-selection",
-      "source": "create-diagram-quiz",
-      "target": "select-quiz-elements",
-      "type": "UseCaseInclude",
+      "id": "fdc8394d-1bdb-4073-b375-3cdab9a7e04e",
+      "source": "16290edd-eafd-4d9d-b55d-c232887ece6c",
+      "target": "collaborate",
+      "type": "UseCaseExtend",
       "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+      "targetHandle": "bottom",
+      "data": {
+        "targetAnchor": {
+          "side": "bottom",
+          "ratio": 0.8977272727272727
+        },
+        "points": []
+      }
+    },
+    {
+      "id": "9dbf9c25-38af-414d-b1d2-4f75a12295d2",
+      "source": "f1d0ffa8-4dd1-4ac7-af9b-fdaf646b8342",
+      "target": "export-diagram",
+      "type": "UseCaseExtend",
+      "sourceHandle": "left",
+      "targetHandle": "bottom",
+      "data": {
+        "targetAnchor": {
+          "side": "bottom",
+          "ratio": 0.7777777777777777
+        },
+        "points": []
+      }
+    },
+    {
+      "id": "1478b1d0-9f08-4f2c-8fe5-30d6bd8f15d2",
+      "source": "diagram-user",
+      "target": "5be216c6-c8a5-4c51-9cbc-088a2c1dc8ab",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.04166666666666629
+        },
+        "points": [],
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
     }
   ],
   "assessments": {}
