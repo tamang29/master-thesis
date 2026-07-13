@@ -128,30 +128,3 @@ nielsen1993usability:
   author: Nielsen, Jakob
   date: 1993
   publisher: Morgan Kaufmann
-
-apollonDocs2026:
-  type: web
-  title: UML modeling editor for the web
-  author:
-    - name: "Apollon Team, Technical University of Munich"
-  date: 2026
-  url: "https://ls1intum.github.io/Apollon/"
-  urldate: 2026-06-29
-
-artemisRepo2026:
-  type: web
-  title: "Artemis: Interactive Learning with Individual Feedback"
-  author:
-    - name: "Chair for Applied Software Engineering, Technical University of Munich"
-  date: 2026
-  url: "https://github.com/ls1intum/Artemis"
-  urldate: 2026-06-29
-
-athenaDocs2023:
-  type: web
-  title: "Athena: A system to support (semi-)automated assessment of exercises"
-  author:
-    - name: "Technical University of Munich, Chair for Applied Software Engineering"
-  date: 2023
-  url: "https://ls1intum.github.io/Athena/"
-  urldate: 2026-06-29

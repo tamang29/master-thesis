@@ -35,6 +35,6 @@ Together, these objectives address the user-facing experience and the systems ne
 
 == Outline
 
-Chapter 2, Background, introduces Apollon, Artemis, and Athena. Chapter 3, Related Work, covers modeling-tool usability, visual notation and readability, collaborative diagram editors, workspace awareness, and the positioning of this thesis. Chapter 4, Requirements, presents the existing and proposed system, functional requirements, quality attributes, constraints, and system models. Chapter 5, Architecture, describes the architecture and its subsystem boundaries.
+Chapter 2, Background, introduces Apollon, Artemis, and Athena. Chapter 3, Related Work, covers modeling-tool usability, collaborative diagram editors, workspace awareness, and the positioning of this thesis. Chapter 4, Requirements, presents the existing and proposed system, functional requirements, non-functional requirements, constraints, and system models. Chapter 5, Architecture, describes the architecture and its subsystem boundaries.
 
 Chapter 6, Implementation, documents the implementation according to the four objectives and relates each contribution to its requirement. Chapter 7, User Feedback and Findings, presents feedback, findings, and remaining limitations. Chapter 8, Summary, summarizes the work and identifies remaining directions for the Apollon ecosystem.
