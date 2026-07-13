@@ -1,0 +1,716 @@
+{
+  "id": "requirements-ui-navigation-model",
+  "version": "4.1.0",
+  "title": "Standalone User Interface Navigation",
+  "type": "ActivityDiagram",
+  "nodes": [
+    {
+      "id": "ui-lanes",
+      "width": 990,
+      "height": 1530,
+      "type": "activitySwimlane",
+      "position": {
+        "x": -1710,
+        "y": 615
+      },
+      "data": {
+        "name": "",
+        "orientation": "vertical",
+        "lanes": [
+          {
+            "id": "app-lane",
+            "name": "Apollon Standalone Web Application",
+            "size": 700
+          }
+        ]
+      },
+      "measured": {
+        "width": 990,
+        "height": 1530
+      }
+    },
+    {
+      "id": "start",
+      "width": 50,
+      "height": 50,
+      "type": "activityInitialNode",
+      "position": {
+        "x": 430,
+        "y": 55
+      },
+      "parentId": "ui-lanes",
+      "data": {
+        "name": "Start"
+      },
+      "measured": {
+        "width": 50,
+        "height": 50
+      }
+    },
+    {
+      "id": "overview",
+      "width": 250,
+      "height": 55,
+      "type": "activity",
+      "position": {
+        "x": -1385,
+        "y": 810
+      },
+      "data": {
+        "name": "Show Diagram Overview"
+      },
+      "measured": {
+        "width": 250,
+        "height": 55
+      }
+    },
+    {
+      "id": "choose",
+      "width": 180,
+      "height": 100,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -1345,
+        "y": 935
+      },
+      "data": {
+        "name": "Choose Diagram Action"
+      },
+      "measured": {
+        "width": 180,
+        "height": 100
+      }
+    },
+    {
+      "id": "exit",
+      "width": 50,
+      "height": 50,
+      "type": "activityFinalNode",
+      "position": {
+        "x": -1480,
+        "y": 960
+      },
+      "data": {
+        "name": "End"
+      },
+      "measured": {
+        "width": 50,
+        "height": 50
+      }
+    },
+    {
+      "id": "create",
+      "width": 160,
+      "height": 80,
+      "type": "activity",
+      "position": {
+        "x": -1515,
+        "y": 1100
+      },
+      "data": {
+        "name": "Create Diagram"
+      },
+      "measured": {
+        "width": 160,
+        "height": 80
+      }
+    },
+    {
+      "id": "openLocal",
+      "width": 160,
+      "height": 80,
+      "type": "activity",
+      "position": {
+        "x": -1335,
+        "y": 1100
+      },
+      "data": {
+        "name": "Open Local Diagram"
+      },
+      "measured": {
+        "width": 160,
+        "height": 80
+      }
+    },
+    {
+      "id": "openShared",
+      "width": 160,
+      "height": 80,
+      "type": "activity",
+      "position": {
+        "x": -1145,
+        "y": 1100
+      },
+      "data": {
+        "name": "Open Shared Diagram"
+      },
+      "measured": {
+        "width": 160,
+        "height": 80
+      }
+    },
+    {
+      "id": "openMerge",
+      "width": 110,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -1310,
+        "y": 1255
+      },
+      "data": {
+        "name": ""
+      },
+      "measured": {
+        "width": 110,
+        "height": 110
+      }
+    },
+    {
+      "id": "editor",
+      "width": 245,
+      "height": 70,
+      "type": "activity",
+      "position": {
+        "x": -1380,
+        "y": 1430
+      },
+      "data": {
+        "name": "Show Diagram Editor"
+      },
+      "measured": {
+        "width": 245,
+        "height": 70
+      }
+    },
+    {
+      "id": "editorAction",
+      "width": 190,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -1350,
+        "y": 1575
+      },
+      "data": {
+        "name": "Choose Editor Action"
+      },
+      "measured": {
+        "width": 190,
+        "height": 110
+      }
+    },
+    {
+      "id": "versions",
+      "width": 190,
+      "height": 85,
+      "type": "activity",
+      "position": {
+        "x": -1365,
+        "y": 1770
+      },
+      "data": {
+        "name": "Show Version History"
+      },
+      "measured": {
+        "width": 190,
+        "height": 85
+      }
+    },
+    {
+      "id": "share",
+      "width": 190,
+      "height": 85,
+      "type": "activity",
+      "position": {
+        "x": -1630,
+        "y": 1770
+      },
+      "data": {
+        "name": "Show Sharing Controls"
+      },
+      "measured": {
+        "width": 190,
+        "height": 85
+      }
+    },
+    {
+      "id": "export",
+      "width": 190,
+      "height": 85,
+      "type": "activity",
+      "position": {
+        "x": -1095,
+        "y": 1770
+      },
+      "data": {
+        "name": "Show Export Controls"
+      },
+      "measured": {
+        "width": 190,
+        "height": 85
+      }
+    },
+    {
+      "id": "auxMerge",
+      "width": 110,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -1325,
+        "y": 1900
+      },
+      "data": {
+        "name": ""
+      },
+      "measured": {
+        "width": 110,
+        "height": 110
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "n1",
+      "source": "start",
+      "target": "overview",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.52
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n2",
+      "source": "overview",
+      "target": "choose",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.52
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n3",
+      "source": "choose",
+      "target": "create",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[new]",
+        "points": [
+          {
+            "x": -1255,
+            "y": 1036
+          },
+          {
+            "x": -1255,
+            "y": 1069
+          },
+          {
+            "x": -1435,
+            "y": 1069
+          },
+          {
+            "x": -1435,
+            "y": 1099
+          }
+        ]
+      }
+    },
+    {
+      "id": "n4",
+      "source": "choose",
+      "target": "openLocal",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[local]",
+        "points": []
+      }
+    },
+    {
+      "id": "n6",
+      "source": "create",
+      "target": "openMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "left",
+      "data": {
+        "points": [
+          {
+            "x": -1435,
+            "y": 1181
+          },
+          {
+            "x": -1435,
+            "y": 1310
+          },
+          {
+            "x": -1311,
+            "y": 1310
+          }
+        ]
+      }
+    },
+    {
+      "id": "n7",
+      "source": "openLocal",
+      "target": "openMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "n8",
+      "source": "openShared",
+      "target": "openMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "right",
+      "data": {
+        "points": [
+          {
+            "x": -1065,
+            "y": 1181
+          },
+          {
+            "x": -1065,
+            "y": 1310
+          },
+          {
+            "x": -1199,
+            "y": 1310
+          }
+        ]
+      }
+    },
+    {
+      "id": "n9",
+      "source": "openMerge",
+      "target": "editor",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5102040816326531
+        }
+      }
+    },
+    {
+      "id": "n10",
+      "source": "editor",
+      "target": "editorAction",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5102040816326531
+        }
+      }
+    },
+    {
+      "id": "n11",
+      "source": "editorAction",
+      "target": "versions",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[history]",
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5789473684210527
+        }
+      }
+    },
+    {
+      "id": "n12",
+      "source": "editorAction",
+      "target": "share",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[share]",
+        "points": [
+          {
+            "x": -1255,
+            "y": 1685
+          },
+          {
+            "x": -1255,
+            "y": 1740
+          },
+          {
+            "x": -1535,
+            "y": 1740
+          },
+          {
+            "x": -1535,
+            "y": 1770
+          }
+        ],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n13",
+      "source": "editorAction",
+      "target": "export",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "top",
+      "data": {
+        "label": "[export]",
+        "points": [
+          {
+            "x": -1160,
+            "y": 1630
+          },
+          {
+            "x": -1000,
+            "y": 1630
+          },
+          {
+            "x": -1000,
+            "y": 1769
+          }
+        ],
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n14",
+      "source": "editorAction",
+      "target": "overview",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "left",
+      "data": {
+        "label": "[close]",
+        "points": [
+          {
+            "x": -1350,
+            "y": 1630
+          },
+          {
+            "x": -1540,
+            "y": 1630
+          },
+          {
+            "x": -1540,
+            "y": 835
+          },
+          {
+            "x": -1385,
+            "y": 835
+          }
+        ],
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.45454545454545453
+        }
+      }
+    },
+    {
+      "id": "n15",
+      "source": "versions",
+      "target": "auxMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[done]",
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n16",
+      "source": "share",
+      "target": "auxMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "left",
+      "data": {
+        "label": "[done]",
+        "points": [
+          {
+            "x": -1535,
+            "y": 1856
+          },
+          {
+            "x": -1535,
+            "y": 1955
+          },
+          {
+            "x": -1325,
+            "y": 1955
+          }
+        ],
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n17",
+      "source": "export",
+      "target": "auxMerge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "right",
+      "data": {
+        "label": "[done]",
+        "points": [
+          {
+            "x": -1000,
+            "y": 1856
+          },
+          {
+            "x": -1000,
+            "y": 1955
+          },
+          {
+            "x": -1215,
+            "y": 1955
+          }
+        ],
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n18",
+      "source": "auxMerge",
+      "target": "editor",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "right",
+      "data": {
+        "points": [
+          {
+            "x": -1270,
+            "y": 2010
+          },
+          {
+            "x": -1270,
+            "y": 2040
+          },
+          {
+            "x": -840,
+            "y": 2040
+          },
+          {
+            "x": -840,
+            "y": 1465
+          },
+          {
+            "x": -1134,
+            "y": 1465
+          }
+        ],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "n20",
+      "source": "choose",
+      "target": "exit",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": {
+        "label": "[exit]",
+        "points": []
+      }
+    },
+    {
+      "id": "f8d1573c-ec77-40bc-afaf-7fa0975ed1eb",
+      "source": "choose",
+      "target": "openShared",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.46875
+        },
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        },
+        "label": "[shared]"
+      }
+    }
+  ],
+  "assessments": {}
+}
