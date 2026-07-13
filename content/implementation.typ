@@ -8,7 +8,7 @@ This chapter describes how the requirements from @req-chapter were implemented. 
 
 The implementation followed the iterative requirements process described in #section-link(<req-iterative>)#h(0.25em)and the architectural decisions in #section-link(<arch-decisions>). Each development cycle started with a requirement from the proposal or roadmap, continued with a first implementation, and was then tested in the relevant integration context. Problems found during integration became follow-up requirements and were addressed in another cycle.
 
-This process is visible throughout the project. The Artemis migration revealed missing Athena and quiz compatibility requirements. Collaboration awareness moved from the standalone application into the library when Artemis needed it for team modeling. The edge usability refactor was followed by line-jump and label-readability improvements, while the export service evolved from browser-based conversion to JSDOM and React Flow server-side rendering.
+This process is visible when integration findings became follow-up compatibility and quiz requirements, and when collaboration awareness moved from the standalone application into the library for reuse in team modeling. The export service likewise evolved from browser-based conversion to JSDOM and React Flow server-side rendering.
 
 == Improving Modeling and Application Usability <impl-usability>
 
@@ -93,9 +93,9 @@ Diagram cards provide management actions directly on the home page. Users can du
 
 The standalone home page also introduced home-specific light and dark theming. Dedicated CSS variables define the visual appearance of the home page and support theme switching. This work improved consistency between the home page and the editor while keeping the home page independent enough to provide its own layout and navigation structure.
 
-The implementation was supported by end-to-end tests for the new home-page workflow. The tests cover initial loading, empty states, search, filtering, sorting, favorites, source filtering, grid and table switching, infinite scrolling, and card actions. Separate tests and implementation checks cover shared diagram storage, shared link handling, and unavailable shared diagram behavior. These tests reduce the risk that future changes break the main entry point of the standalone application.
+The implementation was supported by end-to-end tests covering loading, browsing, source views, navigation, and diagram-management actions. Separate checks cover shared storage, link handling, and unavailable diagrams, reducing the risk that future changes break the standalone entry point.
 
-The resulting standalone application provides a clearer workflow for creating, reopening, organizing, and sharing diagrams. The home page makes the application more suitable for repeated use because users can return to existing work instead of always starting from an empty editor. Remaining limitations concern stronger persistence, ownership, authentication, local file-system integration, and long-term project workflows. These topics are discussed as future work in Chapter 7.
+The resulting home page supports repeated use by helping users return to and manage existing work. Stronger persistence, ownership, and long-term project workflows remain future work discussed in Chapter 7.
 
 === User Interface Modernization and Consistency <impl-ui-modernization>
 
@@ -126,7 +126,7 @@ Related requirement: #section-link(<req-collaboration>).
 
 The first collaboration iteration added highlighting for nodes and edges selected or dragged by another participant. In a shared modeling session, synchronized diagram data shows the final diagram state, but it does not explain which element another user is currently inspecting or moving. The implementation therefore propagated the currently selected or dragged element as transient collaboration awareness. Remote clients used this awareness state to highlight the corresponding node or edge on their local canvas.
 
-This behavior was intentionally kept outside the persisted diagram model. A highlighted node or edge communicates another user's current focus, not a diagram property that should be saved, submitted, exported, or processed by Artemis and Athena. When the remote selection changed or disappeared, the highlight was cleared from the local canvas. This made the feature useful during live collaboration while preserving the boundary between diagram data and session data.
+This behavior was intentionally kept outside the persisted diagram model. A highlighted node or edge communicates another user's current focus, not a diagram property that should be saved, submitted, exported, or processed by host services. When the remote selection changed or disappeared, the highlight was cleared from the local canvas. This made the feature useful during live collaboration while preserving the boundary between diagram data and session data.
 
 #figure(
   image("/figures/collaboration-selection-highlighting.png", width: 100%),
@@ -146,7 +146,7 @@ Viewport following uses the same separation of concerns as the earlier awareness
   caption: [Third collaboration iteration: viewport following synchronizes the local view with a selected collaborator.],
 )
 
-After the standalone implementation proved useful, collaboration awareness was moved toward the library boundary. This kept selected-element highlights, live cursors, participant identity, and viewport following out of the persisted diagram model while making the awareness presentation reusable by host applications. Host applications still own the collaboration transport, session lifecycle, authentication, and persistence decisions, but the editor can provide a consistent awareness surface once it receives the corresponding transient state.
+After the standalone implementation proved useful, the awareness presentation moved toward the library boundary for reuse by host applications without persisting session data. Hosts still provide the collaboration transport and session lifecycle, while the editor presents the corresponding transient state consistently.
 
 === Team Modeling in Artemis <impl-team-modeling>
 
@@ -188,9 +188,7 @@ The implemented quiz and assessment work improved the connection between Apollon
 
 Related requirement: #section-link(<req-athena>).
 
-Athena was updated to support the current Apollon model format for feedback generation. The parser logic was adapted so Athena supports the earlier and current Apollon model formats required by feedback workflows during the migration period, and the Athena playground was updated to use the maintained Apollon version for validation.
-
-This work was a direct result of the Artemis migration. Once Artemis used newer Apollon models, Athena also needed to process them to keep feedback workflows intact.
+To keep downstream feedback workflows intact during the Artemis migration, Athena received a focused model-format compatibility update. Its parser supports the earlier and current serialized Apollon model formats required by those workflows, and its playground uses the maintained version to validate current models. The change was limited to parser and playground compatibility; Athena continues to consume serialized models rather than embedding the editor.
 
 === VS Code Extension Migration <impl-vscode>
 
@@ -210,7 +208,7 @@ PDF export is needed when diagrams are used outside the editor, for example in r
 
 The export path connected the standalone server to Apollon's diagram conversion workflow. The server receives diagram data through an export endpoint, converts the model into a renderable representation, and returns a PDF artifact to the caller. Implementing this workflow required server routing, export service logic, endpoint path integration, model conversion handling, and configuration changes so the server-side code could use the relevant Apollon rendering functionality. During integration, the endpoint and request handling were refined, and error handling was improved so conversion failures could be reported without modifying the original diagram data.
 
-The conversion service was changed from a Playwright-based implementation to JSDOM and React Flow server-side rendering. The resulting service receives a diagram model, creates the renderable representation without launching a browser, and returns the derived PDF artifact. This makes PDF generation available through the standalone server and better suited to server and container environments, while conversion failures can be reported without modifying the original diagram data.
+The conversion service was changed from a Playwright-based implementation to JSDOM and React Flow server-side rendering. Removing the browser launch made the existing PDF path better suited to server and container environments without changing the diagram model on conversion failure.
 
 === SVG Export and Diagram Rendering <impl-svg-rendering>
 

@@ -11,27 +11,27 @@
 
 This chapter maps the application-domain concepts and requirements from Chapter 4 to the software architecture. It follows the system design structure proposed by Bruegge and Dutoit @bruegge2004object. The design focuses on the parts of the Apollon ecosystem changed by this thesis.
 
-The architecture separates reusable editor behavior from application-specific navigation, persistence, session infrastructure, and deployment. This separation allows the standalone application, mobile application, Artemis, Athena, and the VS Code extension to evolve around one maintained Apollon library.
+The architecture separates reusable editor behavior from host-specific workflows and infrastructure so that application and service integrations can evolve around one maintained Apollon library.
 
 == Overview <arch-overview>
 
-The Apollon library is the reusable center of the proposed architecture. It provides shared editor behavior, model behavior, rendering behavior, editor runtime callbacks, and reusable collaboration-awareness presentation. Host applications configure the editor and connect it to their own user interface, persistence, access control, session infrastructure, and platform-specific workflows.
+The Apollon library is the reusable center of the proposed architecture. It provides editor, model, rendering, callback, and collaboration-awareness behavior that hosts configure for their workflows.
 
-The standalone web application owns the standalone home page, diagram routing, local and shared diagram workflows, and service calls to the standalone server. The iOS application follows the standalone workflow through a Capacitor shell and adds native file/export handling. Artemis embeds Apollon for educational workflows, Athena consumes serialized Apollon models for feedback generation, and the VS Code extension hosts the editor and renderer in the IDE environment.
+The standalone web application owns navigation, diagram-management workflows, and its server calls. The iOS application follows this workflow through a Capacitor shell with native file handling, while Artemis embeds Apollon for educational workflows. Downstream feedback and IDE integrations consume the model or editor capabilities relevant to their roles.
 
 
 == Design Goals <arch-decisions>
 
-The non-functional requirements and constraints in Chapter 4 determine the design goals. Compatibility has the highest priority because Artemis and Athena already serve active educational workflows. Usability follows because the thesis aims to reduce interaction effort. Reuse and maintainability guide the placement of shared behavior in the library.
+The non-functional requirements and constraints in Chapter 4 determine the design goals. Compatibility has the highest priority because existing educational and feedback workflows remain active. Usability follows because the thesis aims to reduce interaction effort, while reuse and maintainability guide the placement of shared behavior in the library.
 
-A shared library reduces duplication but requires stable interfaces for several hosts. Server-side rendering improves deployment portability but must reproduce browser rendering accurately. The architecture resolves these conflicts by keeping shared model and rendering behavior in the Apollon library while leaving authentication, persistence, session infrastructure, and deployment policy to each host.
+A shared library reduces duplication but requires stable interfaces for several hosts. Server-side rendering improves deployment portability but must reproduce browser rendering accurately. The ownership boundary defined in the subsystem decomposition resolves these concerns.
 
 
 == Subsystem Decomposition <arch-subsystems>
 
 The system is decomposed into subsystems according to ownership of editor behavior, application workflows, and integration responsibilities. The decomposition follows the requirement areas from #section-link(<req-iterative>) and keeps dependencies directed toward the Apollon library.
 
-Each host may use a subset of library services. The standalone application uses the main editor and export surface, Artemis configures educational modes and persistence callbacks, Athena consumes model data without embedding the editor, and the VS Code extension uses the maintained editor and renderer in an IDE context.
+Each integration uses only the relevant library services. The standalone application uses the editor and export surface, Artemis configures educational modes and persistence callbacks, downstream feedback consumes model data, and the VS Code extension uses the maintained editor and renderer.
 
 @fig-standalone-decomposition visualizes the decomposition of the standalone application. The web application separates the diagram overview, local editing, shared editing, and version history. Both editors reuse the Apollon library, while shared diagrams and their versions use the standalone server. The server exposes diagram and version APIs, relays collaboration messages, and stores shared diagram data in Redis Stack. White components already existed, orange components were modified, and blue components were added during the work described in this thesis.
 
@@ -50,7 +50,7 @@ The library does not own persistence, authentication, authorization, course data
 
 The standalone application owns the standalone home page, diagram routes, local and shared diagram workflows, and calls to application services. Local diagrams are managed by the browser/client-side application, while shared diagrams use standalone application services and server-side shared diagram storage. The standalone server also provides conversion services for exports that require service-side processing.
 
-The iOS application uses the standalone workflow inside a Capacitor shell. Native bridges connect derived export artifacts to platform file handling and keep the mobile application separate from Artemis and Athena integration concerns.
+The iOS application uses the standalone workflow inside a Capacitor shell. Native bridges connect derived export artifacts to platform file handling and keep the mobile application separate from educational and feedback integration concerns.
 
 === Artemis Integration <arch-artemis>
 
@@ -114,7 +114,7 @@ The standalone application distinguishes local diagrams from diagrams accessed t
 
 The interactive editor uses event-driven control. User input triggers library commands that update the in-memory diagram model and notify the host through callbacks. The host decides when to persist the updated model. Collaboration events form a separate transient stream that updates awareness presentation without changing the persisted diagram model unless a host explicitly persists a model change.
 
-Export uses either client-side control or a request-response service. Client-side formats use the current renderer directly. Service-based conversion sends diagram data and export parameters to the standalone server, which renders the diagram and returns an artifact or an error. Artemis and Athena control their integrations through their existing request and exercise lifecycles.
+Export uses either client-side control or a request-response service. Client-side formats use the current renderer directly, while service-based conversion sends diagram data and export parameters to the standalone server. Educational hosts and downstream feedback services retain control through their existing lifecycles.
 
 == Boundary Conditions
 

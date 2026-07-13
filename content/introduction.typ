@@ -2,7 +2,7 @@
 
 UML models help software engineering students describe the structure and behavior of a system before or alongside its implementation. UML provides a shared visual notation for this purpose and is commonly used in software engineering education @bruegge2004object. Modeling tools can support this learning process when they make diagrams easy to create, understand, discuss, and revise @lu2023umltools.
 
-Apollon is an educational modeling ecosystem built around the Apollon library and used through a standalone web application, a mobile/iOS application, a VS Code extension, and embedded Artemis contexts. Artemis is an interactive learning platform that supports exercises, feedback, and assessment in large courses @krusche2018artemis. In this setting, Apollon allows students to complete modeling exercises and instructors to create, assess, and reuse them. Athena and other educational services can also depend on serialized Apollon models when generating or processing feedback.
+Apollon is an educational modeling ecosystem built around a reusable library and used in standalone, mobile, development, and embedded educational contexts. Artemis is an interactive learning platform that supports exercises, feedback, and assessment in large courses @krusche2018artemis. In this setting, Apollon allows students to complete modeling exercises and instructors to create, assess, and reuse them. Athena and other educational services can also depend on serialized Apollon models when generating or processing feedback.
 
 The different uses of Apollon have therefore developed into an ecosystem rather than a single application. A change to the editor can influence individual diagram creation, collaborative exercises, mobile workflows, assessment, feedback generation, and export artifacts. Improving Apollon requires attention to both modeling usability and the consistency of the integrations that depend on the same editor foundation.
 
@@ -12,7 +12,7 @@ Creating a diagram should help students concentrate on modeling decisions. Howev
 
 Collaborative modeling introduced another challenge. Participants could edit the same diagram, but they received limited collaboration awareness about who else was active, where collaborators were working, and which elements they selected or dragged. This made it harder to coordinate work and understand changes during standalone shared modeling and Artemis team modeling sessions.
 
-Users also encountered different capabilities depending on whether they worked in the standalone web application, mobile/iOS application, VS Code extension, or Artemis. At the same time, educational systems had to continue processing diagrams created with earlier Apollon versions. The coexistence of legacy and reengineered editor behavior increased maintenance effort and made improvements harder to provide consistently. Existing exercises, serialized Apollon models, assessment processes, Athena feedback workflows, and visual exports still had to remain compatible.
+Users also encountered different capabilities across standalone, mobile, development, and educational contexts. At the same time, educational systems had to continue processing diagrams created with earlier Apollon versions. The coexistence of legacy and reengineered editor behavior increased maintenance effort and made improvements harder to provide consistently. Existing exercises, serialized models, assessment processes, downstream feedback workflows, and visual exports still had to remain compatible.
 
 == Motivation
 
@@ -20,7 +20,7 @@ A modeling tool for education should keep the mechanics of editing secondary to 
 
 Collaborative awareness can make shared modeling easier to follow. Showing collaborator names, cursor positions, selected elements, and followed viewports helps participants coordinate within the diagram instead of relying entirely on external communication. Providing this behavior through the reusable editor also makes it available to both the standalone application and Artemis.
 
-A common Apollon foundation can improve consistency across the ecosystem. The standalone web application, mobile/iOS application, VS Code extension, and Artemis can reuse the same editor behavior while retaining their specific workflows. Athena benefits from the same model foundation by continuing to process supported serialized Apollon models for feedback generation. This approach supports the transition away from legacy editor behavior without abandoning existing exercises, model-version compatibility, assessment processes, feedback services, or visual exports.
+A common Apollon foundation can improve consistency by allowing host applications to reuse editor behavior while retaining their specific workflows. Downstream feedback services can continue to process the serialized model formats required during the transition. This approach supports the move away from legacy editor behavior without abandoning existing exercises, assessment processes, feedback services, or visual exports.
 
 == Objectives
 
@@ -35,6 +35,6 @@ Together, these objectives address the user-facing experience and the systems ne
 
 == Outline
 
-Chapter 2, Background, introduces Apollon, Artemis, and Athena. Chapter 3, Related Work, covers modeling-tool usability, collaborative diagram editors, workspace awareness, and the positioning of this thesis. Chapter 4, Requirements, presents the existing and proposed system, functional requirements, non-functional requirements, constraints, and system models. Chapter 5, Architecture, describes the architecture and its subsystem boundaries.
+Chapter 2, Background, introduces Apollon and the educational systems around it. Chapter 3, Related Work, covers modeling-tool usability, collaborative diagram editors, workspace awareness, and the positioning of this thesis. Chapter 4, Requirements, presents the existing and proposed system, functional requirements, non-functional requirements, constraints, and system models. Chapter 5, Architecture, describes the architecture and its subsystem boundaries.
 
 Chapter 6, Implementation, documents the implementation according to the four objectives and relates each contribution to its requirement. Chapter 7, User Feedback and Findings, presents feedback, findings, and remaining limitations. Chapter 8, Summary, summarizes the work and identifies remaining directions for the Apollon ecosystem.

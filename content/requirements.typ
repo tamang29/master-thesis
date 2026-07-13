@@ -11,13 +11,13 @@
 
 This chapter specifies the requirements for enhancing Apollon. It follows the requirements analysis structure proposed by Bruegge and Dutoit @bruegge2004object. The analysis separates the application-domain requirements from implementation decisions and groups related requirements by feature area.
 
-The requirements evolved between January and June 2026. The proposal and roadmap defined initial objectives, implementation work exposed integration gaps, and validation in Apollon, Artemis, and Athena produced follow-up requirements. The chapter records the resulting requirements without reproducing the chronological order of implementation.
+The requirements evolved between January and June 2026. The proposal and roadmap defined initial objectives, implementation work exposed integration gaps, and validation across the relevant applications and services produced follow-up requirements. The chapter records the resulting requirements without reproducing the chronological order of implementation.
 
 == Overview <req-iterative>
 
-The thesis aims to reduce interaction effort in diagram editing, improve awareness during collaborative modeling, support standalone and mobile workflows, and maintain compatibility across the Apollon ecosystem. The scope covers the Apollon library, the standalone web application, the iOS application, Artemis, Athena, and the VS Code extension.
+The thesis aims to reduce interaction effort in diagram editing, improve awareness during collaborative modeling, support standalone and mobile workflows, and maintain compatibility across the library's application and service integrations.
 
-The project used an iterative reengineering process. Each cycle selected a requirement from the proposal or roadmap, implemented and evaluated the requirement in its integration context, and refined the requirement when the evaluation exposed missing behavior. The Artemis migration, for example, created follow-up requirements for quiz generation and Athena model compatibility.
+The project used an iterative reengineering process. Each cycle selected a requirement from the proposal or roadmap, implemented and evaluated the requirement in its integration context, and refined the requirement when the evaluation exposed missing behavior. The Artemis migration, for example, created follow-up requirements for quiz generation and downstream model compatibility.
 
 #table(
   columns: (1fr, 1.7fr, 0.8fr),
@@ -32,15 +32,15 @@ The project used an iterative reengineering process. Each cycle selected a requi
 
 == Existing System
 
-The existing Apollon ecosystem consisted of a legacy editor, a newer Apollon library and standalone application, separate mobile and VS Code projects, and integrations in Artemis and Athena. These components used different build and release processes.
+The existing Apollon ecosystem consisted of a legacy editor, a newer library and standalone application, separate mobile and development-tool projects, and educational integrations. These components used different build and release processes.
 
-The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile support, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment. Athena depended on earlier Apollon model formats for feedback generation. These dependencies limited replacement of the legacy integration.
+The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile support, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment, while downstream feedback generation depended on earlier model formats. These dependencies limited replacement of the legacy integration.
 
 == Proposed System <req-ecosystem>
 
 The proposed system uses the Apollon library as the shared foundation for diagram editing, rendering, collaboration awareness presentation, reusable editor behavior, and editor-side interaction behavior required by host workflows. The standalone web application and iOS application add navigation, persistence, sharing, and platform-specific export workflows without duplicating editor behavior.
 
-Apollon provides the shared editor behavior and model interaction, while Artemis connects this behavior to its exercise lifecycle, submissions, quiz generation, assessment data, access control, and persistence. Athena consumes serialized Apollon models for feedback generation, while the VS Code extension uses the maintained editor and renderer. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
+Apollon provides the shared editor behavior and model interaction, while Artemis connects this behavior to its exercise lifecycle, submissions, quiz generation, assessment data, access control, and persistence. Downstream feedback generation consumes serialized models, while development-tool integration uses the maintained editor and renderer. This arrangement establishes one maintained implementation for shared editor capabilities.
 
 == Functional Requirements
 
@@ -264,7 +264,7 @@ The use case model distinguishes people who create or assess learning activities
 
 A diagram consists of diagram elements. Nodes and edges specialize diagram elements, while containers can own nested elements. A selection references one or more elements. A collaboration session associates participants with transient cursor, selection, and viewport state without changing the persisted diagram model.
 
-An export request references a diagram and an output format and produces a derived export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments. Athena associates a feedback request with a serialized Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
+An export request references a diagram and an output format and produces a derived export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments, while a feedback request references a serialized Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
 
 @fig-requirements-analysis-model models the editor domain separately from host-specific course and infrastructure classes. A diagram owns its elements and versions. Nodes and edges specialize the abstract diagram element, while a collaboration session owns participants and their transient awareness state. Export requests produce artifacts without becoming part of the diagram model.
 
