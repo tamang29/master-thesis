@@ -22,7 +22,7 @@ The standalone web application owns the standalone home page, diagram routing, l
 
 == Design Goals <arch-decisions>
 
-The quality attributes and constraints in Chapter 4 determine the design goals. Compatibility has the highest priority because Artemis and Athena already serve active educational workflows. Usability follows because the thesis aims to reduce interaction effort. Reuse and maintainability guide the placement of shared behavior in the library.
+The non-functional requirements and constraints in Chapter 4 determine the design goals. Compatibility has the highest priority because Artemis and Athena already serve active educational workflows. Usability follows because the thesis aims to reduce interaction effort. Reuse and maintainability guide the placement of shared behavior in the library.
 
 A shared library reduces duplication but requires stable interfaces for several hosts. Server-side rendering improves deployment portability but must reproduce browser rendering accurately. The architecture resolves these conflicts by keeping shared model and rendering behavior in the Apollon library while leaving authentication, persistence, session infrastructure, and deployment policy to each host.
 

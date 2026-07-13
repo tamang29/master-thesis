@@ -5,13 +5,13 @@
   "type": "ComponentDiagram",
   "nodes": [
     {
-      "id": "webapp",
-      "width": 450,
-      "height": 630,
+      "id": "7a58912b-81b4-4107-a7c1-425dd28bd863",
+      "width": 310,
+      "height": 475,
       "type": "componentSubsystem",
       "position": {
-        "x": 55,
-        "y": 120
+        "x": 15,
+        "y": 1125
       },
       "data": {
         "name": "Standalone Web Application",
@@ -21,19 +21,20 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 450,
-        "height": 630
+        "width": 310,
+        "height": 475
       }
     },
     {
-      "id": "overview",
+      "id": "0844ba0d-ca77-4ef4-bea2-1736be637b0f",
       "width": 250,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 65,
-        "y": 95
+        "x": 40,
+        "y": 90
       },
+      "parentId": "7a58912b-81b4-4107-a7c1-425dd28bd863",
       "data": {
         "name": "Diagram Overview",
         "isComponentHeaderShown": true,
@@ -44,20 +45,20 @@
       "measured": {
         "width": 250,
         "height": 80
-      },
-      "parentId": "webapp"
+      }
     },
     {
-      "id": "local-editor",
+      "id": "cd5994f4-b9f0-4271-9aa4-4c581cfeea7a",
       "width": 250,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 65,
-        "y": 220
+        "x": 40,
+        "y": 205
       },
+      "parentId": "7a58912b-81b4-4107-a7c1-425dd28bd863",
       "data": {
-        "name": "Local Diagram Editor",
+        "name": "Apollon Diagram Editor",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
@@ -66,61 +67,38 @@
       "measured": {
         "width": 250,
         "height": 80
-      },
-      "parentId": "webapp"
+      }
     },
     {
-      "id": "shared-editor",
+      "id": "e4afaf83-e14d-4b30-9724-82eda35bcc3e",
       "width": 250,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 65,
-        "y": 345
+        "x": 40,
+        "y": 350
       },
-      "data": {
-        "name": "Shared Diagram Editor",
-        "isComponentHeaderShown": true,
-        "fillColor": "#ffe0ad",
-        "strokeColor": "#d08a00",
-        "textColor": "#000000"
-      },
-      "measured": {
-        "width": 250,
-        "height": 80
-      },
-      "parentId": "webapp"
-    },
-    {
-      "id": "version-history",
-      "width": 250,
-      "height": 80,
-      "type": "component",
-      "position": {
-        "x": 65,
-        "y": 470
-      },
+      "parentId": "7a58912b-81b4-4107-a7c1-425dd28bd863",
       "data": {
         "name": "Version History",
         "isComponentHeaderShown": true,
-        "fillColor": "#d9e8ff",
-        "strokeColor": "#4a86d9",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
       "measured": {
         "width": 250,
         "height": 80
-      },
-      "parentId": "webapp"
+      }
     },
     {
-      "id": "library",
-      "width": 360,
-      "height": 315,
+      "id": "0df50385-9866-45a3-843b-5c9d22cfc5be",
+      "width": 280,
+      "height": 300,
       "type": "componentSubsystem",
       "position": {
-        "x": 615,
-        "y": 270
+        "x": -430,
+        "y": 1260
       },
       "data": {
         "name": "Apollon Library (npm)",
@@ -130,19 +108,20 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 360,
-        "height": 315
+        "width": 280,
+        "height": 300
       }
     },
     {
-      "id": "diagram-editor",
+      "id": "a3f68a2f-dc87-45ad-a98a-e8a55d645cfe",
       "width": 220,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 75,
-        "y": 95
+        "x": 35,
+        "y": 70
       },
+      "parentId": "0df50385-9866-45a3-843b-5c9d22cfc5be",
       "data": {
         "name": "Diagram Editor",
         "isComponentHeaderShown": true,
@@ -153,17 +132,16 @@
       "measured": {
         "width": 220,
         "height": 80
-      },
-      "parentId": "library"
+      }
     },
     {
-      "id": "server",
-      "width": 500,
-      "height": 630,
+      "id": "4d7ac52d-911b-4585-a88a-80a3f269986d",
+      "width": 300,
+      "height": 480,
       "type": "componentSubsystem",
       "position": {
-        "x": 1100,
-        "y": 120
+        "x": 670,
+        "y": 1125
       },
       "data": {
         "name": "Standalone Server",
@@ -173,21 +151,22 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 500,
-        "height": 630
+        "width": 300,
+        "height": 480
       }
     },
     {
-      "id": "diagram-api",
+      "id": "4a794779-ca78-46c2-9bd4-fa597d683b9f",
       "width": 220,
       "height": 75,
       "type": "component",
       "position": {
-        "x": 70,
-        "y": 95
+        "x": 45,
+        "y": 85
       },
+      "parentId": "4d7ac52d-911b-4585-a88a-80a3f269986d",
       "data": {
-        "name": "Diagram API",
+        "name": "Diagram Service",
         "isComponentHeaderShown": true,
         "fillColor": "#ffe0ad",
         "strokeColor": "#d08a00",
@@ -196,24 +175,23 @@
       "measured": {
         "width": 220,
         "height": 75
-      },
-      "parentId": "server"
+      }
     },
     {
-      "id": "version-api",
+      "id": "82491257-c50e-4d72-b9a0-2fa97252f82e",
       "width": 220,
       "height": 75,
       "type": "component",
       "position": {
-        "x": 75,
-        "y": 475
+        "x": 45,
+        "y": 355
       },
-      "parentId": "server",
+      "parentId": "4d7ac52d-911b-4585-a88a-80a3f269986d",
       "data": {
-        "name": "Version API",
+        "name": "Version Service",
         "isComponentHeaderShown": true,
-        "fillColor": "#d9e8ff",
-        "strokeColor": "#4a86d9",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
         "textColor": "#000000"
       },
       "measured": {
@@ -222,13 +200,13 @@
       }
     },
     {
-      "id": "redis",
+      "id": "de99aa2e-8f2a-4b10-bc72-e594decd85f7",
       "width": 190,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 1200,
-        "y": 810
+        "x": 800,
+        "y": 1685
       },
       "data": {
         "name": "Redis Stack",
@@ -243,13 +221,13 @@
       }
     },
     {
-      "id": "legend-existing",
+      "id": "7923a394-3f32-48d5-97d7-09fba9af8106",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1200,
-        "y": 50
+        "x": 640,
+        "y": 1020
       },
       "data": {
         "name": "Existing",
@@ -263,13 +241,13 @@
       }
     },
     {
-      "id": "legend-modified",
+      "id": "8c98dd2b-854c-4eca-9d3c-698eea554f83",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1320,
-        "y": 50
+        "x": 760,
+        "y": 1020
       },
       "data": {
         "name": "Modified",
@@ -283,13 +261,13 @@
       }
     },
     {
-      "id": "legend-added",
+      "id": "88f3d47c-aa5c-4f4d-953a-abbe305338fd",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1440,
-        "y": 50
+        "x": 880,
+        "y": 1020
       },
       "data": {
         "name": "Added",
@@ -303,15 +281,15 @@
       }
     },
     {
-      "id": "9c982ced-6788-4f51-a354-c4ab1c1467dd",
+      "id": "9d60a5b5-574e-4a66-bbec-88cb68bd029b",
       "width": 220,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 75,
-        "y": 220
+        "x": 35,
+        "y": 180
       },
-      "parentId": "library",
+      "parentId": "0df50385-9866-45a3-843b-5c9d22cfc5be",
       "data": {
         "name": "State Synchronization",
         "isComponentHeaderShown": true,
@@ -325,15 +303,15 @@
       }
     },
     {
-      "id": "0266b713-c304-415e-90fb-fb06169b98bf",
+      "id": "27096bab-725a-4f0f-bdf0-1e3c0fb7682c",
       "width": 225,
       "height": 80,
       "type": "component",
       "position": {
-        "x": 70,
-        "y": 280
+        "x": 40,
+        "y": 205
       },
-      "parentId": "server",
+      "parentId": "4d7ac52d-911b-4585-a88a-80a3f269986d",
       "data": {
         "name": "WebSocket Relay",
         "isComponentHeaderShown": true,
@@ -345,73 +323,115 @@
         "width": 225,
         "height": 80
       }
+    },
+    {
+      "id": "30b385b9-4b32-4ca2-9ea1-993030ed6e65",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 500,
+        "y": 1235
+      },
+      "data": {
+        "name": "Diagram API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
+    },
+    {
+      "id": "d9f8e521-c741-42cb-bc23-924d52dbcc21",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 500,
+        "y": 1380
+      },
+      "data": {
+        "name": "Collaboration WebSocket"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
+    },
+    {
+      "id": "6808a2b0-b5d2-48de-9c21-654147402e29",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 500,
+        "y": 1500
+      },
+      "data": {
+        "name": "Version API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
+    },
+    {
+      "id": "0bd9e6f6-41d3-461e-baac-f40d68ebbb51",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": -75,
+        "y": 1355
+      },
+      "data": {
+        "name": "Apollon Editor API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
     }
   ],
   "edges": [
     {
-      "id": "overview-local",
-      "source": "overview",
-      "target": "local-editor",
-      "type": "ComponentDependency",
-      "sourceHandle": "bottom",
-      "targetHandle": "top",
-      "data": {
-        "points": []
-      }
-    },
-    {
-      "id": "overview-shared",
-      "source": "overview",
-      "target": "shared-editor",
-      "type": "ComponentDependency",
+      "id": "62aada55-7b66-40d8-a432-725d2c56007c",
+      "source": "4a794779-ca78-46c2-9bd4-fa597d683b9f",
+      "target": "30b385b9-4b32-4ca2-9ea1-993030ed6e65",
+      "type": "ComponentProvidedInterface",
       "sourceHandle": "left",
-      "targetHandle": "left",
+      "targetHandle": "right",
       "data": {
         "points": [],
-        "sourceAnchor": {
-          "side": "left",
-          "ratio": 0.5625
-        },
         "targetAnchor": {
-          "side": "left",
+          "side": "right",
           "ratio": 0.5
         }
       }
     },
     {
-      "id": "local-editor-library",
-      "source": "local-editor",
-      "target": "diagram-editor",
-      "type": "ComponentDependency",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "id": "7f6bdec4-a9c8-453d-a896-f434202450e8",
+      "source": "27096bab-725a-4f0f-bdf0-1e3c0fb7682c",
+      "target": "d9f8e521-c741-42cb-bc23-924d52dbcc21",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "left",
+      "targetHandle": "right",
       "data": {
         "points": [],
-        "targetAnchor": {
+        "sourceAnchor": {
           "side": "left",
-          "ratio": 0.1875
+          "ratio": 0.8125
+        },
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
         }
       }
     },
     {
-      "id": "shared-editor-library",
-      "source": "shared-editor",
-      "target": "diagram-editor",
-      "type": "ComponentDependency",
-      "sourceHandle": "right",
-      "targetHandle": "left",
-      "data": {
-        "points": [],
-        "targetAnchor": {
-          "side": "left",
-          "ratio": 0.875
-        }
-      }
-    },
-    {
-      "id": "shared-version",
-      "source": "shared-editor",
-      "target": "version-history",
+      "id": "3bc2c98a-2d94-427d-bc39-cd91fbda8cad",
+      "source": "a3f68a2f-dc87-45ad-a98a-e8a55d645cfe",
+      "target": "9d60a5b5-574e-4a66-bbec-88cb68bd029b",
       "type": "ComponentDependency",
       "sourceHandle": "bottom",
       "targetHandle": "top",
@@ -420,180 +440,102 @@
       }
     },
     {
-      "id": "shared-diagram-api",
-      "source": "shared-editor",
-      "target": "diagram-api",
-      "type": "ComponentDependency",
+      "id": "e8335f35-7417-4278-a4dd-de3ce9fb73d5",
+      "source": "cd5994f4-b9f0-4271-9aa4-4c581cfeea7a",
+      "target": "30b385b9-4b32-4ca2-9ea1-993030ed6e65",
+      "type": "ComponentRequiredInterface",
       "sourceHandle": "right",
       "targetHandle": "left",
       "data": {
-        "points": [
-          {
-            "x": 371,
-            "y": 505
-          },
-          {
-            "x": 401,
-            "y": 505
-          },
-          {
-            "x": 401,
-            "y": 600
-          },
-          {
-            "x": 1030,
-            "y": 600
-          },
-          {
-            "x": 1030,
-            "y": 255
-          },
-          {
-            "x": 1169,
-            "y": 255
-          }
-        ]
+        "points": []
       }
     },
     {
-      "id": "shared-version-api",
-      "source": "version-history",
-      "target": "version-api",
-      "type": "ComponentDependency",
+      "id": "4be66d72-f995-4d78-b622-2eda8807581d",
+      "source": "cd5994f4-b9f0-4271-9aa4-4c581cfeea7a",
+      "target": "d9f8e521-c741-42cb-bc23-924d52dbcc21",
+      "type": "ComponentRequiredInterface",
       "sourceHandle": "right",
       "targetHandle": "left",
       "data": {
-        "points": [],
         "sourceAnchor": {
           "side": "right",
           "ratio": 0.8125
         },
-        "targetAnchor": {
-          "side": "left",
-          "ratio": 0.8
-        }
+        "points": []
       }
     },
     {
-      "id": "shared-websocket",
-      "source": "shared-editor",
-      "target": "0266b713-c304-415e-90fb-fb06169b98bf",
-      "type": "ComponentDependency",
+      "id": "7a42e4e7-5abe-42ab-acef-2ba249d91459",
+      "source": "e4afaf83-e14d-4b30-9724-82eda35bcc3e",
+      "target": "6808a2b0-b5d2-48de-9c21-654147402e29",
+      "type": "ComponentRequiredInterface",
       "sourceHandle": "right",
       "targetHandle": "left",
       "data": {
-        "points": [
-          {
-            "x": 371,
-            "y": 505
-          },
-          {
-            "x": 401,
-            "y": 505
-          },
-          {
-            "x": 401,
-            "y": 630
-          },
-          {
-            "x": 1140,
-            "y": 630
-          },
-          {
-            "x": 1140,
-            "y": 440
-          },
-          {
-            "x": 1170,
-            "y": 440
-          }
-        ],
+        "points": []
+      }
+    },
+    {
+      "id": "57a12a1a-8c13-4044-b1cf-5f01ac581ea5",
+      "source": "6808a2b0-b5d2-48de-9c21-654147402e29",
+      "target": "82491257-c50e-4d72-b9a0-2fa97252f82e",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
         "targetAnchor": {
           "side": "left",
-          "ratio": 0.5
-        }
-      }
-    },
-    {
-      "id": "diagram-api-redis",
-      "source": "diagram-api",
-      "target": "redis",
-      "type": "ComponentDependency",
-      "sourceHandle": "right",
-      "targetHandle": "top",
-      "data": {
-        "points": [
-          {
-            "x": 1390,
-            "y": 255
-          },
-          {
-            "x": 1510,
-            "y": 255
-          },
-          {
-            "x": 1510,
-            "y": 779
-          },
-          {
-            "x": 1295,
-            "y": 779
-          },
-          {
-            "x": 1295,
-            "y": 809
-          }
-        ],
-        "sourceAnchor": {
-          "side": "right",
-          "ratio": 0.5333333333333333
-        }
-      }
-    },
-    {
-      "id": "version-api-redis",
-      "source": "version-api",
-      "target": "redis",
-      "type": "ComponentDependency",
-      "sourceHandle": "right",
-      "targetHandle": "top",
-      "data": {
-        "points": [
-          {
-            "x": 1395,
-            "y": 630
-          },
-          {
-            "x": 1445,
-            "y": 630
-          },
-          {
-            "x": 1445,
-            "y": 779
-          },
-          {
-            "x": 1295,
-            "y": 779
-          },
-          {
-            "x": 1295,
-            "y": 809
-          }
-        ],
-        "sourceAnchor": {
-          "side": "right",
           "ratio": 0.4666666666666667
-        }
+        },
+        "points": []
       }
     },
     {
-      "id": "615c5241-50cd-448e-ba67-15fab8bfa8e8",
-      "source": "diagram-editor",
-      "target": "9c982ced-6788-4f51-a354-c4ab1c1467dd",
+      "id": "57f793a7-c062-4945-a58b-8a89b0df07e7",
+      "source": "cd5994f4-b9f0-4271-9aa4-4c581cfeea7a",
+      "target": "0bd9e6f6-41d3-461e-baac-f40d68ebbb51",
+      "type": "ComponentRequiredInterface",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "add090e1-8d37-4367-b8f8-1b641e74161c",
+      "source": "a3f68a2f-dc87-45ad-a98a-e8a55d645cfe",
+      "target": "0bd9e6f6-41d3-461e-baac-f40d68ebbb51",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "e48c58dd-66b4-4e62-a845-e34b6de58294",
+      "source": "4a794779-ca78-46c2-9bd4-fa597d683b9f",
+      "target": "de99aa2e-8f2a-4b10-bc72-e594decd85f7",
       "type": "ComponentDependency",
-      "sourceHandle": "bottom",
+      "sourceHandle": "right",
+      "targetHandle": "right-top",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "ff3b29ed-8dbe-4b8d-ae12-96e5deb0cca8",
+      "source": "82491257-c50e-4d72-b9a0-2fa97252f82e",
+      "target": "de99aa2e-8f2a-4b10-bc72-e594decd85f7",
+      "type": "ComponentDependency",
+      "sourceHandle": "bottom-right",
       "targetHandle": "top",
       "data": {
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.47368421052631576
+        },
         "points": []
       }
     }

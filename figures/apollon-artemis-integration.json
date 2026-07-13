@@ -185,7 +185,7 @@
       "type": "component",
       "position": {
         "x": 55,
-        "y": 165
+        "y": 185
       },
       "parentId": "athena",
       "data": {
@@ -202,12 +202,12 @@
     },
     {
       "id": "library",
-      "width": 365,
-      "height": 325,
+      "width": 415,
+      "height": 335,
       "type": "componentSubsystem",
       "position": {
-        "x": 640,
-        "y": 145
+        "x": 1090,
+        "y": 360
       },
       "data": {
         "name": "Apollon Library (npm)",
@@ -217,8 +217,8 @@
         "textColor": "#000000"
       },
       "measured": {
-        "width": 365,
-        "height": 325
+        "width": 415,
+        "height": 335
       }
     },
     {
@@ -271,8 +271,8 @@
       "height": 180,
       "type": "componentSubsystem",
       "position": {
-        "x": 1215,
-        "y": 290
+        "x": 690,
+        "y": 155
       },
       "data": {
         "name": "Standalone Server",
@@ -309,73 +309,13 @@
       }
     },
     {
-      "id": "editor-api",
-      "width": 40,
-      "height": 40,
-      "type": "componentInterface",
-      "position": {
-        "x": 1100,
-        "y": 585
-      },
-      "data": {
-        "name": "Diagram Editor API",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": {
-        "width": 40,
-        "height": 40
-      }
-    },
-    {
-      "id": "export-api",
-      "width": 40,
-      "height": 40,
-      "type": "componentInterface",
-      "position": {
-        "x": 830,
-        "y": 485
-      },
-      "data": {
-        "name": "Diagram Conversion API",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": {
-        "width": 40,
-        "height": 40
-      }
-    },
-    {
-      "id": "feedback-api",
-      "width": 40,
-      "height": 40,
-      "type": "componentInterface",
-      "position": {
-        "x": 560,
-        "y": 720
-      },
-      "data": {
-        "name": "Feedback API",
-        "fillColor": "#ffffff",
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      },
-      "measured": {
-        "width": 40,
-        "height": 40
-      }
-    },
-    {
       "id": "legend-existing",
       "width": 120,
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1220,
-        "y": 55
+        "x": 1145,
+        "y": 60
       },
       "data": {
         "name": "Existing",
@@ -394,8 +334,8 @@
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1340,
-        "y": 55
+        "x": 1265,
+        "y": 60
       },
       "data": {
         "name": "Modified",
@@ -414,8 +354,8 @@
       "height": 44,
       "type": "colorDescription",
       "position": {
-        "x": 1460,
-        "y": 55
+        "x": 1385,
+        "y": 60
       },
       "data": {
         "name": "Added",
@@ -426,6 +366,57 @@
       "measured": {
         "width": 120,
         "height": 44
+      }
+    },
+    {
+      "id": "245fe943-70bc-44c2-afdb-20696cd9d893",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 565,
+        "y": 735
+      },
+      "data": {
+        "name": "Feedback API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
+    },
+    {
+      "id": "34271070-9ab8-4734-a1fb-6a494df5ea6c",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 845,
+        "y": 485
+      },
+      "data": {
+        "name": "Diagram Editor API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
+      }
+    },
+    {
+      "id": "5b5339cc-9298-431b-ab7d-e426ce0a47a9",
+      "width": 30,
+      "height": 30,
+      "type": "componentInterface",
+      "position": {
+        "x": 630,
+        "y": 405
+      },
+      "data": {
+        "name": "Diagram Conversion API"
+      },
+      "measured": {
+        "width": 30,
+        "height": 30
       }
     }
   ],
@@ -461,12 +452,37 @@
       "source": "assessment",
       "target": "modeling",
       "type": "ComponentDependency",
-      "sourceHandle": "top",
-      "targetHandle": "bottom",
+      "sourceHandle": "left",
+      "targetHandle": "left",
       "data": {
-        "points": [],
+        "points": [
+          {
+            "x": 105,
+            "y": 750
+          },
+          {
+            "x": 75,
+            "y": 750
+          },
+          {
+            "x": 75,
+            "y": 505
+          },
+          {
+            "x": 105,
+            "y": 505
+          }
+        ],
         "strokeColor": "#000000",
-        "textColor": "#000000"
+        "textColor": "#000000",
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.5555555555555556
+        },
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        }
       }
     },
     {
@@ -496,161 +512,125 @@
       }
     },
     {
-      "id": "editor-provides-api",
-      "source": "editor",
-      "target": "editor-api",
-      "type": "ComponentProvidedInterface",
-      "sourceHandle": "right",
-      "targetHandle": "top",
-      "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "targetAnchor": {
-          "side": "top",
-          "ratio": 0.5
-        }
-      }
-    },
-    {
-      "id": "modeling-requires-api",
-      "source": "modeling",
-      "target": "editor-api",
+      "id": "7c2959c3-6fc9-4db7-80f3-61daafb3b088",
+      "source": "assessment",
+      "target": "245fe943-70bc-44c2-afdb-20696cd9d893",
       "type": "ComponentRequiredInterface",
       "sourceHandle": "right",
       "targetHandle": "left",
       "data": {
-        "points": [
-          {
-            "x": 415,
-            "y": 530
-          },
-          {
-            "x": 445,
-            "y": 530
-          },
-          {
-            "x": 445,
-            "y": 605
-          },
-          {
-            "x": 1095,
-            "y": 605
-          }
-        ],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "sourceAnchor": {
-          "side": "right",
-          "ratio": 0.8333333333333334
-        }
+        "points": []
       }
     },
     {
-      "id": "playground-requires-api",
+      "id": "d2db5c7f-93ad-4064-a4fc-26283ed4b18a",
+      "source": "245fe943-70bc-44c2-afdb-20696cd9d893",
+      "target": "feedback-generator",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.625
+        },
+        "points": []
+      }
+    },
+    {
+      "id": "e493a10f-788f-4bbf-a05d-ec56719b6506",
+      "source": "converter",
+      "target": "34271070-9ab8-4734-a1fb-6a494df5ea6c",
+      "type": "ComponentRequiredInterface",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [
+          {
+            "x": 860,
+            "y": 311
+          },
+          {
+            "x": 860,
+            "y": 480
+          }
+        ]
+      }
+    },
+    {
+      "id": "7e2f58ad-77fc-4c21-a056-3b38ad4bd9d2",
+      "source": "editor",
+      "target": "34271070-9ab8-4734-a1fb-6a494df5ea6c",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "68386686-484e-4f30-9714-3cae833ddce4",
+      "source": "modeling",
+      "target": "34271070-9ab8-4734-a1fb-6a494df5ea6c",
+      "type": "ComponentRequiredInterface",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": []
+      }
+    },
+    {
+      "id": "28c69822-81fa-44db-b7e9-cc48a98a1f35",
       "source": "playground",
-      "target": "editor-api",
+      "target": "34271070-9ab8-4734-a1fb-6a494df5ea6c",
       "type": "ComponentRequiredInterface",
       "sourceHandle": "right",
       "targetHandle": "bottom",
       "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "sourceAnchor": {
-          "side": "right",
-          "ratio": 0.42857142857142855
-        }
-      }
-    },
-    {
-      "id": "converter-provides-export",
-      "source": "converter",
-      "target": "export-api",
-      "type": "ComponentProvidedInterface",
-      "sourceHandle": "bottom",
-      "targetHandle": "right",
-      "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "sourceAnchor": {
-          "side": "bottom",
-          "ratio": 0.5
-        }
-      }
-    },
-    {
-      "id": "converter-library",
-      "source": "converter",
-      "target": "library",
-      "type": "ComponentDependency",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "targetAnchor": {
-          "side": "right",
-          "ratio": 0.3384615384615385
-        }
-      }
-    },
-    {
-      "id": "feedback-provides-api",
-      "source": "feedback-generator",
-      "target": "feedback-api",
-      "type": "ComponentProvidedInterface",
-      "sourceHandle": "left",
-      "targetHandle": "right",
-      "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000"
-      }
-    },
-    {
-      "id": "assessment-requires-feedback",
-      "source": "assessment",
-      "target": "feedback-api",
-      "type": "ComponentRequiredInterface",
-      "sourceHandle": "right",
-      "targetHandle": "left",
-      "data": {
         "points": [
           {
-            "x": 415,
-            "y": 740
+            "x": 951,
+            "y": 860
           },
           {
-            "x": 555,
-            "y": 740
+            "x": 981,
+            "y": 860
+          },
+          {
+            "x": 981,
+            "y": 580
+          },
+          {
+            "x": 860,
+            "y": 580
+          },
+          {
+            "x": 860,
+            "y": 520
           }
-        ],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "sourceAnchor": {
-          "side": "right",
-          "ratio": 0.375
-        }
+        ]
       }
     },
     {
-      "id": "modeling-requires-export",
+      "id": "85c6a4d8-6f50-4e92-8e6d-c730c57b081c",
       "source": "modeling",
-      "target": "export-api",
+      "target": "5b5339cc-9298-431b-ab7d-e426ce0a47a9",
       "type": "ComponentRequiredInterface",
-      "sourceHandle": "right",
+      "sourceHandle": "top-right",
       "targetHandle": "left",
       "data": {
-        "points": [],
-        "strokeColor": "#000000",
-        "textColor": "#000000",
-        "sourceAnchor": {
-          "side": "right",
-          "ratio": 0.5555555555555556
-        }
+        "points": []
+      }
+    },
+    {
+      "id": "65eb09b7-e1ad-4679-8490-c902e0706e92",
+      "source": "converter",
+      "target": "5b5339cc-9298-431b-ab7d-e426ce0a47a9",
+      "type": "ComponentProvidedInterface",
+      "sourceHandle": "left",
+      "targetHandle": "top",
+      "data": {
+        "points": []
       }
     }
   ],

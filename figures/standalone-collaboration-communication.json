@@ -6,12 +6,12 @@
   "nodes": [
     {
       "id": "editor-a",
-      "width": 270,
-      "height": 92,
+      "width": 300,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 60,
-        "y": 300
+        "x": 895,
+        "y": -660
       },
       "data": {
         "name": "editorA: Diagram Editor",
@@ -24,18 +24,18 @@
         "methods": []
       },
       "measured": {
-        "width": 270,
-        "height": 92
+        "width": 300,
+        "height": 70
       }
     },
     {
       "id": "sync-a",
-      "width": 300,
-      "height": 92,
+      "width": 295,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 480,
-        "y": 100
+        "x": 710,
+        "y": -510
       },
       "data": {
         "name": "syncA: State Synchronization",
@@ -48,18 +48,18 @@
         "methods": []
       },
       "measured": {
-        "width": 300,
-        "height": 92
+        "width": 295,
+        "height": 70
       }
     },
     {
       "id": "relay",
-      "width": 340,
+      "width": 390,
       "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 930,
-        "y": 300
+        "x": 845,
+        "y": -300
       },
       "data": {
         "name": "relay: WebSocket Relay",
@@ -72,18 +72,18 @@
         "methods": []
       },
       "measured": {
-        "width": 340,
+        "width": 390,
         "height": 70
       }
     },
     {
       "id": "sync-b",
       "width": 300,
-      "height": 92,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 1430,
-        "y": 100
+        "x": 715,
+        "y": -85
       },
       "data": {
         "name": "syncB: State Synchronization",
@@ -97,17 +97,17 @@
       },
       "measured": {
         "width": 300,
-        "height": 92
+        "height": 70
       }
     },
     {
       "id": "editor-b",
-      "width": 270,
-      "height": 92,
+      "width": 330,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 1860,
-        "y": 300
+        "x": 890,
+        "y": 90
       },
       "data": {
         "name": "editorB: Diagram Editor",
@@ -120,18 +120,18 @@
         "methods": []
       },
       "measured": {
-        "width": 270,
-        "height": 92
+        "width": 330,
+        "height": 70
       }
     },
     {
       "id": "presence-a",
-      "width": 300,
-      "height": 92,
+      "width": 340,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 480,
-        "y": 500
+        "x": 1150,
+        "y": -510
       },
       "data": {
         "name": "awarenessA: Collaboration Awareness",
@@ -144,18 +144,18 @@
         "methods": []
       },
       "measured": {
-        "width": 300,
-        "height": 92
+        "width": 340,
+        "height": 70
       }
     },
     {
       "id": "presence-b",
-      "width": 300,
-      "height": 92,
+      "width": 310,
+      "height": 70,
       "type": "communicationObjectName",
       "position": {
-        "x": 1430,
-        "y": 500
+        "x": 1150,
+        "y": -85
       },
       "data": {
         "name": "awarenessB: Collaboration Awareness",
@@ -168,8 +168,8 @@
         "methods": []
       },
       "measured": {
-        "width": 300,
-        "height": 92
+        "width": 310,
+        "height": 70
       }
     }
   ],
@@ -179,10 +179,23 @@
       "source": "editor-a",
       "target": "sync-a",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "left",
+      "targetHandle": "top",
       "data": {
-        "points": [],
+        "points": [
+          {
+            "x": 895,
+            "y": -610
+          },
+          {
+            "x": 810,
+            "y": -610
+          },
+          {
+            "x": 810,
+            "y": -510
+          }
+        ],
         "strokeColor": "#000000",
         "textColor": "#000000",
         "messages": [
@@ -191,7 +204,15 @@
             "text": "1.1: local model change",
             "direction": "target"
           }
-        ]
+        ],
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.7142857142857143
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.3389830508474576
+        }
       }
     },
     {
@@ -199,10 +220,23 @@
       "source": "sync-a",
       "target": "relay",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
+      "sourceHandle": "bottom",
       "targetHandle": "left",
       "data": {
-        "points": [],
+        "points": [
+          {
+            "x": 810,
+            "y": -440
+          },
+          {
+            "x": 810,
+            "y": -280
+          },
+          {
+            "x": 845,
+            "y": -280
+          }
+        ],
         "strokeColor": "#000000",
         "textColor": "#000000",
         "messages": [
@@ -226,6 +260,20 @@
             "text": "3.5: broadcast local full state",
             "direction": "target"
           }
+        ],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.3389830508474576
+        },
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.2857142857142857
+        },
+        "labels": [
+          "1.2: send CRDT document update",
+          "3.1 [connect/reconnect]: request peer state",
+          "3.4: relay complete peer state",
+          "3.5: broadcast local full state"
         ]
       }
     },
@@ -234,8 +282,8 @@
       "source": "relay",
       "target": "sync-b",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
       "data": {
         "points": [],
         "strokeColor": "#000000",
@@ -261,7 +309,15 @@
             "text": "3.6: relay local full state",
             "direction": "target"
           }
-        ]
+        ],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.16666666666666666
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.65
+        }
       }
     },
     {
@@ -269,8 +325,8 @@
       "source": "sync-b",
       "target": "editor-b",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
       "data": {
         "points": [],
         "strokeColor": "#000000",
@@ -281,7 +337,15 @@
             "text": "1.4: apply update and re-render",
             "direction": "target"
           }
-        ]
+        ],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.06060606060606061
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.65
+        }
       }
     },
     {
@@ -290,7 +354,7 @@
       "target": "presence-a",
       "type": "CommunicationLink",
       "sourceHandle": "right",
-      "targetHandle": "left",
+      "targetHandle": "top",
       "data": {
         "points": [],
         "strokeColor": "#000000",
@@ -301,7 +365,15 @@
             "text": "2.1: update local awareness",
             "direction": "target"
           }
-        ]
+        ],
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.7142857142857143
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.39705882352941174
+        }
       }
     },
     {
@@ -309,10 +381,23 @@
       "source": "presence-a",
       "target": "relay",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom",
+      "targetHandle": "right",
       "data": {
-        "points": [],
+        "points": [
+          {
+            "x": 1285,
+            "y": -440
+          },
+          {
+            "x": 1285,
+            "y": -285
+          },
+          {
+            "x": 1235,
+            "y": -285
+          }
+        ],
         "strokeColor": "#000000",
         "textColor": "#000000",
         "messages": [
@@ -321,7 +406,15 @@
             "text": "2.2: send awareness update",
             "direction": "target"
           }
-        ]
+        ],
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.21428571428571427
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.39705882352941174
+        }
       }
     },
     {
@@ -329,8 +422,8 @@
       "source": "relay",
       "target": "presence-b",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
       "data": {
         "points": [],
         "strokeColor": "#000000",
@@ -346,7 +439,15 @@
             "text": "4 [disconnect]: clear stale presence",
             "direction": "target"
           }
-        ]
+        ],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.9358974358974359
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.1935483870967742
+        }
       }
     },
     {
@@ -354,8 +455,8 @@
       "source": "presence-b",
       "target": "editor-b",
       "type": "CommunicationLink",
-      "sourceHandle": "right",
-      "targetHandle": "left",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
       "data": {
         "points": [],
         "strokeColor": "#000000",
@@ -366,7 +467,15 @@
             "text": "2.4: render cursor, selection, drag, and follow",
             "direction": "target"
           }
-        ]
+        ],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.9696969696969697
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.1935483870967742
+        }
       }
     }
   ],

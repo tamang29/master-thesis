@@ -1,0 +1,33 @@
+{
+  "id": "requirements-analysis-object-model",
+  "version": "4.1.0",
+  "title": "Apollon Analysis Object Model",
+  "type": "ClassDiagram",
+  "nodes": [
+    {"id":"diagram","width":230,"height":150,"type":"class","position":{"x":40,"y":30},"data":{"name":"Diagram","attributes":[{"id":"d1","name":"+ id: Identifier"},{"id":"d2","name":"+ title: String"},{"id":"d3","name":"+ type: DiagramType"},{"id":"d4","name":"+ schemaVersion: String"}],"methods":[]},"measured":{"width":230,"height":150}},
+    {"id":"element","width":230,"height":110,"type":"class","position":{"x":370,"y":30},"data":{"name":"DiagramElement","stereotype":"Abstract","attributes":[{"id":"e1","name":"+ id: Identifier"}],"methods":[]},"measured":{"width":230,"height":110}},
+    {"id":"node","width":210,"height":120,"type":"class","position":{"x":700,"y":20},"data":{"name":"Node","attributes":[{"id":"n1","name":"+ position: Point"},{"id":"n2","name":"+ size: Dimension"}],"methods":[]},"measured":{"width":210,"height":120}},
+    {"id":"edge","width":210,"height":120,"type":"class","position":{"x":700,"y":190},"data":{"name":"Edge","attributes":[{"id":"e2","name":"+ source: Node"},{"id":"e3","name":"+ target: Node"}],"methods":[]},"measured":{"width":210,"height":120}},
+    {"id":"container","width":210,"height":90,"type":"class","position":{"x":1020,"y":20},"data":{"name":"Container","attributes":[],"methods":[{"id":"c1","name":"+ contain(element)"}]},"measured":{"width":210,"height":90}},
+    {"id":"assessment","width":240,"height":130,"type":"class","position":{"x":370,"y":230},"data":{"name":"ElementAssessment","attributes":[{"id":"a1","name":"+ score: Number"},{"id":"a2","name":"+ feedback: String"}],"methods":[]},"measured":{"width":240,"height":130}},
+    {"id":"version","width":230,"height":150,"type":"class","position":{"x":40,"y":250},"data":{"name":"DiagramVersion","attributes":[{"id":"v1","name":"+ id: Identifier"},{"id":"v2","name":"+ name: String"},{"id":"v3","name":"+ kind: VersionKind"},{"id":"v4","name":"+ createdAt: DateTime"}],"methods":[]},"measured":{"width":230,"height":150}},
+    {"id":"session","width":240,"height":110,"type":"class","position":{"x":40,"y":500},"data":{"name":"CollaborationSession","attributes":[{"id":"s1","name":"+ id: Identifier"}],"methods":[{"id":"s2","name":"+ join(participant)"}]},"measured":{"width":240,"height":110}},
+    {"id":"participant","width":230,"height":130,"type":"class","position":{"x":370,"y":480},"data":{"name":"Participant","attributes":[{"id":"p1","name":"+ id: Identifier"},{"id":"p2","name":"+ name: String"},{"id":"p3","name":"+ color: Color"}],"methods":[]},"measured":{"width":230,"height":130}},
+    {"id":"awareness","width":260,"height":170,"type":"class","position":{"x":700,"y":450},"data":{"name":"AwarenessState","attributes":[{"id":"w1","name":"+ cursor: Point"},{"id":"w2","name":"+ viewport: Viewport"},{"id":"w3","name":"+ selectedElement: Identifier"},{"id":"w4","name":"+ followedParticipant: Identifier"}],"methods":[]},"measured":{"width":260,"height":170}},
+    {"id":"request","width":230,"height":150,"type":"class","position":{"x":40,"y":720},"data":{"name":"ExportRequest","attributes":[{"id":"r1","name":"+ diagramId: Identifier"},{"id":"r2","name":"+ format: ExportFormat"}],"methods":[{"id":"r3","name":"+ generate()"}]},"measured":{"width":230,"height":150}},
+    {"id":"artifact","width":230,"height":120,"type":"class","position":{"x":370,"y":730},"data":{"name":"ExportArtifact","attributes":[{"id":"x1","name":"+ format: ExportFormat"},{"id":"x2","name":"+ content: Binary"}],"methods":[]},"measured":{"width":230,"height":120}}
+  ],
+  "edges": [
+    {"id":"aom1","source":"diagram","target":"element","type":"ClassComposition","sourceHandle":"right","targetHandle":"left","data":{"sourceMultiplicity":"1","targetMultiplicity":"0..*","targetRole":"elements","points":[]}},
+    {"id":"aom2","source":"node","target":"element","type":"ClassInheritance","sourceHandle":"left","targetHandle":"right","data":{"points":[]}},
+    {"id":"aom3","source":"edge","target":"element","type":"ClassInheritance","sourceHandle":"left","targetHandle":"right","data":{"points":[]}},
+    {"id":"aom4","source":"container","target":"node","type":"ClassInheritance","sourceHandle":"left","targetHandle":"right","data":{"points":[]}},
+    {"id":"aom8","source":"assessment","target":"element","type":"ClassUnidirectional","sourceHandle":"top","targetHandle":"bottom","data":{"targetMultiplicity":"1","targetRole":"subject","points":[]}},
+    {"id":"aom9","source":"diagram","target":"version","type":"ClassComposition","sourceHandle":"bottom","targetHandle":"top","data":{"sourceMultiplicity":"1","targetMultiplicity":"0..*","targetRole":"versions","points":[]}},
+    {"id":"aom10","source":"session","target":"diagram","type":"ClassUnidirectional","sourceHandle":"left","targetHandle":"left","data":{"sourceMultiplicity":"0..1","targetMultiplicity":"1","targetRole":"shared diagram","points":[{"x":10,"y":555},{"x":10,"y":105}]}},
+    {"id":"aom11","source":"session","target":"participant","type":"ClassComposition","sourceHandle":"right","targetHandle":"left","data":{"sourceMultiplicity":"1","targetMultiplicity":"1..*","targetRole":"participants","points":[]}},
+    {"id":"aom12","source":"participant","target":"awareness","type":"ClassComposition","sourceHandle":"right","targetHandle":"left","data":{"sourceMultiplicity":"1","targetMultiplicity":"0..1","targetRole":"transient state","points":[]}},
+    {"id":"aom15","source":"request","target":"artifact","type":"ClassUnidirectional","sourceHandle":"right","targetHandle":"left","data":{"sourceMultiplicity":"1","targetMultiplicity":"0..1","targetRole":"result","points":[]}}
+  ],
+  "assessments": {}
+}

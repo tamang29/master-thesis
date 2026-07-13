@@ -46,7 +46,7 @@ Several smaller improvements completed the edge usability work. The edge toolbar
 
 The edge implementation was supported by unit and end-to-end tests for bending behavior, handle hit-testing, zoom behavior, endpoint markers, migration cleanup, edge decorations, and reconnection behavior. These tests are important because edge interaction combines persisted diagram data, runtime geometry, pointer interaction, and rendering behavior. Small regressions in one of these areas can make existing diagrams harder to edit or read.
 
-The implemented work improves direct manipulation of edges, but it does not fully solve all edge-related usability problems. Later feedback still requested easier straight-line correction, larger selectable areas, more flexible anchor behavior, and stronger snapping support for specific layout situations. These remaining issues are discussed in Chapter 7 and remain future work.
+Later feedback led to additional edge refinements. Straight-line correction was simplified, selectable areas were enlarged, anchor behavior and connection controls were adapted to element geometry, and routing for nearby elements was made more compact to avoid unnecessary detours and U-shaped artifacts. Manual placement for edge labels, including decision labels in activity diagrams, was also added after the walkthrough feedback. These follow-up changes addressed the concrete issues reported during the feedback process rather than leaving them solely as future work.
 
 === Alignment and Editing Controls <impl-app-usability>
 
@@ -60,19 +60,13 @@ The editor also gained class attribute and method reordering, keyboard deletion 
 
 Related requirement: #section-link(<req-app-usability>).
 
-The library was exposed more explicitly for React applications. This work reduced the amount of custom wrapper code required by consumers and helped keep the standalone application and Artemis closer to the same editor behavior.
+The library now exports a reusable React component and hooks for embedding and accessing the editor. React host applications can therefore integrate Apollon through the library's supported API instead of maintaining application-specific wrappers. This keeps the standalone application and Artemis closer to the same editor lifecycle and behavior.
 
-=== iOS Export <impl-ios-export>
-
-Related requirement: #section-link(<req-ios-mobile>).
-
-The iOS application gained file export support for PNG, PDF, JSON, and SVG. Later work added animatable PPTX export for the iOS application. These features implement the mobile export requirements within the constraints of the Capacitor-based app.
-
-=== Mobile Platform Support <impl-mobile-platform>
+=== iOS Export and Platform Support <impl-ios-export>
 
 Related requirement: #section-link(<req-ios-mobile>).
 
-The Capacitor application was extended with local server support for workflows that require app-local services. This made mobile export and related standalone workflows less dependent on desktop browser assumptions.
+The iOS application gained file export support for PNG, PDF, JSON, and SVG. Later work added animatable PPTX export for the iOS application. The Capacitor application was also extended with local server support for workflows that require app-local services. Together, these changes implement mobile export and file handling within the constraints of the Capacitor-based application and reduce dependence on desktop-browser assumptions.
 
 === Standalone Home Page and Routing <impl-standalone-home>
 
@@ -152,10 +146,6 @@ Viewport following uses the same separation of concerns as the earlier awareness
   caption: [Third collaboration iteration: viewport following synchronizes the local view with a selected collaborator.],
 )
 
-=== Library Migration <impl-collaboration-library>
-
-Related requirement: #section-link(<req-collaboration>).
-
 After the standalone implementation proved useful, collaboration awareness was moved toward the library boundary. This kept selected-element highlights, live cursors, participant identity, and viewport following out of the persisted diagram model while making the awareness presentation reusable by host applications. Host applications still own the collaboration transport, session lifecycle, authentication, and persistence decisions, but the editor can provide a consistent awareness surface once it receives the corresponding transient state.
 
 === Team Modeling in Artemis <impl-team-modeling>
@@ -212,21 +202,15 @@ The VS Code extension was moved into the Apollon monorepo and updated to the mai
 
 The export and rendering work implements #section-link(<req-export-rendering>). It spans library rendering, standalone server conversion, and mobile export behavior.
 
-=== Server-Side PDF Export <impl-server-pdf>
+=== Server-Side PDF Export and Rendering <impl-server-pdf>
 
 Related requirement: #section-link(<req-export-rendering>).
 
-PDF export is needed when diagrams are used outside the editor, for example in reports, teaching material, documentation, and learning-platform workflows. Client-side export is useful during interactive editing, but it does not cover all situations in which an application or service should generate a stable artifact from diagram data. The implementation therefore added a server-side PDF export path to the standalone application.
+PDF export is needed when diagrams are used outside the editor, for example in reports, teaching material, documentation, and learning-platform workflows. Client-side export is useful during interactive editing, but it does not cover all situations in which an application or service should generate a stable artifact from diagram data. The implementation therefore added a server-side PDF export path to the standalone application and made the rendering path independent of a full interactive browser.
 
 The export path connected the standalone server to Apollon's diagram conversion workflow. The server receives diagram data through an export endpoint, converts the model into a renderable representation, and returns a PDF artifact to the caller. Implementing this workflow required server routing, export service logic, endpoint path integration, model conversion handling, and configuration changes so the server-side code could use the relevant Apollon rendering functionality. During integration, the endpoint and request handling were refined, and error handling was improved so conversion failures could be reported without modifying the original diagram data.
 
-The result was a service-based PDF export capability that moved export generation beyond a purely browser-local interaction. This made PDF generation easier to integrate into application workflows where the exported artifact is requested from a server instead of produced manually by the user in the editor. Later work generalized and hardened the conversion infrastructure further, but the server-side PDF export path formed the basis for providing diagram export through the standalone server.
-
-=== JSDOM and React Flow Server-Side Rendering <impl-jsdom-ssr>
-
-Related requirement: #section-link(<req-export-rendering>).
-
-The conversion service was changed from a Playwright-based implementation to JSDOM and React Flow server-side rendering. This made the conversion path better suited for server and container environments that should not depend on a full browser runtime.
+The conversion service was changed from a Playwright-based implementation to JSDOM and React Flow server-side rendering. The resulting service receives a diagram model, creates the renderable representation without launching a browser, and returns the derived PDF artifact. This makes PDF generation available through the standalone server and better suited to server and container environments, while conversion failures can be reported without modifying the original diagram data.
 
 === SVG Export and Diagram Rendering <impl-svg-rendering>
 

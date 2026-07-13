@@ -75,7 +75,7 @@ These requirements cover recurring editing actions beyond edge manipulation. Sha
   [Align diagram elements], [The editor shall show alignment guides while users move elements, including elements inside parent elements.], [#section-link(<impl-app-usability>)],
   [Support editing controls], [Users shall delete selected elements with the keyboard and reorder class attributes and methods.], [#section-link(<impl-app-usability>)],
   [Control canvas scrolling], [Host applications shall enable a mode that prevents unintended canvas movement.], [#section-link(<impl-app-usability>)],
-  [Add React API], [React applications can use existing component directly from the library.], [#section-link(<impl-library-usability>)],
+  [Expose a React API], [React host applications shall embed the Apollon editor through reusable components and hooks exported by the library.], [#section-link(<impl-library-usability>)],
 )
 
 === Collaborative Modeling <req-collaboration>
@@ -89,7 +89,7 @@ Collaborative modeling requires awareness of other participants in addition to s
   table.header([Requirement], [Description], [Implemented in]),
   [Show collaborator activity], [Users shall see collaborator cursors with participant identity and highlighted elements selected or dragged by others during a shared session.], [#section-link(<impl-collaboration-awareness>)],
   [Follow a collaborator], [A user shall follow another participant's viewport during synchronous modeling.], [#section-link(<impl-collaboration-awareness>)],
-  [Reuse collaboration awareness], [Host applications shall reuse the library's awareness presentation with host-provided session events.], [#section-link(<impl-collaboration-library>)],
+  [Reuse collaboration awareness], [Host applications shall reuse the library's awareness presentation with host-provided session events.], [#section-link(<impl-collaboration-awareness>)],
   [Support team modeling], [Artemis shall provide collaboration awareness in team modeling exercises.], [#section-link(<impl-team-modeling>)],
 )
 
@@ -117,7 +117,7 @@ The iOS application extends the standalone workflow with Capacitor-based file ac
   table.header([Requirement], [Description], [Implemented in]),
   [Export diagram files], [Users shall export diagrams as PNG, PDF, JSON, and SVG files from the iOS application.], [#section-link(<impl-ios-export>)],
   [Export presentations], [Users shall export diagrams as animatable PPTX presentations from the iOS application.], [#section-link(<impl-ios-export>)],
-  [Use application services], [The Capacitor application shall access app-local services required by export workflows and mobile file handling.], [#section-link(<impl-mobile-platform>)],
+  [Use application services], [The Capacitor application shall access app-local services required by export workflows and mobile file handling.], [#section-link(<impl-ios-export>)],
 )
 
 === Artemis Integration <req-artemis>
@@ -170,14 +170,13 @@ Export requirements cover server-generated PDF files and SVG files used outside 
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Generate PDF files], [A server endpoint shall receive a diagram model and return a derived PDF artifact.], [#section-link(<impl-server-pdf>)],
-  [Render diagrams on the server], [The conversion service shall render diagrams without an interactive browser session.], [#section-link(<impl-jsdom-ssr>)],
+  [Generate PDFs on the server], [The conversion service shall receive a diagram model, render it without an interactive browser session, and return a PDF artifact.], [#section-link(<impl-server-pdf>)],
   [Generate compatible SVG files], [Derived SVG artifacts shall support external consumers and preserve text, clipping, nodes, and edges.], [#section-link(<impl-svg-rendering>)],
 )
 
 == Non-Functional Requirements
 
-Non-functional requirements define how well the proposed system shall provide its functional behavior. The attributes use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
+Non-functional requirements define how well the proposed system shall provide its functional behavior. They use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
 
 The thesis prioritizes usability and compatibility because Apollon serves repeated editing workflows and forms part of existing educational systems. Maintainability and portability support continued use across the library, standalone application, mobile application, and integrations.
 
@@ -187,10 +186,10 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   columns: (0.8fr, 1.1fr, 2fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([ID], [Attribute], [Quality requirement]),
-  [QA-U1], [Interaction efficiency], [Users should adjust edges and align elements with fewer corrective actions than in the existing editor.],
-  [QA-U2], [Predictability], [Editing actions should behave consistently in standalone, embedded, quiz, and assessment contexts.],
-  [QA-U4], [Mobile usability], [Export workflows should remain usable with touch input and platform file dialogs.],
+  table.header([ID], [Attribute], [Non-functional requirement]),
+  [NF-U1], [Interaction efficiency], [Users should adjust edges and align elements with fewer corrective actions than in the existing editor.],
+  [NF-U2], [Predictability], [Editing actions should behave consistently in standalone, embedded, quiz, and assessment contexts.],
+  [NF-U3], [Mobile usability], [Export workflows should remain usable with touch input and platform file dialogs.],
 )
 
 === Reliability and Compatibility
@@ -199,10 +198,10 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   columns: (0.8fr, 1.1fr, 2fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([ID], [Attribute], [Quality requirement]),
-  [QA-R1], [Export correctness], [Exports should preserve diagram bounds, labels, nodes, edges, and notation-specific rendering.],
-  [QA-R2], [Integration compatibility], [Artemis modeling, quiz, assessment, and team modeling workflows should continue to function after migration.],
-  [QA-R3], [Feedback continuity], [Athena should continue generating feedback for supported historical and current model formats.],
+  table.header([ID], [Attribute], [Non-functional requirement]),
+  [NF-R1], [Export correctness], [Exports should preserve diagram bounds, labels, nodes, edges, and notation-specific rendering.],
+  [NF-R2], [Integration compatibility], [Artemis modeling, quiz, assessment, and team modeling workflows should continue to function after migration.],
+  [NF-R3], [Feedback continuity], [Athena should continue generating feedback for supported historical and current model formats.],
 )
 
 === Maintainability and Portability
@@ -211,10 +210,10 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   columns: (0.8fr, 1.1fr, 2fr),
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
-  table.header([ID], [Attribute], [Quality requirement]),
-  [QA-S1], [Reuse], [Shared editing behavior and awareness presentation should reside in the library, while host applications own persistence, access control, and session infrastructure.],
-  [QA-S2], [Consistency], [Standalone, Artemis, mobile, and VS Code integrations should use the maintained renderer and model definitions.],
-  [QA-S3], [Deployment portability], [Server-side conversion should operate in the deployment environment without a full interactive browser.],
+  table.header([ID], [Attribute], [Non-functional requirement]),
+  [NF-M1], [Reuse], [Shared editing behavior and awareness presentation should reside in the library, while host applications own persistence, access control, and session infrastructure.],
+  [NF-M2], [Consistency], [Standalone, Artemis, mobile, and VS Code integrations should use the maintained renderer and model definitions.],
+  [NF-M3], [Deployment portability], [Server-side conversion should operate in the deployment environment without a full interactive browser.],
 )
 
 == Constraints
@@ -252,21 +251,14 @@ The relevant actors are students, instructors, assessors, standalone users, and 
 
 === Use Case Model
 
-The use case model distinguishes people who create or assess learning activities from people who edit diagrams. Students and standalone users edit, collaborate, navigate, and export diagrams. Instructors create modeling and quiz exercises, while assessors inspect submissions and assign scores. Artemis acts as an external host for editor behavior and model data. Athena consumes serialized Apollon models and provides feedback.
+The use case model distinguishes people who create or assess learning activities from people who edit diagrams. The Diagram User actor represents students and standalone users who create, manage, collaborate on, and export diagrams. Instructors create modeling and quiz exercises, while assessors inspect submissions and assign scores. Artemis acts as an external host for the embedded editor and its model data. Athena consumes serialized Apollon models and provides generated feedback.
 
-The table summarizes the central use cases without adding implementation-specific components.
+@fig-requirements-use-cases derives these goals from the functional requirements without introducing implementation-specific components. White use cases existed before this thesis, orange use cases were modified, and blue use cases were added. Following a collaborator extends collaborative editing, presentation export extends the general export workflow, and diagram quiz creation includes selecting the quiz elements. This separation makes the preserved educational workflow, the enhanced editor and integration behavior, and the newly introduced standalone and collaboration behavior explicit.
 
-#table(
-  columns: (1fr, 2.2fr),
-  inset: (x: 5pt, y: 4pt),
-  align: (left, left),
-  table.header([Actor], [Primary use cases]),
-  [Student or standalone user], [Create and edit a diagram; collaborate; open an existing diagram; export a diagram.],
-  [Instructor], [Create modeling exercises; create drag-and-drop quizzes; start team modeling sessions.],
-  [Assessor], [Inspect diagram elements; open assessment controls; assign scores.],
-  [Artemis], [Embed the editor; manage exercises and sessions; persist submissions.],
-  [Athena], [Read supported serialized Apollon models; generate modeling feedback.],
-)
+#figure(
+  image("/figures/requirements-use-case-model.png", width: 100%),
+  caption: [Use-case model of the actors and primary goals of the Apollon system.],
+) <fig-requirements-use-cases>
 
 === Analysis Object Model
 
@@ -274,14 +266,41 @@ A diagram consists of diagram elements. Nodes and edges specialize diagram eleme
 
 An export request references a diagram and an output format and produces a derived export artifact. Artemis associates diagrams with modeling exercises, quiz exercises, and assessments. Athena associates a feedback request with a serialized Apollon model. These concepts define the application domain used by the architecture in Chapter 5.
 
+@fig-requirements-analysis-model models the editor domain separately from host-specific course and infrastructure classes. A diagram owns its elements and versions. Nodes and edges specialize the abstract diagram element, while a collaboration session owns participants and their transient awareness state. Export requests produce artifacts without becoming part of the diagram model.
+
+#figure(
+  image("/figures/requirements-analysis-object-model.png", width: 100%),
+  caption: [Analysis object model of diagrams, collaboration state, versions, assessments, and exports.],
+) <fig-requirements-analysis-model>
+
 === Dynamic Model
 
 The central editing activity begins when a user opens or creates a diagram. Editing actions update diagram data, while collaboration actions update transient collaboration state. The user can save, share, submit, or export the diagram. Validation or conversion failures return the user to the current diagram without discarding its state.
 
 The integration activity begins when Artemis loads a modeling, quiz, or assessment context and initializes Apollon with the corresponding mode. Artemis receives changed diagram or selection data and persists exercise-specific results. Athena separately receives a feedback request, selects a compatible parser for the model version, and returns generated feedback.
 
+@fig-requirements-dynamic-model separates persisted diagram changes from optional transient collaboration updates. The latter occur only in a collaborative session. Leaving the editing loop persists or submits the diagram, after which export remains an optional derived operation.
+
+#pagebreak()
+#set page(flipped: true)
+#figure(
+  image("/figures/requirements-editing-activity-model.png", width: 100%),
+  caption: [Activity model of the diagram editing, persistence, collaboration, and export flow.],
+) <fig-requirements-dynamic-model>
+#pagebreak()
+#set page(flipped: false)
+
 === User Interface
 
 The requirements distinguish three interface areas. The editor provides the canvas and editing controls, the standalone home page lists local and shared diagrams, and the iOS application connects editor actions to platform file export. Collaboration indicators remain close to the canvas because they describe the current session.
 
-The proposal mockups define the intended navigation and mobile workflows. Implementation screenshots belong in Chapter 6, where they can document the realized interfaces and explain differences between the initial mockups and the final behavior.
+@fig-requirements-ui-model represents the standalone navigation independently of a particular visual design. The diagram overview leads to new, local, or shared diagrams. From the editor, users can inspect version history, configure sharing, export an artifact, or return to the overview. Implementation screenshots belong in Chapter 6, where they document the realized interfaces.
+
+#pagebreak()
+#set page(flipped: true)
+#figure(
+  image("/figures/requirements-ui-navigation-model.png", width: 80%),
+  caption: [Activity model of the standalone user-interface navigation.],
+) <fig-requirements-ui-model>
+#pagebreak()
+#set page(flipped: false)

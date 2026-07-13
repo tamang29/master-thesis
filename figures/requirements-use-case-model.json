@@ -1,0 +1,434 @@
+{
+  "id": "requirements-use-case-model",
+  "version": "4.1.0",
+  "title": "Apollon Use Case Model",
+  "type": "UseCaseDiagram",
+  "nodes": [
+    {
+      "id": "system",
+      "width": 1020,
+      "height": 930,
+      "type": "useCaseSystem",
+      "position": { "x": 220, "y": 20 },
+      "data": {
+        "name": "Apollon",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 1020, "height": 930 }
+    },
+    {
+      "id": "diagram-user",
+      "width": 120,
+      "height": 150,
+      "type": "useCaseActor",
+      "position": { "x": 30, "y": 250 },
+      "data": {
+        "name": "Diagram User",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 150 }
+    },
+    {
+      "id": "instructor",
+      "width": 120,
+      "height": 150,
+      "type": "useCaseActor",
+      "position": { "x": 1320, "y": 70 },
+      "data": {
+        "name": "Instructor",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 150 }
+    },
+    {
+      "id": "artemis",
+      "width": 120,
+      "height": 150,
+      "type": "useCaseActor",
+      "position": { "x": 1320, "y": 570 },
+      "data": {
+        "name": "Artemis",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 150 }
+    },
+    {
+      "id": "assessor",
+      "width": 120,
+      "height": 150,
+      "type": "useCaseActor",
+      "position": { "x": 1320, "y": 330 },
+      "data": {
+        "name": "Assessor",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 150 }
+    },
+    {
+      "id": "athena",
+      "width": 120,
+      "height": 150,
+      "type": "useCaseActor",
+      "position": { "x": 1320, "y": 820 },
+      "data": {
+        "name": "Athena",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 150 }
+    },
+    {
+      "id": "edit-diagram",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 70, "y": 70 },
+      "parentId": "system",
+      "data": {
+        "name": "Create or Edit Diagram",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "collaborate",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 70, "y": 250 },
+      "parentId": "system",
+      "data": {
+        "name": "Collaborate on Diagram",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "manage-diagrams",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 70, "y": 430 },
+      "parentId": "system",
+      "data": {
+        "name": "Manage Diagrams",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "export-diagram",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 70, "y": 610 },
+      "parentId": "system",
+      "data": {
+        "name": "Export Diagram",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "request-feedback",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 70, "y": 790 },
+      "parentId": "system",
+      "data": {
+        "name": "Request Generated Feedback",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "follow-collaborator",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 400, "y": 250 },
+      "parentId": "system",
+      "data": {
+        "name": "Follow Collaborator",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "select-quiz-elements",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 400, "y": 430 },
+      "parentId": "system",
+      "data": {
+        "name": "Select Quiz Elements",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "export-presentation",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 400, "y": 610 },
+      "parentId": "system",
+      "data": {
+        "name": "Export Presentation",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "create-modeling-exercise",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 710, "y": 70 },
+      "parentId": "system",
+      "data": {
+        "name": "Create Modeling Exercise",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "create-diagram-quiz",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 710, "y": 250 },
+      "parentId": "system",
+      "data": {
+        "name": "Create Diagram Quiz",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "assess-submission",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 710, "y": 430 },
+      "parentId": "system",
+      "data": {
+        "name": "Assess Submission",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "embed-editor",
+      "width": 220,
+      "height": 100,
+      "type": "useCase",
+      "position": { "x": 710, "y": 610 },
+      "parentId": "system",
+      "data": {
+        "name": "Embed Apollon Editor",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 100 }
+    },
+    {
+      "id": "legend-existing",
+      "width": 120,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 550, "y": 990 },
+      "data": {
+        "name": "Existing",
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 44 }
+    },
+    {
+      "id": "legend-modified",
+      "width": 120,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 670, "y": 990 },
+      "data": {
+        "name": "Modified",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 44 }
+    },
+    {
+      "id": "legend-added",
+      "width": 120,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 790, "y": 990 },
+      "data": {
+        "name": "Added",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 120, "height": 44 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "user-edit",
+      "source": "diagram-user",
+      "target": "edit-diagram",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "user-collaborate",
+      "source": "diagram-user",
+      "target": "collaborate",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "user-manage",
+      "source": "diagram-user",
+      "target": "manage-diagrams",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "user-export",
+      "source": "diagram-user",
+      "target": "export-diagram",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "user-feedback",
+      "source": "diagram-user",
+      "target": "request-feedback",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "instructor-modeling",
+      "source": "instructor",
+      "target": "create-modeling-exercise",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "instructor-quiz",
+      "source": "instructor",
+      "target": "create-diagram-quiz",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "artemis-editor",
+      "source": "artemis",
+      "target": "embed-editor",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "assessor-assessment",
+      "source": "assessor",
+      "target": "assess-submission",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "athena-feedback",
+      "source": "athena",
+      "target": "request-feedback",
+      "type": "UseCaseAssociation",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "follow-extends-collaboration",
+      "source": "follow-collaborator",
+      "target": "collaborate",
+      "type": "UseCaseExtend",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "presentation-extends-export",
+      "source": "export-presentation",
+      "target": "export-diagram",
+      "type": "UseCaseExtend",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "quiz-includes-selection",
+      "source": "create-diagram-quiz",
+      "target": "select-quiz-elements",
+      "type": "UseCaseInclude",
+      "sourceHandle": "left",
+      "targetHandle": "right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    }
+  ],
+  "assessments": {}
+}
