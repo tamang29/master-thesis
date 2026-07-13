@@ -1,0 +1,580 @@
+{
+  "id": "requirements-editing-activity-model",
+  "version": "4.1.0",
+  "title": "Diagram Editing Activity Model",
+  "type": "ActivityDiagram",
+  "nodes": [
+    {
+      "id": "96a1b21c-bdf7-44b2-9ccf-a80569d1b121",
+      "width": 735,
+      "height": 1865,
+      "type": "activitySwimlane",
+      "position": {
+        "x": -1265,
+        "y": -175
+      },
+      "data": {
+        "name": "",
+        "orientation": "vertical",
+        "lanes": [
+          {
+            "id": "1e5abe8a-650d-4c88-a14b-55338756a606",
+            "name": "Apollon",
+            "size": 200
+          }
+        ]
+      },
+      "measured": {
+        "width": 735,
+        "height": 1865
+      }
+    },
+    {
+      "id": "start",
+      "width": 50,
+      "height": 50,
+      "type": "activityInitialNode",
+      "position": {
+        "x": 310,
+        "y": 45
+      },
+      "parentId": "96a1b21c-bdf7-44b2-9ccf-a80569d1b121",
+      "data": {
+        "name": "Start"
+      },
+      "measured": {
+        "width": 50,
+        "height": 50
+      }
+    },
+    {
+      "id": "open",
+      "width": 190,
+      "height": 100,
+      "type": "activity",
+      "position": {
+        "x": -1010,
+        "y": -20
+      },
+      "data": {
+        "name": "Open or Create Diagram"
+      },
+      "measured": {
+        "width": 190,
+        "height": 100
+      }
+    },
+    {
+      "id": "load",
+      "width": 210,
+      "height": 100,
+      "type": "activity",
+      "position": {
+        "x": -1015,
+        "y": 140
+      },
+      "data": {
+        "name": "Load Diagram and Editing Context"
+      },
+      "measured": {
+        "width": 210,
+        "height": 100
+      }
+    },
+    {
+      "id": "edit",
+      "width": 190,
+      "height": 100,
+      "type": "activity",
+      "position": {
+        "x": -1005,
+        "y": 300
+      },
+      "data": {
+        "name": "Edit Diagram Elements"
+      },
+      "measured": {
+        "width": 190,
+        "height": 100
+      }
+    },
+    {
+      "id": "collaborative",
+      "width": 200,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -1000,
+        "y": 455
+      },
+      "data": {
+        "name": "Collaborative Session?"
+      },
+      "measured": {
+        "width": 200,
+        "height": 110
+      }
+    },
+    {
+      "id": "awareness",
+      "width": 220,
+      "height": 100,
+      "type": "activity",
+      "position": {
+        "x": -1240,
+        "y": 630
+      },
+      "data": {
+        "name": "Share Transient Collaboration State"
+      },
+      "measured": {
+        "width": 220,
+        "height": 100
+      }
+    },
+    {
+      "id": "merge",
+      "width": 110,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -950,
+        "y": 625
+      },
+      "data": {
+        "name": ""
+      },
+      "measured": {
+        "width": 110,
+        "height": 110
+      }
+    },
+    {
+      "id": "continue",
+      "width": 170,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -980,
+        "y": 795
+      },
+      "data": {
+        "name": "Continue Editing?"
+      },
+      "measured": {
+        "width": 170,
+        "height": 110
+      }
+    },
+    {
+      "id": "persist",
+      "width": 255,
+      "height": 70,
+      "type": "activity",
+      "position": {
+        "x": -1020,
+        "y": 965
+      },
+      "data": {
+        "name": "Save, Share, or Submit Diagram"
+      },
+      "measured": {
+        "width": 255,
+        "height": 70
+      }
+    },
+    {
+      "id": "exportDecision",
+      "width": 150,
+      "height": 110,
+      "type": "activityMergeNode",
+      "position": {
+        "x": -970,
+        "y": 1090
+      },
+      "data": {
+        "name": "Export?"
+      },
+      "measured": {
+        "width": 150,
+        "height": 110
+      }
+    },
+    {
+      "id": "generate",
+      "width": 200,
+      "height": 100,
+      "type": "activity",
+      "position": {
+        "x": -995,
+        "y": 1260
+      },
+      "data": {
+        "name": "Generate Export Artifact"
+      },
+      "measured": {
+        "width": 200,
+        "height": 100
+      }
+    },
+    {
+      "id": "result",
+      "width": 190,
+      "height": 100,
+      "type": "activityObjectNode",
+      "position": {
+        "x": -990,
+        "y": 1425
+      },
+      "data": {
+        "name": "Export Artifact"
+      },
+      "measured": {
+        "width": 190,
+        "height": 100
+      }
+    },
+    {
+      "id": "end",
+      "width": 50,
+      "height": 50,
+      "type": "activityFinalNode",
+      "position": {
+        "x": -915,
+        "y": 1600
+      },
+      "data": {
+        "name": "End"
+      },
+      "measured": {
+        "width": 50,
+        "height": 50
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "f1",
+      "source": "start",
+      "target": "open",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.42105263157894735
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f2",
+      "source": "open",
+      "target": "load",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.4473684210526316
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.42857142857142855
+        }
+      }
+    },
+    {
+      "id": "f3",
+      "source": "load",
+      "target": "edit",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f4",
+      "source": "edit",
+      "target": "collaborative",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5526315789473685
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f5",
+      "source": "collaborative",
+      "target": "awareness",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "left",
+      "targetHandle": "top",
+      "data": {
+        "label": "[yes]",
+        "points": [],
+        "sourceAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f6",
+      "source": "collaborative",
+      "target": "merge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "right",
+      "data": {
+        "label": "[no]",
+        "points": [],
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f7",
+      "source": "awareness",
+      "target": "merge",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": {
+        "points": [
+          {
+            "x": -1019,
+            "y": 680
+          },
+          {
+            "x": -950,
+            "y": 680
+          }
+        ],
+        "targetAnchor": {
+          "side": "left",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f8",
+      "source": "merge",
+      "target": "continue",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f9",
+      "source": "continue",
+      "target": "edit",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "right",
+      "data": {
+        "label": "[yes]",
+        "points": [
+          {
+            "x": -810,
+            "y": 850
+          },
+          {
+            "x": -630,
+            "y": 850
+          },
+          {
+            "x": -630,
+            "y": 330
+          },
+          {
+            "x": -815,
+            "y": 330
+          }
+        ],
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.3
+        }
+      }
+    },
+    {
+      "id": "f10",
+      "source": "continue",
+      "target": "persist",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[no]",
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.49019607843137253
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f11",
+      "source": "persist",
+      "target": "exportDecision",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.49019607843137253
+        }
+      }
+    },
+    {
+      "id": "f12",
+      "source": "exportDecision",
+      "target": "generate",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "label": "[yes]",
+        "points": [],
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        },
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f13",
+      "source": "exportDecision",
+      "target": "end",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "right",
+      "data": {
+        "label": "[no]",
+        "points": [
+          {
+            "x": -820,
+            "y": 1145
+          },
+          {
+            "x": -630,
+            "y": 1145
+          },
+          {
+            "x": -630,
+            "y": 1625
+          },
+          {
+            "x": -865,
+            "y": 1625
+          }
+        ],
+        "sourceAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "right",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f14",
+      "source": "generate",
+      "target": "result",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    },
+    {
+      "id": "f15",
+      "source": "result",
+      "target": "end",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "bottom",
+      "targetHandle": "top",
+      "data": {
+        "points": [],
+        "sourceAnchor": {
+          "side": "bottom",
+          "ratio": 0.5263157894736842
+        },
+        "targetAnchor": {
+          "side": "top",
+          "ratio": 0.5
+        }
+      }
+    }
+  ],
+  "assessments": {}
+}
