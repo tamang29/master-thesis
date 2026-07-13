@@ -238,4 +238,33 @@ One implementation iteration introduced a flat SVG exporter to reduce dependency
 
 == Implementation Timeline <impl-timeline>
 
-Implementation progressed from ecosystem preparation to integrated editor improvements between February and June 2026. Mobile export and the VS Code migration began the work in February, followed by usability and export infrastructure in March. Artemis, Athena, quiz, and assessment compatibility dominated April and May. The June iterations consolidated the standalone home page, reusable collaboration awareness, team modeling, edge interaction, and editor-interface modernization.
+#{
+  set text(size: 9.5pt)
+  show table.cell: it => {
+    set par(justify: false)
+    it
+  }
+
+  table(
+    columns: (auto, 1fr, 1.3fr, auto),
+    inset: (x: 4pt, y: 3pt),
+    align: (left, left, left, center),
+    table.header([Month], [Feature Area], [Key Deliverables], [Status]),
+    [February 2026], [iOS app and mobile export], [iOS file export for PNG, PDF, JSON, and SVG], [Done],
+    [February 2026], [VS Code extension], [Migration into Apollon monorepo and renderer update], [Done],
+    [March 2026], [App usability], [Alignment guides and follow-up editing fixes], [Done],
+    [March 2026], [Export and conversion], [Server-side PDF export endpoint and request handling], [Done],
+    [March 2026], [SVG export and rendering], [Flat exporter, compatibility modes, CSS variable handling, fallback colors, diagram-specific rendering fixes, and export validation], [Done],
+    [April 2026], [Artemis integration], [Replace legacy Apollon with the maintained Apollon integration], [Done],
+    [April 2026], [Athena integration], [Current Apollon model-format support, parser compatibility, and playground update], [Done],
+    [April 2026], [Artemis quiz integration], [Element selection, SVG background export, and automatic diagram cut-outs], [Done],
+    [May 2026], [Artemis quiz follow-ups], [Nested selections, quiz cut-outs, and assessment scoring compatibility], [Done],
+    [May 2026], [iOS app and mobile export], [Animatable PPTX export for iOS], [Done],
+    [May 2026], [Collaboration], [Selected-element highlights, live cursors, display-name modal, and follow collaborator viewport], [Done],
+    [June 2026], [Standalone web application], [Home page, diagram list, routing, filtering, sorting, sharing, and management actions], [Done],
+    [June 2026], [Collaboration], [Move awareness features into the Apollon library], [Done],
+    [June 2026], [Artemis integration], [Team modeling awareness integration], [Done],
+    [June 2026], [Edge usability], [Step-edge bending, waypoint dragging, reconnection, dynamic handles, and edge readability fixes], [Done],
+    [June 2026], [Editor user interface], [Editor-side component cleanup, popovers, selection controls, tooltips, and style-editor migration], [Done],
+  )
+}
