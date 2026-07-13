@@ -235,3 +235,7 @@ The rendering work also included diagram-specific fixes. Class diagram rendering
 The export changes were supported by visual export checks and snapshot updates. These checks help detect regressions where a change still compiles but produces a visually different or incorrect exported diagram. Visual validation is especially relevant for SVG because many export bugs appear as small layout, clipping, or marker errors rather than as runtime exceptions.
 
 One implementation iteration introduced a flat SVG exporter to reduce dependency on browser-specific rendering behavior. Later work refined the export architecture further, so the flat exporter represents an implementation step rather than the only final export mechanism.
+
+== Implementation Timeline <impl-timeline>
+
+Implementation progressed from ecosystem preparation to integrated editor improvements between February and June 2026. Mobile export and the VS Code migration began the work in February, followed by usability and export infrastructure in March. Artemis, Athena, quiz, and assessment compatibility dominated April and May. The June iterations consolidated the standalone home page, reusable collaboration awareness, team modeling, edge interaction, and editor-interface modernization.

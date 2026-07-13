@@ -34,7 +34,7 @@ The existing Apollon ecosystem consisted of a legacy editor, a newer Apollon lib
 
 The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile support, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment. Athena depended on earlier Apollon model formats for feedback generation. These dependencies limited replacement of the legacy integration.
 
-== System Scope <req-ecosystem>
+== Proposed System <req-ecosystem>
 
 The enhanced system must provide consistent editing, rendering, collaboration, navigation, mobile, educational, and export workflows across the Apollon ecosystem. Existing host workflows, stored models, assessment behavior, and feedback generation remain in scope wherever a change to the maintained editor or model format can affect them. Chapter 5 assigns these responsibilities to concrete subsystems.
 
@@ -224,10 +224,12 @@ The following constraints apply across feature areas and take precedence over lo
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([ID], [Constraint], [Description]),
-  [C1], [Existing iOS application], [Mobile work must reuse the existing App Store application identity and Capacitor-based application.],
-  [C2], [Stored diagrams], [Changes to routing, rendering, and model handling must preserve access to existing diagrams where possible.],
-  [C3], [Release coordination], [Integration work must align with the relevant Artemis, Athena, npm, VS Code, and iOS release processes.],
-  [C4], [Session data], [Cursor, participant identity, selection, and followed viewport state are transient collaboration state and must not become part of the persisted diagram model.],
+  [C1], [Artemis regression], [The migration must not remove required modeling, quiz, assessment, or team modeling behavior.],
+  [C2], [Athena compatibility], [Athena must support the earlier and current Apollon model formats required by existing feedback workflows.],
+  [C3], [Existing iOS application], [Mobile work must reuse the existing App Store application identity and Capacitor-based application.],
+  [C4], [Stored diagrams], [Changes to routing, rendering, and model handling must preserve access to existing diagrams where possible.],
+  [C5], [Release coordination], [Integration work must align with the relevant Artemis, Athena, npm, VS Code, and iOS release processes.],
+  [C6], [Session data], [Cursor, participant identity, selection, and followed viewport state are transient collaboration state and must not become part of the persisted diagram model.],
 )
 
 == System Models
@@ -273,3 +275,7 @@ An export request references a diagram and an output format and produces a deriv
 The central editing activity begins when a user opens or creates a diagram. Editing actions update diagram data, while collaboration actions update transient collaboration state. The user can save, share, submit, or export the diagram. Validation or conversion failures return the user to the current diagram without discarding its state.
 
 The integration activity begins when Artemis loads a modeling, quiz, or assessment context and initializes Apollon with the corresponding mode. Artemis receives changed diagram or selection data and persists exercise-specific results. Athena separately receives a feedback request, selects a compatible parser for the model version, and returns generated feedback.
+
+=== User Interface
+
+The requirements distinguish three interface areas. The editor provides the canvas and editing controls, the standalone home page lists local and shared diagrams, and the iOS application connects editor actions to platform file export. Collaboration indicators remain close to the canvas because they describe the current session. Chapter 6 documents the realized interfaces.

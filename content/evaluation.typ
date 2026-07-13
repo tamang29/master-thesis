@@ -102,4 +102,6 @@ Some implemented features were still in transition during parts of the feedback 
 
 Automatically generated transcripts were used for some sessions. Obvious transcription errors were corrected when summarizing the findings, but direct quotations should only be used after checking the original recording or transcript. For this reason, this chapter primarily reports paraphrased findings instead of relying on long direct quotes.
 
+== Implications for Future Work
+
 The findings and evaluation limitations inform the prioritized future-work directions in @summary-chapter.

@@ -1,10 +1,10 @@
 = Summary <summary-chapter>
 
-== Conclusion
+== Status
 
 This thesis strengthened Apollon as a reusable educational modeling ecosystem. The work coordinated changes across the Apollon library, standalone and mobile applications, Artemis, Athena, and the VS Code extension to address the four objectives defined in Chapter 1.
 
-=== Realized Objectives
+=== Realized Goals
 
 The first objective was to improve modeling and application usability. This was addressed through changes that reduced repeated editing effort and made common workflows easier to finish. Edge bending, waypoint dragging, reconnection, dynamic handles, line jumps, and label readability fixes improved direct manipulation and visual clarity for relationships between diagram elements. Alignment guides, keyboard deletion, class member reordering, scroll lock, and editor-side user interface cleanup addressed smaller sources of friction that accumulate during repeated modeling. The standalone home page and routing work gave users clearer paths for creating, reopening, and sharing local and shared diagrams, while mobile/iOS export support made diagram export less dependent on desktop browser assumptions.
 
@@ -13,6 +13,12 @@ The second objective was to support collaborative modeling. The thesis introduce
 The third objective was to integrate Apollon into educational systems. The work migrated Artemis to the maintained Apollon integration while preserving modeling exercises, quiz-related editor interactions, assessment views, and team modeling. Drag-and-drop quiz generation was repaired for the maintained model format, nested selections were supported, and assessment compatibility was strengthened where serialization changes affected grading behavior. Athena gained support for the earlier and current serialized models needed during the migration period, and the VS Code extension moved to the maintained renderer.
 
 The fourth objective was to improve diagram portability. The thesis provided a server-side PDF export path, improved SVG compatibility, and addressed rendering issues involving text bounds, clipping, labels, and diagram-specific shapes. Visual checks make rendering regressions easier to detect. These results improve the export paths used by the ecosystem without claiming universal interoperability.
+
+=== Remaining Limitations
+
+Qualitative feedback identified remaining limitations in edge and layout control, persistence and ownership, notation coverage, advanced editing, and interoperability. These limitations require broader product or architectural decisions and motivate the prioritized directions below.
+
+== Conclusion
 
 Together, the results show that usability and integration are connected: an editor feature becomes more valuable when it can be reused consistently across the environments in which students, instructors, assessors, and standalone users work. The architectural separation between shared editor behavior and host-owned workflows enabled that reuse while preserving existing educational and feedback processes. Qualitative feedback indicates that the implemented direction addresses relevant workflows, but it does not replace a controlled usability study or imply that all usability problems are solved.
 
