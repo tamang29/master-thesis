@@ -11,8 +11,6 @@
 
 This chapter maps the application-domain concepts and requirements from Chapter 4 to the software architecture. It follows the system design structure proposed by Bruegge and Dutoit @bruegge2004object. The design focuses on the parts of the Apollon ecosystem changed by this thesis.
 
-The architecture separates reusable editor behavior from application-specific navigation, persistence, session infrastructure, and deployment. This separation allows the standalone application, mobile application, Artemis, Athena, and the VS Code extension to evolve around one maintained Apollon library.
-
 == Overview <arch-overview>
 
 The Apollon library is the reusable center of the proposed architecture. It provides shared editor behavior, model behavior, rendering behavior, editor runtime callbacks, and reusable collaboration-awareness presentation. Host applications configure the editor and connect it to their own user interface, persistence, access control, session infrastructure, and platform-specific workflows.
@@ -30,8 +28,6 @@ A shared library reduces duplication but requires stable interfaces for several 
 == Subsystem Decomposition <arch-subsystems>
 
 The system is decomposed into subsystems according to ownership of editor behavior, application workflows, and integration responsibilities. The decomposition follows the requirement areas from #section-link(<req-iterative>) and keeps dependencies directed toward the Apollon library.
-
-Each host may use a subset of library services. The standalone application uses the main editor and export surface, Artemis configures educational modes and persistence callbacks, Athena consumes model data without embedding the editor, and the VS Code extension uses the maintained editor and renderer in an IDE context.
 
 @fig-standalone-decomposition visualizes the decomposition of the standalone application. The web application separates the diagram overview, local editing, shared editing, and version history. Both editors reuse the Apollon library, while shared diagrams and their versions use the standalone server. The server exposes diagram and version APIs, relays collaboration messages, and stores shared diagram data in Redis Stack. White components already existed, orange components were modified, and blue components were added during the work described in this thesis.
 
@@ -112,7 +108,7 @@ The standalone application distinguishes local diagrams from diagrams accessed t
 
 == Global Software Control
 
-The interactive editor uses event-driven control. User input triggers library commands that update the in-memory diagram model and notify the host through callbacks. The host decides when to persist the updated model. Collaboration events form a separate transient stream that updates awareness presentation without changing the persisted diagram model unless a host explicitly persists a model change.
+The interactive editor uses event-driven control. User input triggers library commands that update the in-memory diagram model and notify the host through callbacks. The host decides when to persist the updated model. Collaboration events form a separate transient stream that updates awareness presentation according to the data boundary defined in the previous section.
 
 Export uses either client-side control or a request-response service. Client-side formats use the current renderer directly. Service-based conversion sends diagram data and export parameters to the standalone server, which renders the diagram and returns an artifact or an error. Artemis and Athena control their integrations through their existing request and exercise lifecycles.
 

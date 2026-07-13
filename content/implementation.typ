@@ -42,11 +42,9 @@ Line jumps were added to improve readability when several orthogonal edges cross
 
 The implementation also removed stale runtime geometry from the persisted diagram model. Earlier geometry values that belonged only to rendering or interaction could become outdated when diagrams were imported or migrated. The edge migration logic strips such runtime-only data and recalculates the required geometry during rendering and interaction. This reduces compatibility problems when diagrams move between versions or host applications.
 
-Several smaller improvements completed the edge usability work. The edge toolbar follows live drag interaction instead of remaining fixed to outdated geometry. Edge decorations in SFC diagrams follow the edge while it is dragged, and decorative SVG parts are pointer-transparent so they do not block interaction with the edge itself. A separate connector fix addressed overlapping required-interface markers in component and deployment diagrams. Together, these changes improve edge interaction, readability, and compatibility across supported diagram types.
+Several smaller improvements completed the edge usability work. The edge toolbar follows live drag interaction instead of remaining fixed to outdated geometry. Edge decorations in SFC diagrams follow the edge while it is dragged, and decorative SVG parts are pointer-transparent so they do not block interaction with the edge itself. Together, these changes improve edge interaction and readability across supported diagram types.
 
 The edge implementation was supported by unit and end-to-end tests for bending behavior, handle hit-testing, zoom behavior, endpoint markers, migration cleanup, edge decorations, and reconnection behavior. These tests are important because edge interaction combines persisted diagram data, runtime geometry, pointer interaction, and rendering behavior. Small regressions in one of these areas can make existing diagrams harder to edit or read.
-
-The implemented work improves direct manipulation of edges, but it does not fully solve all edge-related usability problems. Later feedback still requested easier straight-line correction, larger selectable areas, more flexible anchor behavior, and stronger snapping support for specific layout situations. These remaining issues are discussed in Chapter 7 and remain future work.
 
 === Alignment and Editing Controls <impl-app-usability>
 
@@ -101,8 +99,6 @@ The standalone home page also introduced home-specific light and dark theming. D
 
 The implementation was supported by end-to-end tests for the new home-page workflow. The tests cover initial loading, empty states, search, filtering, sorting, favorites, source filtering, grid and table switching, infinite scrolling, and card actions. Separate tests and implementation checks cover shared diagram storage, shared link handling, and unavailable shared diagram behavior. These tests reduce the risk that future changes break the main entry point of the standalone application.
 
-The resulting standalone application provides a clearer workflow for creating, reopening, organizing, and sharing diagrams. The home page makes the application more suitable for repeated use because users can return to existing work instead of always starting from an empty editor. Remaining limitations concern stronger persistence, ownership, authentication, local file-system integration, and long-term project workflows. These topics are discussed as future work in Chapter 7.
-
 === User Interface Modernization and Consistency <impl-ui-modernization>
 
 Related requirement: #section-link(<req-usability>).
@@ -132,7 +128,7 @@ Related requirement: #section-link(<req-collaboration>).
 
 The first collaboration iteration added highlighting for nodes and edges selected or dragged by another participant. In a shared modeling session, synchronized diagram data shows the final diagram state, but it does not explain which element another user is currently inspecting or moving. The implementation therefore propagated the currently selected or dragged element as transient collaboration awareness. Remote clients used this awareness state to highlight the corresponding node or edge on their local canvas.
 
-This behavior was intentionally kept outside the persisted diagram model. A highlighted node or edge communicates another user's current focus, not a diagram property that should be saved, submitted, exported, or processed by Artemis and Athena. When the remote selection changed or disappeared, the highlight was cleared from the local canvas. This made the feature useful during live collaboration while preserving the boundary between diagram data and session data.
+When the remote selection changed or disappeared, the highlight was cleared from the local canvas. The library boundary for this transient state is described in Section 6.3.2.
 
 #figure(
   image("/figures/collaboration-selection-highlighting.png", width: 100%),
@@ -145,7 +141,7 @@ Participant identity was introduced together with the cursor display. A randomiz
 
 The third iteration added viewport following. Live cursors and selection highlights show where collaborators are active, but they do not automatically bring another user's area of the diagram into view. This became important for larger diagrams and for teaching or team-modeling situations where one participant wants to guide the attention of the group. The follow feature lets a user choose a collaborator and synchronize the local viewport with that collaborator's viewport while following is active.
 
-Viewport following uses the same separation of concerns as the earlier awareness features. The followed viewport is session state, not diagram content. The host or collaboration service distributes the relevant viewport information, and the editor applies it only while the user has chosen to follow another participant. Users can therefore share focus during a discussion without modifying the diagram model or introducing host-specific persistence behavior into the Apollon library.
+The host or collaboration service distributes the relevant viewport information, and the editor applies it only while the user has chosen to follow another participant. Users can therefore share focus during a discussion without modifying the diagram.
 
 #figure(
   image("/figures/collaboration-follow-viewport.png", width: 100%),
@@ -192,8 +188,6 @@ The nested-selection work required coordination between model interpretation and
 
 A smaller assessment-related contribution addressed compatibility with structured grading instructions. During the Apollon migration, flattened serialization of Apollon drop information affected how usage-count limits for structured grading instructions were evaluated. The scoring logic and related tests were adjusted so that these limits are enforced correctly with the updated Apollon data representation. This contribution was part of the broader migration context but should be understood as a focused assessment compatibility fix rather than ownership of the full Artemis migration.
 
-The implemented quiz and assessment work improved the connection between Apollon diagrams and Artemis teaching workflows. Instructors can generate drag-and-drop quiz questions from selected Apollon elements, including nested class diagram content, while Artemis keeps the exported background and drop areas aligned. The work also strengthened regression coverage for the quiz and assessment paths. Remaining limitations concern the general expressiveness of quiz generation, support for additional diagram-specific element types, and the maintainability of the integration as Apollon evolves further.
-
 === Athena Model Compatibility <impl-athena>
 
 Related requirement: #section-link(<req-athena>).
@@ -220,8 +214,6 @@ PDF export is needed when diagrams are used outside the editor, for example in r
 
 The export path connected the standalone server to Apollon's diagram conversion workflow. The server receives diagram data through an export endpoint, converts the model into a renderable representation, and returns a PDF artifact to the caller. Implementing this workflow required server routing, export service logic, endpoint path integration, model conversion handling, and configuration changes so the server-side code could use the relevant Apollon rendering functionality. During integration, the endpoint and request handling were refined, and error handling was improved so conversion failures could be reported without modifying the original diagram data.
 
-The result was a service-based PDF export capability that moved export generation beyond a purely browser-local interaction. This made PDF generation easier to integrate into application workflows where the exported artifact is requested from a server instead of produced manually by the user in the editor. Later work generalized and hardened the conversion infrastructure further, but the server-side PDF export path formed the basis for providing diagram export through the standalone server.
-
 === JSDOM and React Flow Server-Side Rendering <impl-jsdom-ssr>
 
 Related requirement: #section-link(<req-export-rendering>).
@@ -242,37 +234,4 @@ The rendering work also included diagram-specific fixes. Class diagram rendering
 
 The export changes were supported by visual export checks and snapshot updates. These checks help detect regressions where a change still compiles but produces a visually different or incorrect exported diagram. Visual validation is especially relevant for SVG because many export bugs appear as small layout, clipping, or marker errors rather than as runtime exceptions.
 
-One implementation iteration introduced a flat SVG exporter to reduce dependency on browser-specific rendering behavior. Later export work refined parts of the export architecture further. The thesis therefore treats the flat exporter as an implementation step, not as the only final export mechanism. Overall, the SVG and rendering work improved diagram portability and export correctness while leaving further export hardening and deterministic conversion behavior to later system-level work.
-
-== Implementation Timeline <impl-timeline>
-
-#{
-  set text(size: 9.5pt)
-  show table.cell: it => {
-    set par(justify: false)
-    it
-  }
-
-  table(
-    columns: (auto, 1fr, 1.3fr, auto),
-    inset: (x: 4pt, y: 3pt),
-    align: (left, left, left, center),
-    table.header([Month], [Feature Area], [Key Deliverables], [Status]),
-    [February 2026], [iOS app and mobile export], [iOS file export for PNG, PDF, JSON, and SVG], [Done],
-    [February 2026], [VS Code extension], [Migration into Apollon monorepo and renderer update], [Done],
-    [March 2026], [App usability], [Alignment guides and follow-up editing fixes], [Done],
-    [March 2026], [Export and conversion], [Server-side PDF export endpoint and request handling], [Done],
-    [March 2026], [SVG export and rendering], [Flat exporter, compatibility modes, CSS variable handling, fallback colors, diagram-specific rendering fixes, and export validation], [Done],
-    [April 2026], [Artemis integration], [Replace legacy Apollon with the maintained Apollon integration], [Done],
-    [April 2026], [Athena integration], [Current Apollon model-format support, parser compatibility, and playground update], [Done],
-    [April 2026], [Artemis quiz integration], [Element selection, SVG background export, and automatic diagram cut-outs], [Done],
-    [May 2026], [Artemis quiz follow-ups], [Nested selections, quiz cut-outs, and assessment scoring compatibility], [Done],
-    [May 2026], [iOS app and mobile export], [Animatable PPTX export for iOS], [Done],
-    [May 2026], [Collaboration], [Selected-element highlights, live cursors, display-name modal, and follow collaborator viewport], [Done],
-    [June 2026], [Standalone web application], [Home page, diagram list, routing, filtering, sorting, sharing, and management actions], [Done],
-    [June 2026], [Collaboration], [Move awareness features into the Apollon library], [Done],
-    [June 2026], [Artemis integration], [Team modeling awareness integration], [Done],
-    [June 2026], [Edge usability], [Step-edge bending, waypoint dragging, reconnection, dynamic handles, and edge readability fixes], [Done],
-    [June 2026], [Editor user interface], [Editor-side component cleanup, popovers, selection controls, tooltips, and style-editor migration], [Done],
-  )
-}
+One implementation iteration introduced a flat SVG exporter to reduce dependency on browser-specific rendering behavior. Later work refined the export architecture further, so the flat exporter represents an implementation step rather than the only final export mechanism.

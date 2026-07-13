@@ -18,7 +18,7 @@ General-purpose editors provide practical reference points for common collaborat
 
 The scholarly grounding for this part of the thesis is workspace awareness. Gutwin and Greenberg describe workspace awareness as knowledge about the interaction of others with a shared workspace, including who is present, where they are working, and what they are doing @gutwin2002workspace. For collaborative modeling, this means that synchronized diagram data alone is insufficient. Users also need collaboration awareness about other users' activity, location, selections, and focus in the shared diagram.
 
-This directly connects to Apollon's live cursors, participant names, selections, and viewport following. In Artemis team modeling, these cues help students coordinate work in a shared modeling session within an interactive learning context @krusche2018artemis, while standalone use benefits from the same collaboration awareness concepts. At the same time, cursors, selections, participant identity, and followed viewport state are transient collaboration state. They describe the current session and should not be coupled to the persisted diagram model, which must remain usable for quiz generation, assessment, Athena feedback, export, and later editing.
+This directly connects to Apollon's live cursors, participant names, selections, and viewport following. In Artemis team modeling, these cues help students coordinate work in a shared modeling session within an interactive learning context @krusche2018artemis, while standalone use benefits from the same collaboration awareness concepts.
 
 == Positioning of This Thesis
 
