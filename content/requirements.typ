@@ -282,13 +282,11 @@ The integration activity begins when Artemis loads a modeling, quiz, or assessme
 @fig-requirements-dynamic-model separates persisted diagram changes from optional transient collaboration updates. The latter occur only in a collaborative session. Leaving the editing loop persists or submits the diagram, after which export remains an optional derived operation.
 
 #pagebreak()
-#set page(flipped: true)
 #figure(
-  image("/figures/requirements-editing-activity-model.png", width: 100%),
+  image("/figures/requirements-editing-activity-model.png", height: 85%),
   caption: [Activity model of the diagram editing, persistence, collaboration, and export flow.],
 ) <fig-requirements-dynamic-model>
 #pagebreak()
-#set page(flipped: false)
 
 === User Interface
 
@@ -297,10 +295,8 @@ The requirements distinguish three interface areas. The editor provides the canv
 @fig-requirements-ui-model represents the standalone navigation independently of a particular visual design. The diagram overview leads to new, local, or shared diagrams. From the editor, users can inspect version history, configure sharing, export an artifact, or return to the overview. Implementation screenshots belong in Chapter 6, where they document the realized interfaces.
 
 #pagebreak()
-#set page(flipped: true)
 #figure(
-  image("/figures/requirements-ui-navigation-model.png", width: 80%),
+  image("/figures/requirements-ui-navigation-model.png", height: 85%),
   caption: [Activity model of the standalone user-interface navigation.],
 ) <fig-requirements-ui-model>
 #pagebreak()
-#set page(flipped: false)
