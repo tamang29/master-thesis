@@ -1,6 +1,6 @@
 = Introduction
 
-Graphical models help software engineering students describe the structure and behavior of a system before or alongside its implementation. UML provides a shared visual notation for this purpose and is commonly used in software engineering education @bruegge2004object. Modeling tools can support this learning process when they make diagrams easy to create, understand, discuss, and revise @lu2023umltools.
+UML models help software engineering students describe the structure and behavior of a system before or alongside its implementation. UML provides a shared visual notation for this purpose and is commonly used in software engineering education @bruegge2004object. Modeling tools can support this learning process when they make diagrams easy to create, understand, discuss, and revise @lu2023umltools.
 
 Apollon is an educational modeling ecosystem built around the Apollon library and used through a standalone web application, a mobile/iOS application, a VS Code extension, and embedded Artemis contexts. Artemis is an interactive learning platform that supports exercises, feedback, and assessment in large courses @krusche2018artemis. In this setting, Apollon allows students to complete modeling exercises and instructors to create, assess, and reuse them. Athena and other educational services can also depend on serialized Apollon models when generating or processing feedback.
 
@@ -28,7 +28,7 @@ The objective of this thesis is to improve the usability and integration of Apol
 
 + *Improve modeling and application usability.* Simplify diagram editing, navigation, mobile use, and export workflows.
 + *Support collaborative modeling.* Make collaborator activity visible in shared modeling sessions and provide reusable collaboration awareness for standalone shared modeling and Artemis team modeling.
-+ *Integrate Apollon into educational systems.* Introduce the maintained editor while preserving modeling exercises, quiz-related workflows, assessment, feedback generation, and existing diagram formats.
++ *Enhance Apollon for educational systems.* Improve the maintained editor while preserving modeling exercises, quiz-related workflows, assessment, feedback generation, and existing diagram formats.
 + *Improve diagram portability.* Produce dependable visual representations and export artifacts across the environments in which Apollon is used.
 
 Together, these objectives address the user-facing experience and the systems needed to provide it consistently. The detailed requirements are presented in Chapter 4, while Chapter 6 describes how the individual improvements were implemented.

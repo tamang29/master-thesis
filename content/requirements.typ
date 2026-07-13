@@ -11,7 +11,7 @@
 
 This chapter specifies the requirements for enhancing Apollon. It follows the requirements analysis structure proposed by Bruegge and Dutoit @bruegge2004object. The analysis separates the application-domain requirements from implementation decisions and groups related requirements by feature area.
 
-The requirements evolved between February and June 2026. The proposal and roadmap defined initial objectives, implementation work exposed integration gaps, and validation in Apollon, Artemis, and Athena produced follow-up requirements. The chapter records the resulting requirements without reproducing the chronological order of implementation.
+The requirements evolved between January and June 2026. The proposal and roadmap defined initial objectives, implementation work exposed integration gaps, and validation in Apollon, Artemis, and Athena produced follow-up requirements. The chapter records the resulting requirements without reproducing the chronological order of implementation.
 
 == Overview <req-iterative>
 
@@ -27,20 +27,20 @@ The project used an iterative reengineering process. Each cycle selected a requi
   [Diagram and application interaction], [Editing effort, navigation, and mobile workflows.], [#section-link(<impl-usability>)],
   [Collaborative modeling], [Collaboration awareness and Artemis team modeling.], [#section-link(<impl-collaboration>)],
   [Educational integrations], [Artemis, Athena, and VS Code compatibility.], [#section-link(<impl-ecosystem>)],
-  [Export and rendering], [PDF, SVG, presentation, and server-side conversion.], [#section-link(<impl-export-rendering>)],
+  [Export and rendering], [PDF, SVG, PNG presentation, and server-side conversion.], [#section-link(<impl-export-rendering>)],
 )
 
 == Existing System
 
-The existing Apollon ecosystem consisted of a legacy editor, a newer Apollon library and standalone application, separate mobile and VS Code projects, and integrations in Artemis and Athena. These components used different build and release processes. Some capabilities existed only in one application, which made them difficult to reuse in other contexts.
+The existing Apollon ecosystem consisted of a legacy editor, a newer Apollon library and standalone application, separate mobile and VS Code projects, and integrations in Artemis and Athena. These components used different build and release processes.
 
-The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile export, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment. Athena depended on earlier Apollon model formats for feedback generation. These dependencies limited replacement of the legacy integration.
+The existing editor supported common modeling workflows, but edge manipulation, alignment, collaboration awareness, mobile support, and diagram navigation required improvement. Artemis depended on legacy Apollon behavior for modeling exercises, quizzes, and assessment. Athena depended on earlier Apollon model formats for feedback generation. These dependencies limited replacement of the legacy integration.
 
 == Proposed System <req-ecosystem>
 
 The proposed system uses the Apollon library as the shared foundation for diagram editing, rendering, collaboration awareness presentation, reusable editor behavior, and editor-side interaction behavior required by host workflows. The standalone web application and iOS application add navigation, persistence, sharing, and platform-specific export workflows without duplicating editor behavior.
 
-Artemis embeds the library in modeling exercises, team modeling, quiz-related editor interactions, and assessment views. In these contexts, Apollon provides the shared editor behavior and model interaction, while Artemis connects this behavior to its exercise lifecycle, submissions, quiz generation, assessment data, access control, and persistence. Athena consumes serialized Apollon models for feedback generation, while the VS Code extension uses the maintained editor and renderer. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
+Apollon provides the shared editor behavior and model interaction, while Artemis connects this behavior to its exercise lifecycle, submissions, quiz generation, assessment data, access control, and persistence. Athena consumes serialized Apollon models for feedback generation, while the VS Code extension uses the maintained editor and renderer. This arrangement reduces duplicated behavior and establishes one maintained implementation for shared editor capabilities.
 
 == Functional Requirements
 
@@ -72,10 +72,10 @@ These requirements cover recurring editing actions beyond edge manipulation. Sha
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Align diagram elements], [The editor shall show alignment guides while users move elements, including elements inside containers.], [#section-link(<impl-app-usability>)],
+  [Align diagram elements], [The editor shall show alignment guides while users move elements, including elements inside parent elements.], [#section-link(<impl-app-usability>)],
   [Support editing controls], [Users shall delete selected elements with the keyboard and reorder class attributes and methods.], [#section-link(<impl-app-usability>)],
   [Control canvas scrolling], [Host applications shall enable a mode that prevents unintended canvas movement.], [#section-link(<impl-app-usability>)],
-  [Embed the editor], [React applications shall integrate the editor without depending on standalone application state.], [#section-link(<impl-library-usability>)],
+  [Add React API], [React applications can use existing component directly from the library.], [#section-link(<impl-library-usability>)],
 )
 
 === Collaborative Modeling <req-collaboration>
@@ -143,8 +143,8 @@ Athena consumes serialized Apollon models when it generates feedback. The integr
   inset: (x: 5pt, y: 4pt),
   align: (left, left, left),
   table.header([Requirement], [Description], [Implemented in]),
-  [Process current models], [Athena shall process the current Apollon model format for feedback generation.], [#section-link(<impl-athena>)],
-  [Process earlier models], [Athena shall support the earlier and current Apollon model formats required during the migration period.], [#section-link(<impl-athena>)],
+  [Process current models], [Athena should support the current Apollon model format for feedback generation.], [#section-link(<impl-athena>)],
+  [Process earlier models], [Athena should support the earlier Apollon model formats required during the migration period.], [#section-link(<impl-athena>)],
   [Validate model support], [The Athena playground shall validate feedback generation with models from the current Apollon version.], [#section-link(<impl-athena>)],
 )
 
@@ -175,9 +175,9 @@ Export requirements cover server-generated PDF files and SVG files used outside 
   [Generate compatible SVG files], [Derived SVG artifacts shall support external consumers and preserve text, clipping, nodes, and edges.], [#section-link(<impl-svg-rendering>)],
 )
 
-== Quality Attributes
+== Non-Functional Requirements
 
-Quality attributes define how well the proposed system shall provide its functional behavior. The attributes use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
+Non-functional requirements define how well the proposed system shall provide its functional behavior. The attributes use the usability, reliability, performance, and supportability categories described by Bruegge and Dutoit @bruegge2004object.
 
 The thesis prioritizes usability and compatibility because Apollon serves repeated editing workflows and forms part of existing educational systems. Maintainability and portability support continued use across the library, standalone application, mobile application, and integrations.
 
@@ -190,7 +190,6 @@ The thesis prioritizes usability and compatibility because Apollon serves repeat
   table.header([ID], [Attribute], [Quality requirement]),
   [QA-U1], [Interaction efficiency], [Users should adjust edges and align elements with fewer corrective actions than in the existing editor.],
   [QA-U2], [Predictability], [Editing actions should behave consistently in standalone, embedded, quiz, and assessment contexts.],
-  [QA-U3], [Collaboration awareness], [Collaboration indicators should communicate participant activity without obscuring diagram content.],
   [QA-U4], [Mobile usability], [Export workflows should remain usable with touch input and platform file dialogs.],
 )
 
@@ -247,9 +246,9 @@ The relevant actors are students, instructors, assessors, standalone users, and 
 
 *Editing and export scenario.* Lina is a student who edits a class diagram on a tablet. She aligns elements, reconnects an edge, verifies that crossing edges remain readable, and exports the result as a PDF and presentation. The application returns her to the diagram overview after the export.
 
-*Collaborative modeling scenario.* Jonas is an instructor who starts a team modeling exercise in Artemis. Students see who has joined, observe collaborator cursors and selections, and follow a teammate's viewport while discussing one part of the model. The submitted diagram contains diagram data but no transient awareness state.
+*Collaborative modeling scenario.* Jonas is an instructor who creates a team modeling exercise in Artemis. Students see who has joined, observe collaborator cursors and selections, and follow a teammate's viewport while discussing one part of the model. The submitted diagram contains diagram data but no transient awareness state.
 
-*Quiz and feedback scenario.* Mira is an instructor who selects nested diagram elements for a drag-and-drop quiz. Artemis generates the required cut-outs and later displays assessment controls for a modeling submission. Athena processes the associated Apollon model and generates feedback regardless of whether the model uses an earlier or current supported format.
+*Quiz and feedback scenario.* Mira is an instructor who selects nested diagram elements for a drag-and-drop quiz. Artemis generates the required cut-outs and later displays assessment controls for a modeling submission.
 
 === Use Case Model
 

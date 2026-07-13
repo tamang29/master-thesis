@@ -11,7 +11,7 @@
 
 This chapter maps the application-domain concepts and requirements from Chapter 4 to the software architecture. It follows the system design structure proposed by Bruegge and Dutoit @bruegge2004object. The design focuses on the parts of the Apollon ecosystem changed by this thesis.
 
-The architecture separates reusable editor behavior from application-specific navigation, persistence, authentication, session infrastructure, and deployment. This separation allows the standalone application, mobile application, Artemis, Athena, and the VS Code extension to evolve around one maintained Apollon library.
+The architecture separates reusable editor behavior from application-specific navigation, persistence, session infrastructure, and deployment. This separation allows the standalone application, mobile application, Artemis, Athena, and the VS Code extension to evolve around one maintained Apollon library.
 
 == Overview <arch-overview>
 
@@ -19,35 +19,13 @@ The Apollon library is the reusable center of the proposed architecture. It prov
 
 The standalone web application owns the standalone home page, diagram routing, local and shared diagram workflows, and service calls to the standalone server. The iOS application follows the standalone workflow through a Capacitor shell and adds native file/export handling. Artemis embeds Apollon for educational workflows, Athena consumes serialized Apollon models for feedback generation, and the VS Code extension hosts the editor and renderer in the IDE environment.
 
-#table(
-  columns: (1fr, 1.4fr, 1.25fr),
-  inset: (x: 5pt, y: 4pt),
-  align: (left, left, left),
-  table.header([Requirement area], [Primary subsystems], [Architectural placement]),
-  [Diagram interaction], [Apollon library], [Shared editing behavior remains independent of one host application.],
-  [Collaboration], [Apollon library, host session service], [The library presents transient collaboration state; the host supplies session and transport events.],
-  [Standalone and mobile workflows], [Web application, iOS shell, standalone server], [Application layers manage navigation, platform access, and service calls.],
-  [Educational integration], [Artemis, Athena, Apollon library], [Integration layers connect shared editor behavior and model data to teaching workflows.],
-  [Export and rendering], [Apollon library, standalone server], [Shared rendering supports browser export; the server handles service-based conversion.],
-)
 
 == Design Goals <arch-decisions>
 
 The quality attributes and constraints in Chapter 4 determine the design goals. Compatibility has the highest priority because Artemis and Athena already serve active educational workflows. Usability follows because the thesis aims to reduce interaction effort. Reuse and maintainability guide the placement of shared behavior in the library.
 
-Some goals conflict. A shared library reduces duplication but requires stable interfaces for several hosts. Server-side rendering improves deployment portability but must reproduce browser rendering accurately. The architecture resolves these conflicts by keeping shared model and rendering behavior in the Apollon library while leaving authentication, persistence, session infrastructure, and deployment policy to each host.
+A shared library reduces duplication but requires stable interfaces for several hosts. Server-side rendering improves deployment portability but must reproduce browser rendering accurately. The architecture resolves these conflicts by keeping shared model and rendering behavior in the Apollon library while leaving authentication, persistence, session infrastructure, and deployment policy to each host.
 
-#table(
-  columns: (auto, 1fr, 2fr),
-  inset: (x: 5pt, y: 4pt),
-  align: (center, left, left),
-  table.header([Priority], [Design goal], [Rationale]),
-  [1], [Preserve compatibility], [Avoid regressions in Artemis exercises, Athena feedback, and existing diagrams.],
-  [2], [Improve usability], [Reduce corrective editing actions and clarify collaboration and navigation.],
-  [3], [Reuse shared behavior], [Provide editing, rendering, and awareness presentation through the library.],
-  [4], [Support multiple environments], [Run Apollon in browsers, mobile shells, servers, Artemis, and VS Code.],
-  [5], [Limit operational complexity], [Avoid unnecessary services and full browser runtimes in server conversion.],
-)
 
 == Subsystem Decomposition <arch-subsystems>
 
@@ -117,13 +95,12 @@ Shared diagrams follow a separate path. HTTPS and WebSocket traffic passes throu
   [iOS device], [Capacitor mobile shell, Apollon library, native file/export bridge], [Local bridge calls and HTTPS where standalone services are required.],
   [Standalone server], [Shared diagram services and conversion service], [HTTP request-response with diagram and export data.],
   [Artemis server], [Exercise, assessment, persistence, and collaboration services], [Artemis APIs and real-time session communication.],
-  [Athena service], [Serialized model consumer and feedback generation], [Feedback requests containing serialized model data.],
   [VS Code host], [Apollon extension, editor, and renderer], [Workspace files and extension-host APIs.],
 )
 
 == Persistent Data Management
 
-The persisted diagram model contains diagram elements and notation-specific properties. The Apollon library receives and returns this model but does not select a storage system or become the authoritative store for any host. Storage ownership follows host boundaries: standalone local diagrams are client/browser-managed, standalone local version history is stored separately in IndexedDB, standalone shared diagrams use application/server-side shared diagram services, Artemis stores exercises, submissions, quiz data, assessment data, and Apollon model data in Artemis-side persistence, and VS Code stores diagrams as workspace files. Athena consumes serialized models for feedback generation and does not become an authoritative diagram store.
+The persisted diagram model contains diagram elements and notation-specific properties. The Apollon library receives and returns this model but does not select a storage system or become the authoritative store for any host. Storage ownership follows host boundaries: standalone local diagrams are client/browser-managed, standalone local version history is stored separately in IndexedDB, standalone shared diagrams use application/server-side shared diagram services, Artemis stores exercises, submissions, quiz data, assessment data, and Apollon model data in Artemis-side persistence, and VS Code stores diagrams as workspace files.
 
 Collaboration cursors, participant identity, selections, and followed viewport state are transient collaboration state. They belong to a collaboration session and disappear when the session ends. Derived export artifacts are not the persisted diagram model: clients may save them as files, but the diagram model remains the source for later editing and conversion.
 
@@ -131,7 +108,7 @@ Collaboration cursors, participant identity, selections, and followed viewport s
 
 Host applications own authentication and authorization. Artemis applies its existing student, instructor, and assessor roles before it loads an exercise or accepts an assessment change. The Apollon library receives only the mode and capabilities available to the current user and does not authenticate users or maintain accounts and permissions.
 
-The standalone application distinguishes local diagrams from diagrams accessed through shared links. Sharing services must validate access according to their link and ownership policy. Collaboration services must associate awareness events with an authorized session participant before forwarding them to the library.
+The standalone application distinguishes local diagrams from diagrams accessed through shared links. Sharing services must validate access according to their link. Collaboration services must associate awareness events with an authorized session participant before forwarding them to the library.
 
 == Global Software Control
 
