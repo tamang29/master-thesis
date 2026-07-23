@@ -1,0 +1,217 @@
+{
+  "id": "presentation-artemis-apollon-integration-focus",
+  "version": "4.1.0",
+  "title": "Artemis and Maintained Apollon",
+  "type": "ComponentDiagram",
+  "nodes": [
+    {
+      "id": "artemis",
+      "width": 650,
+      "height": 650,
+      "type": "componentSubsystem",
+      "position": { "x": 0, "y": 0 },
+      "data": {
+        "name": "Artemis",
+        "isComponentSubsystemHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 650, "height": 650 }
+    },
+    {
+      "id": "modeling",
+      "width": 360,
+      "height": 90,
+      "type": "component",
+      "position": { "x": 145, "y": 80 },
+      "parentId": "artemis",
+      "data": {
+        "name": "Modeling Module",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 360, "height": 90 }
+    },
+    {
+      "id": "quiz",
+      "width": 300,
+      "height": 80,
+      "type": "component",
+      "position": { "x": 60, "y": 245 },
+      "parentId": "artemis",
+      "data": {
+        "name": "Quiz Module",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 300, "height": 80 }
+    },
+    {
+      "id": "assessment",
+      "width": 300,
+      "height": 80,
+      "type": "component",
+      "position": { "x": 290, "y": 375 },
+      "parentId": "artemis",
+      "data": {
+        "name": "Assessment Module",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 300, "height": 80 }
+    },
+    {
+      "id": "team-modeling",
+      "width": 300,
+      "height": 90,
+      "type": "component",
+      "position": { "x": 60, "y": 500 },
+      "parentId": "artemis",
+      "data": {
+        "name": "Team Modeling Session",
+        "isComponentHeaderShown": true,
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 300, "height": 90 }
+    },
+    {
+      "id": "library",
+      "width": 500,
+      "height": 650,
+      "type": "componentSubsystem",
+      "position": { "x": 900, "y": 0 },
+      "data": {
+        "name": "Apollon Library (npm)",
+        "isComponentSubsystemHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 500, "height": 650 }
+    },
+    {
+      "id": "editor",
+      "width": 330,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 85, "y": 80 },
+      "parentId": "library",
+      "data": {
+        "name": "Diagram Editor",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 330, "height": 100 }
+    },
+    {
+      "id": "model-renderer",
+      "width": 330,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 85, "y": 270 },
+      "parentId": "library",
+      "data": {
+        "name": "Model and Renderer",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 330, "height": 100 }
+    },
+    {
+      "id": "awareness",
+      "width": 330,
+      "height": 110,
+      "type": "component",
+      "position": { "x": 85, "y": 475 },
+      "parentId": "library",
+      "data": {
+        "name": "Collaboration UI and Awareness",
+        "isComponentHeaderShown": true,
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 330, "height": 110 }
+    },
+    {
+      "id": "legend-modified",
+      "width": 150,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 310, "y": -85 },
+      "data": {
+        "name": "Modified",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 150, "height": 44 }
+    },
+    {
+      "id": "legend-added",
+      "width": 150,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 460, "y": -85 },
+      "data": {
+        "name": "Added",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 150, "height": 44 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "quiz-modeling",
+      "source": "quiz",
+      "target": "modeling",
+      "type": "ComponentDependency",
+      "sourceHandle": "top",
+      "targetHandle": "bottom-left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "assessment-modeling",
+      "source": "assessment",
+      "target": "modeling",
+      "type": "ComponentDependency",
+      "sourceHandle": "top",
+      "targetHandle": "bottom-right",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "modeling-editor",
+      "source": "modeling",
+      "target": "editor",
+      "type": "ComponentDependency",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    },
+    {
+      "id": "team-awareness",
+      "source": "team-modeling",
+      "target": "awareness",
+      "type": "ComponentDependency",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [], "strokeColor": "#000000", "textColor": "#000000" }
+    }
+  ],
+  "assessments": {}
+}

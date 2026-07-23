@@ -1,0 +1,183 @@
+{
+  "id": "presentation-apollon-products-and-integrations",
+  "version": "4.1.0",
+  "title": "Apollon Products and Integrations",
+  "type": "ComponentDiagram",
+  "nodes": [
+    {
+      "id": "applications",
+      "width": 350,
+      "height": 500,
+      "type": "componentSubsystem",
+      "position": { "x": 0, "y": 100 },
+      "data": {
+        "name": "Apollon Applications",
+        "isComponentSubsystemHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#0065bd",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 350, "height": 500 }
+    },
+    {
+      "id": "standalone",
+      "width": 250,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 50, "y": 105 },
+      "parentId": "applications",
+      "data": {
+        "name": "Standalone Web App",
+        "isComponentHeaderShown": true,
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 250, "height": 100 }
+    },
+    {
+      "id": "mobile",
+      "width": 250,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 50, "y": 285 },
+      "parentId": "applications",
+      "data": {
+        "name": "Mobile / iOS App",
+        "isComponentHeaderShown": true,
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 250, "height": 100 }
+    },
+    {
+      "id": "library",
+      "width": 400,
+      "height": 500,
+      "type": "componentSubsystem",
+      "position": { "x": 500, "y": 100 },
+      "data": {
+        "name": "Apollon Library (npm)",
+        "isComponentSubsystemHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 400, "height": 500 }
+    },
+    {
+      "id": "editor",
+      "width": 260,
+      "height": 90,
+      "type": "component",
+      "position": { "x": 70, "y": 75 },
+      "parentId": "library",
+      "data": {
+        "name": "Diagram Editor",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 260, "height": 90 }
+    },
+    {
+      "id": "collaboration-ui",
+      "width": 260,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 70, "y": 205 },
+      "parentId": "library",
+      "data": {
+        "name": "Collaboration UI and Awareness",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 260, "height": 100 }
+    },
+    {
+      "id": "model-renderer",
+      "width": 260,
+      "height": 90,
+      "type": "component",
+      "position": { "x": 70, "y": 350 },
+      "parentId": "library",
+      "data": {
+        "name": "Model and Renderer",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 260, "height": 90 }
+    },
+    {
+      "id": "integrations",
+      "width": 450,
+      "height": 620,
+      "type": "componentSubsystem",
+      "position": { "x": 1050, "y": 40 },
+      "data": {
+        "name": "Apollon Integrations",
+        "isComponentSubsystemHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#0065bd",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 450, "height": 620 }
+    },
+    {
+      "id": "artemis",
+      "width": 340,
+      "height": 125,
+      "type": "component",
+      "position": { "x": 55, "y": 80 },
+      "parentId": "integrations",
+      "data": {
+        "name": "Artemis\nModeling, Quiz, Assessment",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 340, "height": 125 }
+    },
+    {
+      "id": "vscode",
+      "width": 300,
+      "height": 100,
+      "type": "component",
+      "position": { "x": 75, "y": 270 },
+      "parentId": "integrations",
+      "data": {
+        "name": "VS Code Extension",
+        "isComponentHeaderShown": true,
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 300, "height": 100 }
+    },
+    {
+      "id": "athena",
+      "width": 270,
+      "height": 90,
+      "type": "component",
+      "position": { "x": 90, "y": 445 },
+      "parentId": "integrations",
+      "data": {
+        "name": "Athena - AI Feedback",
+        "isComponentHeaderShown": true,
+        "fillColor": "#ffffff",
+        "strokeColor": "#000000",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 270, "height": 90 }
+    }
+  ],
+  "edges": [],
+  "assessments": {}
+}

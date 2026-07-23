@@ -1,0 +1,593 @@
+{"kind":"deck","id":"pr/t9tz4p","name":"Deck"}
+{"kind":"layout","layoutId":"db1b3daa-6fba-402d-85bb-c934c10abefe","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5330362a-ce2b-473c-b584-1e85719537dd","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/zpi98o","slide":1,"title":"MASTER'S THESIS | INFORMATION SYSTEMS / INFORMATIK","textShapes":7}
+{"kind":"shape","id":"sh/t0zu9w3e","slide":1,"bbox":[0,0,20,720]}
+{"kind":"shape","id":"sh/6d8by14n","slide":1,"bbox":[20,0,7,720]}
+{"kind":"textbox","id":"sh/7yhc7ml8","slide":1,"text":"MASTER'S THESIS | INFORMATION SYSTEMS / INFORMATIK","textPreview":"MASTER'S THESIS | INFORMATION SYSTEMS / INFORMATIK","textChars":50,"textLines":1,"bbox":[70,64,850,22]}
+{"kind":"textbox","id":"sh/g3qt4b2p","slide":1,"text":"Enhance Usability of the Educational Modeling Software Apollon","textPreview":"Enhance Usability of the Educational Modeling Software Apollon","textChars":62,"textLines":1,"bbox":[70,132,970,132]}
+{"kind":"textbox","id":"sh/h4judg3a","slide":1,"text":"Collaboration-aware modeling and a maintained Artemis integration","textPreview":"Collaboration-aware modeling and a maintained Artemis integration","textChars":65,"textLines":1,"bbox":[70,294,870,40]}
+{"kind":"textbox","id":"sh/u18b21kz","slide":1,"text":"with mobile and VS Code support, plus Athena model compatibility","textPreview":"with mobile and VS Code support, plus Athena model compatibility","textChars":64,"textLines":1,"bbox":[70,342,820,36]}
+{"kind":"shape","id":"sh/f2hcb6lk","slide":1,"bbox":[70,418,208,1]}
+{"kind":"textbox","id":"sh/w76ts7ml","slide":1,"text":"Fady Samaan | Ravi Tamang","textPreview":"Fady Samaan | Ravi Tamang","textChars":25,"textLines":1,"bbox":[70,456,650,34]}
+{"kind":"textbox","id":"sh/x8fu1c36","slide":1,"text":"Supervisor: Felix Dietrich, M.Sc.\nExaminer: Prof. Dr. Stephan Krusche\nMunich | July 2026","textPreview":"Supervisor: Felix Dietrich, M.Sc. | Examiner: Prof. Dr. Stephan Krusche | Munich | July 2026","textChars":88,"textLines":3,"bbox":[70,504,640,102]}
+{"kind":"textbox","id":"sh/03ahsnu1","slide":1,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"image","id":"im/q9cj2tsz","slide":1,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1142,42,92,48]}
+{"kind":"notes","id":"nt/zpi98o","slide":1,"text":"0:00-0:15. Open with the outcome: this thesis made collaboration visible and moved Artemis onto maintained Apollon while keeping teaching workflows intact. Mobile, VS Code, and Athena are supporting ecosystem results. Source: thesis metadata and abstract."}
+{"kind":"slide","id":"sl/lgxh5y","slide":2,"title":"CONTEXT | COMPONENT MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/ba5gvi90","slide":2,"name":"Section label","text":"CONTEXT | COMPONENT MODEL","textPreview":"CONTEXT | COMPONENT MODEL","textChars":25,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/wbeh4nq5","slide":2,"name":"Slide title","text":"Two applications and three integrations reuse one Apollon library","textPreview":"Two applications and three integrations reuse one Apollon library","textChars":65,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/ydgz6x8b","slide":2,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/jep0zi9w","slide":2,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/kfyh8nqh","slide":2,"name":"Slide number","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/lg7i1sr2","slide":2,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/zilgny9s","slide":2,"text":"Applications run Apollon. Artemis, VS Code, and Athena integrate it - in that order of importance here.","textPreview":"Applications run Apollon. Artemis, VS Code, and Athena integrate it - in that order of importance here.","textChars":103,"textLines":1,"bbox":[132,645,1016,24]}
+{"kind":"image","id":"im/ovihsbqp","slide":2,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/72pgbm9w","slide":2,"name":"","geometry":"rect","alt":"Apollon component model with applications, shared library, and integrations","bbox":[70,144,1140,488]}
+{"kind":"notes","id":"nt/lgxh5y","slide":2,"text":"0:15-0:50. Use the diagram's three columns. Standalone and mobile are Apollon applications. Artemis, VS Code, and Athena are integrations; Artemis is the primary one. The standalone conversion service is intentionally absent because it is an internal server component, not a peer environment. Apollon JSON: presentation-research/diagrams/apollon-products-and-integrations.json."}
+{"kind":"slide","id":"sl/avls3m","slide":3,"title":"PROBLEM","textShapes":14}
+{"kind":"textbox","id":"sh/o7eh0fa1","slide":3,"name":"Section label","text":"PROBLEM","textPreview":"PROBLEM","textChars":7,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/n6507u9g","slide":3,"name":"Slide title","text":"Shared editing worked, but collaborators could not read intent","textPreview":"Shared editing worked, but collaborators could not read intent","textChars":62,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/xw7id4ry","slide":3,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/cbyh4zad","slide":3,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/bap0bu9s","slide":3,"name":"Slide number","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/a9gz2ps7","slide":3,"bbox":[64,160,350,336]}
+{"kind":"shape","id":"sh/d03i10re","slide":3,"bbox":[64,160,7,336]}
+{"kind":"textbox","id":"sh/sfuhsvat","slide":3,"text":"ON THE CANVAS","textPreview":"ON THE CANVAS","textChars":13,"textLines":1,"bbox":[89,178,302,18]}
+{"kind":"textbox","id":"sh/mhk7mlob","slide":3,"text":"Editing demanded repair work","textPreview":"Editing demanded repair work","textChars":28,"textLines":1,"bbox":[89,209,302,62]}
+{"kind":"textbox","id":"sh/nit8vqpg","slide":3,"text":"Correcting edge paths, arranging elements, and navigating larger diagrams repeatedly interrupted the modeling task.","textPreview":"Correcting edge paths, arranging elements, and navigating larger diagrams repeatedly interrupted the modeling task.","textChars":115,"textLines":1,"bbox":[89,283,302,195]}
+{"kind":"shape","id":"sh/oj2pov61","slide":3,"bbox":[465,160,350,336]}
+{"kind":"shape","id":"sh/9kbqx07m","slide":3,"bbox":[465,160,7,336]}
+{"kind":"textbox","id":"sh/alk7q5o7","slide":3,"text":"IN COLLABORATION","textPreview":"IN COLLABORATION","textChars":16,"textLines":1,"bbox":[490,178,302,18]}
+{"kind":"textbox","id":"sh/bmd8zaps","slide":3,"text":"State sync was not enough","textPreview":"State sync was not enough","textChars":25,"textLines":1,"bbox":[490,209,302,62]}
+{"kind":"textbox","id":"sh/wnmpsf6d","slide":3,"text":"The final model arrived, but users could not reliably see who was active, what they selected, or where they were looking.","textPreview":"The final model arrived, but users could not reliably see who was active, what they selected, or where they were looking.","textChars":121,"textLines":1,"bbox":[490,283,302,195]}
+{"kind":"shape","id":"sh/xovq107y","slide":3,"bbox":[866,160,350,336]}
+{"kind":"shape","id":"sh/yp47u5o3","slide":3,"bbox":[866,160,7,336]}
+{"kind":"textbox","id":"sh/jqd83apo","slide":3,"text":"IN THE MAIN INTEGRATION","textPreview":"IN THE MAIN INTEGRATION","textChars":23,"textLines":1,"bbox":[891,178,302,18]}
+{"kind":"textbox","id":"sh/fexora5w","slide":3,"text":"Artemis could not switch by import alone","textPreview":"Artemis could not switch by import alone","textChars":40,"textLines":1,"bbox":[891,209,302,62]}
+{"kind":"textbox","id":"sh/uto7ip4b","slide":3,"text":"Modeling, quizzes, assessment, and team sessions depended on legacy behavior and serialized models.","textPreview":"Modeling, quizzes, assessment, and team sessions depended on legacy behavior and serialized models.","textChars":99,"textLines":1,"bbox":[891,283,302,195]}
+{"kind":"textbox","id":"sh/hgf6tk32","slide":3,"text":"The hard part was reusing improvements without breaking host workflows.","textPreview":"The hard part was reusing improvements without breaking host workflows.","textChars":71,"textLines":1,"bbox":[150,548,980,52]}
+{"kind":"image","id":"im/jyx0bah8","slide":3,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/avls3m","slide":3,"text":"0:50-1:30. Tell this as one connected problem. Editing friction affected individual modeling; missing awareness affected teams; Artemis migration turned shared-editor changes into compatibility work. Source: thesis introduction, requirements, and implementation chapters."}
+{"kind":"slide","id":"sl/77pr6g","slide":4,"title":"OBJECTIVES","textShapes":16}
+{"kind":"textbox","id":"sh/feps3eps","slide":4,"name":"Section label","text":"OBJECTIVES","textPreview":"OBJECTIVES","textChars":10,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/0fitcj6d","slide":4,"name":"Slide title","text":"Four objectives guided the thesis","textPreview":"Four objectives guided the thesis","textChars":33,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/2h0beto3","slide":4,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/ni9s7ypo","slide":4,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/ojitg369","slide":4,"name":"Slide number","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/p4ra9o7u","slide":4,"bbox":[70,148,78,74]}
+{"kind":"textbox","id":"sh/a50bitof","slide":4,"text":"O1","textPreview":"O1","textChars":2,"textLines":1,"bbox":[78,170,62,27]}
+{"kind":"textbox","id":"sh/b6tsbyp0","slide":4,"text":"Improve modeling and application usability","textPreview":"Improve modeling and application usability","textChars":42,"textLines":1,"bbox":[178,149,920,34]}
+{"kind":"textbox","id":"sh/nu1g3uxw","slide":4,"text":"Direct editing, clearer navigation, current standalone workflows, and mobile use","textPreview":"Direct editing, clearer navigation, current standalone workflows, and mobile use","textChars":80,"textLines":1,"bbox":[178,189,930,30]}
+{"kind":"shape","id":"sh/2tszapgb","slide":4,"bbox":[70,256,78,74]}
+{"kind":"textbox","id":"sh/pwjy54f2","slide":4,"text":"O2","textPreview":"O2","textChars":2,"textLines":1,"bbox":[78,278,62,27]}
+{"kind":"textbox","id":"sh/ovahczyh","slide":4,"text":"Support collaborative modeling","textPreview":"Support collaborative modeling","textChars":30,"textLines":1,"bbox":[178,257,920,34]}
+{"kind":"textbox","id":"sh/f6hgzuxk","slide":4,"text":"Named cursors, remote selections, drag highlights, and viewport following","textPreview":"Named cursors, remote selections, drag highlights, and viewport following","textChars":73,"textLines":1,"bbox":[178,297,930,30]}
+{"kind":"shape","id":"sh/e58z6pgf","slide":4,"bbox":[70,364,78,74]}
+{"kind":"textbox","id":"sh/18zy1kfq","slide":4,"text":"O3","textPreview":"O3","textChars":2,"textLines":1,"bbox":[78,386,62,27]}
+{"kind":"textbox","id":"sh/07qh8fy5","slide":4,"text":"Migrate Artemis to maintained Apollon without breaking teaching workflows","textPreview":"Migrate Artemis to maintained Apollon without breaking teaching workflows","textChars":73,"textLines":1,"bbox":[178,365,920,34]}
+{"kind":"textbox","id":"sh/z2lgbex4","slide":4,"text":"Modeling, quiz generation, assessment, and team modeling","textPreview":"Modeling, quiz generation, assessment, and team modeling","textChars":56,"textLines":1,"bbox":[178,405,930,30]}
+{"kind":"shape","id":"sh/y1czi9gj","slide":4,"bbox":[70,472,78,74]}
+{"kind":"textbox","id":"sh/uxwjad0r","slide":4,"text":"O4","textPreview":"O4","textChars":2,"textLines":1,"bbox":[78,494,62,27]}
+{"kind":"textbox","id":"sh/vy5kjihc","slide":4,"text":"Improve diagram portability across web, mobile, and integrations","textPreview":"Improve diagram portability across web, mobile, and integrations","textChars":64,"textLines":1,"bbox":[178,473,920,34]}
+{"kind":"textbox","id":"sh/gje1cnix","slide":4,"text":"Reusable JSON and dependable SVG, PNG, PDF, and PPTX output","textPreview":"Reusable JSON and dependable SVG, PNG, PDF, and PPTX output","textChars":59,"textLines":1,"bbox":[178,513,930,30]}
+{"kind":"image","id":"im/svmdsf61","slide":4,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/77pr6g","slide":4,"text":"1:30-2:05. Read the four verb-led objectives. The status slide repeats these sentences exactly. The third objective intentionally names Artemis rather than saying educational systems. Source: thesis objectives, made presentation-specific without changing scope."}
+{"kind":"slide","id":"sl/dqrcsp","slide":5,"title":"SCOPE | USE-CASE MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/nidoz2xk","slide":5,"name":"Section label","text":"SCOPE | USE-CASE MODEL","textPreview":"SCOPE | USE-CASE MODEL","textChars":22,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/o3mpsny5","slide":5,"name":"Slide title","text":"The same model serves individual, collaborative, and teaching work","textPreview":"The same model serves individual, collaborative, and teaching work","textChars":66,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/a5o7uxgb","slide":5,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/b6x832xw","slide":5,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/c76pw7y1","slide":5,"name":"Slide number","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/x8fq5cfm","slide":5,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/ratoryxc","slide":5,"text":"White: existing | Orange: modified | Blue: added","textPreview":"White: existing | Orange: modified | Blue: added","textChars":48,"textLines":1,"bbox":[400,645,480,22]}
+{"kind":"image","id":"im/kbix4rih","slide":5,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/nipwn214","slide":5,"name":"","geometry":"rect","alt":"Apollon use-case model showing existing, modified, and added use cases","bbox":[72,146,1136,484]}
+{"kind":"notes","id":"nt/dqrcsp","slide":5,"text":"2:05-2:35. Keep the full formal model large and point to only three areas: direct diagram editing, collaborator following, and Artemis teaching workflows. The model was authored in Apollon and has a JSON source at figures/requirements-use-case-model.json."}
+{"kind":"slide","id":"sl/rmbtun","slide":6,"title":"OBJECTIVE 1 | EDITING","textShapes":9}
+{"kind":"textbox","id":"sh/ypo76t8v","slide":6,"name":"Section label","text":"OBJECTIVE 1 | EDITING","textPreview":"OBJECTIVE 1 | EDITING","textChars":21,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/5szqh8r6","slide":6,"name":"Slide title","text":"Editing should change the diagram - not interrupt the thought","textPreview":"Editing should change the diagram - not interrupt the thought","textChars":61,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/7eh8ji9c","slide":6,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/6t87ad8r","slide":6,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/tgzql8ri","slide":6,"name":"Slide number","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/sfqpc3qx","slide":6,"bbox":[52,145,565,416]}
+{"kind":"shape","id":"sh/fi18ni98","slide":6,"bbox":[662,145,566,416]}
+{"kind":"textbox","id":"sh/d0zeh03y","slide":6,"text":"Bend, move, reconnect","textPreview":"Bend, move, reconnect","textChars":21,"textLines":1,"bbox":[78,472,470,32]}
+{"kind":"textbox","id":"sh/qx8vml4n","slide":6,"text":"Keep the semantic edge while correcting its path and endpoints.","textPreview":"Keep the semantic edge while correcting its path and endpoints.","textChars":63,"textLines":1,"bbox":[78,513,500,38]}
+{"kind":"textbox","id":"sh/ryhwfql8","slide":6,"text":"Read crossings immediately","textPreview":"Read crossings immediately","textChars":26,"textLines":1,"bbox":[688,472,470,32]}
+{"kind":"textbox","id":"sh/03qdsfmp","slide":6,"text":"Line jumps and geometry-aware handles reduce visual ambiguity.","textPreview":"Line jumps and geometry-aware handles reduce visual ambiguity.","textChars":62,"textLines":1,"bbox":[688,513,500,38]}
+{"kind":"textbox","id":"sh/14jel03a","slide":6,"text":"Also improved: alignment guides, hit areas, keyboard deletion, class-member ordering, labels, and scroll lock.","textPreview":"Also improved: alignment guides, hit areas, keyboard deletion, class-member ordering, labels, and scroll lock.","textChars":110,"textLines":1,"bbox":[82,601,1116,38]}
+{"kind":"image","id":"im/lw7y9cr6","slide":6,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/vmpgf698","slide":6,"name":"","geometry":"rect","alt":"Step-edge bend and reconnection handles","bbox":[76,166,517,286]}
+{"kind":"image","id":"im/7mtwvm54","slide":6,"name":"","geometry":"rect","alt":"Line jumps at edge crossings","bbox":[686,166,518,286]}
+{"kind":"notes","id":"nt/rmbtun","slide":6,"text":"2:35-3:15. Demonstrate the interaction principle: correct the geometry directly instead of deleting and recreating relationships. Mention the secondary improvements in one sentence. Source: thesis implementation chapter, edge usability and editor interaction sections."}
+{"kind":"slide","id":"sl/f2ymsd","slide":7,"title":"OBJECTIVE 2 | COLLABORATION","textShapes":8}
+{"kind":"textbox","id":"sh/p4fadonu","slide":7,"name":"Section label","text":"OBJECTIVE 2 | COLLABORATION","textPreview":"OBJECTIVE 2 | COLLABORATION","textChars":27,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/21obi9o3","slide":7,"name":"Slide title","text":"Collaboration UI moved from state sync to shared intent","textPreview":"Collaboration UI moved from state sync to shared intent","textChars":55,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/c76toj65","slide":7,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/dszahonq","slide":7,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/q5obmtoz","slide":7,"name":"Slide number","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/twva547m","slide":7,"bbox":[70,542,322,38]}
+{"kind":"textbox","id":"sh/d8v2p4jq","slide":7,"text":"1  SEE SELECTIONS AND DRAGS","textPreview":"1  SEE SELECTIONS AND DRAGS","textChars":27,"textLines":1,"bbox":[82,552,298,18]}
+{"kind":"shape","id":"sh/cnmlgz25","slide":7,"bbox":[414,542,322,38]}
+{"kind":"textbox","id":"sh/bmdknu1k","slide":7,"text":"2  RECOGNIZE NAMED CURSORS","textPreview":"2  RECOGNIZE NAMED CURSORS","textChars":26,"textLines":1,"bbox":[426,552,298,18]}
+{"kind":"shape","id":"sh/qlk3epkz","slide":7,"bbox":[850,542,322,38]}
+{"kind":"textbox","id":"sh/lcv2t4jm","slide":7,"text":"3  FOLLOW A VIEWPORT","textPreview":"3  FOLLOW A VIEWPORT","textChars":20,"textLines":1,"bbox":[862,552,298,18]}
+{"kind":"textbox","id":"sh/0bmlkz21","slide":7,"text":"Awareness is transient session state; it never becomes part of the saved diagram.","textPreview":"Awareness is transient session state; it never becomes part of the saved diagram.","textChars":81,"textLines":1,"bbox":[190,610,900,30]}
+{"kind":"image","id":"im/21ovax8b","slide":7,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/qp8vex8n","slide":7,"name":"","geometry":"rect","alt":"Remote selection, drag highlighting, and named cursor","bbox":[58,150,730,378]}
+{"kind":"image","id":"im/twfexsru","slide":7,"name":"","geometry":"rect","alt":"Following another participant's viewport","bbox":[826,150,396,378]}
+{"kind":"notes","id":"nt/f2ymsd","slide":7,"text":"3:15-3:55. Tell the UI evolution in three steps: remote selection and drag highlights, named live cursors, then viewport following. These signals expose intent before the final model update arrives. The same awareness surface is reusable in standalone shared sessions and Artemis team modeling. Source: thesis collaboration implementation."}
+{"kind":"slide","id":"sl/204zhk","slide":8,"title":"OBJECTIVE 2 | COMMUNICATION MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/pkb21sfi","slide":8,"name":"Section label","text":"OBJECTIVE 2 | COMMUNICATION MODEL","textPreview":"OBJECTIVE 2 | COMMUNICATION MODEL","textChars":33,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/2hk3qxwr","slide":8,"name":"Slide title","text":"One session carries two different kinds of change","textPreview":"One session carries two different kinds of change","textChars":49,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/gfilonyl","slide":8,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/1gb2xsf6","slide":8,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/ed03mdgv","slide":8,"name":"Slide number","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/fe9kvix0","slide":8,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/tcr2t8fa","slide":8,"text":"Persisted model updates | Transient presence, cursor, selection, drag, and viewport awareness","textPreview":"Persisted model updates | Transient presence, cursor, selection, drag, and viewport awareness","textChars":93,"textLines":1,"bbox":[210,645,860,22]}
+{"kind":"image","id":"im/6dcva1ov","slide":8,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/xo3udwne","slide":8,"name":"","geometry":"rect","alt":"Apollon communication model separating persisted model updates and transient awareness","bbox":[72,146,1136,484]}
+{"kind":"notes","id":"nt/204zhk","slide":8,"text":"3:55-4:25. The communication model explains why awareness belongs beside, not inside, the diagram model. Yjs synchronizes model state; awareness messages describe the current session and disappear with it. Apollon JSON: figures/standalone-collaboration-communication.json."}
+{"kind":"slide","id":"sl/j4l3l3","slide":9,"title":"MASTER'S THESIS | APOLLON","textShapes":19}
+{"kind":"textbox","id":"sh/wzax0vul","slide":9,"text":"MASTER'S THESIS | APOLLON","textPreview":"MASTER'S THESIS | APOLLON","textChars":25,"textLines":1,"bbox":[52,30,700,18]}
+{"kind":"textbox","id":"sh/axsfylcf","slide":9,"text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"textbox","id":"sh/543yx0b2","slide":9,"text":"Live Demo","textPreview":"Live Demo","textChars":9,"textLines":1,"bbox":[72,150,700,76]}
+{"kind":"textbox","id":"sh/k3ux4vuh","slide":9,"text":"A current diagram, from JSON to editable presentation","textPreview":"A current diagram, from JSON to editable presentation","textChars":53,"textLines":1,"bbox":[76,242,800,42]}
+{"kind":"shape","id":"sh/j2lgvqtw","slide":9,"bbox":[230,397,84,1]}
+{"kind":"shape","id":"sh/y1cf2lcr","slide":9,"bbox":[76,355,84,84]}
+{"kind":"textbox","id":"sh/18zylwby","slide":9,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[98,379,40,34]}
+{"kind":"textbox","id":"sh/07qxsbud","slide":9,"text":"Open","textPreview":"Open","textChars":4,"textLines":1,"bbox":[174,359,126,30]}
+{"kind":"textbox","id":"sh/etgnu9kz","slide":9,"text":"Current home","textPreview":"Current home","textChars":12,"textLines":1,"bbox":[174,401,130,48]}
+{"kind":"shape","id":"sh/fupo3elk","slide":9,"bbox":[468,397,84,1]}
+{"kind":"shape","id":"sh/gvy5wj25","slide":9,"bbox":[314,355,84,84]}
+{"kind":"textbox","id":"sh/1w765o3q","slide":9,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[336,379,40,34]}
+{"kind":"textbox","id":"sh/2xgnytkb","slide":9,"text":"Edit","textPreview":"Edit","textChars":4,"textLines":1,"bbox":[412,359,126,30]}
+{"kind":"textbox","id":"sh/3ypo7elw","slide":9,"text":"One direct interaction","textPreview":"One direct interaction","textChars":22,"textLines":1,"bbox":[412,401,130,48]}
+{"kind":"shape","id":"sh/ozyp0j21","slide":9,"bbox":[706,397,84,1]}
+{"kind":"shape","id":"sh/p0r69o3m","slide":9,"bbox":[552,355,84,84]}
+{"kind":"textbox","id":"sh/q1072tk7","slide":9,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[574,379,40,34]}
+{"kind":"textbox","id":"sh/b29obyls","slide":9,"text":"Collaborate","textPreview":"Collaborate","textChars":11,"textLines":1,"bbox":[650,359,126,30]}
+{"kind":"textbox","id":"sh/nq94zy10","slide":9,"text":"Awareness if stable","textPreview":"Awareness if stable","textChars":19,"textLines":1,"bbox":[650,401,130,48]}
+{"kind":"shape","id":"sh/m50nqt0f","slide":9,"bbox":[790,355,84,84]}
+{"kind":"textbox","id":"sh/9sbm18zq","slide":9,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[812,379,40,34]}
+{"kind":"textbox","id":"sh/8r25s3il","slide":9,"text":"Export","textPreview":"Export","textChars":6,"textLines":1,"bbox":[888,359,126,30]}
+{"kind":"textbox","id":"sh/z294vy1o","slide":9,"text":"JSON + PPTX","textPreview":"JSON + PPTX","textChars":11,"textLines":1,"bbox":[888,401,130,48]}
+{"kind":"shape","id":"sh/y10nmt03","slide":9,"bbox":[1050,308,150,150]}
+{"kind":"textbox","id":"sh/l4rmxoju","slide":9,"text":"3 min","textPreview":"3 min","textChars":5,"textLines":1,"bbox":[1064,351,122,42]}
+{"kind":"textbox","id":"sh/03i5oji9","slide":9,"text":"backup cast ready","textPreview":"backup cast ready","textChars":17,"textLines":1,"bbox":[1034,405,182,24]}
+{"kind":"textbox","id":"sh/byp4re1s","slide":9,"text":"Current Apollon app | Realistic thesis diagram | Backup screencast available","textPreview":"Current Apollon app | Realistic thesis diagram | Backup screencast available","textChars":76,"textLines":1,"bbox":[76,586,900,30]}
+{"kind":"image","id":"im/q9gbyh83","slide":9,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1154,28,80,42]}
+{"kind":"notes","id":"nt/j4l3l3","slide":9,"text":"4:25-7:25. Open the current Apollon home, import a realistic JSON model, demonstrate one editing or collaboration interaction, then export PPTX and show separately editable elements. Use the prepared screencast if collaboration or export is unstable. Return to slide 10 for the architecture explanation."}
+{"kind":"slide","id":"sl/buwtbu","slide":10,"title":"OBJECTIVE 3 | COMPONENT MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/jqt0zmto","slide":10,"name":"Section label","text":"OBJECTIVE 3 | COMPONENT MODEL","textPreview":"OBJECTIVE 3 | COMPONENT MODEL","textChars":29,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/4r2hsrut","slide":10,"name":"Slide title","text":"Artemis owns teaching workflows; Apollon owns editor behavior","textPreview":"Artemis owns teaching workflows; Apollon owns editor behavior","textChars":61,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/6tkzu1cz","slide":10,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/rut036tk","slide":10,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/svm1wbu5","slide":10,"name":"Slide number","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/twvi5gbq","slide":10,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/7y90r2tg","slide":10,"text":"The boundary that matters: Artemis workflows reuse one maintained Apollon library.","textPreview":"The boundary that matters: Artemis workflows reuse one maintained Apollon library.","textChars":82,"textLines":1,"bbox":[232,645,816,22]}
+{"kind":"image","id":"im/0nu10fyx","slide":10,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/ve5kzuxk","slide":10,"name":"","geometry":"rect","alt":"Apollon component model showing Artemis modules and maintained library responsibilities","bbox":[70,144,1140,488]}
+{"kind":"notes","id":"nt/buwtbu","slide":10,"text":"7:25-8:00. Artemis owns modeling exercises, quiz data, assessment records, permissions, persistence, and team sessions. Apollon provides the diagram editor, model and renderer, and collaboration-awareness UI. The conversion service is not a peer integration and is deliberately absent. Apollon JSON: presentation-research/diagrams/artemis-apollon-integration-focus.json."}
+{"kind":"slide","id":"sl/b4t2te","slide":11,"title":"OBJECTIVE 3 | ARTEMIS","textShapes":18}
+{"kind":"textbox","id":"sh/jm987ipc","slide":11,"name":"Section label","text":"OBJECTIVE 3 | ARTEMIS","textPreview":"OBJECTIVE 3 | ARTEMIS","textChars":21,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/4ni9gnqh","slide":11,"name":"Slide title","text":"Artemis kept four teaching workflows on maintained Apollon","textPreview":"Artemis kept four teaching workflows on maintained Apollon","textChars":58,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/6p0rixon","slide":11,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/rq98b2p8","slide":11,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/sri9k76t","slide":11,"name":"Slide number","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/tsrqdc7e","slide":11,"bbox":[148,170,68,68]}
+{"kind":"textbox","id":"sh/mtw76d8j","slide":11,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[166,189,32,30]}
+{"kind":"textbox","id":"sh/nu58zyp4","slide":11,"text":"Model","textPreview":"Model","textChars":5,"textLines":1,"bbox":[64,264,236,38]}
+{"kind":"textbox","id":"sh/3u1snyps","slide":11,"text":"Modeling exercises use the maintained editor and model behavior.","textPreview":"Modeling exercises use the maintained editor and model behavior.","textChars":64,"textLines":1,"bbox":[64,320,236,126]}
+{"kind":"shape","id":"sh/2t8bedo7","slide":11,"bbox":[438,170,68,68]}
+{"kind":"textbox","id":"sh/pgjup87y","slide":11,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[456,189,32,30]}
+{"kind":"textbox","id":"sh/ofatg36d","slide":11,"text":"Quiz","textPreview":"Quiz","textChars":4,"textLines":1,"bbox":[354,264,236,38]}
+{"kind":"textbox","id":"sh/fqhsjypw","slide":11,"text":"Selected and nested elements become aligned cut-outs and drop locations.","textPreview":"Selected and nested elements become aligned cut-outs and drop locations.","textChars":72,"textLines":1,"bbox":[354,320,236,126]}
+{"kind":"shape","id":"sh/ep8batob","slide":11,"bbox":[728,170,68,68]}
+{"kind":"textbox","id":"sh/1szal87m","slide":11,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[746,189,32,30]}
+{"kind":"textbox","id":"sh/grqtc36h","slide":11,"text":"Assess","textPreview":"Assess","textChars":6,"textLines":1,"bbox":[644,264,236,38]}
+{"kind":"textbox","id":"sh/rmxsfepk","slide":11,"text":"Element targeting and structured-grading compatibility remain intact.","textPreview":"Element targeting and structured-grading compatibility remain intact.","textChars":69,"textLines":1,"bbox":[644,320,236,126]}
+{"kind":"shape","id":"sh/6lob6toz","slide":11,"bbox":[1018,170,68,68]}
+{"kind":"textbox","id":"sh/uxoby9s7","slide":11,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1036,189,32,30]}
+{"kind":"textbox","id":"sh/vixcre9c","slide":11,"text":"Collaborate","textPreview":"Collaborate","textChars":11,"textLines":1,"bbox":[934,264,236,38]}
+{"kind":"textbox","id":"sh/wj6t0jax","slide":11,"text":"Team modeling reuses the library's transient awareness surface.","textPreview":"Team modeling reuses the library's transient awareness surface.","textChars":63,"textLines":1,"bbox":[934,320,236,126]}
+{"kind":"shape","id":"sh/hkfutori","slide":11,"bbox":[136,500,1008,98]}
+{"kind":"textbox","id":"sh/ilov2ts3","slide":11,"text":"Migration constraint","textPreview":"Migration constraint","textChars":20,"textLines":1,"bbox":[170,523,230,28]}
+{"kind":"textbox","id":"sh/jmxcvy9o","slide":11,"text":"Existing courses, stored diagrams, quiz generation, assessment, and team sessions had to continue working.","textPreview":"Existing courses, stored diagrams, quiz generation, assessment, and team sessions had to continue working.","textChars":106,"textLines":1,"bbox":[410,516,694,56]}
+{"kind":"image","id":"im/w3y5kvu5","slide":11,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/b4t2te","slide":11,"text":"8:00-8:40. Present the migration through user-visible teaching workflows rather than package changes. Modeling is the base; quiz generation and assessment needed concrete compatibility fixes; team modeling reuses the new collaboration UI. Source: Artemis migration, quiz, assessment, and collaboration sections of the thesis."}
+{"kind":"slide","id":"sl/qtd3v4","slide":12,"title":"OBJECTIVE 3 | ACTIVITY MODEL","textShapes":19}
+{"kind":"textbox","id":"sh/032903ah","slide":12,"name":"Section label","text":"OBJECTIVE 3 | ACTIVITY MODEL","textPreview":"OBJECTIVE 3 | ACTIVITY MODEL","textChars":28,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/z2t8ry9w","slide":12,"name":"Slide title","text":"One aligned pipeline turns diagram selections into a quiz","textPreview":"One aligned pipeline turns diagram selections into a quiz","textChars":57,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/d0rqporq","slide":12,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/czipwja5","slide":12,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/by98ny9k","slide":12,"name":"Slide number","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/qx07utsf","slide":12,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"shape","id":"sh/pwrqloru","slide":12,"bbox":[424,166,150,38]}
+{"kind":"textbox","id":"sh/obipsja9","slide":12,"text":"MODIFIED","textPreview":"MODIFIED","textChars":8,"textLines":1,"bbox":[436,176,126,18]}
+{"kind":"shape","id":"sh/ahk36p4r","slide":12,"bbox":[590,166,150,38]}
+{"kind":"textbox","id":"sh/bit4fulc","slide":12,"text":"ADDED","textPreview":"ADDED","textChars":5,"textLines":1,"bbox":[602,176,126,18]}
+{"kind":"shape","id":"sh/wj2l8zmx","slide":12,"bbox":[80,346,34,34]}
+{"kind":"shape","id":"sh/xkvmh43i","slide":12,"bbox":[142,323,174,82]}
+{"kind":"textbox","id":"sh/mdk3254v","slide":12,"text":"Select diagram\nelements","textPreview":"Select diagram | elements","textChars":23,"textLines":2,"bbox":[154,343,150,44]}
+{"kind":"shape","id":"sh/netkbalg","slide":12,"bbox":[346,323,174,82]}
+{"kind":"textbox","id":"sh/of2l4fm1","slide":12,"text":"Resolve nested\nselections","textPreview":"Resolve nested | selections","textChars":25,"textLines":2,"bbox":[358,343,150,44]}
+{"kind":"shape","id":"sh/9gbmdk3m","slide":12,"bbox":[550,323,178,82]}
+{"kind":"textbox","id":"sh/ep03y54z","slide":12,"text":"Export background\nwithout selections","textPreview":"Export background | without selections","textChars":36,"textLines":2,"bbox":[562,343,154,44]}
+{"kind":"shape","id":"sh/zq9k7a54","slide":12,"bbox":[758,323,186,82]}
+{"kind":"textbox","id":"sh/3up0z61w","slide":12,"text":"Create cut-outs and\ndrop locations","textPreview":"Create cut-outs and | drop locations","textChars":34,"textLines":2,"bbox":[770,343,162,44]}
+{"kind":"shape","id":"sh/itwj61kr","slide":12,"bbox":[974,323,170,82]}
+{"kind":"textbox","id":"sh/5w7i1gj2","slide":12,"text":"Aligned drag-and-\ndrop quiz","textPreview":"Aligned drag-and- | drop quiz","textChars":27,"textLines":2,"bbox":[986,343,146,44]}
+{"kind":"shape","id":"sh/4vy18b2h","slide":12,"bbox":[1172,346,34,34]}
+{"kind":"shape","id":"sh/ryp03618","slide":12,"bbox":[1179,353,20,20]}
+{"kind":"textbox","id":"sh/qxgjalkn","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[115,343,30,42]}
+{"kind":"textbox","id":"sh/dk7i5gje","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[320,343,30,42]}
+{"kind":"textbox","id":"sh/sjy1cb2t","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[524,343,30,42]}
+{"kind":"textbox","id":"sh/7250rml4","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[736,343,30,42]}
+{"kind":"textbox","id":"sh/61czyhkj","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[950,343,30,42]}
+{"kind":"textbox","id":"sh/w7ax8ni1","slide":12,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[1148,343,30,42]}
+{"kind":"textbox","id":"sh/x8jy1sjm","slide":12,"text":"The background, cut-outs, and drop locations share one coordinate system.","textPreview":"The background, cut-outs, and drop locations share one coordinate system.","textChars":73,"textLines":1,"bbox":[260,500,760,36]}
+{"kind":"textbox","id":"sh/a5sf6d0b","slide":12,"text":"Apollon JSON source saved for re-import and later editing","textPreview":"Apollon JSON source saved for re-import and later editing","textChars":57,"textLines":1,"bbox":[384,575,512,26]}
+{"kind":"image","id":"im/zilc76lw","slide":12,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/qtd3v4","slide":12,"text":"8:40-9:15. Walk left to right. Nested class members are resolved before export. The background excludes selected items; cut-outs and drop locations use the same coordinates, preventing drift. The model was validated in Apollon and saved as presentation-research/diagrams/artemis-quiz-generation-activity.json."}
+{"kind":"slide","id":"sl/udzo0p","slide":13,"title":"OBJECTIVE 3 | ARTEMIS","textShapes":11}
+{"kind":"textbox","id":"sh/gf254re1","slide":13,"name":"Section label","text":"OBJECTIVE 3 | ARTEMIS","textPreview":"OBJECTIVE 3 | ARTEMIS","textChars":21,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/fet4bmdg","slide":13,"name":"Slide title","text":"Compatibility fixes kept assessment and team modeling coherent","textPreview":"Compatibility fixes kept assessment and team modeling coherent","textChars":62,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/tsbm9cva","slide":13,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/sr2507ep","slide":13,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/rqt47mdk","slide":13,"name":"Slide number","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/6p0nyhwz","slide":13,"bbox":[70,160,540,390]}
+{"kind":"shape","id":"sh/5orm5cve","slide":13,"bbox":[70,160,7,390]}
+{"kind":"textbox","id":"sh/4ni5w7et","slide":13,"text":"ARTEMIS FIX","textPreview":"ARTEMIS FIX","textChars":11,"textLines":1,"bbox":[95,178,492,18]}
+{"kind":"textbox","id":"sh/qx0b2tk3","slide":13,"text":"Assessment compatibility","textPreview":"Assessment compatibility","textChars":24,"textLines":1,"bbox":[95,209,492,44]}
+{"kind":"textbox","id":"sh/by9sbe1o","slide":13,"text":"Element targeting continued to work after the maintained-model migration. Structured-grading usage counts were repaired where flattened serialization had changed the expected structure.","textPreview":"Element targeting continued to work after the maintained-model migration. Structured-grading usage counts were repaired where flattened s...","textChars":185,"textLines":1,"bbox":[95,265,492,267]}
+{"kind":"shape","id":"sh/czit4j29","slide":13,"bbox":[670,160,540,390]}
+{"kind":"shape","id":"sh/d0radoju","slide":13,"bbox":[670,160,7,390]}
+{"kind":"textbox","id":"sh/2tgby9k7","slide":13,"text":"SHARED IMPROVEMENT","textPreview":"SHARED IMPROVEMENT","textChars":18,"textLines":1,"bbox":[695,178,492,18]}
+{"kind":"textbox","id":"sh/3u9s7e1s","slide":13,"text":"Team-modeling collaboration","textPreview":"Team-modeling collaboration","textChars":27,"textLines":1,"bbox":[695,209,492,44]}
+{"kind":"textbox","id":"sh/ovit0j2d","slide":13,"text":"Artemis reuses the library-level awareness UI for cursors, selections, drags, and viewport following while keeping session transport and persistence in Artemis.","textPreview":"Artemis reuses the library-level awareness UI for cursors, selections, drags, and viewport following while keeping session transport and ...","textChars":160,"textLines":1,"bbox":[695,265,492,267]}
+{"kind":"textbox","id":"sh/pwra9ojy","slide":13,"text":"These are compatibility fixes inside Artemis - not a second editor.","textPreview":"These are compatibility fixes inside Artemis - not a second editor.","textChars":67,"textLines":1,"bbox":[174,598,932,34]}
+{"kind":"image","id":"im/7uxw7ixw","slide":13,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/udzo0p","slide":13,"text":"9:15-9:55. Keep Athena out of this slide. Explain the two concrete Artemis fixes: assessment/structured-grading compatibility and library-level collaboration awareness reused by team modeling. Source: thesis Artemis assessment and collaboration implementation sections."}
+{"kind":"slide","id":"sl/4a0nve","slide":14,"title":"OBJECTIVE 3 | INTEGRATIONS","textShapes":14}
+{"kind":"textbox","id":"sh/qpcr61ov","slide":14,"name":"Section label","text":"OBJECTIVE 3 | INTEGRATIONS","textPreview":"OBJECTIVE 3 | INTEGRATIONS","textChars":26,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/dsnq1gnm","slide":14,"name":"Slide title","text":"VS Code reuses the editor; Athena reuses the model","textPreview":"VS Code reuses the editor; Athena reuses the model","textChars":50,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/fe58365s","slide":14,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/edwralo7","slide":14,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/1gnq5gni","slide":14,"name":"Slide number","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/0fe9cb6d","slide":14,"bbox":[64,150,720,450]}
+{"kind":"shape","id":"sh/vi18rm58","slide":14,"bbox":[824,150,392,450]}
+{"kind":"textbox","id":"sh/uxs7yho3","slide":14,"text":"VS Code","textPreview":"VS Code","textChars":7,"textLines":1,"bbox":[104,188,620,44]}
+{"kind":"textbox","id":"sh/ob6hkzah","slide":14,"text":"SECONDARY INTEGRATION","textPreview":"SECONDARY INTEGRATION","textChars":21,"textLines":1,"bbox":[106,241,300,20]}
+{"kind":"shape","id":"sh/pczyd4b2","slide":14,"bbox":[104,298,260,38]}
+{"kind":"textbox","id":"sh/29ozipsb","slide":14,"text":".apollon workspace files","textPreview":".apollon workspace files","textChars":24,"textLines":1,"bbox":[116,308,236,18]}
+{"kind":"shape","id":"sh/3axgbutw","slide":14,"bbox":[386,298,308,38]}
+{"kind":"textbox","id":"sh/cfqhozad","slide":14,"text":"Maintained editor + renderer","textPreview":"Maintained editor + renderer","textChars":28,"textLines":1,"bbox":[398,308,284,18]}
+{"kind":"textbox","id":"sh/dgzih4by","slide":14,"text":"The extension moved into the Apollon monorepo and release path, so workspace diagrams use the maintained rendering behavior next to the code they describe.","textPreview":"The extension moved into the Apollon monorepo and release path, so workspace diagrams use the maintained rendering behavior next to the c...","textChars":155,"textLines":1,"bbox":[106,380,610,126]}
+{"kind":"textbox","id":"sh/qd8zm9s7","slide":14,"text":"Athena","textPreview":"Athena","textChars":6,"textLines":1,"bbox":[862,188,316,44]}
+{"kind":"textbox","id":"sh/behgfuts","slide":14,"text":"AI-FEEDBACK INTEGRATION","textPreview":"AI-FEEDBACK INTEGRATION","textChars":23,"textLines":1,"bbox":[864,241,290,20]}
+{"kind":"shape","id":"sh/sjmhcfa9","slide":14,"bbox":[862,298,316,38]}
+{"kind":"textbox","id":"sh/tkfy5kbu","slide":14,"text":"Version-aware parser","textPreview":"Version-aware parser","textChars":20,"textLines":1,"bbox":[874,308,292,18]}
+{"kind":"textbox","id":"sh/907e9w3i","slide":14,"text":"Earlier and current Apollon models remain readable so Athena can keep generating AI feedback suggestions through the Artemis workflow.","textPreview":"Earlier and current Apollon models remain readable so Athena can keep generating AI feedback suggestions through the Artemis workflow.","textChars":134,"textLines":1,"bbox":[864,380,310,132]}
+{"kind":"textbox","id":"sh/8fex0r2x","slide":14,"text":"One model foundation; different host responsibilities.","textPreview":"One model foundation; different host responsibilities.","textChars":54,"textLines":1,"bbox":[330,630,620,26]}
+{"kind":"image","id":"im/dgzudk7i","slide":14,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/4a0nve","slide":14,"text":"9:55-10:30. Give VS Code more space because it is the more important secondary integration. Athena is brief: it does not embed the editor; it reads versioned serialized models to support AI feedback suggestions in the Artemis ecosystem. Source: thesis VS Code and Athena sections; Athena project documentation."}
+{"kind":"slide","id":"sl/lujkb9","slide":15,"title":"OBJECTIVE 4 | MOBILE","textShapes":13}
+{"kind":"textbox","id":"sh/lszilcrm","slide":15,"name":"Section label","text":"OBJECTIVE 4 | MOBILE","textPreview":"OBJECTIVE 4 | MOBILE","textChars":20,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/yp8jax8v","slide":15,"name":"Slide title","text":"The same diagram also works on a landscape tablet","textPreview":"The same diagram also works on a landscape tablet","textChars":49,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/8va1g7qx","slide":15,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/tgj2pcri","slide":15,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/6t8jex8r","slide":15,"name":"Slide number","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/7uh0n29c","slide":15,"name":"Landscape tablet frame","bbox":[54,142,780,524]}
+{"kind":"shape","id":"sh/oz614nqt","slide":15,"name":"Landscape tablet screen","bbox":[68,156,752,496]}
+{"kind":"textbox","id":"sh/lgjytsf2","slide":15,"text":"CURRENT HOME | LANDSCAPE","textPreview":"CURRENT HOME | LANDSCAPE","textChars":24,"textLines":1,"bbox":[854,164,330,20]}
+{"kind":"textbox","id":"sh/kfah07eh","slide":15,"text":"Mobile / iOS support","textPreview":"Mobile / iOS support","textChars":20,"textLines":1,"bbox":[854,202,330,42]}
+{"kind":"textbox","id":"sh/ze1gr2xw","slide":15,"text":"Capacitor connects the standalone workflow to native file handling.","textPreview":"Capacitor connects the standalone workflow to native file handling.","textChars":67,"textLines":1,"bbox":[854,264,328,66]}
+{"kind":"shape","id":"sh/ydsfyxwb","slide":15,"bbox":[854,354,96,38]}
+{"kind":"textbox","id":"sh/943yxcfy","slide":15,"text":"PNG","textPreview":"PNG","textChars":3,"textLines":1,"bbox":[866,364,72,18]}
+{"kind":"shape","id":"sh/83uh47et","slide":15,"bbox":[964,354,96,38]}
+{"kind":"textbox","id":"sh/7ilgv2x8","slide":15,"text":"PDF","textPreview":"PDF","textChars":3,"textLines":1,"bbox":[976,364,72,18]}
+{"kind":"shape","id":"sh/mhsz2xwn","slide":15,"bbox":[1074,354,108,38]}
+{"kind":"textbox","id":"sh/h83y1cfa","slide":15,"text":"JSON","textPreview":"JSON","textChars":4,"textLines":1,"bbox":[1086,364,84,18]}
+{"kind":"shape","id":"sh/w7uh8rep","slide":15,"bbox":[888,414,112,38]}
+{"kind":"textbox","id":"sh/gb214vm1","slide":15,"text":"SVG","textPreview":"SVG","textChars":3,"textLines":1,"bbox":[900,424,88,18]}
+{"kind":"shape","id":"sh/hcbix03m","slide":15,"bbox":[1018,414,128,38]}
+{"kind":"textbox","id":"sh/upkj2l4v","slide":15,"text":"PPTX","textPreview":"PPTX","textChars":4,"textLines":1,"bbox":[1030,424,104,18]}
+{"kind":"textbox","id":"sh/fat0vqlg","slide":15,"text":"PPTX keeps diagram elements editable for presentation animation.","textPreview":"PPTX keeps diagram elements editable for presentation animation.","textChars":64,"textLines":1,"bbox":[854,492,328,72]}
+{"kind":"image","id":"im/atcf2lcf","slide":15,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/03axwred","slide":15,"name":"","geometry":"roundRect","alt":"Current Apollon home page in a landscape tablet viewport","bbox":[68,156,752,496]}
+{"kind":"notes","id":"nt/lujkb9","slide":15,"text":"10:30-11:05. This is a current screenshot, not the outdated home-page image in the thesis. Explain that the mobile app uses the standalone workflow inside a Capacitor shell and supports PNG, PDF, JSON, SVG, and PPTX export through platform file handling. Source: thesis mobile implementation and current Apollon app."}
+{"kind":"slide","id":"sl/e0hn2z","slide":16,"title":"EVALUATION","textShapes":9}
+{"kind":"textbox","id":"sh/7u1cnmhs","slide":16,"name":"Section label","text":"EVALUATION","textPreview":"EVALUATION","textChars":10,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/svadg7id","slide":16,"name":"Slide title","text":"Feedback supports the direction - not a measured usability gain","textPreview":"Feedback supports the direction - not a measured usability gain","textChars":63,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/i58bax0b","slide":16,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/jqhcj2hw","slide":16,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/krqtc7ih","slide":16,"name":"Slide number","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/5szulcz2","slide":16,"bbox":[66,156,548,416]}
+{"kind":"shape","id":"sh/21cvm10f","slide":16,"bbox":[666,156,548,416]}
+{"kind":"textbox","id":"sh/3mlcv6h0","slide":16,"text":"What users valued","textPreview":"What users valued","textChars":17,"textLines":1,"bbox":[102,190,470,36]}
+{"kind":"textbox","id":"sh/ra587axs","slide":16,"text":"Collaboration awareness\nLine jumps and edge readability\nExport behavior\nStandalone navigation and diagram management","textPreview":"Collaboration awareness | Line jumps and edge readability | Export behavior | Standalone navigation and diagram management","textChars":116,"textLines":4,"bbox":[104,254,450,198]}
+{"kind":"textbox","id":"sh/69wry5wn","slide":16,"text":"What still interrupted the flow","textPreview":"What still interrupted the flow","textChars":31,"textLines":1,"bbox":[702,190,470,36]}
+{"kind":"textbox","id":"sh/tcna90fy","slide":16,"text":"Precise layout control\nShortcuts and discoverability\nSelection and styling flexibility\nSharing semantics and notation coverage","textPreview":"Precise layout control | Shortcuts and discoverability | Selection and styling flexibility | Sharing semantics and notation coverage","textChars":126,"textLines":4,"bbox":[704,254,450,198]}
+{"kind":"shape","id":"sh/sbe90fed","slide":16,"bbox":[152,606,976,48]}
+{"kind":"textbox","id":"sh/fe5sbax4","slide":16,"text":"Qualitative and formative: no controlled comparison of task time, errors, or satisfaction.","textPreview":"Qualitative and formative: no controlled comparison of task time, errors, or satisfaction.","textChars":90,"textLines":1,"bbox":[180,617,920,24]}
+{"kind":"image","id":"im/cvq1kzux","slide":16,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/e0hn2z","slide":16,"text":"11:05-11:45. Be explicit about the evidence boundary. Feedback from developers, students, teaching contexts, integration work, tests, and walkthroughs supports the direction. The thesis does not statistically quantify task time, errors, or satisfaction. Source: thesis evaluation chapter."}
+{"kind":"slide","id":"sl/8t3ppw","slide":17,"title":"STATUS","textShapes":21}
+{"kind":"textbox","id":"sh/0bqpk3ax","slide":17,"name":"Section label","text":"STATUS","textPreview":"STATUS","textChars":6,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/zahorytc","slide":17,"name":"Slide title","text":"All four objectives are realized within the thesis scope","textPreview":"All four objectives are realized within the thesis scope","textChars":56,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/90j6xsbe","slide":17,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/ozaponat","slide":17,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/ny1ovit8","slide":17,"name":"Slide number","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/mxs7mds3","slide":17,"bbox":[70,148,78,74]}
+{"kind":"textbox","id":"sh/x43q1sbq","slide":17,"text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[78,170,62,27]}
+{"kind":"textbox","id":"sh/w3apsna5","slide":17,"text":"Improve modeling and application usability","textPreview":"Improve modeling and application usability","textChars":42,"textLines":1,"bbox":[178,149,920,34]}
+{"kind":"textbox","id":"sh/axszitwz","slide":17,"text":"Direct editing, navigation, standalone management, and mobile use","textPreview":"Direct editing, navigation, standalone management, and mobile use","textChars":65,"textLines":1,"bbox":[178,189,930,30]}
+{"kind":"shape","id":"sh/vy1gbyd4","slide":17,"bbox":[1138,166,38,38]}
+{"kind":"textbox","id":"sh/wzahk3up","slide":17,"text":"OK","textPreview":"OK","textChars":2,"textLines":1,"bbox":[1144,176,26,18]}
+{"kind":"shape","id":"sh/xk3yd8va","slide":17,"bbox":[70,256,78,74]}
+{"kind":"textbox","id":"sh/ilczmdcv","slide":17,"text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[78,278,62,27]}
+{"kind":"textbox","id":"sh/jmlgfidg","slide":17,"text":"Support collaborative modeling","textPreview":"Support collaborative modeling","textChars":30,"textLines":1,"bbox":[178,257,920,34]}
+{"kind":"textbox","id":"sh/knuho3u1","slide":17,"text":"Named cursors, selections, drag highlights, viewport following, and reuse","textPreview":"Named cursors, selections, drag highlights, viewport following, and reuse","textChars":73,"textLines":1,"bbox":[178,297,930,30]}
+{"kind":"shape","id":"sh/5o3ih8vm","slide":17,"bbox":[1138,274,38,38]}
+{"kind":"textbox","id":"sh/yp8za9wr","slide":17,"text":"OK","textPreview":"OK","textChars":2,"textLines":1,"bbox":[1144,284,26,18]}
+{"kind":"shape","id":"sh/zqhg3edw","slide":17,"bbox":[70,364,78,74]}
+{"kind":"textbox","id":"sh/3uxwbato","slide":17,"text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[78,386,62,27]}
+{"kind":"textbox","id":"sh/29ovi5cj","slide":17,"text":"Migrate Artemis to maintained Apollon without breaking teaching workflows","textPreview":"Migrate Artemis to maintained Apollon without breaking teaching workflows","textChars":73,"textLines":1,"bbox":[178,365,920,34]}
+{"kind":"textbox","id":"sh/pwfedkbu","slide":17,"text":"Modeling, quiz generation, assessment, and team modeling preserved","textPreview":"Modeling, quiz generation, assessment, and team modeling preserved","textChars":66,"textLines":1,"bbox":[178,405,930,30]}
+{"kind":"shape","id":"sh/ov6dkfu9","slide":17,"bbox":[1138,382,38,38]}
+{"kind":"textbox","id":"sh/f6dw7ats","slide":17,"text":"OK","textPreview":"OK","textChars":2,"textLines":1,"bbox":[1144,392,26,18]}
+{"kind":"shape","id":"sh/u54ve5c7","slide":17,"bbox":[70,472,78,74]}
+{"kind":"textbox","id":"sh/18ve90by","slide":17,"text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[78,494,62,27]}
+{"kind":"textbox","id":"sh/g7mdgvud","slide":17,"text":"Improve diagram portability across web, mobile, and integrations","textPreview":"Improve diagram portability across web, mobile, and integrations","textChars":64,"textLines":1,"bbox":[178,473,920,34]}
+{"kind":"textbox","id":"sh/z2hwjutw","slide":17,"text":"JSON round-trip plus dependable SVG, PNG, PDF, and editable PPTX","textPreview":"JSON round-trip plus dependable SVG, PNG, PDF, and editable PPTX","textChars":64,"textLines":1,"bbox":[178,513,930,30]}
+{"kind":"shape","id":"sh/y18fqpsr","slide":17,"bbox":[1138,490,38,38]}
+{"kind":"textbox","id":"sh/w7it4rat","slide":17,"text":"OK","textPreview":"OK","textChars":2,"textLines":1,"bbox":[1144,500,26,18]}
+{"kind":"textbox","id":"sh/x8radwre","slide":17,"text":"Realized does not mean finished: the evaluation defines the next product-level work.","textPreview":"Realized does not mean finished: the evaluation defines the next product-level work.","textChars":84,"textLines":1,"bbox":[160,604,960,32]}
+{"kind":"image","id":"im/je9gjyls","slide":17,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/8t3ppw","slide":17,"text":"11:45-12:25. Return to the exact wording and order from slide 4. All four objectives are realized within the defined scope. Do not imply that the qualitative evaluation proves a quantified usability gain. Source: thesis summary and realized goals."}
+{"kind":"slide","id":"sl/ao02np","slide":18,"title":"PRESENTATION WORKFLOW","textShapes":18}
+{"kind":"textbox","id":"sh/epozmpsb","slide":18,"name":"Section label","text":"PRESENTATION WORKFLOW","textPreview":"PRESENTATION WORKFLOW","textChars":21,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/1sfyx4r2","slide":18,"name":"Slide title","text":"Apollon makes presentation diagrams reusable, not disposable","textPreview":"Apollon makes presentation diagrams reusable, not disposable","textChars":60,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/rmdgra9k","slide":18,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/ql4zipsf","slide":18,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/dofytkrq","slide":18,"name":"Slide number","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/cnmhkfa5","slide":18,"bbox":[64,150,430,430]}
+{"kind":"textbox","id":"sh/ah8zu9sj","slide":18,"text":"All formal models in this deck","textPreview":"All formal models in this deck","textChars":30,"textLines":1,"bbox":[96,468,366,30]}
+{"kind":"textbox","id":"sh/cj214j21","slide":18,"text":"have an Apollon JSON source and were validated in the hosted editor.","textPreview":"have an Apollon JSON source and were validated in the hosted editor.","textChars":68,"textLines":1,"bbox":[96,510,366,50]}
+{"kind":"textbox","id":"sh/xkbixo3m","slide":18,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[722,320,42,36]}
+{"kind":"shape","id":"sh/ahkj29kv","slide":18,"bbox":[548,218,188,278]}
+{"kind":"shape","id":"sh/bit0velg","slide":18,"bbox":[608,244,68,68]}
+{"kind":"textbox","id":"sh/ofi10z25","slide":18,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[626,263,32,28]}
+{"kind":"textbox","id":"sh/pgrit43a","slide":18,"text":"Import JSON","textPreview":"Import JSON","textChars":11,"textLines":1,"bbox":[566,334,152,34]}
+{"kind":"textbox","id":"sh/2t0zy9kz","slide":18,"text":"Open the saved model in the web app","textPreview":"Open the saved model in the web app","textChars":35,"textLines":1,"bbox":[566,386,152,72]}
+{"kind":"textbox","id":"sh/ne90rulk","slide":18,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[946,320,42,36]}
+{"kind":"shape","id":"sh/0rihwz2t","slide":18,"bbox":[772,218,188,278]}
+{"kind":"shape","id":"sh/1srip43e","slide":18,"bbox":[832,244,68,68]}
+{"kind":"textbox","id":"sh/hwzqdwr6","slide":18,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[850,263,32,28]}
+{"kind":"textbox","id":"sh/wbqp4ral","slide":18,"text":"Export PPTX","textPreview":"Export PPTX","textChars":11,"textLines":1,"bbox":[790,334,152,34]}
+{"kind":"textbox","id":"sh/vahobm90","slide":18,"text":"Keep elements editable for animation","textPreview":"Keep elements editable for animation","textChars":36,"textLines":1,"bbox":[790,386,152,72]}
+{"kind":"shape","id":"sh/u9872hsf","slide":18,"bbox":[996,218,188,278]}
+{"kind":"shape","id":"sh/98z69cru","slide":18,"bbox":[1056,244,68,68]}
+{"kind":"textbox","id":"sh/876p0ra9","slide":18,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1074,263,32,28]}
+{"kind":"textbox","id":"sh/76xo7m9o","slide":18,"text":"Retain JSON","textPreview":"Retain JSON","textChars":11,"textLines":1,"bbox":[1014,334,152,34]}
+{"kind":"textbox","id":"sh/m5o7yhsj","slide":18,"text":"Re-import and continue modeling later","textPreview":"Re-import and continue modeling later","textChars":37,"textLines":1,"bbox":[1014,386,152,72]}
+{"kind":"textbox","id":"sh/d4jqlgry","slide":18,"text":"Editable PPTX keeps diagram coordinates stable for the required dataflow animation.","textPreview":"Editable PPTX keeps diagram coordinates stable for the required dataflow animation.","textChars":83,"textLines":1,"bbox":[548,548,636,52]}
+{"kind":"image","id":"im/98fatozi","slide":18,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/qdkra90j","slide":18,"name":"","geometry":"roundRect","alt":"Current Apollon diagram overview","bbox":[82,168,394,274]}
+{"kind":"notes","id":"nt/ao02np","slide":18,"text":"12:25-13:00. Make the workflow explicit for the audience: save the JSON model, import it into the hosted Apollon app, export PPTX for editable slide elements, and keep JSON for future changes. This is also how the presentation's formal models remain reproducible. Official Apollon documentation: https://ls1intum.github.io/Apollon/."}
+{"kind":"slide","id":"sl/9bqai1","slide":19,"title":"FUTURE WORK","textShapes":14}
+{"kind":"textbox","id":"sh/vexkza1o","slide":19,"name":"Section label","text":"FUTURE WORK","textPreview":"FUTURE WORK","textChars":11,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/wf6lsfi9","slide":19,"name":"Slide title","text":"The next gains are product-level","textPreview":"The next gains are product-level","textChars":32,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/iho3u50f","slide":19,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/jix43a10","slide":19,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/4j6lwfi5","slide":19,"name":"Slide number","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/5kzm5kjq","slide":19,"bbox":[70,164,350,360]}
+{"kind":"shape","id":"sh/yl43ilkv","slide":19,"bbox":[70,164,7,360]}
+{"kind":"textbox","id":"sh/zmdkrq1g","slide":19,"text":"EVIDENCE","textPreview":"EVIDENCE","textChars":8,"textLines":1,"bbox":[95,182,302,18]}
+{"kind":"textbox","id":"sh/3ihgbu5c","slide":19,"text":"Measure usability","textPreview":"Measure usability","textChars":17,"textLines":1,"bbox":[95,213,302,46]}
+{"kind":"textbox","id":"sh/2h8zipo7","slide":19,"text":"Evaluate edge, layout, and collaboration refinements systematically across diagram types, sizes, and user groups.","textPreview":"Evaluate edge, layout, and collaboration refinements systematically across diagram types, sizes, and user groups.","textChars":113,"textLines":1,"bbox":[95,271,302,235]}
+{"kind":"shape","id":"sh/p4jyd4ni","slide":19,"bbox":[465,164,350,360]}
+{"kind":"shape","id":"sh/o3ahkz6x","slide":19,"bbox":[465,164,7,360]}
+{"kind":"textbox","id":"sh/fehg7u5g","slide":19,"text":"COLLABORATION","textPreview":"COLLABORATION","textChars":13,"textLines":1,"bbox":[490,182,302,18]}
+{"kind":"textbox","id":"sh/ud8fepov","slide":19,"text":"Strengthen ownership and review","textPreview":"Strengthen ownership and review","textChars":31,"textLines":1,"bbox":[490,213,302,70]}
+{"kind":"textbox","id":"sh/hgzy9knm","slide":19,"text":"Add optional login, persistent shared diagrams, clearer sharing modes, local files, and review comments for supervision and assessment.","textPreview":"Add optional login, persistent shared diagrams, clearer sharing modes, local files, and review comments for supervision and assessment.","textChars":135,"textLines":1,"bbox":[490,295,302,211]}
+{"kind":"shape","id":"sh/gfqxgz61","slide":19,"bbox":[860,164,350,360]}
+{"kind":"shape","id":"sh/7axg3a5k","slide":19,"bbox":[860,164,7,360]}
+{"kind":"textbox","id":"sh/69ofa5oz","slide":19,"text":"TEACHING","textPreview":"TEACHING","textChars":8,"textLines":1,"bbox":[885,182,302,18]}
+{"kind":"textbox","id":"sh/alozm58r","slide":19,"text":"Deepen Artemis support","textPreview":"Deepen Artemis support","textChars":22,"textLines":1,"bbox":[885,213,302,46]}
+{"kind":"textbox","id":"sh/v6xgfa9c","slide":19,"text":"Extend assessment collaboration, PlantUML interoperability, notation coverage, tutorials, and export hardening without cluttering the core workflow.","textPreview":"Extend assessment collaboration, PlantUML interoperability, notation coverage, tutorials, and export hardening without cluttering the cor...","textChars":148,"textLines":1,"bbox":[885,271,302,235]}
+{"kind":"textbox","id":"sh/w76hofqx","slide":19,"text":"Keep advanced capabilities discoverable while preserving a simple student workflow.","textPreview":"Keep advanced capabilities discoverable while preserving a simple student workflow.","textChars":83,"textLines":1,"bbox":[170,566,940,36]}
+{"kind":"image","id":"im/o7ulw7mt","slide":19,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/9bqai1","slide":19,"text":"13:00-13:35. Select three directions: systematic evaluation, stronger persistence/ownership/review, and deeper Artemis teaching support. VS Code and export continuity fit under the product-level ecosystem work. Source: thesis future-work sections."}
+{"kind":"slide","id":"sl/yjcv2w","slide":20,"title":"MASTER'S THESIS | APOLLON","textShapes":7}
+{"kind":"textbox","id":"sh/pozi9czy","slide":20,"text":"MASTER'S THESIS | APOLLON","textPreview":"MASTER'S THESIS | APOLLON","textChars":25,"textLines":1,"bbox":[52,30,700,18]}
+{"kind":"textbox","id":"sh/3mh072hs","slide":20,"text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"textbox","id":"sh/crq1k7yp","slide":20,"text":"One maintained Apollon makes","textPreview":"One maintained Apollon makes","textChars":28,"textLines":1,"bbox":[92,166,980,58]}
+{"kind":"textbox","id":"sh/dszidcza","slide":20,"text":"collaboration visible","textPreview":"collaboration visible","textChars":21,"textLines":1,"bbox":[92,226,980,58]}
+{"kind":"textbox","id":"sh/qp8jixgj","slide":20,"text":"and keeps Artemis teaching workflows intact","textPreview":"and keeps Artemis teaching workflows intact","textChars":43,"textLines":1,"bbox":[92,286,1040,58]}
+{"kind":"textbox","id":"sh/bqh0b2h4","slide":20,"text":"Mobile and VS Code reuse the same foundation; Athena keeps model-compatible AI feedback.","textPreview":"Mobile and VS Code reuse the same foundation; Athena keeps model-compatible AI feedback.","textChars":88,"textLines":1,"bbox":[96,382,960,44]}
+{"kind":"shape","id":"sh/0va1oryl","slide":20,"bbox":[96,468,220,1]}
+{"kind":"textbox","id":"sh/lwjihwz6","slide":20,"text":"Questions are welcome","textPreview":"Questions are welcome","textChars":21,"textLines":1,"bbox":[96,518,640,58]}
+{"kind":"image","id":"im/jap8fm90","slide":20,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1154,28,80,42]}
+{"kind":"notes","id":"nt/yjcv2w","slide":20,"text":"13:35-13:50. Resolve the opening in one sentence: collaboration became visible and Artemis migrated without losing teaching workflows. Invite questions. The remaining time is buffer for the live demo and transitions."}
+{"kind":"slide","id":"sl/hwhibb","slide":21,"title":"ADDITIONAL MATERIAL","textShapes":4}
+{"kind":"textbox","id":"sh/4bmh0zm9","slide":21,"text":"ADDITIONAL MATERIAL","textPreview":"ADDITIONAL MATERIAL","textChars":19,"textLines":1,"bbox":[52,30,700,18]}
+{"kind":"textbox","id":"sh/i94zyp43","slide":21,"text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"textbox","id":"sh/dgfix4nq","slide":21,"text":"Appendix","textPreview":"Appendix","textChars":8,"textLines":1,"bbox":[72,250,760,82]}
+{"kind":"textbox","id":"sh/sf614zm5","slide":21,"text":"Traceability | formal models | deployment | timeline | contributions | sources","textPreview":"Traceability | formal models | deployment | timeline | contributions | sources","textChars":78,"textLines":1,"bbox":[76,358,1030,42]}
+{"kind":"image","id":"im/el836dkb","slide":21,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1154,28,80,42]}
+{"kind":"notes","id":"nt/hwhibb","slide":21,"text":"Appendix divider. Use only during questions."}
+{"kind":"slide","id":"sl/8rlxjb","slide":22,"title":"APPENDIX | TRACEABILITY","textShapes":24}
+{"kind":"textbox","id":"sh/4nal8b2p","slide":22,"name":"Section label","text":"APPENDIX | TRACEABILITY","textPreview":"APPENDIX | TRACEABILITY","textChars":23,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/jm1kz614","slide":22,"name":"Slide title","text":"The objectives map to concrete workflows and systems","textPreview":"The objectives map to concrete workflows and systems","textChars":52,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/ds3250j6","slide":22,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/srulcv21","slide":22,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/rq1k3q1g","slide":22,"name":"Slide number","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"textbox","id":"sh/qps3alkv","slide":22,"text":"Objective","textPreview":"Objective","textChars":9,"textLines":1,"bbox":[74,148,120,28]}
+{"kind":"textbox","id":"sh/1g3290ji","slide":22,"text":"Focus","textPreview":"Focus","textChars":5,"textLines":1,"bbox":[220,148,250,28]}
+{"kind":"textbox","id":"sh/0vulgv2x","slide":22,"text":"Realized behavior","textPreview":"Realized behavior","textChars":17,"textLines":1,"bbox":[492,148,462,28]}
+{"kind":"textbox","id":"sh/il8fm5s3","slide":22,"text":"Primary systems","textPreview":"Primary systems","textChars":15,"textLines":1,"bbox":[974,148,238,28]}
+{"kind":"shape","id":"sh/jmhwva9o","slide":22,"bbox":[70,188,74,72]}
+{"kind":"textbox","id":"sh/knqxova9","slide":22,"text":"O1","textPreview":"O1","textChars":2,"textLines":1,"bbox":[84,208,46,28]}
+{"kind":"textbox","id":"sh/5ojex0ru","slide":22,"text":"Usability","textPreview":"Usability","textChars":9,"textLines":1,"bbox":[220,195,250,32]}
+{"kind":"textbox","id":"sh/6psfq5sz","slide":22,"text":"Edges | alignment | controls | standalone home | mobile use","textPreview":"Edges | alignment | controls | standalone home | mobile use","textChars":59,"textLines":1,"bbox":[492,192,458,56]}
+{"kind":"textbox","id":"sh/rq1wza9k","slide":22,"text":"Library | standalone | mobile","textPreview":"Library | standalone | mobile","textChars":29,"textLines":1,"bbox":[974,192,230,56]}
+{"kind":"shape","id":"sh/sraxsfa5","slide":22,"bbox":[220,270,984,1]}
+{"kind":"shape","id":"sh/tcjy1krq","slide":22,"bbox":[70,292,74,72]}
+{"kind":"textbox","id":"sh/mtovelsv","slide":22,"text":"O2","textPreview":"O2","textChars":2,"textLines":1,"bbox":[84,312,46,28]}
+{"kind":"textbox","id":"sh/nuxwn69g","slide":22,"text":"Collaboration","textPreview":"Collaboration","textChars":13,"textLines":1,"bbox":[220,299,250,32]}
+{"kind":"textbox","id":"sh/bydcfmp8","slide":22,"text":"Cursors | selections | drag highlights | viewport follow","textPreview":"Cursors | selections | drag highlights | viewport follow","textChars":56,"textLines":1,"bbox":[492,296,458,56]}
+{"kind":"textbox","id":"sh/qx4bmh8n","slide":22,"text":"Library | standalone | Artemis","textPreview":"Library | standalone | Artemis","textChars":30,"textLines":1,"bbox":[974,296,230,56]}
+{"kind":"shape","id":"sh/d0vuhc7e","slide":22,"bbox":[220,374,984,1]}
+{"kind":"shape","id":"sh/czmto7qt","slide":22,"bbox":[70,396,74,72]}
+{"kind":"textbox","id":"sh/3utcb29w","slide":22,"text":"O3","textPreview":"O3","textChars":2,"textLines":1,"bbox":[84,416,46,28]}
+{"kind":"textbox","id":"sh/2tkbix8r","slide":22,"text":"Artemis migration","textPreview":"Artemis migration","textChars":17,"textLines":1,"bbox":[220,403,250,32]}
+{"kind":"textbox","id":"sh/pwbudc72","slide":22,"text":"Modeling | quiz | assessment | team modeling","textPreview":"Modeling | quiz | assessment | team modeling","textChars":44,"textLines":1,"bbox":[492,400,458,56]}
+{"kind":"textbox","id":"sh/ov2tk7qh","slide":22,"text":"Artemis | Apollon library","textPreview":"Artemis | Apollon library","textChars":25,"textLines":1,"bbox":[974,400,230,56]}
+{"kind":"shape","id":"sh/nqxcn6pg","slide":22,"bbox":[220,478,984,1]}
+{"kind":"shape","id":"sh/mpovu18v","slide":22,"bbox":[70,500,74,72]}
+{"kind":"textbox","id":"sh/kzehsz21","slide":22,"text":"O4","textPreview":"O4","textChars":2,"textLines":1,"bbox":[84,520,46,28]}
+{"kind":"textbox","id":"sh/50ni14jm","slide":22,"text":"Portability","textPreview":"Portability","textChars":11,"textLines":1,"bbox":[220,507,250,32]}
+{"kind":"textbox","id":"sh/yxwzqpkv","slide":22,"text":"JSON round-trip | SVG | PNG | PDF | editable PPTX","textPreview":"JSON round-trip | SVG | PNG | PDF | editable PPTX","textChars":49,"textLines":1,"bbox":[492,504,458,56]}
+{"kind":"textbox","id":"sh/jy50zu1g","slide":22,"text":"Web | mobile | VS Code | Athena","textPreview":"Web | mobile | VS Code | Athena","textChars":31,"textLines":1,"bbox":[974,504,230,56]}
+{"kind":"shape","id":"sh/snyhwz2d","slide":22,"bbox":[220,582,984,1]}
+{"kind":"image","id":"im/vax4vu18","slide":22,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/8rlxjb","slide":22,"text":"Traceability reference from the thesis requirements and summary chapters."}
+{"kind":"slide","id":"sl/wze860","slide":23,"title":"APPENDIX | ANALYSIS OBJECT MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/kjehgju5","slide":23,"name":"Section label","text":"APPENDIX | ANALYSIS OBJECT MODEL","textPreview":"APPENDIX | ANALYSIS OBJECT MODEL","textChars":32,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/ji50nytk","slide":23,"name":"Slide title","text":"Diagram data and session awareness stay separate","textPreview":"Diagram data and session awareness stay separate","textChars":48,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/t87it8bm","slide":23,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/8ny1k3u1","slide":23,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/7mp0rytg","slide":23,"name":"Slide number","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/6lwzitcv","slide":23,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/gby1o3ud","slide":23,"text":"Apollon JSON: figures/requirements-analysis-object-model.json","textPreview":"Apollon JSON: figures/requirements-analysis-object-model.json","textChars":61,"textLines":1,"bbox":[400,645,480,22]}
+{"kind":"image","id":"im/3at8vytk","slide":23,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/83ipwjux","slide":23,"name":"","geometry":"rect","alt":"Apollon analysis object model","bbox":[72,146,1136,484]}
+{"kind":"notes","id":"nt/wze860","slide":23,"text":"The object model separates persisted diagram content and versions from transient collaboration state. Artemis owns exercises and assessments; Athena owns feedback requests. Apollon JSON source is stored beside the thesis figure."}
+{"kind":"slide","id":"sl/m1z1g7","slide":24,"title":"APPENDIX | COMPONENT MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/p4fih4bi","slide":24,"name":"Section label","text":"APPENDIX | COMPONENT MODEL","textPreview":"APPENDIX | COMPONENT MODEL","textChars":26,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/214j69s7","slide":24,"name":"Slide title","text":"Standalone hosts the editor, collaboration, and persistence","textPreview":"Standalone hosts the editor, collaboration, and persistence","textChars":59,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/0zm14za1","slide":24,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/10vid4bm","slide":24,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/ed4j2psv","slide":24,"name":"Slide number","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/fed0butg","slide":24,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/lwz2porq","slide":24,"text":"Component responsibilities only - execution nodes are shown separately on the deployment slide.","textPreview":"Component responsibilities only - execution nodes are shown separately on the deployment slide.","textChars":95,"textLines":1,"bbox":[270,645,740,22]}
+{"kind":"image","id":"im/qxsv69gj","slide":24,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/ps3u9of2","slide":24,"name":"","geometry":"rect","alt":"Apollon standalone subsystem decomposition","bbox":[72,146,1136,484]}
+{"kind":"notes","id":"nt/m1z1g7","slide":24,"text":"This is a component model, not a deployment model. It shows the reusable editor, application logic, server responsibilities, collaboration relay, and persistence components. Apollon JSON: figures/apollon-standalone-decomposition.json."}
+{"kind":"slide","id":"sl/1oeq5d","slide":25,"title":"APPENDIX | DEPLOYMENT MODEL","textShapes":5}
+{"kind":"textbox","id":"sh/zehc7qto","slide":25,"name":"Section label","text":"APPENDIX | DEPLOYMENT MODEL","textPreview":"APPENDIX | DEPLOYMENT MODEL","textChars":27,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/0fqtgva9","slide":25,"name":"Slide title","text":"Each host owns the data it persists","textPreview":"Each host owns the data it persists","textChars":35,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/mh8bilsz","slide":25,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/n21cbqtk","slide":25,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/83atkva5","slide":25,"name":"Slide number","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/94jud0bq","slide":25,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/36xsz6tg","slide":25,"text":"Browser and mobile | Standalone server | Artemis | VS Code workspace","textPreview":"Browser and mobile | Standalone server | Artemis | VS Code workspace","textChars":68,"textLines":1,"bbox":[330,645,620,22]}
+{"kind":"image","id":"im/03i50bid","slide":25,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/3a54j610","slide":25,"name":"","geometry":"rect","alt":"Apollon deployment and persistence architecture","bbox":[72,146,1136,484]}
+{"kind":"notes","id":"nt/1oeq5d","slide":25,"text":"Use this slide to answer deployment questions without mixing component and deployment ideas. Local diagrams use browser storage; shared standalone diagrams use Redis; Artemis owns course and submission persistence; VS Code uses workspace files. Apollon JSON: figures/apollon-deployment-and-persistence-architecture.json."}
+{"kind":"slide","id":"sl/08446l","slide":26,"title":"APPENDIX | ACTIVITY MODEL","textShapes":9}
+{"kind":"textbox","id":"sh/o7e9gnq9","slide":26,"name":"Section label","text":"APPENDIX | ACTIVITY MODEL","textPreview":"APPENDIX | ACTIVITY MODEL","textChars":25,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/n65s72po","slide":26,"name":"Slide title","text":"Direct manipulation keeps correction inside the modeling flow","textPreview":"Direct manipulation keeps correction inside the modeling flow","textChars":61,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/14na5s7y","slide":26,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/03e9cnqd","slide":26,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/f25s3ips","slide":26,"name":"Slide number","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/e1wrad87","slide":26,"name":"Diagram stage","bbox":[64,138,1152,500]}
+{"kind":"textbox","id":"sh/l0rahc72","slide":26,"text":"1  MODEL AND CORRECT","textPreview":"1  MODEL AND CORRECT","textChars":20,"textLines":1,"bbox":[148,152,330,24]}
+{"kind":"textbox","id":"sh/u14ji5k3","slide":26,"text":"CONTINUES","textPreview":"CONTINUES","textChars":9,"textLines":1,"bbox":[568,336,144,22]}
+{"kind":"textbox","id":"sh/v2dkba18","slide":26,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[584,360,112,52]}
+{"kind":"textbox","id":"sh/g3m1kf2t","slide":26,"text":"2  SAVE OR EXPORT","textPreview":"2  SAVE OR EXPORT","textChars":17,"textLines":1,"bbox":[784,152,330,24]}
+{"kind":"textbox","id":"sh/6xkje5kr","slide":26,"text":"One Apollon activity model, enlarged in two sequential views","textPreview":"One Apollon activity model, enlarged in two sequential views","textChars":60,"textLines":1,"bbox":[370,642,540,22]}
+{"kind":"image","id":"im/jup0nutc","slide":26,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"image","id":"im/94nihkva","slide":26,"name":"","geometry":"rect","alt":"Upper half of the Apollon editing activity model","bbox":[148,182,330,438]}
+{"kind":"image","id":"im/61kbe94n","slide":26,"name":"","geometry":"rect","alt":"Lower half of the Apollon editing activity model","bbox":[784,182,330,438]}
+{"kind":"notes","id":"nt/08446l","slide":26,"text":"Use this activity model for detailed questions about the edit-correct-save-export flow. It is the same Apollon model shown in two enlarged sequential views for projector readability. Apollon JSON: figures/requirements-editing-activity-model.json."}
+{"kind":"slide","id":"sl/2hof17","slide":27,"title":"APPENDIX | IMPLEMENTATION","textShapes":15}
+{"kind":"textbox","id":"sh/falcbyt4","slide":27,"name":"Section label","text":"APPENDIX | IMPLEMENTATION","textPreview":"APPENDIX | IMPLEMENTATION","textChars":25,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/gbut43ap","slide":27,"name":"Slide title","text":"Integration feedback shaped the next iteration","textPreview":"Integration feedback shaped the next iteration","textChars":46,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/65sbetcn","slide":27,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/r61s7yt8","slide":27,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/s7atgjat","slide":27,"name":"Slide number","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/t8ja9oby","slide":27,"bbox":[158,174,0,414]}
+{"kind":"shape","id":"sh/i18ba9cb","slide":27,"bbox":[132,162,52,52]}
+{"kind":"textbox","id":"sh/j2hs3etw","slide":27,"text":"FEB","textPreview":"FEB","textChars":3,"textLines":1,"bbox":[76,174,50,24]}
+{"kind":"textbox","id":"sh/zy5036t8","slide":27,"text":"Mobile export | VS Code migration | server-side PDF begins","textPreview":"Mobile export | VS Code migration | server-side PDF begins","textChars":58,"textLines":1,"bbox":[222,167,920,36]}
+{"kind":"shape","id":"sh/yxwza1cn","slide":27,"bbox":[222,228,920,1]}
+{"kind":"shape","id":"sh/l0ni5gby","slide":27,"bbox":[132,258,52,52]}
+{"kind":"textbox","id":"sh/kzehcbad","slide":27,"text":"MAR","textPreview":"MAR","textChars":3,"textLines":1,"bbox":[76,270,50,24]}
+{"kind":"textbox","id":"sh/72p076t4","slide":27,"text":"Editing and alignment | SVG compatibility | rendering","textPreview":"Editing and alignment | SVG compatibility | rendering","textChars":53,"textLines":1,"bbox":[222,263,920,36]}
+{"kind":"shape","id":"sh/m1gzelsj","slide":27,"bbox":[222,324,920,1]}
+{"kind":"shape","id":"sh/t47i9gba","slide":27,"bbox":[132,354,52,52]}
+{"kind":"textbox","id":"sh/83yhgbap","slide":27,"text":"APR","textPreview":"APR","textChars":3,"textLines":1,"bbox":[76,366,50,24]}
+{"kind":"textbox","id":"sh/n6lgvmt0","slide":27,"text":"Artemis migration | Athena compatibility | quiz generation","textPreview":"Artemis migration | Athena compatibility | quiz generation","textChars":58,"textLines":1,"bbox":[222,359,920,36]}
+{"kind":"shape","id":"sh/25cz2hcf","slide":27,"bbox":[222,420,920,1]}
+{"kind":"shape","id":"sh/qlk3apc3","slide":27,"bbox":[132,450,52,52]}
+{"kind":"textbox","id":"sh/rmtk3ud8","slide":27,"text":"MAY","textPreview":"MAY","textChars":3,"textLines":1,"bbox":[76,462,50,24]}
+{"kind":"textbox","id":"sh/sn2lczut","slide":27,"text":"Nested quiz selections | assessment | mobile PPTX | collaboration","textPreview":"Nested quiz selections | assessment | mobile PPTX | collaboration","textChars":65,"textLines":1,"bbox":[222,455,920,36]}
+{"kind":"shape","id":"sh/dob254ve","slide":27,"bbox":[222,516,920,1]}
+{"kind":"shape","id":"sh/ix0365cr","slide":27,"bbox":[132,546,52,52]}
+{"kind":"textbox","id":"sh/3y9kzadc","slide":27,"text":"JUN","textPreview":"JUN","textChars":3,"textLines":1,"bbox":[76,558,50,24]}
+{"kind":"textbox","id":"sh/4zil8fux","slide":27,"text":"Standalone home | Artemis team awareness | edge overhaul | UI modernization","textPreview":"Standalone home | Artemis team awareness | edge overhaul | UI modernization","textChars":75,"textLines":1,"bbox":[222,551,920,36]}
+{"kind":"textbox","id":"sh/5kb21kvi","slide":27,"text":"Artemis integration exposed quiz and assessment gaps; team modeling then pulled awareness into the reusable library.","textPreview":"Artemis integration exposed quiz and assessment gaps; team modeling then pulled awareness into the reusable library.","textChars":116,"textLines":1,"bbox":[222,606,920,48]}
+{"kind":"image","id":"im/8nu1sj6h","slide":27,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/2hof17","slide":27,"text":"Source: thesis implementation timeline. The sequence explains why migration, collaboration, and usability could not be developed as isolated work packages."}
+{"kind":"slide","id":"sl/ka5g32","slide":28,"title":"APPENDIX | CONTRIBUTIONS","textShapes":9}
+{"kind":"textbox","id":"sh/x0nitsj2","slide":28,"name":"Section label","text":"APPENDIX | CONTRIBUTIONS","textPreview":"APPENDIX | CONTRIBUTIONS","textChars":24,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/axwzid0b","slide":28,"name":"Slide title","text":"Contribution ownership is documented for handoffs","textPreview":"Contribution ownership is documented for handoffs","textChars":49,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/ovuhg3i5","slide":28,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/9w3yp8jq","slide":28,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/mtczed0f","slide":28,"name":"Slide number","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"shape","id":"sh/nulgny10","slide":28,"bbox":[66,156,548,438]}
+{"kind":"shape","id":"sh/0ruhc3i9","slide":28,"bbox":[666,156,548,438]}
+{"kind":"textbox","id":"sh/1s3yl8ju","slide":28,"text":"Fady - documented inventory","textPreview":"Fady - documented inventory","textChars":27,"textLines":1,"bbox":[102,190,470,34]}
+{"kind":"textbox","id":"sh/x87y94ze","slide":28,"text":"Edge interaction and usability\nStandalone dashboard, routing, and UI modernization\nServer PDF and SVG/export correctness\nArtemis quiz generation and nested selections\nAssessment fixes and migration contributions","textPreview":"Edge interaction and usability | Standalone dashboard, routing, and UI modernization | Server PDF and SVG/export correctness | Artemis qu...","textChars":211,"textLines":5,"bbox":[104,256,452,250]}
+{"kind":"textbox","id":"sh/w7yhgjyt","slide":28,"text":"Ravi - remaining thesis work","textPreview":"Ravi - remaining thesis work","textChars":28,"textLines":1,"bbox":[702,190,470,34]}
+{"kind":"textbox","id":"sh/v6pg7eh8","slide":28,"text":"Mobile/iOS support\nCollaboration awareness and library reuse\nAthena model compatibility\nVS Code extension migration\nRemaining joint ecosystem integration described by the thesis","textPreview":"Mobile/iOS support | Collaboration awareness and library reuse | Athena model compatibility | VS Code extension migration | Remaining joi...","textChars":177,"textLines":5,"bbox":[704,256,452,250]}
+{"kind":"textbox","id":"sh/a5gze9gn","slide":28,"text":"The main story is joint; this appendix supports detailed implementation questions and speaker handoffs.","textPreview":"The main story is joint; this appendix supports detailed implementation questions and speaker handoffs.","textChars":103,"textLines":1,"bbox":[154,624,972,28]}
+{"kind":"image","id":"im/ulkr2p0b","slide":28,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/ka5g32","slide":28,"text":"Attribution follows Fady-contribution-history/fady-contribution-inventory.md and the user's ownership rule. The main presentation remains a joint thesis narrative."}
+{"kind":"slide","id":"sl/oq9yy5","slide":29,"title":"APPENDIX | DIAGRAM SOURCES","textShapes":26}
+{"kind":"textbox","id":"sh/ux8fylgn","slide":29,"name":"Section label","text":"APPENDIX | DIAGRAM SOURCES","textPreview":"APPENDIX | DIAGRAM SOURCES","textChars":26,"textLines":1,"bbox":[52,23,650,20]}
+{"kind":"textbox","id":"sh/h0jy9gfe","slide":29,"name":"Slide title","text":"Every formal model has a saved Apollon source","textPreview":"Every formal model has a saved Apollon source","textChars":45,"textLines":1,"bbox":[52,48,1070,50]}
+{"kind":"shape","id":"sh/7ahw36xw","slide":29,"bbox":[52,115,1182,1]}
+{"kind":"textbox","id":"sh/698fu1gr","slide":29,"name":"Footer","text":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textPreview":"Fady Samaan | Ravi Tamang  |  Master's Thesis | Apollon","textChars":55,"textLines":1,"bbox":[52,681,860,18]}
+{"kind":"textbox","id":"sh/twze5gf2","slide":29,"name":"Slide number","text":"29","textPreview":"29","textChars":2,"textLines":1,"bbox":[1190,681,44,18]}
+{"kind":"textbox","id":"sh/8vqxwbyh","slide":29,"text":"Slide","textPreview":"Slide","textChars":5,"textLines":1,"bbox":[78,150,92,26]}
+{"kind":"textbox","id":"sh/r61gfaxg","slide":29,"text":"Diagram type","textPreview":"Diagram type","textChars":12,"textLines":1,"bbox":[196,150,220,26]}
+{"kind":"textbox","id":"sh/q5sf65gv","slide":29,"text":"Apollon JSON source","textPreview":"Apollon JSON source","textChars":19,"textLines":1,"bbox":[438,150,748,26]}
+{"kind":"shape","id":"sh/0re5sby5","slide":29,"bbox":[72,190,86,48]}
+{"kind":"textbox","id":"sh/1sn61wfq","slide":29,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[88,203,54,22]}
+{"kind":"textbox","id":"sh/epwnq1gz","slide":29,"text":"Component","textPreview":"Component","textChars":9,"textLines":1,"bbox":[196,202,218,24]}
+{"kind":"textbox","id":"sh/zq5oz6xk","slide":29,"text":"presentation-research/diagrams/apollon-products-and-integrations.json","textPreview":"presentation-research/diagrams/apollon-products-and-integrations.json","textChars":69,"textLines":1,"bbox":[438,201,746,26]}
+{"kind":"shape","id":"sh/cne5ory9","slide":29,"bbox":[196,248,988,1]}
+{"kind":"shape","id":"sh/don6xwfu","slide":29,"bbox":[72,260,86,48]}
+{"kind":"textbox","id":"sh/qlwnmhg3","slide":29,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[88,273,54,22]}
+{"kind":"textbox","id":"sh/rm54vmxo","slide":29,"text":"Use case","textPreview":"Use case","textChars":8,"textLines":1,"bbox":[196,272,218,24]}
+{"kind":"textbox","id":"sh/4zu5kryx","slide":29,"text":"figures/requirements-use-case-model.json","textPreview":"figures/requirements-use-case-model.json","textChars":40,"textLines":1,"bbox":[438,271,746,26]}
+{"kind":"shape","id":"sh/p03mtcfi","slide":29,"bbox":[196,318,988,1]}
+{"kind":"shape","id":"sh/l4vu1o3a","slide":29,"bbox":[72,330,86,48]}
+{"kind":"textbox","id":"sh/k32t8jmp","slide":29,"text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[88,343,54,22]}
+{"kind":"textbox","id":"sh/jitczel4","slide":29,"text":"Communication","textPreview":"Communication","textChars":13,"textLines":1,"bbox":[196,342,218,24]}
+{"kind":"textbox","id":"sh/yhkb694j","slide":29,"text":"figures/standalone-collaboration-communication.json","textPreview":"figures/standalone-collaboration-communication.json","textChars":51,"textLines":1,"bbox":[438,341,746,26]}
+{"kind":"shape","id":"sh/xgbux43y","slide":29,"bbox":[196,388,988,1]}
+{"kind":"shape","id":"sh/wf2t4zmd","slide":29,"bbox":[72,400,86,48]}
+{"kind":"textbox","id":"sh/betcvuls","slide":29,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[88,413,54,22]}
+{"kind":"textbox","id":"sh/adkb2p4n","slide":29,"text":"Component","textPreview":"Component","textChars":9,"textLines":1,"bbox":[196,412,218,24]}
+{"kind":"textbox","id":"sh/hcfu983i","slide":29,"text":"presentation-research/diagrams/artemis-apollon-integration-focus.json","textPreview":"presentation-research/diagrams/artemis-apollon-integration-focus.json","textChars":69,"textLines":1,"bbox":[438,411,746,26]}
+{"kind":"shape","id":"sh/gbmdg3mx","slide":29,"bbox":[196,458,988,1]}
+{"kind":"shape","id":"sh/ehgru5kf","slide":29,"bbox":[72,470,86,48]}
+{"kind":"textbox","id":"sh/zips3q1k","slide":29,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[88,483,54,22]}
+{"kind":"textbox","id":"sh/0jy9wv25","slide":29,"text":"Activity","textPreview":"Activity","textChars":8,"textLines":1,"bbox":[196,482,218,24]}
+{"kind":"textbox","id":"sh/1k7a50jq","slide":29,"text":"presentation-research/diagrams/artemis-quiz-generation-activity.json","textPreview":"presentation-research/diagrams/artemis-quiz-generation-activity.json","textChars":68,"textLines":1,"bbox":[438,481,746,26]}
+{"kind":"shape","id":"sh/qdwrqlk3","slide":29,"bbox":[196,528,988,1]}
+{"kind":"shape","id":"sh/rep8zq1o","slide":29,"bbox":[72,540,86,48]}
+{"kind":"textbox","id":"sh/cfy9sv29","slide":29,"text":"23-26","textPreview":"23-26","textChars":5,"textLines":1,"bbox":[88,553,54,22]}
+{"kind":"textbox","id":"sh/dg7q10ju","slide":29,"text":"Appendix models","textPreview":"Appendix models","textChars":15,"textLines":1,"bbox":[196,552,218,24]}
+{"kind":"textbox","id":"sh/a90r2pkn","slide":29,"text":"figures/*.json (matching each rendered model)","textPreview":"figures/*.json (matching each rendered model)","textChars":45,"textLines":1,"bbox":[438,551,746,26]}
+{"kind":"shape","id":"sh/ba9sba1s","slide":29,"bbox":[196,598,988,1]}
+{"kind":"shape","id":"sh/v2po7m58","slide":29,"bbox":[172,620,936,40]}
+{"kind":"textbox","id":"sh/u1gnyhon","slide":29,"text":"Import JSON in the hosted app | Export editable PPTX | Keep JSON for the next revision","textPreview":"Import JSON in the hosted app | Export editable PPTX | Keep JSON for the next revision","textChars":86,"textLines":1,"bbox":[198,630,884,20]}
+{"kind":"image","id":"im/x8f2lgj2","slide":29,"name":"","geometry":"rect","alt":"TUM logo","bbox":[1166,23,68,36]}
+{"kind":"notes","id":"nt/oq9yy5","slide":29,"text":"Source map for reproducibility. The official Apollon application can import the JSON sources and export editable PPTX or other visual formats while JSON remains the editable model source."}

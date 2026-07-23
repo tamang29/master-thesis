@@ -1,0 +1,181 @@
+{
+  "id": "presentation-artemis-quiz-generation-activity",
+  "version": "4.1.0",
+  "title": "Artemis Drag-and-Drop Quiz Generation",
+  "type": "ActivityDiagram",
+  "nodes": [
+    {
+      "id": "start",
+      "width": 50,
+      "height": 50,
+      "type": "activityInitialNode",
+      "position": { "x": 0, "y": 145 },
+      "data": { "name": "Start" },
+      "measured": { "width": 50, "height": 50 }
+    },
+    {
+      "id": "select",
+      "width": 220,
+      "height": 110,
+      "type": "activity",
+      "position": { "x": 120, "y": 115 },
+      "data": {
+        "name": "Select Diagram Elements",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 220, "height": 110 }
+    },
+    {
+      "id": "nested",
+      "width": 230,
+      "height": 110,
+      "type": "activity",
+      "position": { "x": 420, "y": 115 },
+      "data": {
+        "name": "Resolve Nested Selections",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 230, "height": 110 }
+    },
+    {
+      "id": "background",
+      "width": 250,
+      "height": 110,
+      "type": "activity",
+      "position": { "x": 735, "y": 115 },
+      "data": {
+        "name": "Export Background Without Selections",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 250, "height": 110 }
+    },
+    {
+      "id": "cutouts",
+      "width": 235,
+      "height": 110,
+      "type": "activity",
+      "position": { "x": 1070, "y": 115 },
+      "data": {
+        "name": "Create Cut-outs and Drop Locations",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 235, "height": 110 }
+    },
+    {
+      "id": "quiz",
+      "width": 210,
+      "height": 100,
+      "type": "activityObjectNode",
+      "position": { "x": 1390, "y": 120 },
+      "data": {
+        "name": "Aligned Drag-and-Drop Quiz",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 210, "height": 100 }
+    },
+    {
+      "id": "end",
+      "width": 50,
+      "height": 50,
+      "type": "activityFinalNode",
+      "position": { "x": 1680, "y": 145 },
+      "data": { "name": "End" },
+      "measured": { "width": 50, "height": 50 }
+    },
+    {
+      "id": "legend-modified",
+      "width": 150,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 620, "y": 0 },
+      "data": {
+        "name": "Modified",
+        "fillColor": "#ffe0ad",
+        "strokeColor": "#d08a00",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 150, "height": 44 }
+    },
+    {
+      "id": "legend-added",
+      "width": 150,
+      "height": 44,
+      "type": "colorDescription",
+      "position": { "x": 770, "y": 0 },
+      "data": {
+        "name": "Added",
+        "fillColor": "#d9e8ff",
+        "strokeColor": "#4a86d9",
+        "textColor": "#000000"
+      },
+      "measured": { "width": 150, "height": 44 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "f1",
+      "source": "start",
+      "target": "select",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    },
+    {
+      "id": "f2",
+      "source": "select",
+      "target": "nested",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    },
+    {
+      "id": "f3",
+      "source": "nested",
+      "target": "background",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    },
+    {
+      "id": "f4",
+      "source": "background",
+      "target": "cutouts",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    },
+    {
+      "id": "f5",
+      "source": "cutouts",
+      "target": "quiz",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    },
+    {
+      "id": "f6",
+      "source": "quiz",
+      "target": "end",
+      "type": "ActivityControlFlow",
+      "sourceHandle": "right",
+      "targetHandle": "left",
+      "data": { "points": [] }
+    }
+  ],
+  "assessments": {}
+}

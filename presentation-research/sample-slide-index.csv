@@ -1,0 +1,377 @@
+deck,pdf_page,section_label,takeaway_title,slide_kind,diagram_visual,diagram_type,apollon_mappable,notes
+BA Presentation Fangxing_Liu (1).pdf,1,title,Enhancing Terminal Usability in Modern IDEs through AI-Assistance,title,none,,,
+BA Presentation Fangxing_Liu (1).pdf,2,overview,Beginner Student / Professional Developer,context,icon-array,,,two-persona map (closest thing to an agenda in corpus)
+BA Presentation Fangxing_Liu (1).pdf,3,introduction,EduIDE (beginner),context,screenshot,,,build 3-4
+BA Presentation Fangxing_Liu (1).pdf,4,introduction,EduIDE terminal,context,screenshot,,,build of p3
+BA Presentation Fangxing_Liu (1).pdf,5,problem,NullPointerException wall,problem,code,,,
+BA Presentation Fangxing_Liu (1).pdf,6,motivation,Motivation - Beginner,motivation,icon-array,,,3 cards
+BA Presentation Fangxing_Liu (1).pdf,7,objectives,Objectives - Beginner,objectives/requirements/RQ,icon-array,,,3 cards
+BA Presentation Fangxing_Liu (1).pdf,8,scope,Use Case Model - Beginner,domain/use-case,formal UML/model,use case,yes,system boundary + legend
+BA Presentation Fangxing_Liu (1).pdf,9,demo,AI Terminal Assistant Live Demo,demo,none,,,separator
+BA Presentation Fangxing_Liu (1).pdf,10,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,EduIDE extension components; Existing/Modified/New legend
+BA Presentation Fangxing_Liu (1).pdf,11,problem,Terminal Output component focus,architecture/subsystem,formal UML/model,component,yes,small focus diagram
+BA Presentation Fangxing_Liu (1).pdf,12,implementation,Unstructured Terminal Output,other,code,,,
+BA Presentation Fangxing_Liu (1).pdf,13,implementation,Structured Terminal Output,other,code,,,build 13-15
+BA Presentation Fangxing_Liu (1).pdf,14,implementation,Structured Terminal Output,other,code,,,build
+BA Presentation Fangxing_Liu (1).pdf,15,implementation,Structured Terminal Output,other,code,,,build
+BA Presentation Fangxing_Liu (1).pdf,16,overview,Persona switch,context,icon-array,,,"re-show of p2, professional highlighted"
+BA Presentation Fangxing_Liu (1).pdf,17,problem,Problem - Professional,problem,code,,,log wall
+BA Presentation Fangxing_Liu (1).pdf,18,motivation,Motivation - Professional,motivation,icon-array,,,
+BA Presentation Fangxing_Liu (1).pdf,19,objectives,Objectives - Professional,objectives/requirements/RQ,icon-array,,,
+BA Presentation Fangxing_Liu (1).pdf,20,demo,Enhanced Terminal UX Live Demo,demo,none,,,second demo separator
+BA Presentation Fangxing_Liu (1).pdf,21,status,Status,status,none,,,two-persona checklist
+BA Presentation Fangxing_Liu (1).pdf,22,future work,Future Work,future work,none,,,two-persona list
+BA Presentation Fangxing_Liu (1).pdf,23,thanks,Thank you for your attention.,questions/thanks,none,,,
+BA Presentation Jakub Jakubczyk Logos.pdf,1,title,(Logos) title,title,none,,,custom dark template
+BA Presentation Jakub Jakubczyk Logos.pdf,2,problem,"Static registry, scarce GPUs, no runtime visibility",problem,icon-array,,,3 columns
+BA Presentation Jakub Jakubczyk Logos.pdf,3,objectives,Objectives O1-O3,objectives/requirements/RQ,none,,,numbered objectives
+BA Presentation Jakub Jakubczyk Logos.pdf,4,gap analysis,From passive forwarder to active coordinator,context,table,,,baseline vs proposed
+BA Presentation Jakub Jakubczyk Logos.pdf,5,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,6,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,7,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,8,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,9,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,10,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"subsystem decomposition; 6-frame progressive build, ~85% width"
+BA Presentation Jakub Jakubczyk Logos.pdf,11,worker lifecycle,"Sleep models, don't unload",dynamic/workflow,formal UML/model,state machine,no,lane lifecycle state machine; not an Apollon type (closest: activity/flowchart)
+BA Presentation Jakub Jakubczyk Logos.pdf,12,demo,See it running,demo,none,,,separator
+BA Presentation Jakub Jakubczyk Logos.pdf,13,evaluation,One workload. Two approaches. Three load levels.,evaluation/results,table,,,hardware/model setup
+BA Presentation Jakub Jakubczyk Logos.pdf,14,evaluation,Time To First Token,evaluation/results,chart/plot,,,latency distribution plots
+BA Presentation Jakub Jakubczyk Logos.pdf,15,status,Conclusion / Status,status,none,,,per-objective verdicts
+BA Presentation Jakub Jakubczyk Logos.pdf,16,back cover,(closing),questions/thanks,none,,,
+BA Presentation Kalra Catherine.pdf,1,title,Integrating AI Assistance in TUM's Doctoral Application Portal,title,none,,,
+BA Presentation Kalra Catherine.pdf,2,problem,Inaccessible Job Postings / legal exposure,problem,screenshot,,,2 cards
+BA Presentation Kalra Catherine.pdf,3,problem,Tedious Manual Entry / Biased Recommendations,problem,screenshot,,,2 cards
+BA Presentation Kalra Catherine.pdf,4,motivation,Accessibility / Compliance / Efficiency / Integrity,motivation,icon-array,,,4 cards
+BA Presentation Kalra Catherine.pdf,5,objectives,Objectives,objectives/requirements/RQ,icon-array,,,4 cards
+BA Presentation Kalra Catherine.pdf,6,system models,Dynamic Model,dynamic/workflow,formal UML/model,activity,partial,swimlane activity (Professor/System); Apollon has no swimlanes
+BA Presentation Kalra Catherine.pdf,7,system models,Analysis Object Model,data model,formal UML/model,class,yes,AOM ~80% width
+BA Presentation Kalra Catherine.pdf,8,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,9,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,10,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,11,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,12,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,13,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,"6-frame progressive build, thesis-affected modules highlighted"
+BA Presentation Kalra Catherine.pdf,14,demo,Live Demo,demo,none,,,separator
+BA Presentation Kalra Catherine.pdf,15,status,Realized Goals,status,none,,,"reuses objective cards, green/yellow checks"
+BA Presentation Kalra Catherine.pdf,16,status,Ongoing Goals,status,none,,,open items
+BA Presentation Kalra Catherine.pdf,17,future work,AI Consistency Check,future work,screenshot,,,
+BA Presentation Kalra Catherine.pdf,18,future work,AI Document Translation,future work,screenshot,,,
+BA Presentation Kalra Catherine.pdf,19,thanks,Thank you for listening!,questions/thanks,none,,,
+BA Presentation Kalra Catherine.pdf,20,appendix,Icon Sources,appendix-content,none,,,
+BA Presentation Kalra Catherine.pdf,21,appendix,Dynamic Model,appendix-content,formal UML/model,activity,partial,second activity diagram
+BA Presentation Pao Xin Tan.pdf,1,title,Integrating Hades into Artemis,title,none,,,
+BA Presentation Pao Xin Tan.pdf,2,context,Programming Exercise Feedback Loop,context,flow/pipeline,,,code->build->result loop
+BA Presentation Pao Xin Tan.pdf,3,motivation,Hades as an Alternative CI System,motivation,icon-array,,,
+BA Presentation Pao Xin Tan.pdf,4,problem,Gaps: Integration between Artemis and Hades,problem,icon-array,,,
+BA Presentation Pao Xin Tan.pdf,5,objectives,Objectives 1-3,objectives/requirements/RQ,icon-array,,,
+BA Presentation Pao Xin Tan.pdf,6,scope,Use Case Model,domain/use-case,formal UML/model,use case,yes,"two system boundaries (Artemis+Hades), ~85% width"
+BA Presentation Pao Xin Tan.pdf,7,demo,Live Demo,demo,none,,,separator at 7/12
+BA Presentation Pao Xin Tan.pdf,8,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,New/Modified/Existing legend
+BA Presentation Pao Xin Tan.pdf,9,dynamic model,Activity Diagram: Log Aggregation,dynamic/workflow,formal UML/model,activity,partial,container/step swimlane-ish partitions
+BA Presentation Pao Xin Tan.pdf,10,status,Status,status,none,,,reuses objective wording w/ checks
+BA Presentation Pao Xin Tan.pdf,11,future work,Future Work,future work,icon-array,,,
+BA Presentation Pao Xin Tan.pdf,12,thanks,Thank you for your time!,questions/thanks,none,,,
+BA Presentation Youssef El Toukhi.pdf,1,title,Iris as Autonomous AI Tutor in Artemis,title,none,,,
+BA Presentation Youssef El Toukhi.pdf,2,context,"1,000+ Students Enrolled",context,other,,,big-number hook
+BA Presentation Youssef El Toukhi.pdf,3,context,10 Tutors,context,other,,,big-number hook
+BA Presentation Youssef El Toukhi.pdf,4,problem,High volume / limited tutors / repetitive,problem,icon-array,,,
+BA Presentation Youssef El Toukhi.pdf,5,motivation,Students / Tutors,motivation,icon-array,,,
+BA Presentation Youssef El Toukhi.pdf,6,objectives,Objectives,objectives/requirements/RQ,icon-array,,,4 cards
+BA Presentation Youssef El Toukhi.pdf,7,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,Artemis boundary
+BA Presentation Youssef El Toukhi.pdf,8,pipeline,Autonomous Tutor Pipeline,dynamic/workflow,flow/pipeline,,,"icon flow, not formal UML"
+BA Presentation Youssef El Toukhi.pdf,9,demo,Live Demo,demo,none,,,separator
+BA Presentation Youssef El Toukhi.pdf,10,architecture,Subsystem Decomposition - Question Answering,architecture/subsystem,formal UML/model,component,yes,Existing/Edited/Added legend; build 10-11
+BA Presentation Youssef El Toukhi.pdf,11,architecture,Subsystem Decomposition - Question Answering,architecture/subsystem,formal UML/model,component,yes,build of p10
+BA Presentation Youssef El Toukhi.pdf,12,architecture,Subsystem Decomposition - Memory Ingestion,architecture/subsystem,formal UML/model,component,yes,
+BA Presentation Youssef El Toukhi.pdf,13,status,Status,status,none,,,reuses objectives; 3 green 1 yellow
+BA Presentation Youssef El Toukhi.pdf,14,future work,Future Work,future work,icon-array,,,
+BA Presentation Youssef El Toukhi.pdf,15,thanks,Thank you for your attention!,questions/thanks,none,,,
+BA Thesis Presentation Marcos Oliva.pdf,1,title,Improving Software Quality and Developer Experience (E2E),title,none,,,custom gradient template
+BA Thesis Presentation Marcos Oliva.pdf,2,intro,(visual intro),context,photo,,,
+BA Thesis Presentation Marcos Oliva.pdf,3,problem,Problems,problem,none,,,section divider
+BA Thesis Presentation Marcos Oliva.pdf,4,problem,Confusing Local Setup / Long Feedback Loop / Locators,problem,icon-array,,,"quantified pain: 5 steps, 27min, flaky"
+BA Thesis Presentation Marcos Oliva.pdf,5,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,partial,"stylized: actors + rounded boxes, no ovals/boundary"
+BA Thesis Presentation Marcos Oliva.pdf,6,demo,Demo,demo,none,,,gradient separator at 6/12
+BA Thesis Presentation Marcos Oliva.pdf,7,architecture,Subsystem Decomposition,architecture/subsystem,none,,,section divider
+BA Thesis Presentation Marcos Oliva.pdf,8,architecture,Local Dev Setup / E2E Test Suite / CI Pipeline,architecture/subsystem,formal UML/model,component,yes,"New/Improved/Added-by-contributor/Preexisting legend, ~90% width"
+BA Thesis Presentation Marcos Oliva.pdf,9,evaluation,Results (before),evaluation/results,icon-array,,,before metrics; build 9-10
+BA Thesis Presentation Marcos Oliva.pdf,10,evaluation,Results (before/after),evaluation/results,icon-array,,,"5 manual->1 script, 27.7->4.0 min"
+BA Thesis Presentation Marcos Oliva.pdf,11,future work,Future Work,future work,icon-array,,,
+BA Thesis Presentation Marcos Oliva.pdf,12,thanks,Thank you / Any Questions?,questions/thanks,none,,,
+BA-Presentation-Handout-Pahle.pdf,1,title,Passkey-First SSO Solution,title,none,,,
+BA-Presentation-Handout-Pahle.pdf,2,problem,How did the previous system operate?,problem,icon-array,,,
+BA-Presentation-Handout-Pahle.pdf,3,motivation,What can a revised system enhance?,motivation,icon-array,,,
+BA-Presentation-Handout-Pahle.pdf,4,requirements,What should the system be capable of?,objectives/requirements/RQ,icon-array,,,4 numbered requirements
+BA-Presentation-Handout-Pahle.pdf,5,demo,Live Demo,demo,none,,,separator at 5/10 main
+BA-Presentation-Handout-Pahle.pdf,6,architecture,Hardware Software Mapping,deployment/hardware,none,,,section divider
+BA-Presentation-Handout-Pahle.pdf,7,architecture,HW/SW Mapping - Passkey Login,deployment/hardware,formal UML/model,deployment,yes,"3D nodes, numbered flow annotations, ~85% width"
+BA-Presentation-Handout-Pahle.pdf,8,status,What can the system do now?,status,none,,,"reuses requirement wording, checks + TODO"
+BA-Presentation-Handout-Pahle.pdf,9,future work,What should be explored next?,future work,none,,,
+BA-Presentation-Handout-Pahle.pdf,10,thanks,Thank you for your attention!,questions/thanks,none,,,
+BA-Presentation-Handout-Pahle.pdf,11,appendix,Additional Material,appendix-divider,none,,,
+BA-Presentation-Handout-Pahle.pdf,12,appendix,HW/SW Mapping - TUM-Login,appendix-content,formal UML/model,deployment,yes,
+BA-Presentation-Handout-Pahle.pdf,13,appendix,HW/SW Mapping - Session Reuse,appendix-content,formal UML/model,deployment,yes,
+BA_Presentation_Senan_Aslan.pdf,1,title,Dynamic Context Handling and Mobile Extension of Iris,title,none,,,CIT template
+BA_Presentation_Senan_Aslan.pdf,2,problem,Fixed Context / Separate Chats / Web-Only,problem,icon-array,,,3 cards
+BA_Presentation_Senan_Aslan.pdf,3,motivation,Continuity / Trust / Mobility,motivation,icon-array,,,3 cards
+BA_Presentation_Senan_Aslan.pdf,4,objectives,Objectives 00-01,objectives/requirements/RQ,icon-array,,,build 4-5
+BA_Presentation_Senan_Aslan.pdf,5,objectives,Objectives 00-03,objectives/requirements/RQ,icon-array,,,"build complete, 4 cards"
+BA_Presentation_Senan_Aslan.pdf,6,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,"title left, diagram right ~60% width; Existing/New/Modified legend"
+BA_Presentation_Senan_Aslan.pdf,7,demo,Live Demo,demo,none,,,dark navy separator + mascot
+BA_Presentation_Senan_Aslan.pdf,8,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,Pyris/Artemis server/web app stack
+BA_Presentation_Senan_Aslan.pdf,9,status,Status,status,none,,,reuses objective cards; one marked open (red)
+BA_Presentation_Senan_Aslan.pdf,10,future work,Future Work,future work,icon-array,,,4 cards
+BA_Presentation_Senan_Aslan.pdf,11,thanks,Thank you for listening!,questions/thanks,none,,,dark separator
+BA_Presentation_Senan_Aslan.pdf,12,appendix,Additional Material,appendix-divider,none,,,dark separator
+BA_Presentation_Senan_Aslan.pdf,13,appendix,Activity Diagram,appendix-content,formal UML/model,activity,partial,IRIS/ARTEMIS/STUDENT swimlanes
+BA_Presentation_Vivien_Finley_v3.pdf,1,title,Improving the Integration of Iris with Learning Materials,title,none,,,
+BA_Presentation_Vivien_Finley_v3.pdf,2,context,Starting Point,context,icon-array,,,build 2-3
+BA_Presentation_Vivien_Finley_v3.pdf,3,context,Starting Point (RAG + citations),context,icon-array,,,build of p2
+BA_Presentation_Vivien_Finley_v3.pdf,4,problem,Which challenges do students face?,problem,icon-array,,,3 illustrated cards
+BA_Presentation_Vivien_Finley_v3.pdf,5,motivation,Why does addressing these challenges matter?,motivation,icon-array,,,build 5-6
+BA_Presentation_Vivien_Finley_v3.pdf,6,motivation,Why does addressing these challenges matter?,motivation,icon-array,,,build w/ outcome
+BA_Presentation_Vivien_Finley_v3.pdf,7,objectives,How to better connect Iris with learning materials?,objectives/requirements/RQ,icon-array,,,3 objective cards
+BA_Presentation_Vivien_Finley_v3.pdf,8,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,9,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,10,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,11,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,12,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,13,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,6-frame progressive build; existing/modified/new legend; objective-card callout on frames
+BA_Presentation_Vivien_Finley_v3.pdf,14,demo,Live Demo,demo,none,,,white separator
+BA_Presentation_Vivien_Finley_v3.pdf,15,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,16,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,17,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,18,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,19,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,20,data model,Analysis Object Model,data model,formal UML/model,class,yes,6-frame progressive build; existing/modified/new legend
+BA_Presentation_Vivien_Finley_v3.pdf,21,architecture,Subsystem Decomposition (divider),architecture/subsystem,screenshot,,,section intro
+BA_Presentation_Vivien_Finley_v3.pdf,22,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,23,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,24,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,25,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,26,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,27,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,28,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,29,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,30,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,31,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,32,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,33,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,13-frame progressive build; Pyris/Artemis subsystems
+BA_Presentation_Vivien_Finley_v3.pdf,34,status,Status,status,none,,,objective cards w/ green checks + yellow partial
+BA_Presentation_Vivien_Finley_v3.pdf,35,future work,Future Work,future work,icon-array,,,3 cards
+BA_Presentation_Vivien_Finley_v3.pdf,36,thanks,Thank you for your attention!,questions/thanks,none,,,
+BA_Presentation_Vivien_Finley_v3.pdf,37,appendix,Additional Material,appendix-divider,none,,,dark separator
+BA_Presentation_Vivien_Finley_v3.pdf,38,appendix,Activity Diagram,appendix-content,formal UML/model,activity,partial,Student/Artemis/Iris swimlanes + legend
+MA-Presentation-Ostertag.pdf,1,title,Automated Standardization of Educational Documents in an OER Platform,title,none,,,CIT template; Master
+MA-Presentation-Ostertag.pdf,2,introduction,LEARN-Hub as popular CS OER-sharing Repository,context,icon-array,,,hub-and-spokes icon graphic
+MA-Presentation-Ostertag.pdf,3,problem,What is missing?,problem,icon-array,,,3 cards
+MA-Presentation-Ostertag.pdf,4,motivation,Why Solving This Matters,motivation,icon-array,,,3 cards
+MA-Presentation-Ostertag.pdf,5,objectives,Three Objectives - One Thesis,objectives/requirements/RQ,none,,,3 numbered objectives
+MA-Presentation-Ostertag.pdf,6,objectives,Three Objectives - One Thesis,objectives/requirements/RQ,none,,,"re-show, obj 1 highlighted (wayfinding build)"
+MA-Presentation-Ostertag.pdf,7,migration,Migrating to Spring Boot Without Touching Functionality,architecture/subsystem,formal UML/model,component,yes,"migration component diagram, Migrated/New/Existing legend, ~75% width"
+MA-Presentation-Ostertag.pdf,8,objectives,Three Objectives - One Thesis,objectives/requirements/RQ,none,,,"re-show, obj 2 highlighted"
+MA-Presentation-Ostertag.pdf,9,ux & consistency,Integrating the Hub into Chair's Standards,other,table,,,3-column change list
+MA-Presentation-Ostertag.pdf,10,ux & consistency,Mockup Comparison,context,screenshot,,,before/after UI
+MA-Presentation-Ostertag.pdf,11,objectives,Three Objectives - One Thesis,objectives/requirements/RQ,none,,,"re-show, obj 3 highlighted"
+MA-Presentation-Ostertag.pdf,12,standard documents,What Is The Vision of LEARN-Hub?,domain/use-case,formal UML/model,use case,yes,"3 actors, system boundary, include/extend, New/Modified/Existing legend, ~85% width"
+MA-Presentation-Ostertag.pdf,13,standard documents,What Material Should Be Included?,domain/use-case,icon-array,,,6 material cards
+MA-Presentation-Ostertag.pdf,14,architecture,How Is This Achieved? - Generation,architecture/subsystem,formal UML/model,component,yes,subsystem decomposition w/ interfaces; build pair 14-15
+MA-Presentation-Ostertag.pdf,15,architecture,How Is This Achieved? - Retrieval,architecture/subsystem,formal UML/model,component,yes,build of p14 with retrieval path highlighted
+MA-Presentation-Ostertag.pdf,16,demo,Live Demo,demo,none,,,dark navy separator
+MA-Presentation-Ostertag.pdf,17,status,What Did We Achieve?,status,none,,,"reuses objective wording, all green checks"
+MA-Presentation-Ostertag.pdf,18,status,What Stayed Open?,status,none,,,PARTIALLY REALIZED / REMAINED OPEN split
+MA-Presentation-Ostertag.pdf,19,future work,Three Directions for Future Work,future work,icon-array,,,3 cards
+MA-Presentation-Ostertag.pdf,20,questions,Questions are welcome!,questions/thanks,none,,,dark navy separator
+MA-Presentation-Ostertag.pdf,21,appendix,Pipeline Inputs,appendix-content,table,,,material-type input table
+MA-Presentation-Ostertag.pdf,22,appendix,Analysis Object Model,appendix-content,formal UML/model,class,yes,AOM class diagram ~85% width
+MA-Presentation-Ostertag.pdf,23,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,24,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,25,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,26,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,27,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,28,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,29,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,30,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,31,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,32,appendix,What Is The Workflow?,appendix-content,formal UML/model,activity,partial,swimlane activity diagram; 10-frame progressive build (Apollon activity has no swimlanes)
+MA-Presentation-Ostertag.pdf,33,acknowledgements,Acknowledgments,acknowledgements,none,,,credits Lahnor & Ederer template
+MA_Thesis_Presentation_Ederer.pdf,1,title,Design and Development of a Digital Story-Coding Activity with Ozobots,title,none,,,CIT template; Master
+MA_Thesis_Presentation_Ederer.pdf,2,problem,Why Doesn't This Happen Naturally?,problem,icon-array,,,3 cards
+MA_Thesis_Presentation_Ederer.pdf,3,motivation,Why Solving This Matters,motivation,icon-array,,,3 cards
+MA_Thesis_Presentation_Ederer.pdf,4,objectives,Three Objectives - One Thesis,objectives/requirements/RQ,none,,,3 numbered objectives
+MA_Thesis_Presentation_Ederer.pdf,5,concept,Digital Story-Coding with Ozobots,context,photo,,,AI-generated concept images
+MA_Thesis_Presentation_Ederer.pdf,6,system models,Analysis Object Model (overview),data model,formal UML/model,class,yes,"3 color-coded packages, ~85% width"
+MA_Thesis_Presentation_Ederer.pdf,7,system models,Narrative Structure,data model,formal UML/model,class,yes,zoom of p6 package (progressive)
+MA_Thesis_Presentation_Ederer.pdf,8,system models,Programming Structure,data model,formal UML/model,class,yes,zoom of p6 package (progressive)
+MA_Thesis_Presentation_Ederer.pdf,9,system models,Social Collaboration Structure,data model,formal UML/model,class,yes,zoom of p6 package (progressive)
+MA_Thesis_Presentation_Ederer.pdf,10,demo,Live Demo,demo,none,,,dark navy separator with artwork
+MA_Thesis_Presentation_Ederer.pdf,11,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,12,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,13,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,14,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,15,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,16,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,17,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,18,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,19,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,20,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,21,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,22,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,23,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,24,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,25,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,26,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,27,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,28,demo,Live Demo walkthrough,demo,screenshot,,,in-app screenshots; animation frames (printed slides 11-14)
+MA_Thesis_Presentation_Ederer.pdf,29,dynamic model,Physical / Digital Interaction,dynamic/workflow,formal UML/model,activity,partial,two-partition activity flow (lane-like coloring)
+MA_Thesis_Presentation_Ederer.pdf,30,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,31,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,32,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,33,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,34,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,35,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,36,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,37,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,38,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,39,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,40,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,41,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,42,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,43,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,44,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,45,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,46,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,47,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,48,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,49,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,50,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,layered component diagram; 21-frame highlight build (printed slide 16)
+MA_Thesis_Presentation_Ederer.pdf,51,evaluation,Exploratory Testing Overview,evaluation/results,flow/pipeline,,,peer test / pilot1 / pilot2 timeline cards
+MA_Thesis_Presentation_Ederer.pdf,52,evaluation,Pilot 1: Analog Programming,evaluation/results,table,,,results/findings/refinements columns
+MA_Thesis_Presentation_Ederer.pdf,53,evaluation,Pilot 2: Digital Programming,evaluation/results,table,,,results/findings/final design columns
+MA_Thesis_Presentation_Ederer.pdf,54,knowledge transfer,Serious Play Conference,other,photo,,,conference photos
+MA_Thesis_Presentation_Ederer.pdf,55,status,What Did We Achieve? (obj 1),status,screenshot,,,per-objective evidence build
+MA_Thesis_Presentation_Ederer.pdf,56,status,What Did We Achieve? (obj 2),status,screenshot,,,per-objective evidence build
+MA_Thesis_Presentation_Ederer.pdf,57,status,What Did We Achieve? (all),status,none,,,"reuses objective wording, checks"
+MA_Thesis_Presentation_Ederer.pdf,58,status,What Stayed Open?,status,none,,,PARTIALLY REALIZED / REMAINED OPEN
+MA_Thesis_Presentation_Ederer.pdf,59,future work,Three Directions for Future Work,future work,icon-array,,,3 cards
+MA_Thesis_Presentation_Ederer.pdf,60,questions,Questions are welcome!,questions/thanks,none,,,dark separator
+Nikolas Hack Bachelor-Presentation.pdf,1,title,Shared Language Server Architectures,title,none,,,
+Nikolas Hack Bachelor-Presentation.pdf,2,intro,RAM prices in recent Months,context,chart/plot,,,price trend chart
+Nikolas Hack Bachelor-Presentation.pdf,3,intro,EduIDE for Students,context,screenshot,,,
+Nikolas Hack Bachelor-Presentation.pdf,4,problem,From the perspective of an Administrator,problem,custom architecture graphic,,,N IDE boxes; build 4-5
+Nikolas Hack Bachelor-Presentation.pdf,5,problem,From the perspective of an Administrator,problem,custom architecture graphic,,,build w/ annotations
+Nikolas Hack Bachelor-Presentation.pdf,6,motivation,Why does solving this matter?,motivation,icon-array,,,4 cards
+Nikolas Hack Bachelor-Presentation.pdf,7,objectives,How do we reach this goal?,objectives/requirements/RQ,icon-array,,,"3 cards; re-shown at 11, 17"
+Nikolas Hack Bachelor-Presentation.pdf,8,hypothesis,From N:N to N:1,context,custom architecture graphic,,,current vs hypothesis
+Nikolas Hack Bachelor-Presentation.pdf,9,hypothesis,Findings during our research,context,custom architecture graphic,,,build 9-10 + maintainer quote
+Nikolas Hack Bachelor-Presentation.pdf,10,hypothesis,Shared JVM path blocked,context,custom architecture graphic,,,negative result callout
+Nikolas Hack Bachelor-Presentation.pdf,11,objectives,Objectives re-show,objectives/requirements/RQ,icon-array,,,obj2 highlighted (wayfinding)
+Nikolas Hack Bachelor-Presentation.pdf,12,architecture,Architectural Evolution,architecture/subsystem,formal UML/model,deployment,partial,Kubernetes pods/PVC as 3D nodes w/ component symbols; 5-frame build; Preexisting/Modified/New legend
+Nikolas Hack Bachelor-Presentation.pdf,13,architecture,Architectural Evolution,architecture/subsystem,formal UML/model,deployment,partial,Kubernetes pods/PVC as 3D nodes w/ component symbols; 5-frame build; Preexisting/Modified/New legend
+Nikolas Hack Bachelor-Presentation.pdf,14,architecture,Architectural Evolution,architecture/subsystem,formal UML/model,deployment,partial,Kubernetes pods/PVC as 3D nodes w/ component symbols; 5-frame build; Preexisting/Modified/New legend
+Nikolas Hack Bachelor-Presentation.pdf,15,architecture,Architectural Evolution,architecture/subsystem,formal UML/model,deployment,partial,Kubernetes pods/PVC as 3D nodes w/ component symbols; 5-frame build; Preexisting/Modified/New legend
+Nikolas Hack Bachelor-Presentation.pdf,16,architecture,Architectural Evolution,architecture/subsystem,formal UML/model,deployment,partial,Kubernetes pods/PVC as 3D nodes w/ component symbols; 5-frame build; Preexisting/Modified/New legend
+Nikolas Hack Bachelor-Presentation.pdf,17,objectives,Objectives re-show,objectives/requirements/RQ,icon-array,,,obj3 highlighted
+Nikolas Hack Bachelor-Presentation.pdf,18,benchmark,Benchmark Workflow,dynamic/workflow,formal UML/model,activity,yes,3-node strip w/ initial/final nodes
+Nikolas Hack Bachelor-Presentation.pdf,19,demo,Demo - Playwright testing,demo,screenshot,,,"terminal screenshots, not separator"
+Nikolas Hack Bachelor-Presentation.pdf,20,demo,Demo,demo,screenshot,,,
+Nikolas Hack Bachelor-Presentation.pdf,21,evaluation,Benchmark Results - Median RAM,evaluation/results,chart/plot,,,box plots
+Nikolas Hack Bachelor-Presentation.pdf,22,evaluation,Benchmark Results - Median Latency,evaluation/results,chart/plot,,,box plots
+Nikolas Hack Bachelor-Presentation.pdf,23,evaluation,Findings / Limitations,evaluation/results,icon-array,,,
+Nikolas Hack Bachelor-Presentation.pdf,24,status,Where are we now?,status,icon-array,,,objectives w/ green checks; build 24-25
+Nikolas Hack Bachelor-Presentation.pdf,25,status,Where are we now? + Architectural Limitations,status,icon-array,,,
+Nikolas Hack Bachelor-Presentation.pdf,26,future work,Future work,future work,icon-array,,,
+Nikolas Hack Bachelor-Presentation.pdf,27,thanks,Thank you for listening!,questions/thanks,none,,,
+Nikolas Hack Bachelor-Presentation.pdf,28,appendix,Benchmark Workflow (detailed),appendix-content,formal UML/model,activity,yes,4-frame build of detailed workflow
+Nikolas Hack Bachelor-Presentation.pdf,29,appendix,Benchmark Workflow (detailed),appendix-content,formal UML/model,activity,yes,4-frame build of detailed workflow
+Nikolas Hack Bachelor-Presentation.pdf,30,appendix,Benchmark Workflow (detailed),appendix-content,formal UML/model,activity,yes,4-frame build of detailed workflow
+Nikolas Hack Bachelor-Presentation.pdf,31,appendix,Benchmark Workflow (detailed),appendix-content,formal UML/model,activity,yes,4-frame build of detailed workflow
+Shudong_Cai_Thesis_Presentation.pdf,1,title,Benchmarking the Robustness of LMS Autograders,title,none,,,degree unstated on title
+Shudong_Cai_Thesis_Presentation.pdf,2,problem,Malicious student vs autograder,problem,flow/pipeline,,,icon flow + question
+Shudong_Cai_Thesis_Presentation.pdf,3,motivation,Define attacks -> run -> compare,motivation,flow/pipeline,,,icon flow
+Shudong_Cai_Thesis_Presentation.pdf,4,objectives,Objectives,objectives/requirements/RQ,icon-array,,,4 + reproducible/automatic center
+Shudong_Cai_Thesis_Presentation.pdf,5,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,"Researcher/Reviewer actors, boundary"
+Shudong_Cai_Thesis_Presentation.pdf,6,dynamic model,Benchmark Run Activity Diagram,dynamic/workflow,formal UML/model,activity,partial,5 column partitions
+Shudong_Cai_Thesis_Presentation.pdf,7,architecture,System Architecture,architecture/subsystem,formal UML/model,component,yes,"components + subsystem, ~80% width"
+Shudong_Cai_Thesis_Presentation.pdf,8,demo,Live Demo,demo,none,,,white separator (first of two)
+Shudong_Cai_Thesis_Presentation.pdf,9,architecture,System Architecture (annotated),architecture/subsystem,formal UML/model,component,yes,re-show of p7 w/ progress icons
+Shudong_Cai_Thesis_Presentation.pdf,10,implementation,Domain Specific Languages,other,code,,,3 DSL panels
+Shudong_Cai_Thesis_Presentation.pdf,11,architecture,System Architecture (annotated),architecture/subsystem,formal UML/model,component,yes,re-show w/ more icons
+Shudong_Cai_Thesis_Presentation.pdf,12,demo,Live Demo,demo,none,,,second demo separator
+Shudong_Cai_Thesis_Presentation.pdf,13,evaluation,Benchmark Suite,evaluation/results,table,,,"22 categories, 8 platforms"
+Shudong_Cai_Thesis_Presentation.pdf,14,evaluation,Results,evaluation/results,table,,,score table + formula
+Shudong_Cai_Thesis_Presentation.pdf,15,status,Status and Expectations,status,icon-array,,,reuses objective icons w/ green checks
+Shudong_Cai_Thesis_Presentation.pdf,16,future work,Future Work,future work,icon-array,,,
+Shudong_Cai_Thesis_Presentation.pdf,17,thanks,Thank you for listening!,questions/thanks,none,,,
+Shudong_Cai_Thesis_Presentation.pdf,18,sources,Sources,other,none,,,reference list
+Shudong_Cai_Thesis_Presentation.pdf,19,appendix,Additional Material,appendix-divider,none,,,
+Shudong_Cai_Thesis_Presentation.pdf,20,appendix,Evaluated Platform Versions,appendix-content,table,,,
+Shudong_Cai_Thesis_Presentation.pdf,21,appendix,Domain Specific Languages,appendix-content,code,,,5 DSL panels
+Shudong_Cai_Thesis_Presentation.pdf,22,appendix,Descriptor-Driven Result Normalization,appendix-content,flow/pipeline,,,
+Shudong_Cai_Thesis_Presentation.pdf,23,appendix,Aggregator Internal Component Diagram,appendix-content,formal UML/model,component,yes,
+Shudong_Cai_Thesis_Presentation.pdf,24,appendix,Container Manager Internal Component Diagram,appendix-content,formal UML/model,component,yes,
+Shudong_Cai_Thesis_Presentation.pdf,25,appendix,Manager Run Gateway Internal Component Diagram,appendix-content,formal UML/model,component,yes,
+Thesis Presentation - MA Nayer Kotry.pdf,1,title,Global Search in Artemis,title,none,,,custom template; Master
+Thesis Presentation - MA Nayer Kotry.pdf,2,problem,Exam Week!,problem,icon-array,,,story hook 1/3
+Thesis Presentation - MA Nayer Kotry.pdf,3,problem,Student question example,problem,other,,,story hook 2/3
+Thesis Presentation - MA Nayer Kotry.pdf,4,problem,Where is it? (lecture maze),problem,icon-array,,,story hook 3/3
+Thesis Presentation - MA Nayer Kotry.pdf,5,motivation,Discoverability / Comprehension / Continuity,motivation,icon-array,,,3 numbered cards
+Thesis Presentation - MA Nayer Kotry.pdf,6,objectives,Lecture Search / Iris in Global Search / Grounding & Handoff,objectives/requirements/RQ,icon-array,,,3 objective cards
+Thesis Presentation - MA Nayer Kotry.pdf,7,scope,Use Case Diagram,domain/use-case,formal UML/model,use case,yes,"extend chains, New/Collaborating/Shared legend, ~85% width"
+Thesis Presentation - MA Nayer Kotry.pdf,8,demo,Live Demo,demo,none,,,separator
+Thesis Presentation - MA Nayer Kotry.pdf,9,architecture,System Decomposition - Lecture Search,architecture/subsystem,formal UML/model,component,yes,"Artemis/Pyris subsystems, ~90% width"
+Thesis Presentation - MA Nayer Kotry.pdf,10,architecture,System Decomposition - Iris Answer (Skip AI),architecture/subsystem,formal UML/model,component,yes,progressive variant of p9
+Thesis Presentation - MA Nayer Kotry.pdf,11,architecture,System Decomposition - Iris Answer (Trigger AI),architecture/subsystem,formal UML/model,component,yes,progressive variant of p9
+Thesis Presentation - MA Nayer Kotry.pdf,12,status,Status,status,none,,,reuses objective cards; Realized/Partial/Deferred badges
+Thesis Presentation - MA Nayer Kotry.pdf,13,future work,Future Work,future work,icon-array,,,3 cards
+Thesis Presentation - MA Nayer Kotry.pdf,14,thanks,Thank you for your time!,questions/thanks,none,,,
+ThesisPresentationMaiaFilip.pdf,1,title,Benchmarking the Quality of Educational Quizzes Using LLMs,title,none,,,
+ThesisPresentationMaiaFilip.pdf,2,context,Preparing the Quiz,context,icon-array,,,illustration
+ThesisPresentationMaiaFilip.pdf,3,problem,Problem,problem,icon-array,,,no framework statement
+ThesisPresentationMaiaFilip.pdf,4,motivation,Motivation,motivation,icon-array,,,5-frame build 4-8
+ThesisPresentationMaiaFilip.pdf,5,motivation,Motivation,motivation,icon-array,,,build
+ThesisPresentationMaiaFilip.pdf,6,motivation,Motivation,motivation,icon-array,,,build
+ThesisPresentationMaiaFilip.pdf,7,motivation,Motivation,motivation,icon-array,,,build
+ThesisPresentationMaiaFilip.pdf,8,motivation,Motivation,motivation,icon-array,,,build
+ThesisPresentationMaiaFilip.pdf,9,objectives,Objectives,objectives/requirements/RQ,icon-array,,,4 verb-led cards
+ThesisPresentationMaiaFilip.pdf,10,scope,Use Case Model,domain/use-case,formal UML/model,use case,partial,Educator actor + ovals in boundary; stylized
+ThesisPresentationMaiaFilip.pdf,11,demo,Demo,demo,none,,,gradient-text separator
+ThesisPresentationMaiaFilip.pdf,12,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,pipeline of subsystems ~85% width
+ThesisPresentationMaiaFilip.pdf,13,status,Status,status,icon-array,,,reuses objective wording w/ checks
+ThesisPresentationMaiaFilip.pdf,14,future work,Future Work,future work,icon-array,,,
+ThesisPresentationMaiaFilip.pdf,15,thanks,Thank you!,questions/thanks,none,,,
+ThesisPresentation_CelineLahnor.pdf,1,title,Enhancing Notifications and Profile Management in TUMApply,title,none,,,CIT template origin deck
+ThesisPresentation_CelineLahnor.pdf,2,problem,An applicant's journey.,problem,icon-array,,,3-step journey cards
+ThesisPresentation_CelineLahnor.pdf,3,motivation,Why solving this matters.,motivation,icon-array,,,3 cards
+ThesisPresentation_CelineLahnor.pdf,4,objectives,"Three goals, one research question.",objectives/requirements/RQ,icon-array,,,3 cards w/ sub-bullets
+ThesisPresentation_CelineLahnor.pdf,5,system models,Dynamic Model,dynamic/workflow,formal UML/model,activity,partial,"Applicant/System swimlanes, new steps highlighted"
+ThesisPresentation_CelineLahnor.pdf,6,system models,Analysis Object Model,data model,formal UML/model,class,yes,~80% width
+ThesisPresentation_CelineLahnor.pdf,7,demo,Live Demo,demo,none,,,dark navy separator + logo
+ThesisPresentation_CelineLahnor.pdf,8,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,5-frame annotated build; Extended Modules legend
+ThesisPresentation_CelineLahnor.pdf,9,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,5-frame annotated build; Extended Modules legend
+ThesisPresentation_CelineLahnor.pdf,10,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,5-frame annotated build; Extended Modules legend
+ThesisPresentation_CelineLahnor.pdf,11,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,5-frame annotated build; Extended Modules legend
+ThesisPresentation_CelineLahnor.pdf,12,architecture,Subsystem Decomposition,architecture/subsystem,formal UML/model,component,yes,5-frame annotated build; Extended Modules legend
+ThesisPresentation_CelineLahnor.pdf,13,status,What was built.,status,none,,,reuses objective cards; all-green banner
+ThesisPresentation_CelineLahnor.pdf,14,status,What stayed open.,status,none,,,PARTIALLY REALIZED / REMAINED OPEN
+ThesisPresentation_CelineLahnor.pdf,15,future work,Guided Application Preparation,future work,screenshot,,,mockup
+ThesisPresentation_CelineLahnor.pdf,16,future work,In-App Notification Overview,future work,screenshot,,,mockup
+ThesisPresentation_CelineLahnor.pdf,17,thanks,Thank you for listening!,questions/thanks,none,,,dark separator
+ThesisPresentation_CelineLahnor.pdf,18,sources,Sources,other,none,,,icon sources
+präsi_mb_ba_publish.pdf,1,title,Advancing the Ozobot Challenge,title,none,,,non-software thesis (board game)
+präsi_mb_ba_publish.pdf,2,problem,The Problem,problem,chart/plot,,,enrollment chart + board photo
+präsi_mb_ba_publish.pdf,3,motivation,Motivation,motivation,photo,,,
+präsi_mb_ba_publish.pdf,4,objectives,Research Question & Objectives,objectives/requirements/RQ,flow/pipeline,,,RQ + 4-step flow
+präsi_mb_ba_publish.pdf,5,context,The Original Prototype,context,icon-array,,,4 issue flags
+präsi_mb_ba_publish.pdf,6,requirements,Requirements,objectives/requirements/RQ,icon-array,,,
+präsi_mb_ba_publish.pdf,7,design,Physical Redesign,other,photo,,,board artwork
+präsi_mb_ba_publish.pdf,8,design,(card/board assets),other,photo,,,
+präsi_mb_ba_publish.pdf,9,design,The Redesign: Gameplay Logic,dynamic/workflow,formal UML/model,flowchart,yes,gameplay decision flowchart
+präsi_mb_ba_publish.pdf,10,evaluation,Pilot Study: Setup,evaluation/results,icon-array,,,"100 pupils, grades 3-4"
+präsi_mb_ba_publish.pdf,11,evaluation,Results,evaluation/results,icon-array,,,per-requirement checks
+präsi_mb_ba_publish.pdf,12,evaluation,Discussion & Limitations,evaluation/results,none,,,achieved vs open columns
+präsi_mb_ba_publish.pdf,13,conclusion,Conclusion (RQ answered),status,none,,,RQ re-shown w/ check
+präsi_mb_ba_publish.pdf,14,future work,Future Work,future work,photo,,,
+präsi_mb_ba_publish.pdf,15,appendix,(game board),appendix-content,photo,,,
+präsi_mb_ba_publish.pdf,16,appendix,(cards),appendix-content,photo,,,
+präsi_mb_ba_publish.pdf,17,appendix,(Ozobot track),appendix-content,photo,,,
